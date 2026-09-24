@@ -1,0 +1,2 @@
+# Muslim_Prey_Management_With_GIS
+Muslim Prayer Management with GIS is a web-based system designed to manage and visualize Islamic prayer-related information through Geographic Information System (GIS) technology. The system integrates prayer time calculations, geographic location data, solar and lunar information, mosque and prayer place mapping, and astronomical observations into an interactive map-based platform. It is designed to support accurate, location-based, and accessible Islamic prayer management for various regions and time zones.
