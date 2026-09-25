@@ -1,0 +1,349 @@
+:root { color-scheme: light; }
+body { height:100dvh; min-height:100vh; display:grid; grid-template-rows:auto minmax(0,1fr); overflow:hidden; background:#edf2ef; }
+.overlay-admin-header { position:relative; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.65rem clamp(.75rem,2vw,1.35rem); color:#fff; background:#0c3d32; box-shadow:0 8px 24px rgba(0,0,0,.16); }
+.overlay-admin-header h1 { font-size:clamp(1.4rem,3vw,2.2rem); }
+.overlay-admin-header .eyebrow,.overlay-admin-header p { color:rgba(255,255,255,.78); }
+.overlay-admin-actions { display:flex; flex-wrap:wrap; align-items:end; justify-content:flex-end; gap:.55rem; }
+.overlay-admin-actions label { display:grid; gap:.2rem; font-size:.78rem; font-weight:800; }
+.overlay-admin-actions input { min-height:40px; border:1px solid rgba(255,255,255,.3); border-radius:8px; padding:.45rem .65rem; }
+.overlay-admin-layout { width:min(1800px,100%); height:100%; min-height:0; display:grid; grid-template-columns:minmax(220px,260px) minmax(0,1fr); margin:auto; transition:grid-template-columns .18s ease; }
+.overlay-admin-sidebar { min-height:0; overflow:auto; padding:.75rem; border-right:1px solid #d7e1dc; background:#fff; }
+.overlay-admin-content { min-width:0; min-height:0; display:grid; grid-template-rows:auto minmax(0,1fr); padding:.65rem; }
+body.is-sidebar-collapsed .overlay-admin-layout{grid-template-columns:0 minmax(0,1fr)}body.is-sidebar-collapsed .overlay-admin-sidebar{visibility:hidden;overflow:hidden;padding:0;border:0}
+.panel-heading { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1rem; }
+.panel-heading h2 { color:#17211d; }
+.panel-heading.subheading { margin-top:1.5rem; }
+.overlay-definition-list { display:grid; gap:.45rem; }
+.definition-button { width:100%; display:grid; gap:.1rem; border:1px solid #d7e1dc; border-radius:8px; padding:.65rem; text-align:left; background:#fff; }
+.definition-button.is-active { border-color:#176a58; color:#0f4d40; background:#eaf6f1; box-shadow:0 0 0 2px rgba(23,106,88,.1); }
+.definition-button span { color:#6d7773; font-size:.76rem; }
+.admin-status { margin-top:1rem; border-radius:8px; padding:.65rem; background:#eef3f1; font-size:.82rem; }
+.full-button { width:100%; margin-bottom:.75rem; }
+.worship-education-workspace{height:calc(100% - 74px);min-height:420px;display:grid;grid-template-columns:minmax(230px,290px) minmax(0,1fr);gap:12px;overflow:hidden}.worship-education-settings,.worship-education-catalog{min-height:0;overflow:auto}.worship-education-settings{display:grid;align-content:start;gap:10px}.worship-education-settings fieldset{background:#f7fbf9}.worship-education-toolbar{position:sticky;top:0;z-index:2;display:grid;grid-template-columns:minmax(220px,1fr) minmax(180px,260px) minmax(150px,220px);gap:8px;align-items:end;padding:8px;border:1px solid #cadbd5;border-radius:10px;background:rgba(255,255,255,.97)}.worship-education-toolbar h3,.worship-education-toolbar p{margin:.15rem 0}.worship-education-slide-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin-top:8px}.worship-education-slide{min-width:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px;padding:8px;border:1px solid #d2dfda;border-radius:10px;background:#fff}.worship-education-slide.is-disabled{opacity:.58}.worship-education-slide img,.worship-education-slide-placeholder{grid-row:1/4;width:76px;height:76px;display:grid;place-items:center;border-radius:8px;object-fit:contain;background:#eaf2ef;color:#587269;font-size:.68rem;text-align:center}.worship-education-slide h4,.worship-education-slide p{margin:0}.worship-education-slide h4{font-size:.88rem}.worship-education-slide p{color:#60766e;font-size:.72rem;line-height:1.3}.worship-education-slide footer{grid-column:2;display:flex;align-items:center;justify-content:space-between;gap:6px}.worship-education-status{border-radius:999px;padding:2px 6px;background:#e9f8f1;color:#0f5b45;font-size:.65rem;font-weight:900}.worship-education-status.is-disputed{color:#8a4d0b;background:#fff2d7}.worship-education-slide footer label{display:flex;align-items:center;gap:4px;font-size:.7rem;font-weight:800}.worship-education-slide footer input{width:auto;min-height:auto}
+.worship-education-slide-actions{display:flex;align-items:center;gap:4px}.worship-education-slide-actions .button{min-height:28px;padding:4px 8px;font-size:.68rem}.worship-education-dialog{width:min(1040px,96vw);height:min(900px,94dvh);max-width:none;max-height:none;padding:0;border:1px solid #9bb8ae;border-radius:16px;background:#f7fbf9;color:#153f34;box-shadow:0 28px 80px rgba(0,0,0,.35)}.worship-education-dialog::backdrop{background:rgba(5,19,15,.72);backdrop-filter:blur(3px)}.worship-education-dialog>form{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden}.worship-education-dialog header,.worship-education-dialog footer{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff}.worship-education-dialog header{justify-content:space-between;border-bottom:1px solid #cadbd5}.worship-education-dialog header h3,.worship-education-dialog header p{margin:.15rem 0}.worship-education-dialog footer{border-top:1px solid #cadbd5}.worship-education-dialog .form-spacer{flex:1}.worship-education-form-scroll{min-height:0;overflow:auto;padding:12px;display:grid;align-content:start;gap:10px}.worship-education-form-scroll details{border:1px solid #cadbd5;border-radius:10px;background:#fff}.worship-education-form-scroll summary{padding:10px 12px;cursor:pointer;font-weight:900}.worship-education-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:0 12px 12px}.worship-education-form-grid .wide{grid-column:1/-1}.worship-education-form-grid textarea{resize:vertical;min-height:64px}.worship-education-form-grid small{display:block;margin-top:4px;color:#5b746b}.worship-education-form-grid .check-line{align-self:end;min-height:44px}
+.worship-education-section-settings{display:grid!important;gap:5px!important}.worship-education-section-row{display:grid!important;grid-template-columns:auto minmax(0,1fr) 62px;align-items:center;gap:5px!important;padding:5px 6px!important;border:1px solid #d6e3de;border-radius:8px;background:#fff}.worship-education-section-row>input[type="checkbox"]{width:auto;min-height:auto}.worship-education-section-row>input[type="number"]{min-height:30px;padding:3px 5px;text-align:center}.worship-education-section-row small{grid-column:2/-1;color:#60766e;font-size:.66rem}
+.worship-education-load-more{grid-column:1/-1;justify-self:center;margin:.75rem auto 1.25rem}
+.worship-education-reading-summary{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:8px;margin-top:8px}.worship-education-reading-card{min-width:0;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:8px;padding:8px 10px;border:1px solid #bfd5cd;border-radius:10px;background:#f4faf7;color:#174b3f;text-align:left;cursor:pointer}.worship-education-reading-card:hover,.worship-education-reading-card[aria-pressed="true"]{border-color:#177c63;background:#e3f5ee;box-shadow:0 0 0 2px rgba(23,124,99,.1)}.worship-education-reading-card strong{display:grid;place-items:center;min-width:34px;min-height:34px;border-radius:9px;background:#176a58;color:#fff;font-size:1.05rem;font-variant-numeric:tabular-nums}.worship-education-reading-card span{min-width:0;font-size:.74rem;font-weight:850;line-height:1.2}
+.admin-status.is-error { color:#8b2020; background:#fff0f0; }
+.admin-status.is-success { color:#0f5b45; background:#e9f8f1; }
+.customizer-tabs { position:relative; z-index:10; display:flex; flex-wrap:nowrap; gap:.3rem; margin:-.65rem -.65rem .55rem; padding:.5rem .65rem; overflow-x:auto; border-bottom:1px solid #d7e1dc; background:rgba(237,242,239,.96); scrollbar-width:thin; }
+.customizer-tabs button { min-height:36px; flex:0 0 auto; border:1px solid #cdd9d3; border-radius:999px; padding:.35rem .72rem; background:#fff; font-size:.78rem; font-weight:800; }
+.customizer-tabs button.is-active { color:#fff; border-color:#176a58; background:#176a58; }
+.customizer-tabs .customizer-tabs-tool{margin-left:auto;border-style:dashed;color:#315f54;background:#f3faf7}
+.panel-workspace-tabs{display:flex;gap:4px;margin-bottom:.65rem;overflow-x:auto;padding:4px;border:1px solid #cadbd5;border-radius:10px;background:#edf5f1}.panel-workspace-tabs button{min-height:34px;flex:1 0 auto;border:0;border-radius:7px;padding:5px 10px;color:#315f54;background:transparent;font-size:.76rem;font-weight:900}.panel-workspace-tabs button.is-active{color:#fff;background:#176a58}.panel-workspace-view{display:none}.panel-workspace-view.is-active{display:block}.panel-workspace-view>.panel-heading.subheading{margin-top:.25rem;margin-bottom:.6rem}.panel-workspace-view>.panel-heading.subheading p:last-child{margin-bottom:0}.panel-workspace-save{position:sticky;bottom:-.75rem;z-index:5;display:flex;align-items:center;justify-content:flex-end;gap:.65rem;margin-top:.6rem;padding:.55rem .1rem;background:rgba(255,255,255,.96);backdrop-filter:blur(8px)}.panel-workspace-save span{color:#63736d;font-size:.76rem}
+.customizer-panel { display:none; min-height:0; border:1px solid #d7e1dc; border-radius:10px; padding:clamp(.7rem,1.5vw,1rem); background:#fff; box-shadow:0 10px 30px rgba(18,31,27,.07); }
+.customizer-panel.is-active { display:block; height:100%; overflow:auto; overscroll-behavior:contain; }
+.customizer-panel>.panel-heading:first-child{position:sticky;top:-1rem;z-index:4;margin:-.6rem -.6rem .7rem;padding:.65rem;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid #e0e9e5}
+.compact-collapsible>legend{max-width:100%;cursor:pointer;user-select:none}.compact-collapsible>legend::after{content:"  −";color:#08775c}.compact-collapsible.is-collapsed>legend::after{content:"  +"}.compact-collapsible.is-collapsed>:not(legend){display:none!important}.compact-collapsible.is-collapsed{padding-bottom:.45rem}
+body[data-experience-mode="simple"] .overlay-admin-header>div:first-child>p:last-child{display:none}body[data-experience-mode="simple"] .overlay-admin-header h1{font-size:1.35rem}
+.bulk-duration-grid,.form-grid { display:grid; gap:.7rem; margin-bottom:1rem; }
+.bulk-duration-grid { grid-template-columns:repeat(5,minmax(130px,1fr)); align-items:end; padding:.8rem; border-radius:8px; background:#f4f7f5; }
+.form-grid.two { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.form-grid.four { grid-template-columns:repeat(4,minmax(130px,1fr)); }
+.overlay-form label,.bulk-duration-grid label,.form-grid label,.preview-toolbar label,.media-upload-form label { display:grid; gap:.28rem; color:#42504a; font-size:.8rem; font-weight:800; }
+input,select,textarea { width:100%; min-height:42px; border:1px solid #cbd7d1; border-radius:7px; padding:.5rem .6rem; color:#17211d; background:#fff; }
+textarea { resize:vertical; }
+.check-line { display:flex !important; align-items:center; gap:.45rem; margin:.75rem 0; }
+.check-line input { width:auto; min-height:auto; }
+.table-wrap { overflow:auto; margin-bottom:1rem; }
+.settings-table { width:100%; border-collapse:collapse; font-size:.82rem; }
+.settings-table th,.settings-table td { border-bottom:1px solid #e2e9e5; padding:.55rem; text-align:left; vertical-align:middle; }
+.settings-table th { color:#51605a; background:#f4f7f5; white-space:nowrap; }
+.settings-table input[type=checkbox] { width:auto; min-height:auto; }
+.settings-table input[type=number] { min-width:88px; }
+.background-path-editor { display:grid; grid-template-columns:minmax(190px,1fr) auto; gap:.4rem; align-items:center; min-width:300px; }
+.background-path-editor .button { min-height:38px; white-space:nowrap; }
+.language-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1rem 0; }
+fieldset { min-width:0; border:1px solid #d7e1dc; border-radius:9px; padding:.9rem; }
+legend { padding:0 .35rem; color:#244b40; font-weight:900; }
+fieldset label { margin-bottom:.6rem; }
+.form-help { color:#6d7773; font-size:.8rem; }
+.form-actions,.preview-toolbar,.media-upload-form { display:flex; flex-wrap:wrap; align-items:end; gap:.6rem; margin-top:1rem; }
+.component-toggle-row { display:flex; flex-wrap:wrap; gap:1rem; margin:.4rem 0 1rem; }
+.trigger-list { display:grid; gap:.45rem; margin-top:.65rem; }
+.trigger-chip { display:flex; align-items:center; justify-content:space-between; gap:.6rem; border:1px solid #d7e1dc; border-radius:8px; padding:.5rem .65rem; background:#f7f9f8; font-size:.8rem; }
+.sequence-list { display:grid; gap:.7rem; margin-top:.75rem; }
+.sequence-row { display:grid; grid-template-columns:60px minmax(120px,1fr) minmax(120px,1fr) 100px minmax(160px,1fr) auto; gap:.55rem; align-items:end; border:1px solid #d7e1dc; border-radius:8px; padding:.65rem; background:#f7f9f8; }
+.preset-picker { display:grid; grid-template-columns:minmax(220px,1fr) minmax(180px,300px) auto; gap:.75rem; align-items:end; margin-bottom:1rem; border:1px solid #a9d5c5; border-radius:10px; padding:.85rem; background:#effaf5; }
+.preset-picker p { margin:.2rem 0 0; color:#51605a; font-size:.8rem; }
+.wide-field { grid-column:1/-1; }
+.media-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:.7rem; margin:1rem 0; }
+.media-card { overflow:hidden; border:2px solid #d7e1dc; border-radius:10px; background:#fff; }
+.media-card.is-selected { border-color:#176a58; box-shadow:0 0 0 3px rgba(23,106,88,.12); }
+.media-card.is-applied { border-color:#b98413; }
+.media-card img { width:100%; aspect-ratio:16/9; display:block; object-fit:cover; background:#e8eeeb; }
+.media-card video,.media-provider-preview { width:100%; aspect-ratio:16/9; display:grid; place-items:center; object-fit:cover; color:#fff; background:#132b25; font-weight:900; }
+.media-card div { display:grid; gap:.3rem; padding:.5rem; font-size:.72rem; overflow-wrap:anywhere; }
+.media-card .media-card-actions { grid-template-columns:1fr 1fr; }
+.media-card .media-card-actions .button { min-width:0; padding:.45rem .35rem; font-size:.72rem; }
+.media-card .media-name-input { min-height:36px; font-size:.76rem; }
+.media-badge { width:max-content; border-radius:999px; padding:.15rem .45rem; color:#0f5b45; background:#e9f8f1; font-weight:900; }
+.beginner-guide { margin-bottom:1.2rem; border:1px solid #a9d5c5; border-left:5px solid #176a58; border-radius:10px; padding:1rem 1.1rem; background:#effaf5; }
+.beginner-guide ol { margin:.55rem 0; padding-left:1.3rem; }
+.beginner-guide li { margin:.25rem 0; }
+.beginner-guide p { margin:0; color:#51605a; font-size:.84rem; }
+.quick-background-picker { display:grid; grid-template-columns:minmax(220px,360px) minmax(0,1fr); gap:1rem; align-items:center; border:2px solid #a9d5c5; border-radius:12px; padding:.85rem; background:#f7fcfa; }
+.quick-background-picker img { width:100%; aspect-ratio:16/9; border-radius:9px; object-fit:cover; background:#dfe8e3; }
+.quick-background-picker > div { display:grid; gap:.55rem; }
+.quick-background-picker h3,.quick-background-picker p { margin:0; }
+.quick-background-picker code { display:block; overflow-wrap:anywhere; border-radius:6px; padding:.5rem; color:#42504a; background:#eef3f1; font-size:.76rem; }
+.quick-background-picker .button { width:max-content; }
+.optional-media-settings,.axis-settings { margin-top:1rem; border:1px solid #d7e1dc; border-radius:10px; background:#fafcfb; }
+.optional-media-settings > summary,.axis-settings > summary { min-height:48px; display:flex; align-items:center; padding:.7rem .9rem; cursor:pointer; color:#244b40; font-weight:900; }
+.optional-media-settings > summary:focus-visible,.axis-settings > summary:focus-visible { outline:3px solid #e3a72f; outline-offset:2px; }
+.optional-media-settings[open] > summary,.axis-settings[open] > summary { border-bottom:1px solid #d7e1dc; }
+.optional-media-settings .background-media-section,.axis-settings .editor-control-columns { margin:.9rem; }
+.step-label { width:max-content; margin:0 0 .2rem; border-radius:999px; padding:.15rem .55rem; color:#0f5b45; background:#e9f8f1; font-size:.72rem; font-weight:900; text-transform:uppercase; }
+.background-media-section,.background-editor-section { margin-top:1rem; border-top:1px solid #d7e1dc; padding-top:.25rem; }
+.file-picker { min-width:min(420px,100%); }
+.file-picker small { color:#6d7773; font-weight:500; }
+.upload-preview { display:flex; align-items:center; gap:.65rem; max-width:360px; border:1px solid #cbd7d1; border-radius:8px; padding:.4rem; background:#fff; }
+.upload-preview[hidden] { display:none; }
+.upload-preview img { width:96px; height:58px; border-radius:6px; object-fit:cover; }
+.upload-preview span { max-width:220px; overflow-wrap:anywhere; font-size:.8rem; }
+.selection-status,.applied-status { border-radius:8px; padding:.65rem .75rem; color:#42504a; background:#f4f7f5; font-size:.82rem; }
+.selection-status.is-pending { color:#744d00; background:#fff7dc; }
+.applied-status { margin:-.4rem 0 .75rem; }
+.background-editor-stage { position:relative; isolation:isolate; width:100%; aspect-ratio:16/9; min-height:260px; overflow:hidden; border:2px solid #264d42; border-radius:12px; color:#fff; background:#071713; cursor:grab; touch-action:none; user-select:none; box-shadow:inset 0 0 0 1px rgba(255,255,255,.12); }
+.background-editor-stage:active,.background-editor-stage.is-dragging { cursor:grabbing; }
+.background-editor-stage:focus-visible { outline:3px solid #e3a72f; outline-offset:3px; }
+.background-editor-image,.background-editor-video,.background-editor-tint { position:absolute; inset:0; pointer-events:none; }
+.background-editor-image { z-index:-2; background-position:50% 50%; background-size:cover; background-repeat:no-repeat; transform:scale(1); transform-origin:center; }
+.background-editor-video { z-index:-2; width:100%; height:100%; object-fit:cover; transform-origin:center; }
+.background-editor-tint { z-index:-1; background:#081b18; opacity:.52; }
+.background-editor-overlay { position:absolute; isolation:isolate; left:50%; top:50%; width:86%; height:78%; display:grid; place-items:center; border:2px dashed #7ff0bf; border-radius:12px; background:transparent; cursor:move; text-align:center; font-weight:900; transform:translate(-50%,-50%); }
+.background-editor-overlay::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:var(--editor-card-background,#102a25);background-position:center;background-size:cover;opacity:var(--editor-card-opacity,.78)}
+.background-editor-overlay[data-anchor="top-left"] { transform:translate(0,0); }
+.background-editor-overlay[data-anchor="top-right"] { transform:translate(-100%,0); }
+.background-editor-overlay[data-anchor="bottom-left"] { transform:translate(0,-100%); }
+.background-editor-overlay[data-anchor="bottom-right"] { transform:translate(-100%,-100%); }
+.background-editor-overlay small { color:rgba(255,255,255,.75); font-weight:500; }
+.background-editor-widget-layer { position:absolute; inset:0; z-index:2; pointer-events:none; }
+.background-editor-widget-chip { position:absolute; left:var(--editor-widget-x,50%); top:var(--editor-widget-y,50%); width:var(--editor-widget-width,36%); min-width:96px; min-height:42px; display:grid; place-items:center; border:2px solid #f6c453; border-radius:9px; padding:.4rem; color:#fff; background:rgba(20,44,38,.84); cursor:move; pointer-events:auto; text-align:center; font-size:clamp(.68rem,1.3vw,.9rem); font-weight:900; transform:translate(-50%,-50%); box-shadow:0 4px 15px rgba(0,0,0,.35); }
+.background-editor-widget-chip:focus-visible { outline:3px solid #fff; outline-offset:2px; }
+.background-editor-widget-resize { position:absolute; right:-7px; bottom:-7px; width:17px; height:17px; border:2px solid #fff; border-radius:4px; background:#f6c453; cursor:nwse-resize; touch-action:none; }
+.background-editor-resize { position:absolute; right:-7px; bottom:-7px; width:24px; height:24px; border:3px solid #fff; border-radius:50%; background:#176a58; cursor:nwse-resize; box-shadow:0 2px 8px rgba(0,0,0,.3); }
+.editor-mouse-help { position:absolute; left:.6rem; bottom:.55rem; z-index:3; border-radius:6px; padding:.3rem .5rem; color:#fff; background:rgba(0,0,0,.58); font-size:.72rem; pointer-events:none; }
+.editor-control-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:1rem; }
+.quick-editor-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.55rem; margin:.75rem 0; border-radius:10px; padding:.65rem; background:#f4f7f5; }
+.quick-editor-toolbar output { min-width:64px; color:#0f5b45; text-align:center; font-size:1.05rem; font-weight:900; }
+.editor-control-columns fieldset { background:#fbfcfb; }
+.compact-grid { margin-bottom:.65rem; }
+.advanced-settings { margin-top:1rem; border:1px solid #d7e1dc; border-radius:10px; background:#fafcfb; }
+.advanced-settings summary { min-height:48px; display:flex; align-items:center; padding:.7rem .9rem; cursor:pointer; color:#244b40; font-weight:900; }
+.advanced-settings summary:focus-visible { outline:3px solid #e3a72f; outline-offset:2px; }
+.advanced-settings[open] summary { border-bottom:1px solid #d7e1dc; }
+.advanced-settings > :not(summary) { margin-left:.9rem; margin-right:.9rem; }
+.advanced-settings .form-grid { margin-top:.9rem; }
+.layout-save-bar { position:sticky; bottom:.5rem; z-index:5; display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:1.25rem; border:1px solid #a9d5c5; border-radius:10px; padding:.75rem; background:rgba(239,250,245,.96); box-shadow:0 8px 24px rgba(18,31,27,.12); backdrop-filter:blur(8px); }
+.layout-save-bar div { display:grid; gap:.1rem; }
+.layout-save-bar span { color:#51605a; font-size:.8rem; }
+.preview-toolbar { margin:0 0 .8rem; }
+.overlay-preview-frame { width:100%; min-height:68vh; border:1px solid #b9c9c1; border-radius:10px; background:#0b1815; }
+.media-library-tools,.external-media-form { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:.65rem; align-items:end; margin:.8rem 0; }
+.priority-guide { display:grid; grid-template-columns:repeat(4,minmax(140px,1fr)); gap:.65rem; margin:1rem 0; }
+.priority-guide article { display:grid; gap:.25rem; border:1px solid #c9d9d2; border-radius:10px; padding:.8rem; background:#f7fbf9; }
+.priority-guide strong { color:#176a58; font-size:1.2rem; }
+.priority-guide span { color:#51605a; font-size:.8rem; }
+.widget-checklist { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:.45rem; margin:.6rem 0 1rem; }
+.widget-checklist label { display:flex; align-items:center; gap:.45rem; border:1px solid #d7e1dc; border-radius:8px; padding:.55rem; background:#fff; }
+.widget-checklist input { width:auto; min-height:auto; }
+.widget-editor-list { display:grid; gap:.75rem; margin:1rem 0; }
+.widget-editor-card { border:1px solid #c9d9d2; border-radius:10px; padding:.75rem; background:#f7fbf9; }
+.widget-editor-card > header { display:flex; align-items:center; justify-content:space-between; gap:.7rem; margin-bottom:.65rem; cursor:grab; }
+.widget-editor-card .form-grid { grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); margin:0; }
+.widget-editor-card input[type="checkbox"] { width:auto; min-height:auto; justify-self:start; }
+
+/* Bereavement / Funeral Prayer editor */
+.funeral-workspace{height:calc(100% - 72px);min-height:420px;display:grid;grid-template-columns:minmax(205px,245px) minmax(0,1fr);gap:12px;align-items:stretch}
+.funeral-event-browser{min-height:0;display:grid;grid-template-rows:auto auto minmax(0,1fr);border:1px solid #cadbd5;border-radius:12px;padding:10px;background:#f7fbf9}
+.funeral-browser-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}.funeral-event-browser h3{margin:0}.funeral-event-count{min-width:28px;border-radius:999px;padding:3px 7px;color:#fff;background:#176a58;text-align:center;font-size:.75rem;font-weight:900}.funeral-event-list{min-height:0;display:grid;align-content:start;gap:6px;overflow:auto;margin-top:8px;padding-right:2px}
+.funeral-event-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px;width:100%;padding:7px;border:1px solid #c7d9d2;border-radius:9px;background:#fff;color:#173e36}
+.funeral-event-item.is-active{border-color:#12745f;box-shadow:0 0 0 2px rgba(18,116,95,.16)}
+.funeral-event-select{min-width:0;display:grid;gap:2px;border:0;padding:0;background:transparent;text-align:left;color:inherit;cursor:pointer}.funeral-event-select strong,.funeral-event-select small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.funeral-event-item small{color:#637a73}.funeral-event-item-actions{display:flex;align-items:center;gap:3px}.funeral-event-item-actions button{min-height:30px;border:1px solid #cbdad4;border-radius:6px;padding:3px 6px;background:#f4f8f6;font-size:.68rem;font-weight:800}.funeral-event-item-actions button.is-danger{color:#8b2020;background:#fff3f3}
+.funeral-heading-actions,.funeral-browser-heading{display:flex;flex-wrap:wrap;gap:6px}.funeral-editor-main{position:relative;min-width:0;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr);gap:8px;overflow:hidden}.funeral-event-form{min-height:0;display:grid;align-content:start;gap:10px;overflow:auto;padding-right:3px}
+.funeral-workspace-tabs{display:flex;gap:4px;overflow-x:auto;padding:4px;border:1px solid #cadbd5;border-radius:10px;background:#edf5f1}.funeral-workspace-tabs button{min-height:34px;flex:1 0 auto;border:0;border-radius:7px;padding:5px 10px;color:#315f54;background:transparent;font-size:.76rem;font-weight:900}.funeral-workspace-tabs button.is-active{color:#fff;background:#176a58}
+.funeral-editor-main[data-funeral-view="preview"] .funeral-event-form{display:none}.funeral-editor-main:not([data-funeral-view="preview"])>.funeral-preview,.funeral-editor-main:not([data-funeral-view="preview"])>details[data-funeral-workspace="preview"]{display:none}.funeral-editor-main[data-funeral-view="data"] .funeral-event-form>[data-funeral-workspace]:not([data-funeral-workspace="data"]),.funeral-editor-main[data-funeral-view="schedule"] .funeral-event-form>[data-funeral-workspace]:not([data-funeral-workspace="schedule"]),.funeral-editor-main[data-funeral-view="sequence"] .funeral-event-form>[data-funeral-workspace]:not([data-funeral-workspace="sequence"]){display:none!important}.funeral-editor-main[data-funeral-view="preview"]>.funeral-preview{display:block;min-height:0;height:100%;overflow:auto}.funeral-editor-main[data-funeral-view="preview"]>details[data-funeral-workspace="preview"]{display:block;position:absolute;right:24px;bottom:20px;z-index:3;max-width:min(520px,70%);max-height:45%;overflow:auto;padding:6px;border-radius:8px;background:#fff}
+.funeral-event-form fieldset{border:1px solid #cadbd5;border-radius:14px;padding:14px}.funeral-event-form legend{font-weight:800;padding:0 8px}
+.funeral-photo-field{display:grid;grid-template-columns:minmax(190px,.9fr) minmax(210px,1fr) minmax(260px,1.15fr);gap:10px;align-items:center;margin-top:12px;padding:11px;border:1px solid #cadbd5;border-radius:12px;background:rgba(18,116,95,.035)}
+.funeral-photo-field[hidden]{display:none}.funeral-photo-copy strong{display:block;color:#113d34}.funeral-photo-copy p{margin:.25rem 0 0;color:#5d746d;font-size:.78rem;line-height:1.35}.funeral-photo-preview{min-height:86px;display:grid;grid-template-columns:84px minmax(0,1fr);grid-template-rows:auto auto;gap:3px 9px;align-items:center;padding:7px;border:1px dashed #a9beb6;border-radius:10px;background:#fff}.funeral-photo-preview.is-empty{grid-template-columns:1fr;text-align:center;place-content:center}.funeral-photo-preview img{grid-row:1/3;width:84px;height:76px;border-radius:8px;object-fit:cover;background:#e8f0ed}.funeral-photo-preview span{overflow-wrap:anywhere;font-size:.78rem}.funeral-photo-preview small{color:#627870;overflow-wrap:anywhere}.funeral-photo-controls{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.funeral-photo-picker{flex:1 1 100%;font-weight:700}.funeral-photo-picker input{margin-top:4px}.funeral-photo-controls .check-line{flex:1 1 100%;margin:0}.funeral-photo-controls .button{min-height:36px;padding:6px 10px}.funeral-photo-field>.form-help{grid-column:1/-1;margin:0}.funeral-photo-field.is-uploading{opacity:.72;pointer-events:none}
+.conditional-fields{margin-top:12px;padding:12px;border-radius:10px;background:#f2f8f5}.funeral-method-notice{padding:9px 11px;border-radius:9px;background:#eff7f4;color:#315f54}
+.funeral-method-notice.is-warning{background:#fff5dc;color:#725412}.funeral-form-actions{position:sticky;bottom:8px;z-index:5;padding:10px;border:1px solid #c6d8d1;border-radius:12px;background:rgba(255,255,255,.96)}
+.funeral-preview{border:1px solid #bcd3ca;border-radius:16px;padding:16px;background:#f7fbf9}.funeral-realtime-status{font-size:.82rem;color:#49685f}
+.funeral-realtime-status.is-live{color:#08775c}.funeral-realtime-status.is-fallback{color:#8a5d0b}
+.funeral-notice-preview{display:grid;gap:10px;padding:16px;border-radius:14px;background:linear-gradient(135deg,#0d392f,#176b59);color:#fff;margin-bottom:14px}.funeral-notice-preview.has-photo{grid-template-columns:minmax(110px,25%) minmax(0,1fr);align-items:center}.funeral-notice-photo{display:block;width:100%;max-height:210px;aspect-ratio:4/5;border-radius:12px;object-fit:cover;background:#dceae5}.funeral-notice-copy{display:grid;gap:7px;min-width:0}.funeral-notice-preview h3,.funeral-notice-preview p{margin:0}.funeral-notice-preview dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 12px;margin:4px 0}.funeral-notice-preview dt{font-weight:800}.funeral-notice-preview dd{margin:0}
+.funeral-guide-preview{display:grid;grid-template-columns:minmax(260px,42%) minmax(0,1fr);gap:16px;align-items:center}.funeral-guide-media{position:relative;border-radius:14px;overflow:hidden;background:#e6efeb;min-height:220px}.funeral-guide-media img{display:block;width:100%;height:auto;object-fit:contain}.funeral-guide-media span{position:absolute;right:9px;top:9px;padding:5px 9px;border-radius:999px;background:rgba(5,34,28,.82);color:#fff;font-weight:800}
+.funeral-guide-copy h4{font-size:1.35rem;margin:.2rem 0}.funeral-guide-copy p{margin:.35rem 0}.funeral-arabic{font-family:'Noto Naskh Arabic','Amiri',serif;font-size:clamp(1.35rem,2.6vw,2.2rem);line-height:1.8;white-space:pre-line}.funeral-latin,#funeralGuideTranslation{white-space:pre-line}.funeral-latin{font-style:italic}.funeral-guide-copy a{display:inline-block;margin-top:6px;color:#0b6b57}
+.funeral-playback-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:end;margin-top:14px}.funeral-playback-controls label{width:auto}.funeral-playback-controls select{min-height:36px}
+.funeral-insert-settings{margin-top:12px;padding:12px;border:1px dashed #9ebeb3;border-radius:11px;background:#f7fbf9}.funeral-insert-settings .widget-checklist{margin-top:8px}.funeral-insert-settings.is-disabled{opacity:.55}
+.funeral-chapter-duration-panel{margin:12px 0;padding:12px;border:1px solid #cadbd5;border-radius:12px;background:#f8fbfa}.funeral-chapter-duration-panel h4{margin:0 0 4px}.funeral-chapter-durations{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:7px;margin-top:9px}.funeral-chapter-duration-row{display:grid;grid-template-columns:minmax(0,1fr) 76px;align-items:center;gap:3px 7px;padding:8px;border:1px solid #d9e6e1;border-radius:9px;background:#fff}.funeral-chapter-duration-row span{text-transform:capitalize;font-weight:800}.funeral-chapter-duration-row input{grid-column:2;grid-row:1/3;min-height:38px}.funeral-chapter-duration-row small{color:#637a73}
+.funeral-rule-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}.funeral-rule-columns>section{padding:12px;border:1px solid #cadbd5;border-radius:12px;background:rgba(18,116,95,.025)}.funeral-rule-columns h4,.funeral-presentation-settings h4{margin:0 0 8px}.widget-checklist.compact{display:grid;grid-template-columns:1fr;gap:5px}.protected-phase-grid{display:grid;grid-template-columns:minmax(120px,1fr) 80px 110px;align-items:center;gap:7px}.protected-phase-grid strong{font-size:.78rem;color:#637a73}.protected-phase-grid input{justify-self:center}.funeral-prayer-rule-wrap{overflow-x:auto;border:1px solid #cadbd5;border-radius:12px}.funeral-prayer-rule-table{width:100%;min-width:900px;border-collapse:collapse}.funeral-prayer-rule-table th,.funeral-prayer-rule-table td{padding:7px;border-bottom:1px solid #dce8e3;text-align:center;font-size:.78rem}.funeral-prayer-rule-table th:first-child,.funeral-prayer-rule-table td:first-child{text-align:left;position:sticky;left:0;background:#fff;z-index:1}.funeral-prayer-rule-table input[type="number"]{width:76px}.funeral-sequence-toolbar{display:flex;flex-wrap:wrap;align-items:end;gap:10px}.funeral-sequence-toolbar>label{min-width:150px;flex:1}.funeral-duration-summary{display:flex;align-items:center;gap:10px;margin:12px 0;padding:10px 12px;border-radius:10px;background:rgba(18,116,95,.08)}.funeral-duration-summary strong{font-size:1.35rem;color:#08775c}.funeral-scene-timeline{display:grid;gap:8px}.funeral-scene-row{display:grid;grid-template-columns:92px 34px minmax(150px,1fr) 130px 86px auto;align-items:center;gap:8px;padding:9px;border:1px solid #cadbd5;border-radius:11px;background:rgba(18,116,95,.025)}.funeral-scene-row.is-disabled{opacity:.58}.funeral-scene-time{font-variant-numeric:tabular-nums;color:#08775c;font-weight:800}.funeral-scene-title{min-width:0}.funeral-scene-title strong,.funeral-scene-title small{display:block}.funeral-scene-title small{color:#637a73}.funeral-scene-actions{display:flex;gap:4px}.funeral-scene-actions button{min-height:34px;padding:5px 8px}.funeral-scene-editor{grid-column:1/-1;padding:9px;border-top:1px solid #cadbd5}.funeral-scene-editor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.funeral-scene-editor-grid .wide{grid-column:1/-1}.funeral-scene-editor textarea{min-height:70px}.funeral-scene-simulator{margin:12px 0;border:1px solid #375d54;border-radius:16px;overflow:hidden;background:#071d18}.funeral-simulation-context{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;padding:8px 12px;color:#d8fff1;background:rgba(0,0,0,.25);font-size:.82rem;font-weight:800}.funeral-scene-preview{min-height:420px;max-height:70vh;padding:clamp(18px,4vw,50px);display:grid;place-items:center;align-content:center;text-align:center;overflow:hidden;color:#fff}.funeral-scene-preview-copy{width:min(100%,900px)}.funeral-scene-preview img{display:block;max-width:min(72%,520px);max-height:34vh;margin:0 auto 10px;object-fit:contain;background:#eef6f2;border-radius:14px}.funeral-scene-preview h4{font-size:clamp(1.5rem,4vw,3.3rem);margin:.25em 0}.funeral-scene-preview .arabic{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:clamp(1.7rem,4.5vw,3.8rem);line-height:1.65}.funeral-scene-preview p{white-space:pre-line;margin:.35em 0}.funeral-scene-preview .scene-progress{color:#a7ead8;font-weight:800}.funeral-guide-preview{display:none!important}
+@media(max-width:1100px){.funeral-rule-columns{grid-template-columns:1fr}.funeral-scene-row{grid-template-columns:86px 30px minmax(130px,1fr) 110px 80px}.funeral-scene-actions{grid-column:1/-1;justify-content:flex-end}}
+@media(max-width:700px){.funeral-scene-row{grid-template-columns:74px 28px 1fr}.funeral-scene-row>select,.funeral-scene-row>input{grid-column:span 1}.funeral-scene-editor-grid{grid-template-columns:1fr}.funeral-scene-editor-grid .wide{grid-column:auto}.funeral-scene-preview{min-height:360px;max-height:72vh}.funeral-simulation-context{justify-content:center}.protected-phase-grid{grid-template-columns:1fr 66px 96px}}
+@media(max-width:900px){.funeral-workspace{grid-template-columns:1fr}.funeral-event-browser{position:static}.funeral-event-list{max-height:240px}.funeral-guide-preview{grid-template-columns:1fr}.funeral-form-actions{position:static}}
+@media(max-width:900px){.worship-education-workspace{height:auto;grid-template-columns:1fr;overflow:visible}.worship-education-settings,.worship-education-catalog{overflow:visible}.worship-education-toolbar{position:static;grid-template-columns:1fr 1fr}.worship-education-toolbar>div{grid-column:1/-1}.worship-education-reading-summary{grid-template-columns:repeat(2,minmax(120px,1fr))}}
+@media(max-width:1050px){.funeral-photo-field{grid-template-columns:1fr 1fr}.funeral-photo-copy{grid-column:1/-1}}
+@media(max-width:620px){.funeral-photo-field{grid-template-columns:1fr}.funeral-photo-copy{grid-column:auto}.funeral-notice-preview.has-photo{grid-template-columns:1fr}.funeral-notice-photo{width:min(48%,180px);max-height:180px;margin:auto}}
+.widget-editor-card.is-dragging { opacity:.55; }
+.suggestion-review { margin:1rem 0; border-left:5px solid #b98413; border-radius:9px; padding:.9rem; background:#fff8e8; }
+.suggestion-list { display:grid; gap:.55rem; }
+.suggestion-card { display:flex; flex-wrap:wrap; align-items:center; gap:.55rem; border:1px solid #ecd59b; border-radius:8px; padding:.65rem; background:#fff; }
+.suggestion-card p { flex:1 1 260px; margin:0; }
+.preview-decision-debug { display:block; margin-bottom:.8rem; border-radius:8px; padding:.7rem; color:#244b40; background:#eef7f3; font:700 .82rem/1.5 ui-monospace,monospace; }
+.preview-diagnostics,.audit-list { display:grid; gap:.4rem; margin:.65rem 0; }
+.diagnostic-row,.audit-row { display:grid; grid-template-columns:minmax(140px,240px) minmax(0,1fr); gap:.65rem; border-bottom:1px solid #e2e9e5; padding:.5rem .2rem; font-size:.8rem; }
+.diagnostic-row.active { border-left:4px solid #176a58; padding-left:.55rem; }
+.diagnostic-row.suppressed,.diagnostic-row.inactive { border-left:4px solid #b98413; padding-left:.55rem; }
+.audit-row time { color:#51605a; font-family:ui-monospace,monospace; }
+body[data-experience-mode="simple"] .advanced-only { display:none !important; }
+@media(max-width:1100px){.overlay-admin-layout{grid-template-columns:1fr}.overlay-admin-sidebar{border-right:0;border-bottom:1px solid #d7e1dc}.overlay-definition-list{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}.bulk-duration-grid,.form-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}.customizer-tabs{top:124px}.sequence-row{grid-template-columns:repeat(2,minmax(0,1fr))}.editor-control-columns{grid-template-columns:1fr}.priority-guide{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.overlay-admin-header{position:relative;align-items:flex-start;flex-direction:column}.overlay-admin-actions{justify-content:flex-start}.language-columns,.form-grid.two,.form-grid.four,.bulk-duration-grid,.priority-guide,.preset-picker{grid-template-columns:1fr}.customizer-tabs{position:static;margin:-1rem -1rem 1rem}.overlay-admin-content{padding:.65rem}.background-editor-stage{min-height:210px}.layout-save-bar{align-items:stretch;flex-direction:column}.layout-save-bar .button{width:100%}.media-upload-form{align-items:stretch;flex-direction:column}.quick-background-picker{grid-template-columns:1fr}.quick-background-picker .button{width:100%}.background-path-editor{grid-template-columns:1fr;min-width:220px}.diagnostic-row,.audit-row{grid-template-columns:1fr}.background-editor-widget-chip{min-width:74px}}
+@media(max-width:1100px) and (min-width:701px){.overlay-admin-layout{grid-template-columns:200px minmax(0,1fr)}body.is-sidebar-collapsed .overlay-admin-layout{grid-template-columns:0 minmax(0,1fr)}.funeral-workspace{grid-template-columns:190px minmax(0,1fr)}}
+@media(max-width:700px){body{height:auto;display:block;overflow:auto}.overlay-admin-layout{height:auto;min-height:100vh;display:block}.overlay-admin-sidebar{max-height:42vh;border-right:0;border-bottom:1px solid #d7e1dc}.overlay-admin-content{display:block}.customizer-tabs{position:sticky;top:0;margin:-.65rem -.65rem .55rem}.customizer-panel.is-active{height:auto;overflow:visible}.panel-workspace-save{bottom:4px;flex-direction:column;align-items:stretch}.funeral-workspace{height:auto;min-height:0;grid-template-columns:1fr}.funeral-event-browser{max-height:280px}.funeral-editor-main{min-height:620px;overflow:visible}.funeral-event-form{overflow:visible}.funeral-editor-main[data-funeral-view="preview"]>details[data-funeral-workspace="preview"]{position:static;max-width:none;max-height:none}.funeral-form-actions{position:sticky;bottom:4px}.overlay-admin-header>div:first-child>p:last-child{display:none}}
+@media(max-width:700px){.worship-education-dialog{width:100vw;height:100dvh;border:0;border-radius:0}.worship-education-form-grid{grid-template-columns:1fr}.worship-education-form-grid .wide{grid-column:auto}.worship-education-dialog header,.worship-education-dialog footer{padding:9px}.worship-education-dialog footer{flex-wrap:wrap}.worship-education-dialog .form-spacer{display:none}}
+
+/* Worship education: repeatable evidence input and immediate final-output preview. */
+.worship-education-dialog{width:min(1480px,98vw);height:min(940px,96dvh)}
+.worship-education-dialog>form>header{justify-content:space-between;border-bottom:1px solid #cadbd5}
+.worship-education-dialog>form>footer{border-top:1px solid #cadbd5}
+.worship-education-editor-body{min-height:0;display:grid;grid-template-columns:minmax(430px,1fr) minmax(460px,.95fr);overflow:hidden}
+.worship-education-reference-editor{display:grid;gap:9px;padding:0 12px 12px}
+.worship-education-reference-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.worship-education-reference-heading p{margin:0}
+.worship-education-reference-list{display:grid;gap:8px}
+.worship-education-reference-row{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px;border:1px solid #c6d9d1;border-radius:10px;background:#f8fcfa}
+.worship-education-reference-row h4{grid-column:1/-1;margin:0;padding-right:150px}
+.worship-education-reference-row .wide{grid-column:1/-1}
+.worship-education-reference-row textarea{min-height:54px;resize:vertical}
+.worship-education-row-actions{position:absolute;right:9px;top:38px;display:flex;gap:4px}.worship-education-row-actions .button{padding:4px 7px;font-size:.65rem}
+.worship-education-reference-type{position:absolute;right:104px;top:10px;padding:3px 8px;border-radius:999px;background:#e8f6ef;color:#0a644c;font-size:.7rem;font-weight:900}
+.worship-education-reference-row[data-source-type="quran"]{border-left:5px solid #2a8b66;background:#f3fbf7}.worship-education-reference-row[data-source-type="quran"] .worship-education-reference-type{background:#dff5e8;color:#075c40}
+.worship-education-reference-row[data-source-type="hadith"]{border-left:5px solid #b77a19;background:#fffaf0}.worship-education-reference-row[data-source-type="hadith"] .worship-education-reference-type{background:#fff0c9;color:#805000}
+.worship-education-passage-heading{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px;padding-top:9px;border-top:1px dashed #b8cdc4;font-size:.78rem;font-weight:900}
+.worship-education-passage-list{grid-column:1/-1;display:grid;gap:8px}
+.worship-education-passage-row{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px;border:1px solid #d2dfda;border-radius:9px;background:#fff}
+.worship-education-passage-row h5{grid-column:1/-1;margin:0;padding-right:150px;color:#184d40}.worship-education-passage-row .wide{grid-column:1/-1}.worship-education-passage-row textarea[dir="rtl"]{min-height:92px;text-align:center;font-family:"Noto Naskh Arabic","Amiri",serif;font-size:1.35rem;line-height:1.7}.worship-education-passage-row>.worship-education-row-actions{top:7px}
+.worship-education-reference-row[draggable="true"],.worship-education-passage-row[draggable="true"]{cursor:grab}.worship-education-reference-row.is-dragging,.worship-education-passage-row.is-dragging{opacity:.45;outline:2px dashed #16795f}
+.worship-education-reference-row [data-source-only][hidden]{display:none!important}
+.worship-education-card-style-settings{margin-top:8px}.worship-education-card-style-settings summary{cursor:pointer;font-weight:900}.worship-education-card-style-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:7px}.worship-education-card-style-grid label{min-width:0;font-size:.72rem}.worship-education-card-style-grid input{width:100%}
+.card-style-settings .wide-field{grid-column:span 2}
+.worship-education-live-preview{min-width:0;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr);border-left:1px solid #bdd1c9;background:#071d18}
+.worship-education-live-preview>header{justify-content:space-between;padding:8px 10px;background:#123a31;color:#fff;border-bottom:1px solid rgba(255,255,255,.18)}
+.worship-education-live-preview>header>div{display:flex;align-items:center;gap:6px}
+.worship-education-live-preview small{display:block;color:#b7d9cf}
+.worship-education-live-preview iframe{width:100%;height:100%;min-height:0;border:0;background:#071d18}
+@media(max-width:1100px){.worship-education-editor-body{grid-template-columns:minmax(360px,1fr) minmax(390px,.9fr)}}
+@media(max-width:900px){.worship-education-editor-body{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) minmax(260px,42%)}.worship-education-live-preview{border-left:0;border-top:1px solid #bdd1c9}}
+@media(max-width:700px){.worship-education-reference-row,.worship-education-passage-row,.worship-education-card-style-grid{grid-template-columns:1fr}.worship-education-reference-row .wide,.worship-education-passage-row .wide{grid-column:auto}.worship-education-reference-type{position:static;grid-column:1/-1;justify-self:start}.worship-education-row-actions{position:static;grid-column:1/-1}.worship-education-live-preview>header{align-items:flex-start;flex-direction:column}}
+
+/* One production-faithful preview workspace shared by every customizer section. */
+.section-preview-workspace{
+  position:fixed;
+  z-index:80;
+  top:clamp(82px,11vh,118px);
+  right:12px;
+  bottom:12px;
+  width:min(780px,54vw);
+  min-width:min(520px,calc(100vw - 24px));
+  display:grid;
+  grid-template-rows:auto auto auto minmax(0,1fr);
+  overflow:hidden;
+  border:1px solid #87aa9f;
+  border-radius:16px;
+  color:#173e34;
+  background:#f7fbf9;
+  box-shadow:0 24px 70px rgba(3,26,20,.36);
+}
+.section-preview-workspace[hidden]{display:none!important}
+.section-preview-workspace.is-fullscreen{
+  inset:0;
+  width:100vw;
+  min-width:0;
+  height:100dvh;
+  border:0;
+  border-radius:0;
+}
+.section-preview-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 12px;
+  color:#fff;
+  background:#103e34;
+}
+.section-preview-header h2,.section-preview-header p{margin:.1rem 0;color:inherit}
+.section-preview-header .eyebrow{color:#b9ded2}
+.section-preview-header-actions{display:flex;align-items:center;justify-content:flex-end;gap:6px;flex-wrap:wrap}
+.section-preview-dirty{border-radius:999px;padding:4px 9px;font-size:.72rem;font-weight:900;background:#fff1ca;color:#714b00}
+.section-preview-dirty.is-clean{background:#dff5e9;color:#075d42}
+.section-preview-toolbar{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(110px,1fr));
+  gap:6px;
+  align-items:end;
+  padding:8px 10px;
+  border-bottom:1px solid #bdd0c9;
+  background:#edf6f2;
+}
+.section-preview-toolbar label{display:grid;gap:2px;min-width:0;font-size:.69rem;font-weight:900}
+.section-preview-toolbar select{min-height:34px;padding:4px 6px;font-size:.72rem}
+.section-preview-toolbar .button{min-height:34px;min-width:0;padding:5px 8px;font-size:.72rem}
+.section-preview-status{margin:0;padding:6px 10px;border-bottom:1px solid #bdd0c9;color:#42655c;background:#fff;font-size:.74rem}
+.section-preview-status.is-error{color:#8b2020;background:#fff0f0}
+.section-preview-stage{
+  min-width:0;
+  min-height:0;
+  overflow:auto;
+  display:grid;
+  place-items:center;
+  padding:10px;
+  background:repeating-conic-gradient(#d9e4df 0 25%,#edf3f0 0 50%) 50%/18px 18px;
+  overscroll-behavior:contain;
+}
+.section-preview-frame-shell{position:relative;min-width:0;min-height:0;overflow:hidden;background:#071d18;box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.section-preview-frame-shell iframe{display:block;border:0;background:#071d18;transform-origin:top left}
+.section-preview-stage[data-viewport="auto"] .section-preview-frame-shell{width:100%;height:100%}
+.section-preview-stage[data-viewport="auto"] iframe{width:100%;height:100%;transform:none!important}
+.section-preview-workspace.is-not-applicable .section-preview-stage{place-items:center}
+.section-preview-workspace.is-not-applicable .section-preview-frame-shell{display:none}
+.section-preview-workspace.is-not-applicable .section-preview-status{display:grid;place-items:center;height:100%;font-size:.9rem;text-align:center}
+.customizer-tabs .section-preview-toggle{color:#764d00;border-color:#d9b65a;background:#fff8df}
+.customizer-tabs .section-preview-toggle.is-active{color:#fff;border-color:#9b6800;background:#9b6800}
+@media(max-width:1050px){
+  .section-preview-workspace{top:8px;right:8px;bottom:8px;width:min(760px,calc(100vw - 16px));min-width:0}
+}
+@media(max-width:700px){
+  .section-preview-workspace{inset:0;width:100vw;height:100dvh;border:0;border-radius:0}
+  .section-preview-header{align-items:flex-start}
+  .section-preview-header>div:first-child p:last-child{display:none}
+  .section-preview-toolbar{grid-template-columns:repeat(2,minmax(0,1fr));max-height:178px;overflow:auto}
+  .section-preview-stage{padding:6px}
+}
+@media(max-width:390px){
+  .section-preview-header{display:grid;grid-template-columns:minmax(0,1fr) auto}
+  .section-preview-header-actions{display:grid;grid-template-columns:auto auto}
+  .section-preview-dirty{grid-column:1/-1;text-align:center}
+}
+
+.worship-islamic-db-picker{display:grid;gap:.7rem;align-items:start;margin:.75rem 0 1rem;padding:.8rem;border:1px solid rgba(20,104,77,.24);border-radius:.8rem;background:rgba(20,104,77,.055)}
+.worship-source-picker-header,.worship-source-selection>header{display:flex;justify-content:space-between;align-items:flex-start;gap:.7rem}.worship-source-picker-header p{margin:.2rem 0 0}.worship-source-connectivity,.worship-link-status{flex:0 0 auto;padding:.25rem .5rem;border-radius:999px;background:#e1f2eb;color:#075c40;font-size:.68rem;font-weight:900}.worship-source-connectivity.is-offline,.worship-link-status.is-cached,.worship-link-status.is-source_updated{background:#fff0c9;color:#805000}.worship-link-status.is-missing_source{background:#ffe3e3;color:#972626}
+.worship-source-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;border-radius:.65rem;background:#dbeae4}.worship-source-tabs button{min-height:34px;border:0;border-radius:.5rem;background:transparent;color:#275c4c;font-weight:900;cursor:pointer}.worship-source-tabs button.is-active{background:#14684d;color:#fff;box-shadow:0 2px 8px rgba(10,70,52,.2)}
+.worship-unified-search{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.6rem;align-items:end}.worship-islamic-db-picker>[data-worship-source-panel]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;align-items:end;padding:.65rem;border:1px solid #c7dcd4;border-radius:.65rem;background:#fff}.worship-islamic-db-picker>[data-worship-source-panel][hidden]{display:none!important}.worship-islamic-db-picker label small{display:block;margin-top:.2rem;color:#60766e}
+.worship-source-results{display:grid;gap:.6rem}.worship-source-result-group{display:grid;gap:.35rem}.worship-source-result-group>h5{margin:0;color:#164f3e}.worship-source-result-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem}.worship-source-result{display:grid;gap:.25rem;padding:.55rem;border:1px solid #cadbd5;border-radius:.6rem;background:#fff;text-align:left;color:#153f34;cursor:pointer}.worship-source-result:hover,.worship-source-result.is-selected{border-color:#16795f;box-shadow:0 0 0 2px rgba(22,121,95,.12)}.worship-source-result small{color:#61776f}.worship-source-result p{margin:0;font-size:.73rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.worship-source-result-type{justify-self:start;padding:.12rem .35rem;border-radius:999px;background:#e6f5ef;color:#0c674d;font-size:.62rem;font-weight:900;text-transform:uppercase}
+.worship-source-selection{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;padding:.7rem;border:1px solid #9bc8b8;border-radius:.7rem;background:#f8fffc}.worship-source-selection>header,.worship-source-selection>p,.worship-source-selection>.worship-source-field-options,.worship-source-selection>footer{grid-column:1/-1}.worship-source-selection>p{margin:0;max-height:5.4rem;overflow:auto;font-size:.76rem}.worship-source-selection header small{display:block;margin-top:.18rem}.worship-source-field-options{display:flex;flex-wrap:wrap;gap:.35rem .7rem;padding:.45rem;border-radius:.5rem;background:#e9f5f0}.worship-source-field-options label{display:flex;align-items:center;gap:.25rem;font-size:.72rem;font-weight:800}.worship-source-selection footer{display:flex;justify-content:flex-end;gap:.45rem}
+.worship-islamic-db-picker [role="status"]{display:block}
+.worship-education-reference-row[data-binding-mode="internal_db"]:not([data-source-type="hadith"]) .worship-education-passage-list,.worship-education-reference-row[data-binding-mode="internal_db"]:not([data-source-type="hadith"]) .worship-education-passage-heading{display:none}
+.worship-education-reference-row[data-source-type="tafsir"]{border-left:5px solid #6f63b8;background:#f8f6ff}.worship-education-reference-row[data-source-type="tafsir"] .worship-education-reference-type{background:#ebe7ff;color:#43388d}.worship-education-reference-row .worship-link-status{position:absolute;right:10px;top:42px}
+.worship-component-order-editor{display:grid;gap:.35rem;grid-column:1/-1;padding:.55rem;border:1px solid #c7dcd4;border-radius:.6rem;background:#fff}
+.worship-component-order-list{display:grid;gap:.3rem;margin:0;padding:0;list-style:none;counter-reset:worship-component}
+.worship-component-order-item{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:.4rem;align-items:center;padding:.35rem .45rem;border:1px solid #d4e2dd;border-radius:.5rem;background:#f7fbf9;counter-increment:worship-component}
+.worship-component-order-item::before{content:counter(worship-component);display:grid;place-items:center;width:1.35rem;height:1.35rem;border-radius:999px;background:#dfeee8;color:#175f49;font-size:.66rem;font-weight:900}
+.worship-component-order-item strong{font-size:.74rem;color:#174f3e}.worship-component-order-item .button{min-height:28px;padding:.2rem .5rem;font-size:.68rem}
+@media(max-width:1100px){.worship-islamic-db-picker>[data-worship-source-panel]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.worship-source-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.worship-unified-search,.worship-source-result-list,.worship-islamic-db-picker>[data-worship-source-panel],.worship-source-selection{grid-template-columns:1fr}.worship-source-selection>*{grid-column:1!important}.worship-source-picker-header{display:grid}.worship-source-selection footer{justify-content:stretch;flex-wrap:wrap}.worship-source-selection footer .button{flex:1}}
+
+/* Reserve a separate row for the shared navigation, header and scrollable workspace. */
+@media(min-width:701px){
+ html.mpm-has-navigation body.customizer-page{grid-template-rows:auto auto minmax(0,1fr)}
+}

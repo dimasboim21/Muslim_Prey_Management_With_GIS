@@ -1,0 +1,30 @@
+/* GIFs remain native images so their frames animate; their map footprint stays 22 px. */
+.wx-storm-marker {
+    align-items: center;
+    background: rgba(15, 33, 49, 0.83);
+    border: 1px solid rgba(241, 248, 255, 0.88);
+    border-radius: 50%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.52);
+    box-sizing: content-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    height: 22px;
+    justify-content: center;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    touch-action: manipulation;
+    width: 22px;
+}
+.wx-storm-marker[hidden] { display: none !important; }
+.wx-storm-marker::after { content: ''; inset: -9px; position: absolute; }
+.wx-storm-marker img { border-radius: 50%; display: block; height: 22px; object-fit: contain; pointer-events: none; width: 22px; }
+.wx-storm-marker:not(.is-loaded) img { opacity: 0; }
+.wx-storm-marker-fallback { font: 700 9px/1 "Segoe UI", sans-serif; pointer-events: none; position: absolute; }
+.wx-storm-marker.is-loaded .wx-storm-marker-fallback { visibility: hidden; }
+.wx-storm-marker[data-storm-type="tornado"] { border-color: #ff7f9c; }
+.wx-storm-marker[data-storm-type="hurricane"] { border-color: #ffca81; }
+.wx-storm-marker.is-selected { outline: 2px solid #73f0dc; outline-offset: 3px; }
+.wx-storm-marker:focus-visible { outline: 3px solid #b9fff2; outline-offset: 4px; }

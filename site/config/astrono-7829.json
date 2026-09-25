@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "062_environmental_monitoring",
+  "settings": {
+    "overviewDuration": 6000,
+    "zoomDuration": 1800,
+    "popupDelay": 650,
+    "titleDuration": 2000,
+    "detailDuration": 3000,
+    "sourceDuration": 2500,
+    "transitionDuration": 900,
+    "interSceneOverviewDuration": 1800,
+    "returnToOverviewBetweenFeatures": true,
+    "loopDelay": 1500,
+    "maxEarthquakesPerCycle": 3,
+    "maxWildfiresPerCycle": 3,
+    "importantEarthquakeMagnitude": 5,
+    "earthquakeWindowHours": 168,
+    "wildfireWindowDays": 30,
+    "temperatureUnit": "celsius",
+    "showTemperatureDisplay": true,
+    "showCloudLayer": true
+  },
+  "features": [
+    { "feature": "building", "enabled": true, "order": 10, "zoom": 13, "duration": 9000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 30, "group": "regular" },
+    { "feature": "ip-provider", "enabled": true, "order": 14, "zoom": 12, "duration": 8500, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 18, "group": "regular" },
+    { "feature": "provider-building-calibration", "enabled": true, "order": 17, "zoom": 12, "duration": 8500, "showPopup": true, "showInfoBox": true, "transitionType": "fit", "priority": 17, "group": "regular" },
+    { "feature": "sun", "enabled": true, "order": 20, "zoom": 5, "duration": 9000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 30, "group": "regular" },
+    { "feature": "timeline", "enabled": true, "order": 25, "zoom": 6, "duration": 8000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 28, "group": "regular" },
+    { "feature": "moon", "enabled": true, "order": 30, "zoom": 5, "duration": 9000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 30, "group": "regular" },
+    { "feature": "moon-phase", "enabled": true, "order": 40, "zoom": 6, "duration": 9000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 30, "group": "regular" },
+    { "feature": "kaabah", "enabled": true, "order": 50, "zoom": 12, "duration": 9000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 30, "group": "regular" },
+    { "feature": "kaabah-line", "enabled": true, "order": 55, "zoom": 4, "duration": 8500, "showPopup": true, "showInfoBox": true, "transitionType": "fit", "priority": 26, "group": "regular" },
+    { "feature": "observer", "enabled": true, "order": 60, "zoom": 10, "duration": 8000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 25, "group": "regular" },
+    { "feature": "trajectory", "enabled": true, "order": 70, "zoom": 4, "duration": 8000, "showPopup": true, "showInfoBox": true, "transitionType": "fit", "priority": 20, "group": "regular" },
+    { "feature": "weather", "enabled": true, "order": 80, "zoom": 9, "duration": 15000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 60, "group": "dynamic" },
+    { "feature": "temperature", "enabled": true, "order": 85, "zoom": 10, "duration": 8500, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 59, "group": "dynamic" },
+    { "feature": "cloud-condition", "enabled": true, "order": 90, "zoom": 8, "duration": 8000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 55, "group": "dynamic" },
+    { "feature": "earthquake", "enabled": true, "order": 100, "zoom": 7, "duration": 9000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 90, "group": "dynamic", "maxItemsPerCycle": 3 },
+    { "feature": "wildfire", "enabled": true, "order": 110, "zoom": 7, "duration": 9000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 75, "group": "dynamic", "maxItemsPerCycle": 3 },
+    { "feature": "solar-eclipse", "enabled": true, "order": 120, "zoom": 5, "duration": 9000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 35, "group": "regular" },
+    { "feature": "lunar-eclipse", "enabled": true, "order": 130, "zoom": 5, "duration": 9000, "showPopup": true, "showInfoBox": true, "transitionType": "fly", "priority": 35, "group": "regular" }
+  ]
+}

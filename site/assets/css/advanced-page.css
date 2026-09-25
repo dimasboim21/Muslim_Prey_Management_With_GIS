@@ -1,0 +1,98 @@
+/* Advanced only: structural zones, never a z-index race with map controls. */
+.advanced-page {background:#eef3f6;color:#203139}
+.advanced-page [hidden]{display:none!important}
+.advanced-gate{max-width:760px;margin:8vh auto;padding:20px}
+.advanced-gate header{display:flex;gap:16px;justify-content:space-between;align-items:center}
+#advancedBuildingGate{width:min(680px,calc(100vw - 32px));max-height:85dvh;overflow:auto;border:1px solid #b7c8d3;border-radius:12px;padding:20px;background:#fff;color:#203139}
+#advancedBuildingGate::backdrop{background:#20313944}
+#advancedGateLanguage{display:flex;justify-content:flex-end;margin-bottom:16px}
+#advancedBuildingGate .building-selection{display:block;margin:0;padding:0;border:0;background:transparent}
+#advancedBuildingGate .building-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0}
+#advancedBuildingGate select{width:100%;min-width:0;padding:7px}
+#advancedBuildingGate #buildingSelectionList{display:grid;grid-template-columns:1fr;max-height:42dvh;overflow:auto;gap:6px}
+#advancedBuildingGate .building-choice{text-align:left;display:flex;flex-direction:column;gap:4px;width:100%;padding:9px;background:#f8fafb;border:1px solid #cedbe2;border-radius:6px}
+#advancedBuildingGate code{overflow-wrap:anywhere;font-size:11px}
+#advancedBuildingGate .building-pagination{display:flex;align-items:center;gap:12px;margin-top:12px}
+.advanced-page .app-shell{height:100dvh;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto;gap:8px;padding:8px;position:relative}
+.advanced-page .app-shell.has-panel{grid-template-columns:minmax(0,1fr) minmax(280px, min(380px,34vw))}
+.advanced-page .app-shell>.topbar{position:static;grid-column:1/-1;grid-row:1;max-width:none;width:auto;padding:8px 12px;gap:8px;max-height:26dvh;overflow:auto}
+.advanced-page .topbar h1{font-size:16px}.advanced-page .topbar-actions{flex-wrap:wrap;gap:6px}
+.advanced-page .astro-panel-launcher{position:static;grid-row:2;grid-column:1/-1;display:flex;gap:8px}
+.advanced-page .astro-panel-launcher button,.advanced-page [data-close-astro-drawer]{border:1px solid #bacad4;border-radius:6px;padding:7px 12px;background:#fff;color:#203139}
+.advanced-page .astro-panel-launcher [aria-expanded=true]{background:#176b5b;color:white}
+.advanced-page #map{grid-row:3;grid-column:1;width:100%;height:100%;min-height:0;min-width:0;position:relative;overflow:hidden;border-radius:8px}
+.advanced-page .astro-map-drawer,.advanced-page .astro-info-drawer{position:static;inset:auto;margin:0;grid-row:3;grid-column:2;min-width:0;width:auto;max-width:none;max-height:none;height:100%;overflow:auto;padding:10px;border:1px solid #c7d5df;border-radius:8px;background:white;color:#203139;overscroll-behavior:contain}
+.advanced-page .astro-map-drawer[open],.advanced-page .astro-info-drawer[open]{display:flex;flex-direction:column;gap:8px}
+.advanced-page .astro-drawer-heading{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.advanced-page .astro-map-drawer>.segmented{width:100%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.advanced-page .astro-map-drawer .segmented button{padding:7px 2px;font-size:11px}
+.advanced-page .astro-map-drawer select{min-width:0;max-width:100%}
+.advanced-page .astro-map-drawer #onlineMapControls,.advanced-page .weather-controls{display:flex;flex-wrap:wrap;width:100%}
+.advanced-page .astro-map-drawer #onlineMapControls>label{width:100%;display:flex;justify-content:space-between;gap:8px}
+.advanced-page .astro-map-drawer #onlineMapControls select{max-width:65%}
+.advanced-page .panel-tabs{display:flex;flex-wrap:wrap}.advanced-page .panel-body{overflow:visible}
+.advanced-page .advanced-map-status{grid-row:4;grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:white;border-radius:6px;padding:5px 8px;min-width:0}
+.advanced-page .advanced-map-status>.coordinate-badge,.advanced-page .advanced-map-status>.map-status{position:static;inset:auto;max-width:none;min-height:0;border:0;box-shadow:none;margin:0;padding:2px;background:transparent;font-size:11px;display:flex;gap:8px;flex-wrap:wrap}
+.advanced-page .advanced-building-context{font-size:11px;max-width:270px}.advanced-page .advanced-building-context summary{cursor:pointer}.advanced-page #buildingSelectedIdentity{display:block;overflow-wrap:anywhere;max-width:270px}
+.advanced-page .map-presentation-controls label{display:flex;justify-content:space-between;gap:8px;margin:8px 0}.advanced-page .map-presentation-controls input:not([type=checkbox]){max-width:150px}
+.advanced-page .ol-zoom{top:8px;left:8px}.advanced-page .ol-attribution{bottom:0;right:0;max-width:calc(100% - 16px)}
+.advanced-page .ol-scale-line{bottom:28px;left:8px}
+@media(max-width:760px){
+ .advanced-page .app-shell.has-panel{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(120px,1fr) minmax(0,34dvh) auto}
+ .advanced-page .app-shell.has-panel>.astro-map-drawer,.advanced-page .app-shell.has-panel>.astro-info-drawer{grid-column:1;grid-row:4}
+ .advanced-page .app-shell.has-panel>.advanced-map-status{grid-row:5}
+ .advanced-page .topbar .brand-mark{display:none}.advanced-page .topbar .brand-block p{display:none}
+ .advanced-page .topbar-actions{font-size:11px}.advanced-page .topbar h1{font-size:13px}
+ .advanced-page .advanced-building-context{max-width:200px}
+ #advancedBuildingGate .building-filters{grid-template-columns:1fr}
+}
+
+/* Full viewport canvas with bounded, dismissible tools and reserved map controls. */
+.advanced-page .app-shell,.advanced-page .app-shell.has-panel{display:block;height:100dvh;width:100%;padding:0;overflow:hidden;--map-safe-top:160px;--map-safe-bottom:48px;--map-control-bottom:48px}
+.advanced-page #map{position:absolute;inset:0;width:100%;height:100%;border-radius:0}
+.advanced-page .app-shell>.topbar{position:absolute;top:8px;left:8px;right:8px;width:auto;max-height:24dvh;z-index:30;padding:6px 10px}
+.advanced-page .topbar .brand-block p{display:none}
+.advanced-page .astro-panel-launcher{position:absolute;left:8px;top:90px;z-index:30;max-width:calc(100% - 16px);flex-wrap:wrap}
+.advanced-page .astro-map-drawer,.advanced-page .astro-info-drawer{position:absolute;top:var(--map-safe-top);bottom:var(--map-safe-bottom);right:8px;left:auto;width:min(380px,34vw);height:auto;max-height:none;z-index:25;box-shadow:0 4px 18px #0002}
+.advanced-page .advanced-map-status{position:absolute;bottom:8px;left:8px;right:8px;z-index:20;max-height:16dvh;overflow:auto;width:auto}
+.advanced-page .ol-zoom{top:var(--map-safe-top);left:8px}
+.advanced-page .ol-scale-line{bottom:calc(var(--map-control-bottom) + 24px)}
+.advanced-page .ol-attribution{bottom:var(--map-control-bottom);right:8px;max-width:calc(100% - 16px)}
+.advanced-page .reviewer-link{display:inline-flex;align-items:center;background:#176b5b;color:white;border-radius:6px;padding:8px 12px;text-decoration:none;white-space:nowrap}
+@media(max-width:760px){
+ .advanced-page .astro-map-drawer,.advanced-page .astro-info-drawer{top:auto;left:8px;right:8px;width:auto;bottom:var(--map-safe-bottom);height:34dvh;max-height:calc(100dvh - var(--map-safe-top) - var(--map-safe-bottom) - 8px)}
+ .advanced-page .topbar .brand-block{display:none}
+ .advanced-page .app-shell>.topbar{max-height:25dvh}
+ .advanced-page .ol-attribution{font-size:9px}
+}
+.astro-display-mode #advancedGate[hidden]{display:none!important}
+
+.astro-display-mode [hidden]{display:none!important}
+
+.advanced-page .ol-attribution{right:var(--map-control-right,8px);max-width:calc(100% - var(--map-control-right,8px) - 16px)}
+
+.advanced-page .astro-panel-launcher{flex-wrap:wrap;align-items:center}
+.advanced-page .basemap-quick-options{display:flex;gap:4px;background:#fff;padding:4px;border-radius:8px;max-width:100%;overflow-x:auto}
+.advanced-page .basemap-quick-options button{white-space:nowrap;padding:7px 10px}
+.advanced-page .basemap-quick-options button.active{background:#176b5b;color:#fff}
+@media(max-width:760px){.advanced-page .basemap-quick-options{flex-basis:100%}.advanced-page .basemap-quick-options button{flex:1;padding:7px 5px;font-size:11px}}
+
+/* Keep every control in the drawer's document flow; never flex-shrink filters. */
+.advanced-page .astro-map-drawer>*,.advanced-page .astro-info-drawer>*{flex-shrink:0}
+.advanced-page .astro-map-drawer .volcano-controls{flex:0 0 auto;max-height:none;overflow:visible}
+.advanced-page .astro-map-drawer #onlineMapControls{flex:0 0 auto}
+.advanced-page .volcano-controls-fields{display:grid;grid-template-columns:minmax(0,1fr);align-items:stretch}
+.advanced-page .volcano-field{width:100%;flex:none}
+.advanced-page .volcano-field select,.advanced-page .volcano-field input{max-width:100%;width:100%}
+
+/* Weather used a horizontal flex-basis of 100% inside a vertical drawer. */
+.advanced-page .weather-overlay-section{flex:0 0 auto;min-width:0;border:1px solid #9ccdbd;border-radius:7px;background:#eef8f5}
+.advanced-page .weather-overlay-section>summary{cursor:pointer;padding:10px;color:#145a4b;font-size:12px;font-weight:750}
+.advanced-page .weather-overlay-section>.weather-controls{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));flex:0 0 auto;width:100%;min-width:0;gap:8px;box-sizing:border-box;border:0;padding:4px 10px 10px;align-items:center}
+.advanced-page .weather-controls>*{min-width:0;max-width:100%;box-sizing:border-box;grid-column:1/-1}
+.advanced-page .weather-controls>.toggle-chip:has(#weatherScopeSelect),.advanced-page .weather-controls>.toggle-chip:has(#weatherLayerSelect){grid-column:span 3;display:flex;flex-direction:column;align-items:stretch;gap:5px;white-space:normal}
+.advanced-page .weather-controls select{width:100%;max-width:100%;min-width:0;min-height:32px;background:#fff;border:1px solid #bacad4;border-radius:5px;padding:5px;font-size:11px}
+.advanced-page .weather-controls>#weatherPreviousButton,.advanced-page .weather-controls>#weatherPlayToggle,.advanced-page .weather-controls>#weatherNextButton{grid-column:span 2;justify-content:center;white-space:normal;padding:7px 3px;min-height:32px}
+.advanced-page .weather-controls>.toggle-chip:has(#weatherSpeedSelect){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:center}
+.advanced-page .weather-controls>.weather-frame-slider{width:100%;max-width:none;margin:0}
+.advanced-page .weather-controls>.weather-frame-status,.advanced-page .weather-controls>.weather-legend{white-space:normal;overflow-wrap:anywhere;min-width:0;line-height:1.4}

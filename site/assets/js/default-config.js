@@ -1,0 +1,406 @@
+(function (window) {
+  "use strict";
+
+  window.PRAYER_CONFIG_DATA_URL = window.PrayerRuntime
+    ? window.PrayerRuntime.data("prayer-8bb0.json")
+    : "data/prayer-8bb0.json";
+
+  window.DEFAULT_PRAYER_CONFIG = {
+    version: 2,
+    updatedAt: null,
+    user: {
+      id: "demo-masjid",
+      displayName: "Admin Masjid"
+    },
+    location: {
+      country: "Indonesia",
+      province: "-",
+      city: "-"
+    },
+    mosque: {
+      name: "Masjid",
+      committees: [
+        {
+          position: "Ketua Takmir",
+          names: ["Ahmad Fauzi"]
+        },
+        {
+          position: "Imam",
+          names: ["Muhammad Ihsan", "Abdul Hakim"]
+        },
+        {
+          position: "Bendahara",
+          names: ["Siti Aminah"]
+        }
+      ]
+    },
+    calendar: {
+      locale: "id-ID",
+      timezone: "Asia/Jakarta",
+      hijriCalendar: "islamic-umalqura",
+      hijriAdjustmentDays: 0,
+      hijriDateManual: "",
+      hijriDateManualEffectiveDate: ""
+    },
+    language: "id",
+    display: {
+      backgroundImage: "assets/images/bg/main-bg.png",
+      tahajudBackgroundImage: "assets/images/bg/night-la-9746.png",
+      nightLastThirdBackgroundImage: "assets/images/bg/night-la-9746.png",
+      timeBackgroundImages: {
+        main: "assets/images/bg/main-bg.png",
+        night: "assets/images/bg/night.png",
+        subuh: "assets/images/bg/subuh.png",
+        syuruq: "assets/images/bg/syuruq.png",
+        dhuha: "assets/images/bg/dhuha-awwal.png",
+        istiwa: "assets/images/bg/istiwa.png",
+        zuhur: "assets/images/bg/dhuhr.png",
+        ashar: "assets/images/bg/ashar.png",
+        "late-ashar": "assets/images/bg/ashar-late.png",
+        sunset: "assets/images/bg/sunset.png",
+        maghrib: "assets/images/bg/maghrib.png",
+        isya: "assets/images/bg/isha.png",
+        "night-first-third": "assets/images/bg/night-fi-6044.png",
+        midnight: "assets/images/bg/midnight.png",
+        "last-third-night": "assets/images/bg/night-la-9746.png"
+      },
+      timeBackgroundSettings: {
+        syuruqFallbackMinutes: 18,
+        istiwaOffsetBeforeMinutes: 5,
+        istiwaOffsetAfterMinutes: 0,
+        lateAsharSolarElevation: 6,
+        lateAsharFallbackMinutesBeforeMaghrib: 45,
+        sunsetFallbackMinutes: 3,
+        watchdogIntervalSeconds: 60,
+        transitionMs: 850
+      },
+      dynamicTimeBackground: true,
+      backgroundTone: "dark"
+    },
+    forceDisplay: {
+      enabled: true,
+      preAdzanMinutes: 10,
+      iqomahDelayMinutes: 15,
+      prayerDurationMinutes: 8,
+      includedPrayers: ["maghrib", "isha", "subuh", "dhuhur", "ashar"]
+    },
+    prayerOrder: ["maghrib", "isha", "subuh", "syuruq", "dhuhaAwwal", "dhuhaWoosthaa", "dhuhaAwwabin", "dhuhur", "ashar"],
+    prayerCards: {
+      maghrib: {
+        label: "Maghrib",
+        backgroundColor: "#6f3f9f",
+        backgroundImage: "assets/images/bg/maghrib.png"
+      },
+      isha: {
+        label: "Isya",
+        backgroundColor: "#244f8f",
+        backgroundImage: "assets/images/bg/isha.png"
+      },
+      subuh: {
+        label: "Subuh",
+        backgroundColor: "#0f766e",
+        backgroundImage: "assets/images/bg/subuh.png"
+      },
+      syuruq: {
+        label: "Syuruq",
+        backgroundColor: "#d97706",
+        backgroundImage: "assets/images/bg/syuruq.png"
+      },
+      dhuhaAwwal: {
+        label: "Dhuha Awwal",
+        backgroundColor: "#c99a3f",
+        backgroundImage: "assets/images/bg/dhuha-awwal.png"
+      },
+      dhuhaWoosthaa: {
+        label: "Dhuha Wustha",
+        backgroundColor: "#b7791f",
+        backgroundImage: "assets/images/bg/dhuha-wustha.png"
+      },
+      dhuhaAwwabin: {
+        label: "Dhuha Awwabin",
+        backgroundColor: "#a56f1f",
+        backgroundImage: "assets/images/bg/dhuha-awwabin.png"
+      },
+      dhuhur: {
+        label: "Dhuhur",
+        backgroundColor: "#2f6f3f",
+        backgroundImage: "assets/images/bg/dhuhr.png"
+      },
+      ashar: {
+        label: "Ashar",
+        backgroundColor: "#8a4b2f",
+        backgroundImage: "assets/images/bg/ashar.png"
+      }
+    },
+    activeSourceId: "kemenag",
+    scheduleSources: [
+      {
+        id: "kemenag",
+        name: "Kemenag RI",
+        methodDescription: "Data manual berdasarkan metode Kementerian Agama RI",
+        timezone: "Asia/Jakarta",
+        times: {
+          maghrib: "17:38",
+          isha: "18:50",
+          subuh: "04:13",
+          syuruq: "05:34",
+          dhuhaAwwal: "05:34",
+          dhuhaWoosthaa: "06:22",
+          dhuhaAwwabin: "10:28",
+          dhuhur: "11:28",
+          ashar: "14:48"
+        },
+        dhuhaTimings: {
+          dhuhaAwwal: { start: "05:34", end: "06:21" },
+          dhuhaWoosthaa: { start: "06:22", end: "10:27" },
+          dhuhaAwwabin: { start: "10:28", end: "11:13" }
+        },
+        makruhTimes: {
+          maghrib: "18:08",
+          isha: "19:10",
+          subuh: "04:55",
+          dhuhur: "13:00",
+          ashar: "16:40"
+        }
+      },
+      {
+        id: "muhammadiyah",
+        name: "Muhammadiyah",
+        methodDescription: "Data manual berdasarkan hisab Muhammadiyah",
+        timezone: "Asia/Jakarta",
+        times: {
+          maghrib: "17:39",
+          isha: "18:48",
+          subuh: "04:15",
+          syuruq: "05:36",
+          dhuhaAwwal: "05:36",
+          dhuhaWoosthaa: "06:24",
+          dhuhaAwwabin: "10:29",
+          dhuhur: "11:29",
+          ashar: "14:49"
+        },
+        dhuhaTimings: {
+          dhuhaAwwal: { start: "05:36", end: "06:23" },
+          dhuhaWoosthaa: { start: "06:24", end: "10:28" },
+          dhuhaAwwabin: { start: "10:29", end: "11:14" }
+        },
+        makruhTimes: {
+          maghrib: "18:09",
+          isha: "19:08",
+          subuh: "04:57",
+          dhuhur: "13:01",
+          ashar: "16:41"
+        }
+      },
+      {
+        id: "manual-lokal",
+        name: "Manual Lokal",
+        methodDescription: "Input manual pengurus masjid",
+        timezone: "Asia/Jakarta",
+        times: {
+          maghrib: "17:40",
+          isha: "18:52",
+          subuh: "04:12",
+          syuruq: "05:35",
+          dhuhaAwwal: "05:35",
+          dhuhaWoosthaa: "06:20",
+          dhuhaAwwabin: "10:30",
+          dhuhur: "11:30",
+          ashar: "14:50"
+        },
+        dhuhaTimings: {
+          dhuhaAwwal: { start: "05:35", end: "06:19" },
+          dhuhaWoosthaa: { start: "06:20", end: "10:29" },
+          dhuhaAwwabin: { start: "10:30", end: "11:15" }
+        },
+        makruhTimes: {
+          maghrib: "18:10",
+          isha: "19:12",
+          subuh: "04:54",
+          dhuhur: "13:02",
+          ashar: "16:42"
+        }
+      }
+    ],
+    reminders: [
+      {
+        type: "ayat",
+        title: "Dirikan Sholat",
+        arabicText: "وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَارْكَعُوا مَعَ الرَّاكِعِينَ",
+        content: "Dirikanlah sholat, tunaikanlah zakat, dan rukuklah beserta orang-orang yang rukuk.",
+        translation: "Pesan: jagalah sholat sebagai bentuk ketaatan dan penghambaan kepada Allah.",
+        reference: "QS. Al-Baqarah: 43"
+      },
+      {
+        type: "ayat",
+        title: "Sholat Mencegah Keburukan",
+        arabicText: "إِنَّ الصَّلَاةَ تَنْهَىٰ عَنِ الْفَحْشَاءِ وَالْمُنكَرِ",
+        content: "Sesungguhnya sholat mencegah dari perbuatan keji dan mungkar.",
+        translation: "Makna: sholat yang dijaga dengan baik membentuk akhlak dan menahan diri dari keburukan.",
+        reference: "QS. Al-Ankabut: 45"
+      },
+      {
+        type: "ayat",
+        title: "Menjaga Sholat",
+        arabicText: "حَافِظُوا عَلَى الصَّلَوَاتِ وَالصَّلَاةِ الْوُسْطَىٰ",
+        content: "Peliharalah semua sholat dan sholat wustha.",
+        translation: "Makna: setiap waktu sholat perlu dijaga, tidak ditunda tanpa alasan.",
+        reference: "QS. Al-Baqarah: 238"
+      },
+      {
+        type: "hadits",
+        title: "Sholat Tepat Waktu",
+        arabicText: "",
+        content: "Di antara amalan yang paling dicintai Allah adalah sholat pada waktunya.",
+        translation: "Makna: saat waktu sholat tiba, dahulukan panggilan Allah sebelum urusan lain.",
+        reference: "HR. Bukhari dan Muslim"
+      },
+      {
+        type: "hadits",
+        title: "Sholat Berjamaah",
+        arabicText: "",
+        content: "Sholat berjamaah memiliki keutamaan yang jauh lebih besar daripada sholat sendirian.",
+        translation: "Makna: datang ke masjid dan merapatkan saf adalah bagian dari menjaga kekuatan jamaah.",
+        reference: "HR. Bukhari dan Muslim"
+      },
+      {
+        type: "hadits",
+        title: "Sholat Adalah Cahaya",
+        arabicText: "الصَّلَاةُ نُورٌ",
+        content: "Sholat adalah cahaya.",
+        translation: "Makna: sholat menerangi hati, sikap, dan jalan hidup seorang muslim.",
+        reference: "HR. Muslim"
+      },
+      {
+        type: "tausiyah",
+        title: "Saf Sholat",
+        content: "Luruskan saf, rapatkan barisan, dan tenangkan hati sebelum takbir.",
+        translation: "",
+        reference: "Pengingat Takmir"
+      }
+    ],
+    astronomy: {
+      sun: {
+        source: "Manual Lokal",
+        altitude: "42.5 derajat",
+        azimuth: "287 derajat",
+        direction: "Barat Laut",
+        sunrise: "05:34",
+        transit: "11:29",
+        sunset: "17:38",
+        note: "Template posisi matahari dapat diisi manual dari hasil observasi atau aplikasi falak."
+      },
+      moon: {
+        source: "Manual Lokal",
+        phase: "Bulan sabit",
+        illumination: "32%",
+        altitude: "28 derajat",
+        azimuth: "252 derajat",
+        direction: "Barat",
+        moonrise: "09:42",
+        moonset: "22:18",
+        note: "Template posisi bulan dapat disesuaikan dengan data rukyat atau hisab lokal."
+      },
+      eclipse: {
+        solar: {
+          status: "Tidak ada indikasi gerhana",
+          type: "-",
+          date: "",
+          start: "",
+          peak: "",
+          end: "",
+          visibility: "Tidak terlihat di wilayah masjid",
+          prayerRecommendation: "Sholat kusuf tidak dijadwalkan.",
+          dataSource: "Manual hisab/rukyat",
+          note: "Isi jika ada kemungkinan gerhana matahari. Jika terlihat di wilayah masjid, jadwalkan sholat kusuf."
+        },
+        lunar: {
+          status: "Tidak ada indikasi gerhana",
+          type: "-",
+          date: "",
+          start: "",
+          peak: "",
+          end: "",
+          visibility: "Tidak terlihat di wilayah masjid",
+          prayerRecommendation: "Sholat khusuf tidak dijadwalkan.",
+          dataSource: "Manual hisab/rukyat",
+          note: "Isi jika ada kemungkinan gerhana bulan. Jika terlihat di wilayah masjid, jadwalkan sholat khusuf."
+        }
+      }
+    },
+    islamicPrograms: {
+      fridayPrayer: {
+        khatib: "",
+        imam: "",
+        muadzin: ""
+      },
+      worshipDays: [
+        {
+          title: "Idul Adha",
+          hijriDate: "10 Dzulhijjah",
+          gregorianDate: "Isi manual sesuai keputusan pemerintah/ormas",
+          description: "Sholat Idul Adha dan penyembelihan hewan kurban."
+        },
+        {
+          title: "Puasa Arafah",
+          hijriDate: "9 Dzulhijjah",
+          gregorianDate: "Isi manual sesuai kalender hijriah setempat",
+          description: "Pengingat puasa Arafah sebelum Idul Adha."
+        },
+        {
+          title: "Hari Tasyrik",
+          hijriDate: "11, 12, 13 Dzulhijjah",
+          gregorianDate: "Isi manual sesuai kalender hijriah setempat",
+          description: "Hari makan, minum, dan memperbanyak dzikir; tidak untuk puasa sunnah."
+        },
+        {
+          title: "Idul Fitri",
+          hijriDate: "1 Syawal",
+          gregorianDate: "Isi manual sesuai keputusan pemerintah/ormas",
+          description: "Sholat Idul Fitri dan silaturahmi jamaah."
+        },
+        {
+          title: "Nuzulul Quran",
+          hijriDate: "17 Ramadan",
+          gregorianDate: "Isi manual",
+          description: "Template peringatan dan kajian Nuzulul Quran."
+        },
+        {
+          title: "Isra Miraj",
+          hijriDate: "27 Rajab",
+          gregorianDate: "Isi manual",
+          description: "Template kajian peringatan Isra Miraj."
+        }
+      ],
+      activities: [
+        {
+          title: "Sholat Idul Adha",
+          date: "",
+          hijriDate: "10 Dzulhijjah",
+          time: "06:30",
+          schedule: "10 Dzulhijjah 06:30",
+          personInCharge: "Takmir Masjid",
+          description: "Sholat Idul Adha berjamaah dan khutbah Id."
+        },
+        {
+          title: "Penyembelihan Kurban",
+          date: "",
+          hijriDate: "10 Dzulhijjah",
+          time: "08:00",
+          schedule: "Setelah sholat Id",
+          personInCharge: "Panitia Kurban",
+          description: "Pendataan, penyembelihan, dan distribusi daging kurban."
+        },
+        {
+          title: "Sholat Gerhana",
+          date: "",
+          hijriDate: "",
+          time: "",
+          schedule: "Menyesuaikan hasil pembacaan gerhana",
+          personInCharge: "Imam dan Takmir",
+          description: "Diaktifkan jika gerhana terlihat atau diumumkan untuk wilayah masjid."
+        }
+      ]
+    }
+  };
+})(window);

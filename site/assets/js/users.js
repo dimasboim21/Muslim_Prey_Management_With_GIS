@@ -1,0 +1,102 @@
+(function(){'use strict';
+const $=id=>document.getElementById(id),ranks={'Developer':4,'Admin':3,'Editor':2,'User':1};let actor=window.MpmServerSession?.user||null,csrf=window.MpmServerSession?.csrf||'',sessionResolved=!!window.MpmServerSession,rows=[],legacy=[],photoChange;
+const words={uniqueId:['ID unik pengguna','User unique ID'],createdAt:['Tanggal pendaftaran','Registration date'],pendingId:['Lengkapi tanggal lahir untuk membentuk ID unik.','Complete date of birth to generate a unique ID.'],birth_date_required:['Tanggal lahir wajib untuk ID unik.','Date of birth is required for the unique ID.'],last_developer:['Developer terakhir atau akun sendiri tidak dapat dihapus.','The last Developer or your own account cannot be deleted.'],accessLog:['Riwayat akses','Access history'],event:['Aktivitas','Activity'],phoneCountry:['Kode negara telepon','Phone country code'],choose:['Pilih','Select'],invalid_phone:['Nomor telepon harus dalam format internasional, contoh +628123456789.','Use an international phone number, for example +628123456789.'],invalid_gender:['Pilih laki-laki atau perempuan.','Select male or female.'],invalid_civilStatus:['Pilih menikah atau lajang.','Select married or single.'],invalid_education:['Pilih pendidikan terakhir.','Select highest education.'],invalid_birth_date:['Tanggal lahir tidak valid.','Invalid date of birth.'],photoColumn:['Foto','Photo'],actions:['Tindakan','Actions'],title:['Administrasi pengguna','User administration'],reader:['Buka pembaca','Open reader'],logout:['Keluar','Log out'],login:['Login','Log in'],username:['Username','Username'],password:['Password','Password'],ownProfile:['Profil saya','My profile'],users:['Pengguna','Users'],add:['Tambah pengguna','Add user'],search:['Cari nama / username','Search name / username'],status:['Status','Status'],active:['Aktif','Active'],deleted:['Dihapus','Deleted'],all:['Semua','All'],close:['Tutup','Close'],legacy:['Hubungkan profil lama (opsional)','Link existing profile (optional)'],name:['Nama lengkap','Full name'],role:['Tingkatan','Role'],newPassword:['Password baru (kosongkan untuk mempertahankan)','New password (leave blank to keep)'],currentPassword:['Password saat ini (untuk mengganti password sendiri)','Current password (to change your own password)'],permissions:['Izin pengelolaan pengguna','User management permissions'],permCreate:['Tambah akun tingkat lebih rendah','Create lower-level accounts'],permUpdate:['Lihat dan ubah akun tingkat lebih rendah','View and update lower-level accounts'],permDelete:['Hapus dan pulihkan akun tingkat lebih rendah','Delete and restore lower-level accounts'],permissionRule:['Batas tingkatan selalu berlaku. Hanya Developer yang dapat mengubah izin ini.','Role limits always apply. Only Developer can change these permissions.'],photo:['Foto profil (JPG, PNG, WebP)','Profile photo (JPG, PNG, WebP)'],removePhoto:['Hapus foto','Remove photo'],save:['Simpan','Save'],edit:['Ubah','Edit'],remove:['Hapus','Delete'],restore:['Pulihkan','Restore'],empty:['Belum ada pengguna pada pilihan ini.','No users in this selection.'],newProfile:['Buat profil baru','Create a new profile'],saved:['Pengguna berhasil disimpan.','User saved successfully.'],confirmDelete:['Hapus akses akun ini? Progres dan catatan akan tetap disimpan.','Remove access for this account? Reading progress and notes will be preserved.'],invalid_login:['Username atau password tidak cocok.','Incorrect username or password.'],login_required:['Silakan login terlebih dahulu.','Please log in first.'],forbidden:['Anda tidak memiliki izin untuk tindakan ini.','You do not have permission for this action.'],csrf:['Sesi formulir berubah. Muat ulang halaman lalu coba lagi.','Form session changed. Reload the page and try again.'],login_throttled:['Terlalu banyak percobaan. Coba lagi dalam 10 menit.','Too many attempts. Try again in 10 minutes.'],duplicate_username:['Username sudah digunakan.','Username is already in use.'],password_length:['Password harus 10-72 karakter.','Password must contain 10-72 characters.'],password_required:['Password wajib untuk akun baru.','A password is required for a new account.'],current_password_required:['Password saat ini diperlukan dan harus benar.','The correct current password is required.'],invalid_username:['Username: 3-60 huruf/angka, titik, garis bawah, atau tanda hubung.','Username: 3-60 letters/numbers, dots, underscores, or hyphens.'],developer_unique:['Hanya satu Developer yang diperbolehkan.','Only one Developer is allowed.'],developer_immutable:['Identitas dan tingkatan Developer tidak dapat diganti.','Developer identity and role cannot be changed.'],server_error:['Server belum dapat memproses permintaan.','The server could not process this request.'],restore_first:['Pulihkan akun sebelum mengeditnya.','Restore this account before editing.'],photoError:['Pilih JPG, PNG, atau WebP maksimal 10 MB.','Choose a JPG, PNG, or WebP up to 10 MB.'],unsynced:['Profil memiliki catatan lokal yang belum tersinkron. Selesaikan sinkronisasi dahulu.','This profile has unsynced local notes. Complete synchronization first.']};
+const dict={id:{},en:{}};Object.entries(words).forEach(([k,v])=>{dict.id['ua.'+k]=v[0];dict.en['ua.'+k]=v[1];});PrayerI18n.mergeDictionary(dict);
+const t=k=>words[k]?PrayerI18n.t('ua.'+k):k;
+function error(e,node='accountStatus'){$(node).textContent=t(e.message);}
+async function api(resource='session',body=null){const q=body?'':('?'+resource);const response=await fetch('api/user-administration.php'+q,{method:body?'POST':'GET',credentials:'same-origin',cache:'no-store',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf},body:body?JSON.stringify(body):undefined});const value=await response.json();if(!response.ok||!value.success)throw new Error(value.error||'server_error');return value.data;}
+function allowed(permission){return actor&&(actor.role==='Developer'||actor.permissions.includes(permission));}
+function lower(p){return actor&&p.userId!==actor.userId&&(actor.role==='Developer'||ranks[p.role]<ranks[actor.role]);}
+let sortKey='createdAt',sortDirection=1,accessRows=[],logSort='createdAt',logDirection=-1;
+const stamp=value=>value?value+' (server)':'';
+function comparator(key,direction){return (a,b)=>String(a[key]??'').localeCompare(String(b[key]??''),document.documentElement.lang,{numeric:true,sensitivity:'base'})*direction;}
+let sessionChannel;try{sessionChannel=new BroadcastChannel('mpm:user-session');}catch(_){}
+function notifySessionChange(){
+ // SQL/session writes already succeeded. Storage notifications are best-effort only.
+ try{localStorage.setItem('mpm:user-session-changed',String(Date.now()));}catch(_){}
+ try{sessionChannel?.postMessage({type:'changed'});}catch(_){}
+ window.dispatchEvent(new Event('mpm:user-session-changed'));
+}
+function avatar(p){
+ const box=document.createElement('span');box.className='user-avatar';
+ const initial=document.createElement('img');initial.src='assets/avatar.svg';initial.alt='';box.append(initial);
+ if(p.hasPhoto){const img=document.createElement('img');img.alt=t('photoColumn')+' '+p.name;img.hidden=true;img.onload=()=>{img.hidden=false;initial.hidden=true;};img.onerror=()=>{img.hidden=true;initial.hidden=false;};img.src='api/user-administration.php?resource=photo&userId='+encodeURIComponent(p.userId);box.append(img);}
+ return box;
+}
+function render(){
+ $('loginSection').hidden=!sessionResolved||!!actor;$('accountSection').hidden=!actor;$('logoutButton').hidden=!actor;if(!actor)return;
+ $('signedInName').textContent=actor.name;$('signedInUsername').textContent=actor.username;$('signedInAvatar').replaceChildren(avatar(actor));$('signedInRole').textContent=actor.role;$('signedInUniqueId').textContent=actor.uniqueId||t('pendingId');$('signedInCreatedAt').textContent=t('createdAt')+': '+stamp(actor.createdAt);$('newAccountButton').hidden=!allowed('users.create');
+ $('roleCounts').replaceChildren(...Object.keys(ranks).filter(role=>actor.role==='Developer'||role!=='Developer').map(role=>{const badge=document.createElement('span');badge.textContent=role+': '+rows.filter(r=>r.role===role&&!r.deletedAt).length;return badge;}));
+ const query=$('accountSearch').value.toLowerCase(),filter=$('accountFilter').value,list=$('accountList');list.replaceChildren();
+ rows.filter(p=>(filter==='all'||(filter==='deleted')===!!p.deletedAt)&&(p.name+' '+p.username+' '+(p.uniqueId||'')).toLowerCase().includes(query)).sort(comparator(sortKey,sortDirection)).forEach(p=>{
+  const row=document.createElement('tr');row.className='account-row';
+  const photo=document.createElement('td');photo.append(avatar(p));row.append(photo);
+  [p.name,p.username,p.uniqueId||t('pendingId'),p.role,stamp(p.createdAt),t(p.deletedAt?'deleted':'active')].forEach(text=>{const cell=document.createElement('td');cell.textContent=text;row.append(cell);});
+  const cell=document.createElement('td'),actions=document.createElement('div');actions.className='row-actions';
+  function button(label,action){const b=document.createElement('button');b.textContent=t(label);b.dataset.accountAction=label;b.dataset.userId=p.userId;b.onclick=()=>Promise.resolve(action()).catch(error);actions.append(b);}
+  if(!p.deletedAt&&(p.userId===actor.userId||(lower(p)&&allowed('users.update'))))button('edit',()=>open(p.userId));
+  if(lower(p)&&allowed('users.delete'))button(p.deletedAt?'restore':'remove',async()=>{
+   if(!p.deletedAt){let cache;try{cache=JSON.parse(localStorage.getItem('mpm:personal-reading:v1')||'{}');}catch(_){cache={};}if(Object.keys(cache.outbox||{}).concat(Object.keys(cache.drafts||{})).some(k=>k.startsWith(p.userId+'|')))throw new Error('unsynced');if(!confirm(t('confirmDelete')))return;}
+   await api('',{action:'set_deleted',userId:p.userId,deleted:!p.deletedAt});await reload();
+  });cell.append(actions);row.append(cell);list.append(row);
+ });if(!list.children.length){const row=document.createElement('tr'),cell=document.createElement('td');cell.colSpan=8;cell.textContent=t('empty');row.append(cell);list.append(row);}
+}
+async function reload(){
+ const session=await api('resource=session');
+ if(actor?.userId!==session.user?.userId){rows=[];legacy=[];}
+ actor=session.user;csrf=session.csrf;sessionResolved=true;
+ // Authentication visibility must not depend on the user directory or legacy profiles.
+ render();window.dispatchEvent(new CustomEvent('mpm:user-session-ready',{detail:session}));
+ if(!actor)return;
+ const results=await Promise.allSettled([api('resource=users'),actor.role==='Developer'?api('resource=legacy'):Promise.resolve([])]);
+ if(results[0].status==='fulfilled')rows=results[0].value;
+ if(results[1].status==='fulfilled')legacy=results[1].value;
+ render();const failed=results.find(result=>result.status==='rejected');if(failed)throw failed.reason;
+}
+function reloadAfterAuthentication(){
+ // Recreate Viewer/account storage and session snapshots after the server changes identity.
+ window.MpmSessionNavigationPending=true;
+ $('loginSection').hidden=true;$('accountSection').hidden=true;
+ notifySessionChange();location.reload();
+}
+async function open(id=''){
+ const p=id?await api('resource=profile&userId='+encodeURIComponent(id)):null;$('accountForm').reset();photoChange=undefined;
+ document.querySelectorAll('[data-profile-field]').forEach(node=>{let value=p?.details?.[node.dataset.profileField]||'';if(node.dataset.profileField==='nationality'){node.querySelectorAll('[data-legacy-nationality]').forEach(option=>option.remove());value=MpmNationalityValue(value);if(value&&!Array.from(node.options).some(option=>option.value===value)){const option=new Option(value,value);option.dataset.legacyNationality='';node.add(option);}}node.value=value;});
+ const birth=document.querySelector('[data-profile-field=birthDate]');birth.required=!p||!!p.uniqueId;birth.max=new Date().toLocaleDateString('en-CA');
+ loadPhone(p?.details||{});
+ $('accountIdentityInfo').textContent=p?(p.uniqueId||t('pendingId'))+' | '+t('createdAt')+': '+stamp(p.createdAt):t('pendingId');$('accessLogSection').hidden=!p;accessRows=p?await api('resource=access_log&userId='+encodeURIComponent(id)):[];renderAccessLog();
+ $('accountId').value=id;$('accountName').value=p?.name||'';$('accountUsername').value=p?.username||'';$('accountUsername').readOnly=p?.role==='Developer';$('accountPassword').required=!p;
+ const own=p?.userId===actor.userId;$('currentPasswordLabel').hidden=!own;$('accountRole').replaceChildren();
+ Object.keys(ranks).filter(role=>actor.role==='Developer'||role===p?.role||ranks[role]<ranks[actor.role]).forEach(role=>$('accountRole').add(new Option(role,role)));$('accountRole').value=p?.role||'User';$('accountRole').disabled=own;
+ $('permissionFields').hidden=actor.role!=='Developer'||p?.role==='Developer';document.querySelectorAll('[name=permission]').forEach(e=>{e.checked=(p?.permissions||[]).includes(e.value);});
+ $('accountPhotoPreview').hidden=false;$('accountPhotoPreview').src=p?.photo||'assets/avatar.svg';
+ $('legacyProfileLabel').hidden=!!p||actor.role!=='Developer';$('legacyProfileSelect').replaceChildren(new Option(t('newProfile'),''));legacy.forEach(r=>$('legacyProfileSelect').add(new Option(r.name+' / '+r.userId,r.userId)));
+ $('accountFormTitle').textContent=t(p?'edit':'add');$('accountFormStatus').textContent='';$('accountDialog').showModal();
+}
+$('loginForm').onsubmit=async event=>{event.preventDefault();const b=event.target.querySelector('button[type=submit]');b.disabled=true;try{await api('',{action:'login',username:$('loginUsername').value,password:$('loginPassword').value});$('loginPassword').value='';$('accountStatus').textContent='';reloadAfterAuthentication();}catch(e){error(e);}finally{b.disabled=false;}};
+$('logoutButton').onclick=async()=>{try{await api('',{action:'logout'});$('accountDialog').close();reloadAfterAuthentication();}catch(e){error(e);}};
+$('newAccountButton').onclick=()=>open().catch(error);$('ownProfileButton').onclick=()=>open(actor.userId).catch(error);$('closeAccountDialog').onclick=()=>$('accountDialog').close();
+$('accountSearch').oninput=render;$('accountFilter').onchange=render;
+$('legacyProfileSelect').onchange=()=>{const p=legacy.find(p=>p.userId===$('legacyProfileSelect').value);if(p)$('accountName').value=p.name;};
+$('accountRole').onchange=()=>{if(!$('accountId').value)document.querySelectorAll('[name=permission]').forEach(e=>e.checked=$('accountRole').value!=='User');};
+$('accountPhoto').onchange=async()=>{try{const file=$('accountPhoto').files[0];if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>10000000)throw new Error('photoError');const url=URL.createObjectURL(file);try{const image=new Image();image.src=url;await image.decode();const canvas=document.createElement('canvas'),scale=Math.min(1,600/image.width,600/image.height);canvas.width=Math.round(image.width*scale);canvas.height=Math.round(image.height*scale);canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);photoChange=canvas.toDataURL('image/jpeg',.8);$('accountPhotoPreview').src=photoChange;$('accountPhotoPreview').hidden=false;}finally{URL.revokeObjectURL(url);}}catch(e){error(e,'accountFormStatus');}};
+$('accountForm').onsubmit=async event=>{event.preventDefault();$('saveAccountButton').disabled=true;try{const body={action:'save',userId:$('accountId').value||$('legacyProfileSelect').value,username:$('accountUsername').value,name:$('accountName').value,role:$('accountRole').value,password:$('accountPassword').value,currentPassword:$('accountCurrentPassword').value};
+ body.details=Object.fromEntries(Array.from(document.querySelectorAll('[data-profile-field]')).map(node=>[node.dataset.profileField,node.value]));
+ body.details.phone=phoneValue();body.details.phoneCountry=$('phoneCountry').value;
+ if(actor.role==='Developer'&&body.role!=='Developer')body.permissions=Array.from(document.querySelectorAll('[name=permission]:checked')).map(e=>e.value);
+ if($('removeAccountPhoto').checked)body.photo=null;else if(photoChange!==undefined)body.photo=photoChange;
+ await api('',body);$('accountPassword').value='';$('accountCurrentPassword').value='';$('accountDialog').close();$('accountStatus').textContent=t('saved');await reload();notifySessionChange();
+}catch(e){error(e,'accountFormStatus');}finally{$('saveAccountButton').disabled=false;}};
+function renderAccessLog(){const list=$('accessLogList');list.replaceChildren();accessRows.slice().sort(comparator(logSort,logDirection)).forEach(row=>{const tr=document.createElement('tr');[stamp(row.createdAt),row.event,row.ipAddress||''].forEach(value=>{const td=document.createElement('td');td.textContent=value;tr.append(td);});list.append(tr);});}
+function profileLabels(){const en=document.documentElement.lang==='en';document.querySelectorAll('[data-profile-label]').forEach(node=>{const field=MpmProfileFields.find(f=>f[0]===node.dataset.profileLabel);node.textContent=field[en?2:1];});
+ Object.entries(MpmProfileChoices).forEach(([key,options])=>{const node=document.querySelector('[data-profile-field='+key+']'),value=node.value;node.replaceChildren(new Option(t('choose'),''));const rows=key==='nationality'?options.slice().sort((a,b)=>a[en?2:1].localeCompare(b[en?2:1],en?'en':'id')):options;rows.forEach(row=>node.add(new Option(row[en?2:1],row[0])));if(key==='nationality'&&value&&!rows.some(row=>row[0]===value)){const legacy=new Option(value,value);legacy.dataset.legacyNationality='';node.add(legacy);}node.value=value;});
+ const country=$('phoneCountry'),value=country.value||'ID';let names;try{names=new Intl.DisplayNames([en?'en':'id'],{type:'region'});}catch(_){}country.replaceChildren();MpmCallingCodes.map(([iso,code])=>({iso,code,name:names?.of(iso)||iso})).sort((a,b)=>a.name.localeCompare(b.name)).forEach(row=>country.add(new Option(row.name+' +'+row.code,row.iso)));country.value=value;
+ document.querySelector('[data-phone-label]').textContent=t('phoneCountry');renderAccessLog();
+}
+MpmProfileFields.forEach(([key])=>{const label=document.createElement('label'),title=document.createElement('span'),input=document.createElement(MpmProfileChoices[key]?'select':['residentialAddress','permanentAddress'].includes(key)?'textarea':'input');title.dataset.profileLabel=key;input.dataset.profileField=key;if(input.tagName!=='SELECT')input.maxLength=4000;if(key==='birthDate')input.type='date';if(key==='email')input.type='email';if(key==='phone'){input.type='tel';input.maxLength=24;const codeLabel=document.createElement('label'),codeTitle=document.createElement('span'),country=document.createElement('select');codeTitle.dataset.phoneLabel='';country.id='phoneCountry';codeLabel.append(codeTitle,country);$('profileDetailFields').append(codeLabel);}label.append(title,input);$('profileDetailFields').append(label);});
+function loadPhone(details){const input=document.querySelector('[data-profile-field=phone]');const raw=details.phone||'';let iso=details.phoneCountry||'';if(!iso&&raw.startsWith('+'))iso=MpmCallingCodes.slice().sort((a,b)=>b[1].length-a[1].length).find(row=>raw.startsWith('+'+row[1]))?.[0];$('phoneCountry').value=iso||'ID';const code=MpmCallingCodes.find(row=>row[0]===$('phoneCountry').value)?.[1]||'62';input.value=raw.startsWith('+'+code)?raw.slice(code.length+1):raw;}
+function phoneValue(){let value=document.querySelector('[data-profile-field=phone]').value.trim().replace(/[\s().-]/g,'');if(!value)return '';if(value.startsWith('+'))return value;const iso=$('phoneCountry').value,code=MpmCallingCodes.find(row=>row[0]===iso)?.[1]||'';if(iso==='ID')value=value.replace(/^0/,'');return '+'+code+value;}
+document.querySelectorAll('[data-sort]').forEach(button=>button.onclick=()=>{sortDirection=sortKey===button.dataset.sort?-sortDirection:1;sortKey=button.dataset.sort;document.querySelectorAll('[data-sort]').forEach(b=>b.closest('th').setAttribute('aria-sort',b===button?(sortDirection===1?'ascending':'descending'):'none'));render();});
+document.querySelectorAll('[data-log-sort]').forEach(button=>button.onclick=()=>{logDirection=logSort===button.dataset.logSort?-logDirection:1;logSort=button.dataset.logSort;document.querySelectorAll('[data-log-sort]').forEach(b=>b.closest('th').setAttribute('aria-sort',b===button?(logDirection===1?'ascending':'descending'):'none'));renderAccessLog();});
+render();profileLabels();window.addEventListener('mpm:language-changed',()=>{render();profileLabels();});reload().catch(e=>{error(e);if(!sessionResolved){sessionResolved=true;render();}});
+})();

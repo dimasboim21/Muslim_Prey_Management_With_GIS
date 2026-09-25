@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <script src="assets/js/paths.js"></script>
+  <script src="assets/js/deploymen-ed4f.js?v=1"></script>
+  <script src="assets/js/viewer-runtime.js?v=1"></script>
+  <script src="assets/js/account-c-f56d.js?v=20260924-viewer1"></script>
+  <link rel="stylesheet" href="assets/css/site-nav-2a92.css?v=1">
+  <script src="assets/js/site-navi-17b5.js?v=1" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f4d40">
+  <title>MEEP Simplify BMS</title>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/facility-4720.css?v=97">
+  <link rel="stylesheet" href="assets/css/meep-sim-ed72.css?v=4">
+<script defer src="assets/js/user-sess-efc4.js?v=1"></script>
+<script src="assets/js/url-acces-9679.js?v=1" defer></script></head>
+<body class="facility-body meep-body">
+  <main class="facility-shell meep-shell">
+    <header class="facility-topbar meep-topbar">
+      <a class="facility-brand" href="bms.html" aria-label="MEEP Simplify BMS">
+        <span>
+          <strong>MEEP Simplify BMS</strong>
+          <small>Mechanical · Electrical · Electronica · Plumbing</small>
+        </span>
+      </a>
+      <div class="facility-actions">
+        <label>Bahasa / Language<select id="languageSelect" data-language-switcher><option value="id">Bahasa Indonesia</option><option value="en">English</option></select></label>
+        <span id="meepConnectionStatus" class="status-pill" role="status">Menghubungkan SQL…</span>
+        <button id="meepReloadButton" class="button button-secondary" type="button">Muat ulang</button>
+        <a class="button button-secondary" href="admin.html">Admin WebGIS</a>
+        <a class="button button-primary" href="index.html">Dashboard</a>
+      </div>
+    </header>
+
+    <section class="meep-scope" aria-labelledby="meepPageTitle" data-access-key="card:node-922519753c-1">
+      <div>
+        <p class="eyebrow">Building management system · SQL authority</p>
+        <h1 id="meepPageTitle">Inventaris, energi, meter, dan perawatan</h1>
+        <p id="meepScopeText">Pilih gedung RDBMS sebelum memuat data BMS.</p>
+        <div class="meep-building-picker">
+          <label for="meepBuildingSelect">Gedung aktif</label>
+          <select id="meepBuildingSelect" aria-label="Pilih gedung dari RDBMS">
+            <option value="">Pilih gedung…</option>
+          </select>
+          <button id="meepUseBuildingButton" class="button button-primary" type="button">Gunakan gedung</button>
+          <button id="meepAddBuildingButton" class="button button-secondary" type="button">+ Gedung baru</button>
+          <button id="meepEditBuildingButton" class="button button-secondary" type="button" hidden>Edit gedung</button>
+          <small id="meepBuildingCatalogStatus" role="status">Membaca master gedung dari SQL…</small>
+        </div>
+      </div>
+      <div class="meep-scope-note">
+        <strong>Data source policy</strong>
+        <span>Spesifikasi hasil pencarian selalu menjadi kandidat. Nilai baru dipakai setelah Accept/Edit oleh user.</span>
+      </div>
+    </section>
+
+    <section id="meepSelectionRequired" class="meep-selection-required" data-access-key="card:meepSelectionRequired">
+      <strong>Pilih gedung terlebih dahulu</strong>
+      <span>Perangkat, meter, konsumsi energi, dan maintenance selalu dipisahkan berdasarkan gedung yang dipilih dari RDBMS.</span>
+    </section>
+
+    <section class="summary-grid meep-summary" aria-label="Ringkasan MEEP" data-meep-building-content hidden data-access-key="card:node-3fabd329a7-3">
+      <article class="metric-card" data-access-key="card:section-1"><span>Total devices</span><strong id="summaryDevices">0</strong><small id="summaryDeviceRecords">0 record</small></article>
+      <article class="metric-card" data-access-key="card:section-2"><span>Connected load</span><strong id="summaryConnected">0 W</strong><small id="summaryUnknownLoad">0 belum terhitung</small></article>
+      <article class="metric-card" data-access-key="card:section-3"><span>Estimated demand</span><strong id="summaryDemand">0 W</strong><small>sesuai demand factor</small></article>
+      <article class="metric-card" data-access-key="card:section-4"><span>Energy estimate</span><strong id="summaryEnergy">0 kWh/hari</strong><small id="summaryMonthly">0 kWh/bulan</small></article>
+      <article class="metric-card" data-access-key="card:section-5"><span>Meter status</span><strong id="summaryMeters">Belum ada</strong><small id="summaryMeterCount">0 meter</small></article>
+      <article class="metric-card" data-access-key="card:section-6"><span>Maintenance due</span><strong id="summaryMaintenance">0</strong><small id="summaryOverdue">0 overdue</small></article>
+    </section>
+
+    <nav class="module-tabs meep-tabs" aria-label="Modul MEEP" data-meep-building-content hidden>
+      <button class="tab-button is-active" type="button" data-meep-tab="devices" aria-selected="true">Perangkat</button>
+      <button class="tab-button" type="button" data-meep-tab="calculator" aria-selected="false">Kalkulator listrik</button>
+      <button class="tab-button" type="button" data-meep-tab="meters" aria-selected="false">kWh meter</button>
+      <button class="tab-button" type="button" data-meep-tab="maintenance" aria-selected="false">Maintenance</button>
+      <button class="tab-button" type="button" data-meep-tab="specifications" aria-selected="false">Cari spesifikasi</button>
+    </nav>
+
+    <section class="workspace meep-workspace" data-meep-building-content hidden data-access-key="card:node-c16277cd7c-10">
+      <section class="module-pane is-active" data-meep-pane="devices" aria-labelledby="deviceTableTitle" data-access-key="panel:devices">
+        <div class="pane-heading">
+          <div>
+            <p class="eyebrow">Database perangkat terpasang</p>
+            <h2 id="deviceTableTitle">Device Table</h2>
+          </div>
+          <div class="meep-toolbar">
+            <input id="deviceSearchInput" type="search" placeholder="Cari perangkat, brand, lokasi…" aria-label="Cari perangkat">
+            <select id="deviceDisciplineFilter" aria-label="Filter kategori MEEP">
+              <option value="">Semua kategori</option>
+              <option value="mechanical">Mechanical</option>
+              <option value="electrical">Electrical</option>
+              <option value="electronica">Electronica</option>
+              <option value="plumbing">Plumbing</option>
+            </select>
+            <button id="addDeviceButton" class="button button-primary" type="button">+ Perangkat</button>
+          </div>
+        </div>
+        <div class="table-wrap meep-table-wrap">
+          <table>
+            <thead><tr>
+              <th>Device</th><th>Brand</th><th>Model / Series</th><th>Location</th><th>Rated Power</th>
+              <th>Quantity</th><th>Estimated Load</th><th>Estimasi biaya / bulan</th><th>Last Service</th><th>Next Service</th><th>Status</th><th>Aksi</th>
+            </tr></thead>
+            <tbody id="deviceTableBody"></tbody>
+          </table>
+          <p id="deviceEmptyState" class="empty-state">Belum ada perangkat. Klik “+ Perangkat” untuk mulai.</p>
+        </div>
+      </section>
+
+      <section class="module-pane" data-meep-pane="calculator" aria-labelledby="calculatorTitle" hidden data-access-key="panel:calculator">
+        <section id="meepEnergyBudget" class="notice-box" data-access-key="card:energy-budget">
+          <h3>Estimasi pengeluaran listrik</h3>
+          <label>Tarif per kWh<input id="meepBudgetTariff" type="number" min="0" step="any"></label>
+          <label>Mata uang<input id="meepBudgetCurrency" value="IDR" maxlength="3" pattern="[A-Za-z]{3}"></label>
+          <p id="meepIndividualCost"></p><p id="meepTotalCost"></p>
+          <p>Estimasi energi saja; belum termasuk pajak dan biaya tetap. Konsumsi aktual mengikuti pengukuran.</p>
+        </section>
+        <div class="pane-heading">
+          <div><p class="eyebrow">Konversi tanpa asumsi tersembunyi</p><h2 id="calculatorTitle">Perhitungan listrik otomatis</h2></div>
+          <button id="calculatorResetButton" class="button button-secondary" type="button">Reset</button>
+        </div>
+        <form id="calculatorForm" class="data-form meep-form-grid calculator-form">
+          <label>Phase<select name="phaseCount"><option value="">Belum diketahui</option><option value="1">1 phase</option><option value="3">3 phase</option></select></label>
+          <label>Volt (V)<input name="voltageV" type="number" min="0" step="any" placeholder="230 / 400"></label>
+          <label>Ampere (A)<input name="currentA" type="number" min="0" step="any"></label>
+          <label>Power factor / cos φ<input name="powerFactor" type="number" min="0.001" max="1" step="any"></label>
+          <label>Watt (W)<input name="watts" type="number" min="0" step="any"></label>
+          <label>kW<input name="kilowatts" type="number" min="0" step="any"></label>
+          <label>VA<input name="apparentPowerVa" type="number" min="0" step="any"></label>
+          <label>kVA<input name="kva" type="number" min="0" step="any"></label>
+          <label>Jumlah perangkat<input name="quantity" type="number" min="0.001" step="any" value="1"></label>
+          <label>Jam operasi/hari<input name="operatingHoursDay" type="number" min="0" max="24" step="any" value="0"></label>
+          <label>Hari operasi/bulan<input name="operatingDaysMonth" type="number" min="0" max="31" step="any" value="30"></label>
+          <label>Demand factor<input name="demandFactor" type="number" min="0" max="1" step="any" value="1"></label>
+          <label>Watt hasil pengukuran (opsional)<input name="measuredPowerW" type="number" min="0" step="any"></label>
+          <label>kWh terukur total (opsional)<input name="energyKwh" type="number" min="0" step="any"><small>Total seluruh quantity.</small></label>
+          <label>Durasi pengukuran kWh (jam)<input name="energyPeriodHours" type="number" min="0" step="any"><small>Dipakai untuk menghitung rata-rata Watt.</small></label>
+        </form>
+        <section class="calculation-results" aria-live="polite" data-access-key="card:node-2997666a1b-13">
+          <article data-access-key="card:node-83715f80d5-14"><span>Active power</span><strong id="calcActivePower">—</strong></article>
+          <article data-access-key="card:node-83715f80d5-15"><span>Apparent power</span><strong id="calcApparentPower">—</strong></article>
+          <article data-access-key="card:node-83715f80d5-16"><span>Calculated current</span><strong id="calcCurrent">—</strong></article>
+          <article data-access-key="card:node-83715f80d5-17"><span>Connected load</span><strong id="calcConnected">—</strong></article>
+          <article data-access-key="card:node-83715f80d5-18"><span>Demand</span><strong id="calcDemand">—</strong></article>
+          <article data-access-key="card:node-83715f80d5-19"><span>kWh / hari</span><strong id="calcDaily">—</strong></article>
+          <article data-access-key="card:node-83715f80d5-20"><span>kWh / bulan</span><strong id="calcMonth">—</strong></article>
+          <article data-access-key="card:node-83715f80d5-21"><span>kWh / tahun</span><strong id="calcYear">—</strong></article>
+        </section>
+        <div id="calculatorWarnings" class="notice-box">Isi data yang tersedia. Sistem menampilkan “—” bila hubungan listrik belum cukup untuk dihitung.</div>
+      </section>
+
+      <section class="module-pane" data-meep-pane="meters" aria-labelledby="meterTitle" hidden data-access-key="panel:meters">
+        <div class="pane-heading">
+          <div><p class="eyebrow">Prabayar · pascabayar · 1/3 phase</p><h2 id="meterTitle">Monitoring kWh Meter</h2></div>
+          <button id="addMeterButton" class="button button-primary" type="button">+ Meter</button>
+        </div>
+        <div class="table-wrap meep-table-wrap">
+          <table><thead><tr><th>Meter</th><th>Jenis</th><th>Phase</th><th>Kapasitas</th><th>Tarif</th><th>Stand terakhir</th><th>Konsumsi</th><th>Estimasi biaya</th><th>Aksi</th></tr></thead>
+          <tbody id="meterTableBody"></tbody></table>
+          <p id="meterEmptyState" class="empty-state">Belum ada kWh meter.</p>
+        </div>
+        <details class="history-panel" data-access-key="card:section-7">
+          <summary>Histori pembacaan semua meter</summary>
+          <div class="table-wrap"><table><thead><tr><th>Meter</th><th>Periode</th><th>Stand awal</th><th>Stand akhir</th><th>kWh</th><th>Biaya</th><th>Dicatat</th></tr></thead><tbody id="readingHistoryBody"></tbody></table></div>
+        </details>
+      </section>
+
+      <section class="module-pane" data-meep-pane="maintenance" aria-labelledby="maintenanceTitle" hidden data-access-key="panel:maintenance">
+        <div class="pane-heading">
+          <div><p class="eyebrow">Histori append-only per perangkat</p><h2 id="maintenanceTitle">Service / Maintenance Monitoring</h2></div>
+          <div class="meep-toolbar">
+            <select id="maintenanceStatusFilter"><option value="">Semua status</option><option value="overdue">Overdue</option><option value="due">Maintenance due</option><option value="scheduled">Terjadwal</option><option value="not-scheduled">Belum dijadwalkan</option></select>
+            <button id="addMaintenanceButton" class="button button-primary" type="button">+ Service</button>
+          </div>
+        </div>
+        <div class="table-wrap meep-table-wrap">
+          <table><thead><tr><th>Device</th><th>Jenis</th><th>Mode</th><th>Tanggal service</th><th>Pekerjaan</th><th>Teknisi/vendor</th><th>Biaya</th><th>Next service</th><th>Attachment</th></tr></thead><tbody id="maintenanceTableBody"></tbody></table>
+          <p id="maintenanceEmptyState" class="empty-state">Belum ada histori maintenance.</p>
+        </div>
+      </section>
+
+      <section class="module-pane" data-meep-pane="specifications" aria-labelledby="specificationTitle" hidden data-access-key="panel:specifications">
+        <div class="pane-heading">
+          <div><p class="eyebrow">Search adapter · staged evidence · verified cache</p><h2 id="specificationTitle">Automatic Device Specification Search</h2></div>
+        </div>
+        <div class="source-priority" aria-label="Prioritas sumber">
+          <span>1 Manufacturer</span><span>2 Manual/datasheet resmi</span><span>3 Official catalog</span><span>4 Distributor resmi</span><span>5 Fallback</span>
+        </div>
+        <form id="specificationSearchForm" class="data-form meep-form-grid search-form">
+          <label>Pencarian bebas<input name="searchText" placeholder="Lenovo LOQ 15ARP10E, Samsung QN950F, pompa air…"></label>
+          <label>Brand<input name="brand" placeholder="Opsional"></label>
+          <label>Kategori (otomatis)<input name="productType" placeholder="Opsional, contoh: Split AC"></label>
+          <label>Model<input name="model" placeholder="Opsional"></label>
+          <label>Series (opsional)<input name="series" placeholder="Inverter series"></label>
+          <label>URL produk resmi (opsional)<input name="sourceUrl" type="url" placeholder="https://..."></label>
+          <div class="form-actions"><button id="specificationSearchButton" class="button button-primary" type="submit">Cari sumber online</button></div>
+        </form>
+        <p id="specificationSearchStatus" class="notice-box" role="status">Cari dengan nama perangkat atau kode produk. Kolom terpisah hanya untuk mempersempit pencarian. Periksa varian sebelum menyimpan.</p>
+        <div id="specificationSourceChoices" class="specification-results"></div>
+        <div id="specificationResults" class="specification-results"></div>
+        <details class="history-panel" open data-access-key="card:section-8">
+          <summary>Verified specification cache</summary>
+          <div id="verifiedSpecificationList" class="verified-spec-list"></div>
+        </details>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="buildingDialog" class="meep-dialog">
+    <form id="buildingForm" method="dialog" class="dialog-form">
+      <header><div><p class="eyebrow">Master gedung RDBMS</p><h2 id="buildingDialogTitle">Tambah gedung</h2></div><button class="dialog-close" type="button" data-close-dialog="buildingDialog" aria-label="Tutup">×</button></header>
+      <input name="buildingId" type="hidden">
+      <input name="version" type="hidden">
+      <div class="data-form meep-form-grid">
+        <label>Nama gedung<input name="buildingName" required placeholder="Kantor pusat, pabrik, hotel…"></label>
+        <label>Tipe gedung<select name="buildingTypeId" required><option value="">Pilih tipe…</option></select></label>
+        <label>Benua<input name="continent" placeholder="Asia"></label>
+        <label>Negara<input name="country" required placeholder="Indonesia"></label>
+        <label>ADM1 / provinsi<input name="adm1" required placeholder="Daerah Istimewa Yogyakarta"></label>
+        <label>ADM2 / kota<input name="adm2" required placeholder="Kabupaten Sleman"></label>
+        <label>Latitude<input name="latitude" type="number" min="-90" max="90" step="any" required></label>
+        <label>Longitude<input name="longitude" type="number" min="-180" max="180" step="any" required></label>
+        <label>Sumber koordinat<select name="coordinateSource"><option value="manual">Manual</option><option value="map">Peta</option><option value="gps">GPS</option><option value="database">Database</option><option value="import">Import</option></select></label>
+        <label class="span-2">Informasi tambahan<textarea name="additionalInformation" rows="3"></textarea></label>
+      </div>
+      <div class="notice-box">Gedung disimpan langsung ke tabel master <code>buildings</code>. Perubahan memakai pemeriksaan versi agar update dari perangkat lain tidak tertimpa.</div>
+      <footer><button class="button button-secondary" type="button" data-close-dialog="buildingDialog">Batal</button><button class="button button-primary" type="submit">Simpan gedung</button></footer>
+    </form>
+  </dialog>
+
+  <dialog id="deviceDialog" class="meep-dialog wide-dialog">
+    <form id="deviceForm" method="dialog" class="dialog-form">
+      <header><div><p class="eyebrow">Installed device</p><h2 id="deviceDialogTitle">Tambah perangkat</h2></div><button class="dialog-close" type="button" data-close-dialog="deviceDialog" aria-label="Tutup">×</button></header>
+      <input name="installedDeviceId" type="hidden">
+      <div class="data-form meep-form-grid">
+        <label>Kategori MEEP<select name="disciplineKey" required><option value="mechanical">Mechanical</option><option value="electrical">Electrical</option><option value="electronica">Electronica</option><option value="plumbing">Plumbing</option></select></label>
+        <label>Nama perangkat<input name="deviceName" required placeholder="AC ruang utama"></label>
+        <label>Product type<input name="productType" required placeholder="Split AC, pump, UPS…"></label>
+        <label>Lokasi<input name="locationName" required placeholder="Ruang utama / panel A"></label>
+        <label>Brand<input name="brandName" placeholder="Sesuai nameplate"></label>
+        <label>Model<input name="modelName"></label>
+        <label>Series<input name="seriesName"></label>
+        <label>Asset code<input name="assetCode" placeholder="Opsional, unik per site"></label>
+        <label>Quantity<input name="quantity" type="number" min="0.001" step="any" value="1" required></label>
+        <label>Spesifikasi diterima<select name="specificationId"><option value="">Input manual / pengukuran</option></select></label>
+      </div>
+      <details open data-access-key="card:node-f8fb1f5abf-27"><summary>Data listrik dan kapasitas</summary>
+        <div class="data-form meep-form-grid">
+          <label>Phase<select name="phaseCount"><option value="">Belum diketahui</option><option value="1">1 phase</option><option value="3">3 phase</option></select></label>
+          <label>Voltage (V)<input name="voltageV" type="number" min="0" step="any"></label>
+          <label>Current (A)<input name="currentA" type="number" min="0" step="any"></label>
+          <label>Claimed wattage (W)<input name="claimedPowerW" type="number" min="0" step="any"></label>
+          <label>Rated input (W)<input name="ratedInputW" type="number" min="0" step="any"></label>
+          <label>Rated input (kW)<input name="ratedInputKw" type="number" min="0" step="any"></label>
+          <label>Apparent power (VA)<input name="apparentPowerVa" type="number" min="0" step="any"></label>
+          <label>Apparent power (kVA)<input name="apparentPowerKva" type="number" min="0" step="any"></label>
+          <label>Power factor / cos φ<input name="powerFactor" type="number" min="0.001" max="1" step="any"></label>
+          <label>Frequency (Hz)<input name="frequencyHz" type="number" min="0" step="any"></label>
+          <label>Capacity<input name="capacityValue" type="number" min="0" step="any"></label>
+          <label>Capacity unit<input name="capacityUnit" placeholder="BTU/h, L/min, TR…"></label>
+        </div>
+      </details>
+      <details open data-access-key="card:node-f8fb1f5abf-28"><summary>Operasi, estimasi aktual, dan sumber</summary>
+        <div class="data-form meep-form-grid">
+          <label>Jam operasi/hari<input name="operatingHoursDay" type="number" min="0" max="24" step="any" value="0"></label>
+          <label>Hari operasi/bulan<input name="operatingDaysMonth" type="number" min="0" max="31" step="any" value="30"></label>
+          <label>Demand factor<input name="demandFactor" type="number" min="0" max="1" step="any" value="1"></label>
+          <label>Watt hasil pengukuran<input name="measuredPowerW" type="number" min="0" step="any"></label>
+          <label>Sumber nilai daya<select name="powerValueSource"><option value="manual">Input manual</option><option value="manufacturer-specification">Manufacturer specification</option><option value="datasheet">Datasheet/manual</option><option value="actual-measurement">Pengukuran aktual</option></select></label>
+          <label class="span-2">URL/catatan sumber spesifikasi<input name="specificationSource" placeholder="URL atau referensi nameplate"></label>
+          <label class="span-2">Catatan<textarea name="notes" rows="2"></textarea></label>
+        </div>
+      </details>
+      <div id="deviceCalculationPreview" class="inline-calculation">Estimasi akan tampil setelah data listrik cukup.</div>
+      <footer><button class="button button-secondary" type="button" data-close-dialog="deviceDialog">Batal</button><button class="button button-primary" type="submit">Simpan perangkat</button></footer>
+    </form>
+  </dialog>
+
+  <dialog id="deviceDetailDialog" class="meep-dialog wide-dialog">
+    <div class="dialog-form"><header><div><p class="eyebrow">Device detail</p><h2 id="deviceDetailTitle">Perangkat</h2></div><button class="dialog-close" type="button" data-close-dialog="deviceDetailDialog">×</button></header><div id="deviceDetailContent"></div><footer><button id="deviceEditFromDetail" class="button button-secondary" type="button">Edit</button><button id="deviceArchiveButton" class="button button-danger" type="button">Arsipkan</button><button class="button button-primary" type="button" data-close-dialog="deviceDetailDialog">Selesai</button></footer></div>
+  </dialog>
+
+  <dialog id="meterDialog" class="meep-dialog">
+    <form id="meterForm" method="dialog" class="dialog-form">
+      <header><div><p class="eyebrow">kWh meter master</p><h2>Tambah / edit meter</h2></div><button class="dialog-close" type="button" data-close-dialog="meterDialog">×</button></header>
+      <input name="meterId" type="hidden">
+      <div class="data-form meep-form-grid">
+        <label>Nama meter<input name="meterName" required placeholder="Meter PLN utama"></label>
+        <label>Jenis<select name="meterTypeKey" required><option value="prepaid">Prabayar / token</option><option value="postpaid">Pascabayar</option><option value="smart-ami">Smart meter / AMI</option><option value="sub-meter">Sub-meter panel</option><option value="sensor-ready">Sensor otomatis</option></select></label>
+        <label>Phase<select name="phaseCount" required><option value="1">1 phase</option><option value="3">3 phase</option></select></label>
+        <label>Kapasitas (VA)<input name="capacityVa" list="meterCapacityOptions" type="number" min="1" max="220000" required></label>
+        <datalist id="meterCapacityOptions"></datalist>
+        <label>Nomor meter<input name="meterNumber" required></label><label>Nomor pelanggan<input name="customerNumber"></label>
+        <label>Tarif / golongan<input name="tariffClass" placeholder="R-1, B-2…"></label><label>Tarif per kWh<input name="tariffPerKwh" type="number" min="0" step="any"></label>
+        <label>Mata uang<input name="currencyCode" maxlength="3" value="IDR"></label><label>Sisa token (kWh)<input name="tokenBalanceKwh" type="number" min="0" step="any"></label>
+        <label class="span-2">Catatan<textarea name="notes" rows="2"></textarea></label>
+      </div>
+      <footer><button class="button button-secondary" type="button" data-close-dialog="meterDialog">Batal</button><button class="button button-primary" type="submit">Simpan meter</button></footer>
+    </form>
+  </dialog>
+
+  <dialog id="readingDialog" class="meep-dialog">
+    <form id="readingForm" method="dialog" class="dialog-form">
+      <header><div><p class="eyebrow">Histori meter</p><h2>Tambah pembacaan</h2></div><button class="dialog-close" type="button" data-close-dialog="readingDialog">×</button></header>
+      <div class="data-form meep-form-grid">
+        <label>Meter<select name="meterId" required></select></label><label>Waktu pencatatan<input name="readingAt" type="datetime-local"></label>
+        <label>Periode awal<input name="periodStart" type="date" required></label><label>Periode akhir<input name="periodEnd" type="date" required></label>
+        <label>Stand awal (kWh)<input name="openingKwh" type="number" min="0" step="any"></label><label>Stand akhir (kWh)<input name="closingKwh" type="number" min="0" step="any"></label>
+        <label>Konsumsi langsung (kWh)<input name="consumptionKwh" type="number" min="0" step="any"><small>Dipakai bila stand tidak lengkap.</small></label>
+        <label>Tarif per kWh<input name="tariffPerKwh" type="number" min="0" step="any"></label>
+        <label>Mata uang<input name="currencyCode" maxlength="3"></label><label>Sumber<select name="sourceKind"><option value="manual">Manual</option><option value="bill">Tagihan</option><option value="meter-photo">Foto meter</option><option value="sensor">Sensor</option></select></label>
+        <label class="span-2">Catatan<textarea name="notes" rows="2"></textarea></label>
+      </div>
+      <footer><button class="button button-secondary" type="button" data-close-dialog="readingDialog">Batal</button><button class="button button-primary" type="submit">Simpan pembacaan</button></footer>
+    </form>
+  </dialog>
+
+  <dialog id="maintenanceDialog" class="meep-dialog wide-dialog">
+    <form id="maintenanceForm" method="dialog" class="dialog-form">
+      <header><div><p class="eyebrow">Append-only history</p><h2>Tambah service / maintenance</h2></div><button class="dialog-close" type="button" data-close-dialog="maintenanceDialog">×</button></header>
+      <div class="data-form meep-form-grid">
+        <label>Perangkat<select name="installedDeviceId" required></select></label><label>Tanggal service<input name="serviceDate" type="datetime-local" required></label>
+        <label>Jenis service<input name="serviceType" required placeholder="Cleaning, overhaul, inspeksi panel…"></label><label>Mode<select name="maintenanceKind" required><option value="preventive">Preventive</option><option value="corrective">Corrective</option><option value="inspection">Inspection</option></select></label>
+        <label class="span-2">Kondisi sebelum<textarea name="conditionBefore" rows="2"></textarea></label>
+        <label class="span-2">Pekerjaan yang dilakukan<textarea name="workPerformed" rows="3" required></textarea></label>
+        <label>Sparepart<textarea name="spareParts" rows="2"></textarea></label><label>Teknisi / vendor<input name="technicianVendor"></label>
+        <label>Biaya<input name="costAmount" type="number" min="0" step="any"></label><label>Mata uang<input name="currencyCode" maxlength="3" value="IDR"></label>
+        <label>Hasil pekerjaan<textarea name="workResult" rows="2"></textarea></label><label>Next service date<input name="nextServiceDate" type="date"></label>
+        <label class="span-2">Catatan<textarea name="notes" rows="2"></textarea></label>
+        <label class="span-2">Attachment (opsional)<input name="attachment" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp,.txt,.csv,.doc,.docx,.xls,.xlsx,.zip"><small>PDF, gambar, dokumen, spreadsheet, atau ZIP; maks. 12 MB. Di-upload setelah histori tersimpan.</small></label>
+      </div>
+      <footer><button class="button button-secondary" type="button" data-close-dialog="maintenanceDialog">Batal</button><button class="button button-primary" type="submit">Simpan histori</button></footer>
+    </form>
+  </dialog>
+
+  <dialog id="specificationReviewDialog" class="meep-dialog wide-dialog">
+    <form id="specificationReviewForm" method="dialog" class="dialog-form">
+      <header><div><p class="eyebrow">Human verification gate</p><h2>Edit lalu Accept</h2></div><button class="dialog-close" type="button" data-close-dialog="specificationReviewDialog">×</button></header>
+      <input name="candidateId" type="hidden">
+      <div class="data-form meep-form-grid">
+        <label>Detected brand<input name="detectedBrand" required></label><label>Product type<input name="productType" required></label>
+        <label>Model<input name="detectedModel" required></label><label>Series<input name="detectedSeries"></label>
+        <label>Rated watt (W)<input name="ratedPowerW" type="number" min="0.001" step="any"></label><label>Voltage (V)<input name="voltageV" type="number" min="0" step="any"></label>
+        <label>Current (A)<input name="currentA" type="number" min="0" step="any"></label><label>Apparent power (VA)<input name="apparentPowerVa" type="number" min="0" step="any"></label>
+        <label>Power factor<input name="powerFactor" type="number" min="0.001" max="1" step="any"></label><label>Phase<select name="phaseCount"><option value="">Belum diketahui</option><option value="1">1 phase</option><option value="3">3 phase</option></select></label>
+        <label>Capacity value<input name="capacityValue" type="number" min="0" step="any"></label><label>Capacity unit<input name="capacityUnit"></label>
+        <label>Frequency (Hz)<input name="frequencyHz" type="number" min="0" step="any"></label>
+        <label class="span-2">Source title<input name="sourceTitle" required></label><label class="span-2">Source URL<input name="sourceUrl" type="url" required></label>
+      </div>
+      <div class="notice-box">Accept menyimpan nilai sebagai spesifikasi terverifikasi beserta URL, evidence asli, user reviewer, tanggal, dan fingerprint cache.</div>
+      <footer><button class="button button-secondary" type="button" data-close-dialog="specificationReviewDialog">Batal</button><button class="button button-primary" type="submit">Accept hasil edit</button></footer>
+    </form>
+  </dialog>
+
+  <div id="meepToast" class="meep-toast" role="status" aria-live="polite" hidden></div>
+  <script src="assets/js/i18n.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/ui-transl-64c1.js?v=20260923-meep"></script>
+  <script src="assets/js/meep-i18n.js?v=6"></script>
+  <script src="assets/js/meep-runt-b373.js?v=1"></script>
+  <script src="assets/js/meep-simp-31f8.js?v=20260924-viewer1"></script>
+</body>
+</html>

@@ -1,0 +1,840 @@
+.astronomy-calendar-clock {
+    --astro-clock-accent: #24528f;
+    --astro-clock-accent-strong: #173e70;
+    --astro-clock-border: #d8e2ef;
+    --astro-clock-muted: #64748b;
+    --astro-clock-surface: #f7f9fc;
+    margin-top: 12px;
+    min-width: 0;
+}
+
+.astro-calendar-tabs {
+    background: #eaf0f8;
+    border: 1px solid var(--astro-clock-border);
+    border-radius: 9px;
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 4px;
+}
+
+.astro-calendar-tab,
+.astro-calendar-action {
+    appearance: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 750;
+    min-height: 38px;
+}
+
+.astro-calendar-tab {
+    background: transparent;
+    color: #44546a;
+    padding: 7px 10px;
+}
+
+.astro-calendar-tab[aria-selected="true"] {
+    background: #fff;
+    border-color: #b9cbe2;
+    box-shadow: 0 1px 4px rgba(28, 55, 90, 0.12);
+    color: var(--astro-clock-accent-strong);
+}
+
+.astro-calendar-tab:focus-visible,
+.astro-calendar-action:focus-visible,
+.astro-clock-timezone-select:focus-visible,
+.astro-calendar-day:focus-visible,
+.astro-event-dialog-close:focus-visible {
+    outline: 3px solid rgba(36, 82, 143, 0.28);
+    outline-offset: 2px;
+}
+
+.astro-calendar-panel {
+    border: 1px solid var(--astro-clock-border);
+    border-radius: 10px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.astro-calendar-panel[hidden] {
+    display: none;
+}
+
+.astro-clock-summary {
+    align-items: center;
+    background: linear-gradient(145deg, #f9fbfe, #eef4fb);
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 124px minmax(0, 1fr);
+    padding: 13px;
+}
+
+.astro-analog-clock {
+    aspect-ratio: 1;
+    background:
+        radial-gradient(circle at center, #fff 0 57%, transparent 58%),
+        repeating-conic-gradient(from -1deg, #94a3b8 0 1deg, transparent 1deg 6deg),
+        #f4f7fb;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #bdcde0, inset 0 0 14px rgba(32, 58, 91, 0.12);
+    max-width: 124px;
+    position: relative;
+    width: 100%;
+}
+
+.astro-clock-number {
+    color: #30445e;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.astro-clock-number.n12 { left: 50%; top: 12%; }
+.astro-clock-number.n3 { left: 88%; top: 50%; }
+.astro-clock-number.n6 { left: 50%; top: 88%; }
+.astro-clock-number.n9 { left: 12%; top: 50%; }
+
+.astro-clock-hand {
+    border-radius: 999px;
+    bottom: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: 50% 100%;
+    will-change: transform;
+}
+
+.astro-clock-hour {
+    background: #1f334c;
+    height: 25%;
+    width: 5px;
+}
+
+.astro-clock-minute {
+    background: var(--astro-clock-accent);
+    height: 34%;
+    width: 3px;
+}
+
+.astro-clock-second {
+    background: #d5364b;
+    height: 39%;
+    width: 1.5px;
+}
+
+.astro-clock-center {
+    background: #d5364b;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+}
+
+.astro-digital-clock {
+    color: #10233d;
+    font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+    font-size: clamp(19px, 5vw, 28px);
+    font-variant-numeric: tabular-nums;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.astro-clock-date-primary {
+    color: #203650;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-top: 7px;
+}
+
+.astro-clock-date-secondary,
+.astro-clock-zone {
+    color: var(--astro-clock-muted);
+    font-size: 11px;
+    line-height: 1.4;
+    margin-top: 3px;
+}
+
+.astro-month-calendar {
+    background: #fff;
+    border-top: 1px solid var(--astro-clock-border);
+    padding: 11px;
+}
+
+.astro-calendar-toolbar {
+    align-items: center;
+    display: grid;
+    gap: 6px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    margin-bottom: 9px;
+}
+
+.astro-calendar-action {
+    background: #fff;
+    border-color: #b9cbe2;
+    color: var(--astro-clock-accent);
+    min-width: 38px;
+    padding: 5px 8px;
+}
+
+.astro-calendar-action:hover {
+    background: #edf4fc;
+}
+
+.astro-calendar-month-title {
+    color: #203650;
+    font-size: 13px;
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+}
+
+.astro-calendar-today {
+    display: block;
+    font-size: 10px;
+    margin: 6px auto 0;
+    min-height: 30px;
+}
+
+.astro-calendar-weekdays,
+.astro-calendar-days {
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.astro-calendar-weekday {
+    color: #687991;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 0;
+    text-align: center;
+}
+
+.astro-calendar-day {
+    appearance: none;
+    align-items: center;
+    aspect-ratio: 1.15;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #253a55;
+    cursor: pointer;
+    display: flex;
+    font-family: inherit;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    justify-content: center;
+    min-width: 0;
+    padding: 2px;
+    position: relative;
+}
+
+.astro-calendar-day:hover {
+    background: #edf4fc;
+    border-color: #c7d8ea;
+}
+
+.astro-calendar-day.has-events {
+    border-color: #91add0;
+    font-weight: 800;
+}
+
+.astro-calendar-day-number {
+    line-height: 1;
+}
+
+.astro-calendar-event-count {
+    align-items: center;
+    background: #c2415d;
+    border: 1px solid #fff;
+    border-radius: 999px;
+    color: #fff;
+    display: flex;
+    font-size: 8px;
+    font-weight: 850;
+    height: 14px;
+    justify-content: center;
+    line-height: 1;
+    min-width: 14px;
+    padding: 0 3px;
+    position: absolute;
+    right: -2px;
+    top: -3px;
+}
+
+.astro-calendar-day.is-today {
+    background: var(--astro-clock-accent);
+    border-color: var(--astro-clock-accent-strong);
+    color: #fff;
+    font-weight: 850;
+}
+
+.astro-calendar-day.is-today .astro-calendar-event-count {
+    background: #fff;
+    border-color: var(--astro-clock-accent-strong);
+    color: var(--astro-clock-accent-strong);
+}
+
+.astro-calendar-day.is-empty {
+    visibility: hidden;
+}
+
+.astro-hijri-date-catalog {
+    background: #f8fbff;
+    border-top: 1px solid var(--astro-clock-border);
+    padding: 12px;
+}
+
+.astro-hijri-date-catalog-head {
+    align-items: start;
+    display: grid;
+    gap: 9px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    margin-bottom: 9px;
+}
+
+.astro-hijri-date-catalog-head h4 {
+    color: #173e70;
+    font-size: 13px;
+    margin: 0 0 3px;
+}
+
+.astro-hijri-date-catalog-head p,
+.astro-hijri-date-catalog-head > span,
+.astro-hijri-date-catalog-state,
+.astro-hijri-date-catalog-dynamic {
+    color: #607189;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.astro-hijri-date-catalog-head p {
+    margin: 0;
+}
+
+.astro-hijri-date-catalog-head > span {
+    background: #e9f2fc;
+    border-radius: 999px;
+    font-weight: 750;
+    padding: 4px 8px;
+    white-space: nowrap;
+}
+
+.astro-hijri-date-catalog-list {
+    display: grid;
+    gap: 6px;
+    max-height: 330px;
+    overflow: auto;
+    padding-right: 2px;
+}
+
+.astro-hijri-date-catalog-item {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #d5e1ee;
+    border-radius: 8px;
+    display: grid;
+    gap: 9px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 9px 10px;
+}
+
+.astro-hijri-date-catalog-item.is-user-event {
+    border-left: 4px solid #d28b28;
+}
+
+.astro-hijri-date-catalog-summary {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+}
+
+.astro-hijri-date-catalog-date {
+    color: #214f79;
+    font-size: 11px;
+}
+
+.astro-hijri-date-catalog-name {
+    color: #263c56;
+    font-size: 11px;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+}
+
+.astro-hijri-date-catalog-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+.astro-hijri-date-catalog-actions .astro-calendar-primary-button {
+    min-height: 32px;
+    padding: 6px 9px;
+}
+
+.astro-clock-timezone-field {
+    display: grid;
+    gap: 5px;
+    margin-bottom: 9px;
+}
+
+.astro-clock-timezone-field label {
+    color: #66758d;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.astro-clock-timezone-select {
+    background: #fff;
+    border: 1px solid #cdd9e8;
+    border-radius: 5px;
+    color: #172033;
+    font: inherit;
+    min-height: 36px;
+    padding: 6px 8px;
+    width: 100%;
+}
+
+.astro-calendar-help {
+    color: var(--astro-clock-muted);
+    font-size: 10px;
+    line-height: 1.45;
+    margin: 8px 1px 0;
+}
+
+.astro-calendar-event-status {
+    background: #f6f8fb;
+    border: 1px solid var(--astro-clock-border);
+    border-radius: 7px;
+    color: #52647c;
+    font-size: 10px;
+    line-height: 1.45;
+    margin: 7px 0 0;
+    padding: 7px 9px;
+}
+
+.astro-calendar-knowledge-actions {
+    display: grid;
+    gap: 7px;
+}
+
+.astro-calendar-primary-button {
+    background: #ecf5ff;
+    border: 1px solid #9fbeda;
+    border-radius: 8px;
+    color: #174d7e;
+    cursor: pointer;
+    font: 750 11px/1.35 inherit;
+    min-height: 38px;
+    padding: 8px 12px;
+    text-align: center;
+}
+
+.astro-calendar-primary-button:hover:not(:disabled) {
+    background: #dceeff;
+}
+
+.astro-calendar-primary-button:focus-visible {
+    outline: 3px solid rgba(27, 104, 168, 0.28);
+    outline-offset: 2px;
+}
+
+.astro-calendar-primary-button:disabled {
+    cursor: wait;
+    opacity: 0.55;
+}
+
+.astro-calendar-event-dialog {
+    background: #fff;
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 20px 70px rgba(15, 35, 60, 0.28);
+    color: #17263a;
+    max-height: min(82vh, 780px);
+    max-width: 720px;
+    padding: 0;
+    width: min(calc(100vw - 28px), 720px);
+}
+
+.astro-calendar-event-dialog::backdrop {
+    background: rgba(13, 26, 43, 0.58);
+    backdrop-filter: blur(2px);
+}
+
+.astro-event-dialog-head {
+    align-items: start;
+    background: linear-gradient(145deg, #eef5fd, #f9fbfe);
+    border-bottom: 1px solid var(--astro-clock-border);
+    display: grid;
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 17px 18px 14px;
+}
+
+.astro-event-dialog-head h3 {
+    color: #173e70;
+    font-size: clamp(17px, 4vw, 22px);
+    line-height: 1.25;
+    margin: 2px 0 4px;
+}
+
+.astro-event-dialog-head p {
+    color: #607189;
+    font-size: 11px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.astro-event-dialog-kicker {
+    font-weight: 850;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.astro-event-dialog-close {
+    align-items: center;
+    appearance: none;
+    background: #fff;
+    border: 1px solid #b8c9de;
+    border-radius: 999px;
+    color: #29496f;
+    cursor: pointer;
+    display: flex;
+    font: 800 22px/1 Arial, sans-serif;
+    height: 38px;
+    justify-content: center;
+    width: 38px;
+}
+
+.astro-event-dialog-body {
+    display: grid;
+    gap: 10px;
+    max-height: 55vh;
+    overflow: auto;
+    padding: 14px 18px;
+}
+
+.astro-event-card {
+    border: 1px solid #d7e1ed;
+    border-left: 4px solid var(--astro-clock-accent);
+    border-radius: 9px;
+    padding: 12px;
+}
+
+.astro-event-name {
+    color: #173654;
+    font-size: 15px;
+    line-height: 1.3;
+    margin: 0 0 7px;
+}
+
+.astro-event-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.astro-event-badge {
+    background: #eaf2fb;
+    border: 1px solid #c9daec;
+    border-radius: 999px;
+    color: #345574;
+    font-size: 9px;
+    font-weight: 750;
+    line-height: 1.3;
+    padding: 3px 7px;
+}
+
+.astro-event-description,
+.astro-event-tradition,
+.astro-event-warning,
+.astro-event-card li,
+.astro-event-empty {
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.astro-event-description {
+    color: #354960;
+    margin: 0 0 8px;
+}
+
+.astro-event-tradition {
+    background: #fff8e5;
+    border-radius: 6px;
+    color: #795b13;
+    margin: 7px 0;
+    padding: 6px 8px;
+}
+
+.astro-event-warning {
+    background: #fff1f1;
+    border-left: 3px solid #c2415d;
+    color: #7b2639;
+    margin: 8px 0;
+    padding: 7px 8px;
+}
+
+.astro-event-subtitle {
+    color: #314b68;
+    font-size: 11px;
+    margin: 9px 0 3px;
+}
+
+.astro-event-card ul {
+    margin: 3px 0 0;
+    padding-left: 18px;
+}
+
+.astro-event-sources a {
+    color: #1d5b98;
+    overflow-wrap: anywhere;
+}
+
+.astro-event-source-detail,
+.astro-event-source-scope,
+.astro-event-source-summary {
+    display: block;
+    margin-top: 2px;
+}
+
+.astro-event-source-detail {
+    color: #485f79;
+    font-weight: 700;
+}
+
+.astro-event-source-scope {
+    color: #77550d;
+}
+
+.astro-event-source-summary {
+    color: #607189;
+}
+
+.astro-event-empty {
+    color: #607189;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.astro-event-dialog-note {
+    background: #f6f8fb;
+    border-top: 1px solid var(--astro-clock-border);
+    color: #66758d;
+    font-size: 10px;
+    line-height: 1.45;
+    margin: 0;
+    padding: 10px 18px 13px;
+}
+
+.astro-event-section-title {
+    color: #244866;
+    font-size: 13px;
+    margin: 5px 0 0;
+}
+
+.astro-inline-edit-button {
+    margin-top: 8px;
+}
+
+.astro-date-crud-panel {
+    background: #eef6ff;
+    border: 1px solid #bed5ea;
+    border-radius: 9px;
+    display: grid;
+    gap: 7px;
+    margin-top: 10px;
+    padding: 11px 12px;
+}
+
+.astro-date-crud-panel strong {
+    color: #173e70;
+    font-size: 12px;
+}
+
+.astro-date-crud-panel p {
+    color: #536b84;
+    font-size: 10px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.astro-date-crud-panel .astro-calendar-primary-button {
+    justify-self: start;
+}
+
+.astro-user-calendar-explanation {
+    background: #eef6ff;
+    border: 1px solid #c5d8eb;
+    border-radius: 9px;
+    display: grid;
+    gap: 3px;
+    padding: 10px 12px;
+}
+
+.astro-user-calendar-explanation strong {
+    color: #1d4c76;
+    font-size: 12px;
+}
+
+.astro-user-calendar-explanation span {
+    color: #597087;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.astro-user-calendar-form {
+    background: #fbfcfe;
+    border: 1px solid #d5e0ec;
+    border-radius: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 12px;
+}
+
+.astro-user-calendar-field {
+    display: grid;
+    gap: 5px;
+    min-width: 0;
+}
+
+.astro-user-calendar-field > span {
+    color: #344f6c;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.astro-user-calendar-field input,
+.astro-user-calendar-field select,
+.astro-user-calendar-field textarea {
+    background: #fff;
+    border: 1px solid #b9c9da;
+    border-radius: 7px;
+    box-sizing: border-box;
+    color: #17263a;
+    font: 500 12px/1.4 inherit;
+    min-height: 40px;
+    padding: 8px 9px;
+    width: 100%;
+}
+
+.astro-user-calendar-field textarea {
+    min-height: 82px;
+    resize: vertical;
+}
+
+.astro-user-calendar-field input:focus,
+.astro-user-calendar-field select:focus,
+.astro-user-calendar-field textarea:focus {
+    border-color: #4383b9;
+    outline: 3px solid rgba(45, 119, 176, 0.15);
+}
+
+.astro-user-calendar-field small {
+    color: #66788e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.astro-user-calendar-wide {
+    grid-column: 1 / -1;
+}
+
+.astro-user-calendar-actions,
+.astro-user-calendar-row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.astro-user-calendar-form-status {
+    color: #315b7d;
+    font-size: 10px;
+    margin: 0;
+    min-height: 1.4em;
+}
+
+.astro-user-calendar-list {
+    display: grid;
+    gap: 8px;
+}
+
+.astro-user-calendar-card {
+    border-left-color: #597da3;
+}
+
+.astro-user-delete {
+    background: #fff2f1;
+    border-color: #d9aaa5;
+    color: #8a2924;
+}
+
+@media (max-width: 520px) {
+    .astro-clock-summary {
+        grid-template-columns: 92px minmax(0, 1fr);
+        padding: 10px;
+    }
+
+    .astro-analog-clock {
+        max-width: 92px;
+    }
+
+    .astro-digital-clock {
+        font-size: 19px;
+    }
+
+    .astro-calendar-event-dialog {
+        max-height: 90vh;
+        width: calc(100vw - 14px);
+    }
+
+    .astro-event-dialog-head,
+    .astro-event-dialog-body {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .astro-user-calendar-form {
+        grid-template-columns: 1fr;
+    }
+
+    .astro-hijri-date-catalog-head,
+    .astro-hijri-date-catalog-item {
+        grid-template-columns: 1fr;
+    }
+
+    .astro-hijri-date-catalog-head > span {
+        justify-self: start;
+    }
+
+    .astro-hijri-date-catalog-actions {
+        justify-content: flex-start;
+    }
+
+    .astro-user-calendar-wide {
+        grid-column: 1;
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .astro-clock-hand {
+        will-change: auto;
+    }
+}

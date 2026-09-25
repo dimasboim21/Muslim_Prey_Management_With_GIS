@@ -1,0 +1,370 @@
+/**
+ * KML MAP STYLES
+ * Styling untuk popup, info-box, dan komponen interaktif lainnya
+ */
+
+/* ================================
+   POPUP STYLES
+   ================================ */
+.kml-popup {
+    position: fixed;
+    background: white;
+    border: 2px solid #4d94d4;
+    border-radius: 8px;
+    padding: 10px 15px;
+    max-width: 250px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-family: 'Russo One', sans-serif;
+    font-size: 12px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.kml-popup.hidden {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.kml-popup strong {
+    display: block;
+    color: #2c5aa0;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.kml-popup small {
+    display: block;
+    color: #666;
+    margin: 2px 0;
+    line-height: 1.4;
+}
+
+/* ================================
+   INFO BOX OVERLAY
+   ================================ */
+.info-box-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    transition: opacity 0.3s ease;
+}
+
+.info-box-overlay.hidden {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ================================
+   INFO BOX MAIN CONTAINER
+   ================================ */
+.info-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    z-index: 2001;
+    max-width: 400px;
+    width: 90%;
+    max-height: 70vh;
+    overflow-y: auto;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.info-box.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.info-box.slide-in {
+    animation-name: slideIn;
+}
+
+.info-box.slide-out {
+    animation-name: slideOut;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+}
+
+/* ================================
+   INFO BOX HEADER
+   ================================ */
+.info-box-header {
+    position: relative;
+    background: linear-gradient(135deg, #4d94d4 0%, #2c5aa0 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 3px solid #2c5aa0;
+}
+
+.info-box-header h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: bold;
+    word-wrap: break-word;
+    padding-right: 30px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.close-btn span {
+    display: block;
+    line-height: 1;
+}
+
+/* ================================
+   INFO BOX BODY
+   ================================ */
+.info-box-body {
+    padding: 20px;
+    font-size: 13px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row label {
+    font-weight: bold;
+    color: #2c5aa0;
+    min-width: 100px;
+    flex-shrink: 0;
+}
+
+.info-value {
+    color: #333;
+    word-break: break-word;
+    text-align: right;
+    flex-grow: 1;
+    padding-left: 10px;
+}
+
+.info-box-body hr {
+    margin: 15px 0;
+    border: none;
+    border-top: 2px solid #ddd;
+}
+
+/* ================================
+   INFO BOX FOOTER
+   ================================ */
+.info-box-footer {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+}
+
+.info-btn {
+    padding: 10px 20px;
+    background: #4d94d4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Russo One', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin: 0 5px;
+}
+
+.info-btn:hover {
+    background: #2c5aa0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+}
+
+.info-btn:active {
+    transform: translateY(0);
+}
+
+.info-btn.close-btn {
+    position: static;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    margin: 0;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+@media (max-width: 768px) {
+    .kml-popup {
+        font-size: 11px;
+        padding: 8px 12px;
+        max-width: 200px;
+    }
+
+    .info-box {
+        width: 95%;
+        max-height: 80vh;
+    }
+
+    .info-box-header h2 {
+        font-size: 16px;
+    }
+
+    .info-box-body {
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .info-row {
+        padding: 8px 0;
+        flex-direction: column;
+    }
+
+    .info-row label {
+        margin-bottom: 5px;
+        min-width: auto;
+    }
+
+    .info-value {
+        text-align: left;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .kml-popup {
+        font-size: 10px;
+        padding: 6px 10px;
+        max-width: 150px;
+    }
+
+    .info-box {
+        width: 98%;
+        max-width: none;
+    }
+
+    .info-box-header {
+        padding: 15px;
+    }
+
+    .info-box-header h2 {
+        font-size: 14px;
+    }
+
+    .close-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .info-box-body {
+        font-size: 11px;
+        padding: 10px;
+    }
+
+    .info-row {
+        padding: 6px 0;
+    }
+
+    .info-btn {
+        padding: 8px 15px;
+        font-size: 11px;
+    }
+}
+
+/* ================================
+   SCROLLBAR STYLING (WebKit)
+   ================================ */
+.info-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.info-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.info-box::-webkit-scrollbar-thumb {
+    background: #4d94d4;
+    border-radius: 10px;
+}
+
+.info-box::-webkit-scrollbar-thumb:hover {
+    background: #2c5aa0;
+}
+
+/* ================================
+   MAP VIEWPORT
+   ================================ */
+#map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Change cursor when hovering over features */
+#map.feature-hover {
+    cursor: pointer;
+}

@@ -1,0 +1,1 @@
+window.MpmDeployment = { mode: 'static' };

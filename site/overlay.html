@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <script src="assets/js/paths.js"></script>
+  <script src="assets/js/deploymen-ed4f.js?v=1"></script>
+  <script src="assets/js/viewer-runtime.js?v=1"></script>
+  <script src="assets/js/account-c-f56d.js?v=20260924-viewer1"></script>
+  <link rel="stylesheet" href="assets/css/site-nav-2a92.css?v=2">
+  <script src="assets/js/site-navi-17b5.js?v=1" defer></script>
+  <script src="assets/js/i18n.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/ui-catalog.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/ui-transl-64c1.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/building-links.js?v=20260919-record2"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="ui.67950a0a">Universal Background & Overlay Customizer</title>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/overlay.css?v=24">
+<script defer src="assets/js/user-sess-efc4.js?v=1"></script>
+<script src="assets/js/url-acces-9679.js?v=1" defer></script></head>
+<body class="customizer-page">
+  <header class="overlay-admin-header">
+    <div>
+      <p class="eyebrow"><span data-i18n="ui.c7774ca9">Universal display orchestration</span></p>
+      <h1><span data-i18n="ui.6071b661">Background, Informasi & Overlay</span></h1>
+      <p><span data-i18n="ui.ec02bbca">Pilih media, susun informasi, tentukan waktu tampil, lalu uji. Mode lanjutan tersedia tanpa mengganggu alur sederhana.</span></p>
+    </div>
+    <div class="overlay-admin-actions">
+              <span data-language-slot></span>
+      <button id="overlaySidebarToggleButton" class="button button-secondary" type="button" aria-expanded="true"><span data-i18n="ui.b733dfcb">Daftar overlay</span></button>
+      <label><span data-i18n="ui.ac09be0e">Mode tampilan</span>
+        <select id="customizerExperienceMode"><option value="simple" data-i18n="ui.a5289dba">Sederhana</option><option value="advanced" data-i18n="ui.51ed7b6c">Lanjutan</option></select>
+      </label>
+      <label class="advanced-only"><span data-i18n="ui.4647b35">Admin token</span> <input id="overlayAdminToken" type="password" autocomplete="current-password" placeholder="Opsional di localhost" data-i18n-placeholder="ui.6c0c7180"></label>
+      <button id="overlayReloadButton" class="button button-secondary" type="button"><span data-i18n="ui.4666cea8">Muat ulang semua</span></button>
+      <a class="button button-secondary" href="quran.html"><span data-i18n="ui.675adbdc">Database Qur'an & Hadith</span></a>
+      <a class="button button-secondary" href="index.html" target="_blank" rel="noopener"><span data-i18n="ui.661009b7">Buka layar utama</span></a>
+    </div>
+  </header>
+
+  <main class="overlay-admin-layout">
+    <aside class="overlay-admin-sidebar" data-access-key="card:node-defffc2a3e-1">
+      <div class="panel-heading">
+        <h2>Overlay</h2>
+        <button id="overlayNewButton" class="button button-primary" type="button"><span data-i18n="ui.e2b87eab">Tambah custom</span></button>
+      </div>
+      <button id="restoreAllDefaultsButton" class="button button-danger full-button" type="button"><span data-i18n="ui.fb9f7c65">Restore semua default</span></button>
+      <div id="overlayDefinitionList" class="overlay-definition-list"></div>
+      <p id="overlayAdminStatus" class="admin-status" role="status" aria-live="polite"><span data-i18n="ui.10fdd5da">Memuat konfigurasi...</span></p>
+    </aside>
+
+    <section class="overlay-admin-content" data-access-key="card:node-9be6c31a6e-2">
+      <nav class="customizer-tabs" aria-label="Bagian konfigurasi" data-i18n-aria-label="ui.bc2cb7f">
+        <button class="is-active" type="button" data-panel="prayer"><span data-i18n="ui.fa23a9bc">Waktu salat</span></button>
+        <button type="button" data-panel="definition"><span data-i18n="ui.7183a99a">Konten</span></button>
+        <button type="button" data-panel="layout"><span data-i18n="ui.7b076651">Tampilan</span></button>
+        <button type="button" data-panel="orchestration"><span data-i18n="ui.3ade39c6">Prioritas</span></button>
+        <button type="button" data-panel="funeral"><span data-i18n="ui.45a620b6">Jenazah/Ghaib</span></button>
+        <button type="button" data-panel="education"><span data-i18n="ui.73ec23dc">Materi Ibadah</span></button>
+        <button type="button" data-panel="preview"><span data-i18n="ui.89e5e40b">Preview</span></button>
+        <button id="sectionPreviewToggleButton" class="customizer-tabs-tool section-preview-toggle" type="button" aria-controls="sectionPreviewWorkspace" aria-expanded="false"><span data-i18n="ui.327c1b26">Preview index.html</span></button>
+        <button id="togglePanelSectionsButton" class="customizer-tabs-tool" type="button" aria-pressed="false"><span data-i18n="ui.ec3da9c9">Buka semua bagian</span></button>
+      </nav>
+
+      <section class="customizer-panel is-active" data-customizer-panel="prayer" data-access-key="panel:prayer">
+        <div class="panel-heading">
+          <div><p class="eyebrow"><span data-i18n="ui.fa23a9bc">Waktu salat</span></p><h2><span data-i18n="ui.a06acc44">Pilih kelompok yang akan diatur</span></h2></div>
+          <button id="restorePrayerDefaultsButton" class="button button-danger" type="button"><span data-i18n="ui.366dd974">Restore default</span></button>
+        </div>
+        <nav class="panel-workspace-tabs" aria-label="Kelompok pengaturan waktu salat" data-i18n-aria-label="ui.2a439e57">
+          <button class="is-active" type="button" data-panel-view-button="fardhu"><span data-i18n="ui.d2c96655">Fardhu</span></button>
+          <button type="button" data-panel-view-button="friday"><span data-i18n="ui.958e373a">Jumat</span></button>
+          <button type="button" data-panel-view-button="dhuha">Dhuha</button>
+          <button type="button" data-panel-view-button="qiyamul">Qiyamul</button>
+        </nav>
+        <div class="panel-workspace-view is-active" data-panel-view="fardhu">
+        <div class="panel-heading subheading"><div><p class="eyebrow"><span data-i18n="ui.d2c96655">Fardhu</span></p><h2><span data-i18n="ui.e1c9e345">Durasi per state</span></h2></div></div>
+        <div class="bulk-duration-grid">
+          <label><span data-i18n="ui.9e8814fc">Pra-adzan semua (menit)</span><input id="bulkPreAdzan" type="number" min="0" max="1440" value="10"></label>
+          <label><span data-i18n="ui.960af644">Adzan semua (menit)</span><input id="bulkAdzan" type="number" min="0" max="1440" value="2"></label>
+          <label><span data-i18n="ui.7542694d">Iqamah semua (menit)</span><input id="bulkIqamah" type="number" min="0" max="1440" value="10"></label>
+          <label><span data-i18n="ui.a1a795c1">Pelaksanaan semua (menit)</span><input id="bulkPrayer" type="number" min="0" max="1440" value="20"></label>
+          <button id="applyBulkDurationsButton" class="button button-secondary" type="button"><span data-i18n="ui.2891faf7">Terapkan ke semua salat</span></button>
+        </div>
+        <div class="table-wrap">
+          <table class="settings-table">
+            <thead><tr><th><span data-i18n="ui.2bdc79fa">Salat</span></th><th>State</th><th><span data-i18n="ui.8b423ee8">Aktif</span></th><th><span data-i18n="ui.8d4ae927">Durasi (menit)</span></th><th><span data-i18n="ui.30f38cae">Background</span></th></tr></thead>
+            <tbody id="prayerSettingsBody"></tbody>
+          </table>
+        </div>
+        </div>
+
+        <div class="panel-workspace-view" data-panel-view="friday">
+        <div class="panel-heading subheading"><div><p class="eyebrow"><span data-i18n="ui.fac9feb">Khusus Jumat</span></p><h2><span data-i18n="ui.25a77b2b">Informasi dan Pelaksanaan Salat Jumat</span></h2><p><span data-i18n="ui.ebcc5d92">Informasi tampil setelah rangkaian Subuh selesai sampai 15 menit sebelum Dzuhur. Pada hari Jumat seluruh rangkaian Dzuhur diganti hanya oleh pelaksanaan Jumat 45 menit mulai tepat waktu Dzuhur.</span></p></div></div>
+        <div class="table-wrap">
+          <table class="settings-table">
+            <thead><tr><th><span data-i18n="ui.266d3733">Tahap</span></th><th><span data-i18n="ui.8b423ee8">Aktif</span></th><th><span data-i18n="ui.ce1a7b51">Durasi / batas (menit)</span></th><th>Anchor</th><th><span data-i18n="ui.30f38cae">Background</span></th></tr></thead>
+            <tbody id="fridaySettingsBody"></tbody>
+          </table>
+        </div>
+        </div>
+
+        <div class="panel-workspace-view" data-panel-view="dhuha">
+        <div class="panel-heading subheading"><div><p class="eyebrow">Sunnah</p><h2>Dhuha Awwal / Wustha / Awwabin</h2><p><span data-i18n="ui.2dfe1db8">Durasi tampil hanya mengatur lamanya reminder terlihat. Countdown menunjukkan remaining menuju transisi berikutnya: Awwal ke Wustha, Wustha ke Awwabin, dan Awwabin ke waktu Dzuhur.</span></p></div></div>
+        <div class="table-wrap">
+          <table class="settings-table">
+            <thead><tr><th><span data-i18n="ui.743a9d0c">Fase</span></th><th><span data-i18n="ui.8b423ee8">Aktif</span></th><th><span data-i18n="ui.770541ba">Overlay tampil (detik)</span></th><th><span data-i18n="ui.757f89b6">Interval reminder (menit)</span></th><th><span data-i18n="ui.30f38cae">Background</span></th></tr></thead>
+            <tbody id="dhuhaSettingsBody"></tbody>
+          </table>
+        </div>
+        </div>
+
+        <div class="panel-workspace-view" data-panel-view="qiyamul">
+        <div class="panel-heading subheading"><div><p class="eyebrow"><span data-i18n="ui.9ff171ea">Ibadah malam</span></p><h2>Qiyamul Lail</h2><p><span data-i18n="ui.a6b0f8d3">Anchor dihitung dari Maghrib sampai Subuh berikutnya. Kolom tampil mengatur lamanya overlay muncul; countdown pada sepertiga malam terakhir menunjukkan sisa waktu Qiyamul sampai batas persiapan Subuh, bukan sisa durasi overlay.</span></p></div></div>
+        <div class="table-wrap">
+          <table class="settings-table">
+            <thead><tr><th><span data-i18n="ui.266d3733">Tahap</span></th><th><span data-i18n="ui.8b423ee8">Aktif</span></th><th><span data-i18n="ui.770541ba">Overlay tampil (detik)</span></th><th>Anchor</th><th><span data-i18n="ui.f0a82164">Jarak / interval (menit)</span></th><th><span data-i18n="ui.30f38cae">Background</span></th></tr></thead>
+            <tbody id="qiyamulSettingsBody"></tbody>
+          </table>
+        </div>
+        </div>
+        <div class="panel-workspace-save"><span><span data-i18n="ui.d7d0bcdd">Perubahan pada seluruh kelompok disimpan bersama.</span></span><button id="savePrayerSettingsButton" class="button button-primary" type="button"><span data-i18n="ui.5e69a245">Simpan timing ke SQL</span></button></div>
+      </section>
+
+      <section class="customizer-panel" data-customizer-panel="definition" data-access-key="panel:definition">
+        <div class="panel-heading"><div><p class="eyebrow"><span data-i18n="ui.377622a7">Definisi generik</span></p><h2><span data-i18n="ui.b36c9a5e">Konten, prioritas, dan trigger</span></h2></div></div>
+        <section class="preset-picker" aria-labelledby="overlayPresetTitle" data-access-key="card:node-ce3947b296-5">
+          <div><strong id="overlayPresetTitle"><span data-i18n="ui.ba46b035">Mulai dari contoh siap pakai</span></strong><p><span data-i18n="ui.13f4063c">Pilih bentuk tampilan; semua isinya tetap dapat diedit sesudah diterapkan.</span></p></div>
+          <label>Preset<select id="overlayPresetSelect"></select></label>
+          <button id="applyOverlayPresetButton" class="button button-secondary" type="button"><span data-i18n="ui.aef3f6b4">Terapkan preset</span></button>
+        </section>
+        <form id="overlayDefinitionForm" class="overlay-form">
+          <details class="advanced-settings advanced-only" data-access-key="card:node-41b6a2d25c-6"><summary><span data-i18n="ui.2e5e1934">Identitas teknis, prioritas, konflik, dan lapisan</span></summary>
+            <div class="form-grid four">
+              <label>Overlay key<input id="definitionKey" required pattern="[A-Za-z0-9][A-Za-z0-9._:-]*"></label>
+              <label><span data-i18n="ui.1c5a8d76">Jenis</span><select id="definitionType"></select></label>
+              <label><span data-i18n="ui.3ade39c6">Prioritas</span><input id="definitionPriority" type="number" min="0" max="10000"></label>
+              <label><span data-i18n="ui.f1f0407e">Saat terinterupsi</span><select id="definitionPolicy"><option value="pause" data-i18n="ui.2d11852d">Jeda lalu lanjut</option><option value="queue" data-i18n="ui.f92b4fcf">Masuk antrean</option><option value="skip" data-i18n="ui.e6c93e43">Hentikan</option><option value="replace" data-i18n="ui.d5c10cc2">Ganti</option><option value="stack" data-i18n="ui.79d4ebf4">Tetap bertumpuk</option><option value="rotate" data-i18n="ui.e0153039">Rotasi</option><option value="suppress" data-i18n="ui.6175c6b">Sembunyikan</option></select></label>
+              <label><span data-i18n="ui.9736d030">Konflik dengan overlay lain</span><select id="definitionConflictMode"><option value="replace" data-i18n="ui.e73053e9">Ganti overlay prioritas lebih rendah</option><option value="stack" data-i18n="ui.ceca6f8d">Tumpuk sebagai lapisan</option><option value="queue" data-i18n="ui.acc3e87">Antrekan</option><option value="rotate" data-i18n="ui.1bb16016">Rotasi bergantian</option><option value="suppress" data-i18n="ui.dd29840e">Jangan tampil saat konflik</option></select></label>
+              <label><span data-i18n="ui.f7591039">Lapisan</span><select id="definitionLayer"><option value="background" data-i18n="ui.30f38cae">Background</option><option value="persistent" data-i18n="ui.1577685f">Informasi tetap</option><option value="main" data-i18n="ui.5debb22c">Konten utama</option><option value="alert" data-i18n="ui.45f00ca">Peringatan</option></select></label>
+              <label><span data-i18n="ui.a32bed22">Urutan lapisan</span><input id="definitionLayerOrder" type="number" min="-1000" max="1000" value="100"></label>
+            </div>
+          </details>
+          <div class="form-grid two">
+            <label><span data-i18n="ui.4e13bd10">Nama Indonesia</span><input id="definitionNameId" required></label>
+            <label><span data-i18n="ui.68510bae">English name</span><input id="definitionNameEn" required></label>
+            <label><span data-i18n="ui.c1b4b03a">Durasi default (detik)</span><input id="definitionDuration" type="number" min="1" max="86400"></label>
+            <label><span data-i18n="ui.c37d557b">Animasi</span><select id="definitionAnimation"><option value="fade" data-i18n="ui.87cda28d">Fade</option><option value="slide">Slide</option></select></label>
+          </div>
+          <label class="check-line"><input id="definitionEnabled" type="checkbox"> <span data-i18n="ui.a18b27cb">Aktif pada layar utama</span></label>
+          <label class="check-line"><input id="definitionInterruptible" type="checkbox" checked> <span data-i18n="ui.564aeaa9">Boleh diinterupsi overlay dengan prioritas lebih tinggi</span></label>
+
+          <fieldset class="advanced-only" data-access-key="card:node-fe15d1b963-7"><legend><span data-i18n="ui.ac7531f9">Cakupan lokasi</span></legend>
+            <div class="form-grid four">
+              <label><span data-i18n="ui.faaf068a">Efek scope</span><select id="scopeEffect"><option value="include" data-i18n="ui.d4119932">Tampilkan di area ini</option><option value="exclude" data-i18n="ui.de676e05">Jangan tampil di area ini</option></select></label>
+              <label><span data-i18n="ui.a3e857a0">Scope</span><select id="scopeType"><option value="GLOBAL" data-i18n="ui.d11e1566">Seluruh sistem</option><option value="PAGE" data-i18n="ui.830c71a8">Halaman tertentu</option><option value="PRAYER" data-i18n="ui.108a62d3">Salat tertentu</option><option value="PRAYER_GROUP" data-i18n="ui.40897396">Kelompok salat</option><option value="PHASE" data-i18n="ui.819769f5">Fase salat</option><option value="DATE_EVENT" data-i18n="ui.9cb9485b">Event kalender</option><option value="COUNTRY" data-i18n="ui.b60614b5">Negara</option><option value="ADM1" data-i18n="ui.2f8793e0">Provinsi/negara bagian</option><option value="ADM2" data-i18n="ui.e1f7c866">Kota/kabupaten</option><option value="GEOFENCE" data-i18n="ui.c79c05c8">Radius koordinat</option><option value="LOCATION" data-i18n="ui.58975b59">Lokasi database</option><option value="BUILDING" data-i18n="ui.28640e92">Gedung database</option></select></label>
+              <label><span data-i18n="ui.2ec28013">Halaman</span><input id="scopePageKey" placeholder="index"></label>
+              <label><span data-i18n="ui.2bdc79fa">Salat</span><input id="scopePrayerKey" placeholder="maghrib"></label>
+              <label><span data-i18n="ui.40897396">Kelompok salat</span><select id="scopePrayerGroup"><option value="">-</option><option value="fardhu" data-i18n="ui.51557276">Semua fardhu</option><option value="sunnah" data-i18n="ui.8ed3895b">Semua sunnah</option></select></label>
+              <label><span data-i18n="ui.743a9d0c">Fase</span><input id="scopePhaseKey" placeholder="pre_adzan"></label>
+              <label><span data-i18n="ui.9cb9485b">Event kalender</span><input id="scopeEventKey" placeholder="ashura"></label>
+              <label><span data-i18n="ui.87ba5748">ISO2 negara</span><input id="scopeCountryIso2" maxlength="2" placeholder="ID"></label>
+              <label><span data-i18n="ui.d9415606">Nama negara</span><input id="scopeCountryName" placeholder="Indonesia"></label>
+              <label><span data-i18n="ui.d8fae2c7">ADM1/provinsi</span><input id="scopeAdm1Name" placeholder="Jawa Barat"></label>
+              <label><span data-i18n="ui.20e7f0a9">ADM2/kota</span><input id="scopeAdm2Name" placeholder="Bandung"></label>
+              <label>Location ID<input id="scopeLocationId" type="number" min="1"></label>
+              <label>Building ID<input id="scopeBuildingId" type="number" min="1"></label>
+              <label><span data-i18n="ui.6d7e4165">Latitude</span><input id="scopeLatitude" type="number" min="-90" max="90" step="0.0000001"></label>
+              <label><span data-i18n="ui.671964ee">Longitude</span><input id="scopeLongitude" type="number" min="-180" max="180" step="0.0000001"></label>
+              <label><span data-i18n="ui.9063">Radius (meter)</span><input id="scopeRadius" type="number" min="1" max="10000000"></label>
+            </div>
+            <button id="addScopeButton" class="button button-secondary" type="button"><span data-i18n="ui.d46bc43e">Tambahkan scope lain</span></button>
+            <div id="scopeList" class="trigger-list"></div>
+          </fieldset>
+
+          <div class="language-columns">
+            <fieldset data-access-key="card:node-9e0bc9903a-8"><legend><span data-i18n="ui.f7e12b28">Konten Indonesia</span></legend>
+              <label><span data-i18n="ui.e9aa2b15">Label kecil</span><input data-content-lang="id" data-content-field="eyebrow"></label>
+              <label><span data-i18n="ui.99b0764d">Judul</span><textarea data-content-lang="id" data-content-field="title" rows="2"></textarea></label>
+              <label><span data-i18n="ui.bd56107d">Subjudul</span><textarea data-content-lang="id" data-content-field="subtitle" rows="2"></textarea></label>
+              <label><span data-i18n="ui.19477d4">Isi</span><textarea data-content-lang="id" data-content-field="bodyText" rows="4"></textarea></label>
+              <label><span data-i18n="ui.4fd4c9b7">Tambahan</span><textarea data-content-lang="id" data-content-field="additionalText" rows="2"></textarea></label>
+            </fieldset>
+            <fieldset data-access-key="card:node-9e0bc9903a-9"><legend><span data-i18n="ui.82e29b8b">English content</span></legend>
+              <label><span data-i18n="ui.e9aa2b15">Eyebrow</span><input data-content-lang="en" data-content-field="eyebrow"></label>
+              <label><span data-i18n="ui.99b0764d">Title</span><textarea data-content-lang="en" data-content-field="title" rows="2"></textarea></label>
+              <label><span data-i18n="ui.bd56107d">Subtitle</span><textarea data-content-lang="en" data-content-field="subtitle" rows="2"></textarea></label>
+              <label><span data-i18n="ui.19477d4">Body</span><textarea data-content-lang="en" data-content-field="bodyText" rows="4"></textarea></label>
+              <label><span data-i18n="ui.4fd4c9b7">Additional</span><textarea data-content-lang="en" data-content-field="additionalText" rows="2"></textarea></label>
+            </fieldset>
+          </div>
+          <p class="form-help"><span data-i18n="ui.4cd8f2d1">Placeholder tersedia: {overlayName}, {countdown}, {sourceName}. Overlay salat memakai placeholder state dari engine.</span></p>
+
+          <fieldset data-access-key="card:node-9e0bc9903a-10"><legend><span data-i18n="ui.14d2f1a5">Urutan slide (opsional)</span></legend>
+            <p class="form-help"><span data-i18n="ui.78c89d41">Jika diisi, slide berputar sesuai durasi masing-masing. Kosong berarti hanya konten utama.</span></p>
+            <div class="form-grid four">
+              <label><span data-i18n="ui.2a5e331c">Mode putar</span><select id="playlistMode"><option value="sequential" data-i18n="ui.d30d7f9f">Berurutan</option><option value="random" data-i18n="ui.b4c569fe">Acak stabil</option></select></label>
+              <label><span data-i18n="ui.5d146514">Rotasi konflik/acak (detik)</span><input id="playlistRotationSeconds" type="number" min="5" max="3600" value="15"></label>
+              <label class="check-line"><input id="playlistLoop" type="checkbox" checked> <span data-i18n="ui.e4f9d683">Ulangi playlist</span></label>
+            </div>
+            <button id="addSequenceItemButton" class="button button-secondary" type="button"><span data-i18n="ui.10817e85">Tambah slide</span></button>
+            <div id="sequenceItemList" class="sequence-list"></div>
+          </fieldset>
+
+          <fieldset data-access-key="card:node-9e0bc9903a-11"><legend>Trigger</legend>
+            <div class="form-grid four">
+              <label><span data-i18n="ui.314a2da2">Jenis trigger</span><select id="triggerType"></select></label>
+              <label><span data-i18n="ui.2bdc79fa">Salat</span><select id="triggerPrayer"><option value="">-</option><option value="subuh">Subuh</option><option value="dhuhur">Dhuhur</option><option value="ashar">Ashar</option><option value="maghrib">Maghrib</option><option value="isha">Isya</option></select></label>
+              <label><span data-i18n="ui.e17704ce">Waktu lokal</span><input id="triggerLocalTime" type="time" step="1"></label>
+              <label><span data-i18n="ui.cb702722">Offset (detik)</span><input id="triggerOffset" type="number" value="0"></label>
+              <label><span data-i18n="ui.e03cda07">Durasi (detik)</span><input id="triggerDuration" type="number" min="1" value="30"></label>
+              <label><span data-i18n="ui.9a9b2af1">Mulai UTC</span><input id="triggerStarts" type="datetime-local"></label>
+              <label><span data-i18n="ui.6114cdc5">Bulan/tanggal Masehi</span><input id="triggerGregorian" placeholder="8/17"></label>
+              <label><span data-i18n="ui.3d8cfb07">Bulan/tanggal Hijriah</span><input id="triggerHijri" placeholder="9/1"></label>
+              <label><span data-i18n="ui.17fe3a31">Tanggal akhir Masehi</span><input id="triggerGregorianEnd" placeholder="8/31"></label>
+              <label><span data-i18n="ui.2ea6532b">Tanggal akhir Hijriah</span><input id="triggerHijriEnd" placeholder="9/10"></label>
+              <label><span data-i18n="ui.80c248ac">Hari aktif</span><input id="triggerWeekdays" placeholder="1,2,3,4,5 (Senin-Jumat)" data-i18n-placeholder="ui.e657518"></label>
+              <label><span data-i18n="ui.e43aa2e4">Sampai waktu</span><input id="triggerEnds" type="datetime-local"></label>
+              <label><span data-i18n="ui.24b4a232">Ulang tiap (menit)</span><input id="triggerRepeatMinutes" type="number" min="1" max="10080"></label>
+              <label><span data-i18n="ui.dc774e98">Fase/anchor</span><input id="triggerPhase" placeholder="last_third_start"></label>
+              <label><span data-i18n="ui.21272bdd">Event astronomi/eksternal</span><input id="triggerEventKey" placeholder="sunset"></label>
+              <label><span data-i18n="ui.1a540595">Data/kondisi</span><input id="triggerConditionPath" placeholder="weather.status"></label>
+              <label>Operator<select id="triggerConditionOperator"><option value="truthy" data-i18n="ui.64ee7af8">Bernilai aktif</option><option value="equals" data-i18n="ui.eb5f3112">Sama dengan</option><option value="not_equals" data-i18n="ui.5e55012c">Tidak sama</option><option value="contains" data-i18n="ui.3d499127">Mengandung</option><option value="greater_than" data-i18n="ui.4f8f6d5c">Lebih besar</option><option value="less_than" data-i18n="ui.3432da69">Lebih kecil</option><option value="falsy" data-i18n="ui.b23069c1">Tidak aktif/kosong</option></select></label>
+              <label><span data-i18n="ui.53cd61c5">Nilai kondisi</span><input id="triggerConditionValue" placeholder="rain"></label>
+            </div>
+            <button id="addTriggerButton" class="button button-secondary" type="button"><span data-i18n="ui.387e3acc">Tambah trigger</span></button>
+            <div id="triggerList" class="trigger-list"></div>
+          </fieldset>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit"><span data-i18n="ui.1a9992ca">Simpan definisi ke SQL</span></button>
+            <button id="activateDefinitionButton" class="button button-secondary" type="button"><span data-i18n="ui.7c119cc7">Aktifkan manual 60 detik</span></button>
+          </div>
+        </form>
+      </section>
+
+      <section class="customizer-panel" data-customizer-panel="layout" data-access-key="panel:layout">
+        <div class="panel-heading"><div><p class="eyebrow"><span data-i18n="ui.97fea324">Editor visual</span></p><h2><span data-i18n="ui.ddcf34c3">Background dan posisi overlay</span></h2></div></div>
+
+        <div class="beginner-guide" aria-labelledby="backgroundGuideTitle">
+          <strong id="backgroundGuideTitle"><span data-i18n="ui.434d5da6">Cara paling cepat</span></strong>
+          <p><span data-i18n="ui.4a787356">Pilih background, klik</span> <b><span data-i18n="ui.5a20e645">Edit gambar ini</span></b><span data-i18n="ui.2f5f0494">, geser atau zoom pada pratinjau, lalu klik</span> <b><span data-i18n="ui.2e0d4ad3">Simpan tampilan ke SQL</span></b><span data-i18n="ui.d98188cc">. File asli tidak berubah.</span></p>
+        </div>
+
+        <section class="quick-background-picker" aria-labelledby="quickBackgroundTitle" data-access-key="card:node-7250f164b2-13">
+          <img id="quickBackgroundPreview" alt="Pratinjau background yang dipilih">
+          <div>
+            <p class="step-label"><span data-i18n="ui.9712bd20">Edit cepat</span></p>
+            <h3 id="quickBackgroundTitle"><span data-i18n="ui.b74b4c89">Pilih background bawaan</span></h3>
+            <label><span data-i18n="ui.1baa605e">Nama background</span>
+              <select id="quickBackgroundSelect"></select>
+            </label>
+            <span id="quickBackgroundInfo" class="quick-background-info"><span data-i18n="ui.36652d3a">Belum ada background di database</span></span>
+            <div class="quick-background-actions">
+              <button id="quickBackgroundEditButton" class="button button-primary" type="button">Edit</button>
+              <button id="quickBackgroundUseButton" class="button button-secondary" type="button"><span data-i18n="ui.b2d948e6">Gunakan</span></button>
+              <button id="quickBackgroundUploadButton" class="button button-secondary" type="button"><span data-i18n="ui.5e15201">Upload</span></button>
+              <button id="quickBackgroundDeleteButton" class="button button-danger" type="button"><span data-i18n="ui.47b55d9e">Hapus</span></button>
+            </div>
+          </div>
+        </section>
+
+        <details class="optional-media-settings" open data-access-key="card:node-97dba7d69e-14">
+          <summary><span data-i18n="ui.551cccfd">Library media: gambar, animasi, video, dan YouTube</span></summary>
+        <section class="background-media-section" aria-labelledby="backgroundMediaTitle" data-access-key="card:node-2c153ce0b5-15">
+          <div class="panel-heading subheading"><div><h3 id="backgroundMediaTitle"><span data-i18n="ui.f2b0a66f">Upload atau pilih media</span></h3><p><span data-i18n="ui.244287fc">Path file disimpan sistem dan tidak perlu diketik pengguna.</span></p></div></div>
+          <div class="media-library-tools">
+            <label><span data-i18n="ui.addaf83c">Cari media</span><input id="mediaSearchInput" type="search" placeholder="Cari nama media" data-i18n-placeholder="ui.3d5fe6d3"></label>
+            <label><span data-i18n="ui.81ea5329">Kategori</span><select id="mediaCategoryFilter"><option value="" data-i18n="ui.fb71e696">Semua kategori</option><option value="page-main" data-i18n="ui.d8179781">Halaman utama</option><option value="prayer" data-i18n="ui.2bdc79fa">Salat</option><option value="friday" data-i18n="ui.958e373a">Jumat</option><option value="dhuha">Dhuha</option><option value="qiyamul">Qiyamul</option><option value="announcement" data-i18n="ui.188f9f1a">Pengumuman</option><option value="emergency" data-i18n="ui.af4baafe">Darurat</option><option value="user" data-i18n="ui.ffefaf79">Upload pengguna</option></select></label>
+            <label><span data-i18n="ui.38bcf822">Jenis media</span><select id="mediaKindFilter"><option value="" data-i18n="ui.8d32181b">Semua jenis</option><option value="image" data-i18n="ui.99e3fb3d">Gambar</option><option value="animated_image" data-i18n="ui.37e14310">GIF / animasi</option><option value="video">Video</option><option value="online" data-i18n="ui.33ee7c4e">Media online / YouTube</option></select></label>
+          </div>
+          <form id="mediaUploadForm" class="media-upload-form">
+            <label class="file-picker"><span data-i18n="ui.4f821740">Pilih media dari perangkat</span>
+              <input id="mediaUploadInput" name="media" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif,image/svg+xml,video/mp4,video/webm,video/ogg" required>
+              <small><span data-i18n="ui.358bd45d">Gambar/animasi atau video MP4/WebM/OGV hingga 35 MB. SVG diperiksa keamanannya.</span></small>
+            </label>
+            <label><span data-i18n="ui.243feb3e">Kategori upload</span><select id="mediaUploadCategory"><option value="user" data-i18n="ui.ffefaf79">Upload pengguna</option><option value="page-main" data-i18n="ui.d8179781">Halaman utama</option><option value="prayer" data-i18n="ui.2bdc79fa">Salat</option><option value="friday" data-i18n="ui.958e373a">Jumat</option><option value="dhuha">Dhuha</option><option value="qiyamul">Qiyamul</option><option value="announcement" data-i18n="ui.188f9f1a">Pengumuman</option><option value="emergency" data-i18n="ui.af4baafe">Darurat</option></select></label>
+            <div id="mediaUploadPreviewWrap" class="upload-preview" hidden>
+              <img id="mediaUploadPreview" alt="Pratinjau gambar yang akan di-upload">
+              <span id="mediaUploadPreviewName"></span>
+            </div>
+            <button id="mediaUploadButton" class="button button-secondary" type="submit"><span data-i18n="ui.89e6858">Upload media</span></button>
+          </form>
+          <form id="externalMediaForm" class="external-media-form">
+            <label><span data-i18n="ui.9cc0eba6">Nama media</span><input id="externalMediaName" placeholder="Contoh: Siaran kajian" data-i18n-placeholder="ui.b84cf46e"></label>
+            <label><span data-i18n="ui.4e1bb729">Sumber</span><select id="externalMediaSource"><option value="direct_url" data-i18n="ui.738c10f5">URL langsung</option><option value="youtube">YouTube</option></select></label>
+            <label><span data-i18n="ui.1c5a8d76">Jenis</span><select id="externalMediaKind"><option value="image" data-i18n="ui.99e3fb3d">Gambar</option><option value="animated_image" data-i18n="ui.c37d557b">Animasi</option><option value="video">Video</option></select></label>
+            <label>URL HTTPS<input id="externalMediaUrl" type="url" placeholder="https://..."></label>
+            <label><span data-i18n="ui.70de34d">Fallback gambar (opsional)</span><input id="externalMediaFallback" type="url" placeholder="https://..."></label>
+            <button class="button button-secondary" type="submit"><span data-i18n="ui.53595aa2">Tambahkan URL ke library</span></button>
+          </form>
+          <p id="backgroundSelectionStatus" class="selection-status" role="status" aria-live="polite"><span data-i18n="ui.6a807cf0">Belum ada gambar yang dipilih untuk diedit.</span></p>
+          <div id="mediaGallery" class="media-gallery" aria-label="Galeri background" data-i18n-aria-label="ui.403959"></div>
+        </section>
+        </details>
+
+        <section class="background-editor-section" aria-labelledby="backgroundEditorTitle" data-access-key="card:node-1f3a749008-16">
+          <div class="panel-heading subheading">
+            <div><p class="step-label"><span data-i18n="ui.b1c70f9c">Geser langsung</span></p><h3 id="backgroundEditorTitle"><span data-i18n="ui.e9705191">Pratinjau background</span></h3></div>
+            <button id="applyBackgroundMediaButton" class="button button-primary" type="button" disabled><span data-i18n="ui.111ada16">Gunakan sebagai background</span></button>
+          </div>
+          <p id="backgroundAppliedStatus" class="applied-status"><span data-i18n="ui.709a364a">Background tersimpan belum dipilih.</span></p>
+          <div id="backgroundEditorStage" class="background-editor-stage" tabindex="0" aria-label="Editor background. Geser area kosong untuk mengatur posisi gambar, gulir roda mouse untuk zoom, dan geser kotak overlay untuk mengatur posisi konten." data-i18n-aria-label="ui.f74825d0">
+            <div id="backgroundEditorImage" class="background-editor-image" aria-hidden="true"></div>
+            <video id="backgroundEditorVideo" class="background-editor-video" muted loop playsinline hidden></video>
+            <div id="backgroundEditorTint" class="background-editor-tint" aria-hidden="true"></div>
+            <div id="backgroundEditorOverlay" class="background-editor-overlay" data-anchor="center">
+              <span><span data-i18n="ui.2f23b45c">Overlay teks</span><br><small><span data-i18n="ui.24d0cd33">Geser untuk memindahkan</span></small></span>
+              <span id="backgroundEditorResizeHandle" class="background-editor-resize" title="Geser untuk mengubah ukuran" aria-hidden="true" data-i18n-title="ui.54e0e7b9"></span>
+            </div>
+            <div id="backgroundEditorWidgetLayer" class="background-editor-widget-layer" aria-label="Posisi komponen modular" data-i18n-aria-label="ui.2b35b1bb"></div>
+            <span class="editor-mouse-help"><span data-i18n="ui.40fe4575">Area kosong: geser gambar &middot; roda mouse: zoom &middot; kotak komponen: geser posisi &middot; sudut kotak: ubah ukuran</span></span>
+          </div>
+
+          <div class="quick-editor-toolbar" aria-label="Kontrol cepat background" data-i18n-aria-label="ui.9e31d699">
+            <button id="zoomOutBackgroundButton" class="button button-secondary" type="button" aria-label="Perkecil gambar" data-i18n-aria-label="ui.9df300"><span data-i18n="ui.d8849672">&minus; Perkecil</span></button>
+            <output id="quickZoomValue" for="layoutImageScale">100%</output>
+            <button id="zoomInBackgroundButton" class="button button-secondary" type="button" aria-label="Perbesar gambar" data-i18n-aria-label="ui.bbe8fd07"><span data-i18n="ui.1bb9ad46">+ Perbesar</span></button>
+            <button id="resetBackgroundImageButton" class="button button-secondary" type="button"><span data-i18n="ui.f83d57f6">Tengahkan gambar</span></button>
+          </div>
+
+          <details class="axis-settings" data-access-key="card:node-0e2bfee988-17">
+            <summary><span data-i18n="ui.6c5d0c13">Atur dengan angka X/Y dan ukuran (opsional)</span></summary>
+          <div class="editor-control-columns">
+            <fieldset data-access-key="card:node-9e0bc9903a-18">
+              <legend><span data-i18n="ui.7bc8038b">Gambar background</span></legend>
+              <p class="form-help"><span data-i18n="ui.7a770ab7">Geser gambar dengan mouse atau isi nilai X/Y. Nilai 50 berarti tepat di tengah.</span></p>
+              <div class="form-grid four compact-grid">
+                <label><span data-i18n="ui.3ca1ca06">Posisi gambar X (%)</span><input id="layoutImageX" type="number" min="0" max="100" step="0.1" value="50"></label>
+                <label><span data-i18n="ui.f15c40bd">Posisi gambar Y (%)</span><input id="layoutImageY" type="number" min="0" max="100" step="0.1" value="50"></label>
+                <label>Zoom (%)<input id="layoutImageScale" type="number" min="100" max="300" step="1" value="100"></label>
+                <label><span data-i18n="ui.46831fd2">Zoom dengan slider</span><input id="layoutImageScaleRange" type="range" min="100" max="300" step="1" value="100"></label>
+                <label><span data-i18n="ui.682d0fd5">Penyesuaian gambar</span><select id="layoutFit"><option value="cover" data-i18n="ui.7857c836">Penuhi layar (disarankan)</option><option value="contain" data-i18n="ui.805819a">Tampilkan seluruh gambar</option><option value="fill" data-i18n="ui.3adc2e0f">Regangkan</option><option value="none" data-i18n="ui.950ed0bc">Ukuran asli</option><option value="scale-down" data-i18n="ui.d32fd32a">Perkecil bila perlu</option></select></label>
+                <label><span data-i18n="ui.71cab17a">Opacity gambar</span><input id="layoutImageOpacity" type="range" min="0" max="1" step="0.01"></label>
+              </div>
+            </fieldset>
+
+            <fieldset data-access-key="card:node-9e0bc9903a-19">
+              <legend><span data-i18n="ui.2f23b45c">Overlay teks</span></legend>
+              <p class="form-help"><span data-i18n="ui.28595f65">Geser kotak hijau untuk memindahkan. Geser sudut kanan bawah untuk mengubah ukurannya.</span></p>
+              <div class="form-grid four compact-grid">
+                <label><span data-i18n="ui.ddfc1c2e">Titik acuan</span><select id="layoutAnchor"><option value="center" data-i18n="ui.74e6d5d0">Tengah</option><option value="top-left" data-i18n="ui.53c71325">Kiri atas</option><option value="top-right" data-i18n="ui.53fd2edb">Kanan atas</option><option value="bottom-left" data-i18n="ui.40ed5a9f">Kiri bawah</option><option value="bottom-right" data-i18n="ui.5f936785">Kanan bawah</option></select></label>
+                <label><span data-i18n="ui.8367f5c2">Posisi overlay X (%)</span><input id="layoutX" type="number" min="0" max="100" step="0.1"></label>
+                <label><span data-i18n="ui.40770c49">Posisi overlay Y (%)</span><input id="layoutY" type="number" min="0" max="100" step="0.1"></label>
+                <label><span data-i18n="ui.5401d2ad">Lebar overlay (%)</span><input id="layoutWidth" type="number" min="5" max="100" step="0.1"></label>
+                <label><span data-i18n="ui.4ea3e1f3">Tinggi overlay (%)</span><input id="layoutHeight" type="number" min="5" max="100" step="0.1"></label>
+              </div>
+              <button id="resetOverlayPositionButton" class="button button-secondary" type="button"><span data-i18n="ui.b9246625">Reset posisi overlay</span></button>
+            </fieldset>
+          </div>
+          </details>
+        </section>
+
+        <details class="advanced-settings card-style-settings" data-access-key="card:node-168613b6c6-20">
+          <summary><span data-i18n="ui.df045d6b">Default visual card untuk seluruh overlay</span></summary>
+          <p class="form-help"><span data-i18n="ui.8a310357">Nilai ini menjadi fallback semua card. Opacity hanya memengaruhi lapisan background card, bukan teks atau isinya.</span></p>
+          <div class="form-grid four">
+            <label><span data-i18n="ui.834ee734">Warna background</span><input id="globalCardBackgroundColor" type="color" value="#102a25"></label>
+            <label><span data-i18n="ui.db97ac93">Gambar background card</span><input id="globalCardBackgroundImage" placeholder="assets/images/... atau https://..." data-i18n-placeholder="ui.93b15622"></label>
+            <label class="wide-field">Gradient CSS<input id="globalCardBackgroundGradient" placeholder="linear-gradient(135deg, rgba(...), rgba(...))"></label>
+            <label><span data-i18n="ui.3e2d1362">Opacity background</span><input id="globalCardOpacity" type="range" min="0" max="1" step="0.01" value="0.78"></label>
+            <label>Backdrop blur (px)<input id="globalCardBackdropBlur" type="number" min="0" max="80" step="1" value="14"></label>
+            <label><span data-i18n="ui.e1fb57ce">Warna border</span><input id="globalCardBorderColor" type="color" value="#ffffff"></label>
+            <label><span data-i18n="ui.c0ab1908">Opacity border</span><input id="globalCardBorderOpacity" type="range" min="0" max="1" step="0.01" value="0.22"></label>
+            <label><span data-i18n="ui.8dcad1d6">Lebar border (px)</span><input id="globalCardBorderWidth" type="number" min="0" max="20" step="0.5" value="1"></label>
+            <label><span data-i18n="ui.adbaeda6">Radius card (px)</span><input id="globalCardBorderRadius" type="number" min="0" max="160" value="24"></label>
+            <label class="wide-field">Box shadow<input id="globalCardBoxShadow" value="0 28px 80px rgba(0,0,0,.32)"></label>
+            <label class="wide-field">Padding CSS<input id="globalCardPadding" value="clamp(.6rem,min(4vw,4dvh),4rem)"></label>
+            <label><span data-i18n="ui.a49c9909">Warna teks</span><input id="globalCardTextColor" type="color" value="#ffffff"></label><label><span data-i18n="ui.477df176">Warna judul</span><input id="globalCardTitleColor" type="color" value="#ffffff"></label><label><span data-i18n="ui.95cafe98">Warna subjudul</span><input id="globalCardSubtitleColor" type="color" value="#ffffff"></label>
+            <label><span data-i18n="ui.cd4dad4c">Warna Arab</span><input id="globalCardArabicColor" type="color" value="#ffffff"></label><label><span data-i18n="ui.30c3a122">Warna Latin</span><input id="globalCardLatinColor" type="color" value="#e7f5f0"></label><label><span data-i18n="ui.745579f4">Warna arti</span><input id="globalCardTranslationColor" type="color" value="#ffffff"></label><label><span data-i18n="ui.d0bc08">Warna sumber</span><input id="globalCardSourceColor" type="color" value="#bff9e9"></label>
+          </div>
+          <button id="saveGlobalCardStyleButton" class="button button-primary" type="button"><span data-i18n="ui.eac4b20a">Simpan default seluruh card</span></button>
+        </details>
+
+        <details class="advanced-settings" data-access-key="card:node-e55737679c-21">
+          <summary><span data-i18n="ui.886c72c7">Override visual card untuk overlay terpilih</span></summary>
+          <p class="form-help"><span data-i18n="ui.bdaf363f">Override ini menang atas default global. Kosongkan field teks opsional jika tidak memerlukan gambar atau gradient.</span></p>
+          <div class="form-grid four">
+            <label><span data-i18n="ui.f9d4feb5">Warna tint</span><input id="layoutTintColor" type="color"></label>
+            <label><span data-i18n="ui.9571024b">Opacity tint</span><input id="layoutTintOpacity" type="range" min="0" max="1" step="0.01"></label>
+            <label><span data-i18n="ui.524ce6ae">Warna card</span><input id="layoutCardColor" type="color"></label>
+            <label><span data-i18n="ui.9c0074c8">Opacity card</span><input id="layoutCardOpacity" type="range" min="0" max="1" step="0.01"></label>
+            <label><span data-i18n="ui.db97ac93">Gambar background card</span><input id="layoutCardBackgroundImage" placeholder="assets/images/... atau https://..." data-i18n-placeholder="ui.93b15622"></label>
+            <label class="wide-field"><span data-i18n="ui.fa52b7b9">Gradient card</span><input id="layoutCardBackgroundGradient" placeholder="linear-gradient(...)"></label>
+            <label>Backdrop blur (px)<input id="layoutCardBackdropBlur" type="number" min="0" max="80"></label>
+            <label><span data-i18n="ui.e1fb57ce">Warna border</span><input id="layoutCardBorderColor" type="color"></label><label><span data-i18n="ui.c0ab1908">Opacity border</span><input id="layoutCardBorderOpacity" type="range" min="0" max="1" step="0.01"></label><label><span data-i18n="ui.8dcad1d6">Lebar border (px)</span><input id="layoutCardBorderWidth" type="number" min="0" max="20" step="0.5"></label><label>Radius (px)<input id="layoutCardBorderRadius" type="number" min="0" max="160"></label>
+            <label class="wide-field">Box shadow<input id="layoutCardBoxShadow"></label><label class="wide-field">Padding CSS<input id="layoutCardPadding"></label>
+            <label><span data-i18n="ui.a49c9909">Warna teks</span><input id="layoutCardTextColor" type="color"></label><label><span data-i18n="ui.477df176">Warna judul</span><input id="layoutCardTitleColor" type="color"></label><label><span data-i18n="ui.95cafe98">Warna subjudul</span><input id="layoutCardSubtitleColor" type="color"></label><label><span data-i18n="ui.cd4dad4c">Warna Arab</span><input id="layoutCardArabicColor" type="color"></label><label><span data-i18n="ui.30c3a122">Warna Latin</span><input id="layoutCardLatinColor" type="color"></label><label><span data-i18n="ui.745579f4">Warna arti</span><input id="layoutCardTranslationColor" type="color"></label><label><span data-i18n="ui.d0bc08">Warna sumber</span><input id="layoutCardSourceColor" type="color"></label>
+            <label><span data-i18n="ui.f9a9aab4">Rata teks</span><select id="contentTextAlign"><option value="left" data-i18n="ui.42d6fc08">Kiri</option><option value="center" data-i18n="ui.74e6d5d0">Tengah</option><option value="right" data-i18n="ui.1eacec1e">Kanan</option></select></label>
+            <label><span data-i18n="ui.18d00354">Ukuran judul responsif</span><input id="contentTitleSize" value="clamp(2rem, 7vw, 6rem)"></label>
+            <label><span data-i18n="ui.570f28f5">Ukuran isi responsif</span><input id="contentBodySize" value="clamp(1rem, 2.4vw, 1.7rem)"></label>
+          </div>
+          <label class="check-line"><input id="layoutShowCard" type="checkbox"> <span data-i18n="ui.31919788">Tampilkan panel/card konten</span></label>
+          <div class="component-toggle-row">
+            <label class="check-line"><input id="componentShowBackground" type="checkbox"> <span data-i18n="ui.30f38cae">Background</span></label>
+            <label class="check-line"><input id="componentShowContent" type="checkbox"> <span data-i18n="ui.34178432">Panel teks</span></label>
+            <label class="check-line"><input id="componentShowClock" type="checkbox"> <span data-i18n="ui.5417413">Jam aktual</span></label>
+            <label class="check-line"><input id="componentShowDates" type="checkbox"> <span data-i18n="ui.2184d589">Tanggal Masehi & Hijriah</span></label>
+          </div>
+          <select id="definitionBackgroundMedia" hidden aria-hidden="true"><option value="" data-i18n="ui.a3f22b96">Tidak ada</option></select>
+          <input id="definitionBackgroundPath" type="hidden">
+        </details>
+
+        <div class="layout-save-bar">
+          <div><strong><span data-i18n="ui.409697df">Langkah 4</span></strong><span><span data-i18n="ui.64fe3504">Simpan pilihan background, posisi, ukuran, dan zoom ke database.</span></span></div>
+          <button id="saveLayoutButton" class="button button-primary" type="button"><span data-i18n="ui.2e0d4ad3">Simpan tampilan ke SQL</span></button>
+        </div>
+      </section>
+
+      <section class="customizer-panel" data-customizer-panel="orchestration" data-access-key="panel:orchestration">
+        <div class="beginner-guide">
+          <strong><span data-i18n="ui.1d6fa11b">Susun komponen tanpa pemrograman</span></strong>
+          <p><span data-i18n="ui.43f01216">Centang informasi yang ingin tampil. Konten utama tetap dikelola pada tab Konten & trigger; komponen dapat hidup pada lapisan background, tetap, utama, atau peringatan.</span></p>
+        </div>
+        <div class="priority-guide" aria-label="Panduan prioritas" data-i18n-aria-label="ui.4cb6664d">
+          <article data-access-key="card:node-83715f80d5-23"><strong>900-1000</strong><span><span data-i18n="ui.20d85afd">Darurat dan keselamatan</span></span></article>
+          <article data-access-key="card:node-83715f80d5-24"><strong>700-899</strong><span><span data-i18n="ui.4c647082">Adzan, iqamah, pelaksanaan salat</span></span></article>
+          <article data-access-key="card:node-83715f80d5-25"><strong>400-699</strong><span><span data-i18n="ui.650d9e30">Pengumuman penting dan kalender</span></span></article>
+          <article data-access-key="card:node-83715f80d5-26"><strong>100-399</strong><span><span data-i18n="ui.d208c549">Media, ticker, cuaca, dan informasi umum</span></span></article>
+        </div>
+        <fieldset data-access-key="card:node-9e0bc9903a-27"><legend><span data-i18n="ui.eeeb0d76">Komponen modular</span></legend>
+          <div id="widgetChecklist" class="widget-checklist">
+            <label><input type="checkbox" value="clock"> <span data-i18n="ui.18e80918">Jam digital/analog</span></label><label><input type="checkbox" value="prayer_schedule"> <span data-i18n="ui.50ea62c9">Jadwal salat</span></label>
+            <label><input type="checkbox" value="media"> Media</label><label><input type="checkbox" value="text"> <span data-i18n="ui.3938f658">Teks</span></label>
+            <label><input type="checkbox" value="ticker"> <span data-i18n="ui.a40eb3bb">Running text</span></label><label><input type="checkbox" value="announcement"> <span data-i18n="ui.188f9f1a">Pengumuman</span></label>
+            <label><input type="checkbox" value="fyi"> <span data-i18n="ui.70c17bbf">FYI / kartu informasi</span></label>
+            <label><input type="checkbox" value="quran"> Al-Qur'an</label><label><input type="checkbox" value="tafsir"> <span data-i18n="ui.526671dd">Tafsir + sumber</span></label>
+            <label><input type="checkbox" value="hadith"> <span data-i18n="ui.141fa225">Hadis + rujukan</span></label><label><input type="checkbox" value="islamic_calendar"> <span data-i18n="ui.78a1d825">Kalender Islam</span></label>
+            <label><input type="checkbox" value="fasting"> <span data-i18n="ui.6b574c85">Informasi puasa</span></label><label><input type="checkbox" value="sunnah_prayer"> <span data-i18n="ui.d0c10fd3">Salat sunnah</span></label>
+            <label><input type="checkbox" value="weather"> <span data-i18n="ui.141e7134">Cuaca</span></label><label><input type="checkbox" value="webgis"> WebGIS</label>
+            <label><input type="checkbox" value="astronomy"> <span data-i18n="ui.ea1dbcc1">Astronomi</span></label><label><input type="checkbox" value="emergency"> <span data-i18n="ui.af4baafe">Darurat</span></label>
+            <label><input type="checkbox" value="bereavement"> <span data-i18n="ui.d70c0eb9">Kabar duka</span></label>
+          </div>
+          <p class="form-help"><span data-i18n="ui.6d863f05">Setelah dicentang, atur isi, sumber, lapisan, serta posisi setiap komponen di bawah. Quran, tafsir, dan hadis tidak akan diberi klaim sumber otomatis.</span></p>
+          <div id="widgetEditorList" class="widget-editor-list"></div>
+          <label class="advanced-only"><span data-i18n="ui.1aac20d9">Catatan sumber bersama (fallback)</span><textarea id="widgetSourceNote" rows="3" placeholder="Dipakai hanya jika komponen belum mempunyai sumber sendiri." data-i18n-placeholder="ui.c039d6f5"></textarea></label>
+        </fieldset>
+        <fieldset data-access-key="card:node-9e0bc9903a-28"><legend><span data-i18n="ui.952343e1">Fase terlindungi</span></legend>
+          <p class="form-help"><span data-i18n="ui.a3170a9f">Overlay biasa tidak boleh mengganti fase yang dicentang kecuali prioritasnya lebih tinggi dan layer peringatan.</span></p>
+          <div id="protectedPhaseChecklist" class="widget-checklist"><label><input type="checkbox" value="adzan"> Adzan</label><label><input type="checkbox" value="iqamah"> Iqamah</label><label><input type="checkbox" value="prayer"> <span data-i18n="ui.405045d1">Pelaksanaan salat</span></label><label><input type="checkbox" value="friday"> <span data-i18n="ui.d69eba59">Pelaksanaan Jumat</span></label><label><input type="checkbox" value="fajr_preparation"> <span data-i18n="ui.bc64f51d">Persiapan Subuh</span></label></div>
+        </fieldset>
+        <section class="suggestion-review" data-access-key="card:node-b55bef9199-29"><h3><span data-i18n="ui.b37965b5">Saran data eksternal</span></h3><p><span data-i18n="ui.54b71726">Berita bencana atau kabar duka tidak ditayangkan otomatis. Masukkan sumber HTTPS, tinjau, lalu ubah menjadi overlay editable atau abaikan.</span></p>
+          <form id="externalSuggestionForm" class="form-grid four">
+            <label><span data-i18n="ui.1c5a8d76">Jenis</span><select id="suggestionType"><option value="disaster" data-i18n="ui.205c65e5">Bencana/darurat</option><option value="bereavement" data-i18n="ui.d70c0eb9">Kabar duka</option><option value="weather" data-i18n="ui.141e7134">Cuaca</option><option value="astronomy" data-i18n="ui.ea1dbcc1">Astronomi</option><option value="announcement" data-i18n="ui.188f9f1a">Pengumuman</option></select></label>
+            <label><span data-i18n="ui.99b0764d">Judul</span><input id="suggestionTitle" required></label>
+            <label><span data-i18n="ui.4e1bb729">Sumber</span><input id="suggestionSourceName" required></label>
+            <label>URL HTTPS<input id="suggestionSourceUrl" type="url" required placeholder="https://..."></label>
+            <label><span data-i18n="ui.2e77da01">Wilayah kejadian</span><input id="suggestionRegion" placeholder="Contoh: Kabupaten Sleman" data-i18n-placeholder="ui.4812eee1"></label>
+            <label><span data-i18n="ui.9470b5c6">Waktu kejadian</span><input id="suggestionOccurredAt" type="datetime-local" step="1"></label>
+            <label><span data-i18n="ui.e1662727">Waktu publikasi sumber</span><input id="suggestionPublishedAt" type="datetime-local" step="1"></label>
+            <label><span data-i18n="ui.2bf79198">Terakhir diperbarui</span><input id="suggestionUpdatedAt" type="datetime-local" step="1"></label>
+            <label><span data-i18n="ui.ea36962c">Status verifikasi</span><select id="suggestionVerification"><option value="unverified" data-i18n="ui.fa609f93">Belum diverifikasi admin</option><option value="verified_source" data-i18n="ui.c64d9eea">Sumber sudah diverifikasi</option><option value="verified_event" data-i18n="ui.b05be4e9">Kejadian sudah diverifikasi</option></select></label>
+            <label class="wide-field"><span data-i18n="ui.d0ee82c7">Ringkasan</span><textarea id="suggestionSummary" rows="3"></textarea></label>
+            <button class="button button-secondary" type="submit"><span data-i18n="ui.4cf20e7b">Masukkan ke antrean review</span></button>
+          </form>
+          <div id="externalSuggestionList" class="suggestion-list"><p class="form-help"><span data-i18n="ui.25991a67">Belum ada saran menunggu review.</span></p></div>
+        </section>
+        <details class="advanced-settings" data-access-key="card:node-e55737679c-30"><summary><span data-i18n="ui.f3cc093f">Audit konfigurasi dan runtime</span></summary><div id="overlayAuditList" class="audit-list"><p class="form-help"><span data-i18n="ui.4f265e1a">Belum ada log.</span></p></div></details>
+        <button id="saveOrchestrationButton" class="button button-primary" type="button"><span data-i18n="ui.13bdcddb">Simpan komponen & prioritas</span></button>
+      </section>
+
+      <section class="customizer-panel funeral-editor-panel" data-customizer-panel="funeral" data-access-key="panel:funeral">
+        <div class="panel-heading">
+          <div><p class="eyebrow"><span data-i18n="ui.e26f2479">Bereavement &amp; Funeral Prayer</span></p><h2><span data-i18n="ui.94496120">Kabar duka, Salat Jenazah, dan Salat Gaib</span></h2><p><span data-i18n="ui.1bd5e322">Satu event dapat berupa wafat individual, korban jamak, atau bencana. Admin tetap menentukan tindak lanjut; sistem tidak pernah memilih Salat Gaib secara otomatis.</span></p></div>
+          <div class="funeral-heading-actions"><button id="funeralNewEventButton" class="button button-primary" type="button"><span data-i18n="ui.2e2b1e38">Tambah event</span></button><button id="funeralEventReloadButton" class="button button-secondary" type="button"><span data-i18n="ui.1b827701">Muat ulang event</span></button></div>
+        </div>
+        <div class="funeral-workspace">
+          <aside class="funeral-event-browser" data-access-key="card:node-5b51cdd39f-32">
+            <div class="funeral-browser-heading"><h3><span data-i18n="ui.bf41ab27">Daftar event</span></h3><output id="funeralEventCount" class="funeral-event-count">0</output></div>
+            <label><span data-i18n="ui.5e71ed70">Cari event</span><input id="funeralEventSearch" type="search" placeholder="Nama atau lokasi" data-i18n-placeholder="ui.290bf8e6"></label>
+            <div id="funeralEventList" class="funeral-event-list"><p class="form-help"><span data-i18n="ui.b5d43ff2">Memuat event...</span></p></div>
+          </aside>
+          <div class="funeral-editor-main" data-funeral-view="data">
+            <nav class="funeral-workspace-tabs" aria-label="Bagian editor event" data-i18n-aria-label="ui.f309f4e8"><button class="is-active" type="button" data-funeral-view-button="data"><span data-i18n="ui.3e61e15d">Data event</span></button><button type="button" data-funeral-view-button="schedule"><span data-i18n="ui.8a7984ef">Jadwal tampil</span></button><button type="button" data-funeral-view-button="sequence"><span data-i18n="ui.1cdefa95">Sequence</span></button><button type="button" data-funeral-view-button="preview"><span data-i18n="ui.89e5e40b">Preview</span></button></nav>
+            <form id="funeralEventForm" class="funeral-event-form">
+              <input id="funeralEventKey" type="hidden">
+              <fieldset data-funeral-workspace="data" data-access-key="card:node-d7338e2b53-33"><legend><span data-i18n="ui.c739e791">1. Kejadian dan orang/korban</span></legend>
+                <div class="form-grid four">
+                  <label><span data-i18n="ui.209e30b3">Jenis kejadian</span><select id="funeralEventType"><option value="individual_death" data-i18n="ui.c14fb517">Wafat individual</option><option value="multiple_deaths" data-i18n="ui.f50d59f5">Wafat beberapa orang</option><option value="disaster_fatalities" data-i18n="ui.59dfbaf0">Bencana dengan korban jiwa</option><option value="other_fatal_incident" data-i18n="ui.39383d7f">Insiden fatal lainnya</option></select></label>
+                  <label id="funeralDeceasedNameLabel"><span data-i18n="ui.2496c064">Nama almarhum/almarhumah</span><input id="funeralDeceasedName" placeholder="Si Fulan"></label>
+                  <label><span data-i18n="ui.b08d44b0">Jenis kelamin korban</span><select id="funeralDeceasedGender"><option value="male" data-i18n="ui.6fa21c59">Satu laki-laki / almarhum</option><option value="female" data-i18n="ui.d47de18c">Satu perempuan / almarhumah</option><option value="male_plural" data-i18n="ui.a0a2fe1e">Beberapa laki-laki</option><option value="female_plural" data-i18n="ui.2b4bb75e">Beberapa perempuan</option><option value="mixed" data-i18n="ui.7e639f84">Kelompok campuran</option><option value="unknown" data-i18n="ui.62e4d7b4">Belum diketahui</option></select></label>
+                  <label id="funeralFatalityCountLabel" hidden><span data-i18n="ui.a721844e">Jumlah korban jiwa</span><input id="funeralFatalityCount" type="number" min="1"></label>
+                  <label><span data-i18n="ui.f95420f">Nama kejadian</span><input id="funeralEventName" placeholder="Contoh: Gempa Bumi" data-i18n-placeholder="ui.48ccb5d3"></label>
+                  <label><span data-i18n="ui.b825e5a9">Lokasi kejadian</span><input id="funeralEventLocation"></label>
+                  <label><span data-i18n="ui.fa9ab95e">Waktu wafat/kejadian</span><input id="funeralEventAt" type="datetime-local" step="1"></label>
+                  <label><span data-i18n="ui.846088b8">Informasi dilaporkan</span><input id="funeralReportedAt" type="datetime-local" step="1"></label>
+                  <label><span data-i18n="ui.acf782eb">Informasi diterima sistem</span><input id="funeralReceivedAt" type="datetime-local" step="1"></label>
+                  <label><span data-i18n="ui.6d0ef2c3">Informasi diverifikasi</span><input id="funeralVerifiedAt" type="datetime-local" step="1"></label>
+                  <label><span data-i18n="ui.96531f89">Timezone</span><select id="funeralTimezone"><option value="Asia/Jakarta">Asia/Jakarta (WIB)</option><option value="Asia/Makassar">Asia/Makassar (WITA)</option><option value="Asia/Jayapura">Asia/Jayapura (WIT)</option><option value="UTC">UTC</option></select></label>
+                </div>
+                <section id="funeralDeceasedPhotoField" class="funeral-photo-field" aria-labelledby="funeralPhotoTitle" data-access-key="card:funeralDeceasedPhotoField">
+                  <input id="funeralDeceasedPhotoMediaId" type="hidden">
+                  <input id="funeralDeceasedPhotoUrl" type="hidden">
+                  <input id="funeralDeceasedPhotoName" type="hidden">
+                  <div class="funeral-photo-copy">
+                    <strong id="funeralPhotoTitle"><span data-i18n="ui.76d63bd">Foto almarhum/almarhumah (opsional)</span></strong>
+                    <p><span data-i18n="ui.860bf742">Foto tidak wajib. Pilih dan periksa preview dahulu; foto baru tampil pada laman Kabar Duka setelah di-upload, dikonfirmasi, dan event disimpan.</span></p>
+                  </div>
+                  <div id="funeralPhotoPreview" class="funeral-photo-preview is-empty">
+                    <img id="funeralPhotoPreviewImage" alt="Preview foto almarhum/almarhumah" hidden>
+                    <span id="funeralPhotoPreviewEmpty"><span data-i18n="ui.41a87cd4">Belum ada foto. Overlay otomatis memakai layout teks penuh.</span></span>
+                    <small id="funeralPhotoPreviewMeta"></small>
+                  </div>
+                  <div class="funeral-photo-controls">
+                    <label class="funeral-photo-picker"><span data-i18n="ui.e13b272b">Pilih foto</span>
+                      <input id="funeralDeceasedPhotoInput" type="file" accept="image/jpeg,image/png,image/webp">
+                    </label>
+                    <button id="funeralPhotoUploadButton" class="button button-secondary" type="button" disabled><span data-i18n="ui.d485a44f">Upload &amp; gunakan</span></button>
+                    <button id="funeralPhotoRemoveButton" class="button button-danger" type="button" disabled><span data-i18n="ui.160f2300">Hapus foto</span></button>
+                    <label class="check-line"><input id="funeralDeceasedPhotoEnabled" type="checkbox" disabled> <span data-i18n="ui.ff9d8eea">Tampilkan foto pada overlay</span></label>
+                  </div>
+                  <p id="funeralPhotoStatus" class="form-help" role="status" aria-live="polite"><span data-i18n="ui.38767f5">JPEG, PNG, atau WebP; maksimum 8 MB.</span></p>
+                </section>
+              </fieldset>
+
+              <fieldset data-funeral-workspace="data" data-access-key="card:node-d7338e2b53-35"><legend><span data-i18n="ui.4f896897">2. Disemayamkan dan pemakaman</span></legend>
+                <div class="form-grid four">
+                  <label><span data-i18n="ui.581cd7ed">Alamat/tempat disemayamkan</span><input id="funeralWakeLocation"></label>
+                  <label><span data-i18n="ui.bc6b9c15">Mulai disemayamkan</span><input id="funeralWakeStartsAt" type="datetime-local" step="1"></label>
+                  <label><span data-i18n="ui.ce34f7e2">Waktu pemakaman</span><input id="funeralBurialAt" type="datetime-local" step="1"></label>
+                  <label><span data-i18n="ui.bd89369f">Lokasi pemakaman</span><input id="funeralBurialLocation"></label>
+                </div>
+              </fieldset>
+
+              <fieldset data-funeral-workspace="data" data-access-key="card:node-d7338e2b53-36"><legend><span data-i18n="ui.a525945">3. Tindak lanjut</span></legend>
+                <div class="form-grid four">
+                  <label><span data-i18n="ui.6f35b956">Tindak lanjut</span><select id="funeralAction"><option value="janazah" data-i18n="ui.45399ba1">Salat Jenazah</option><option value="ghaib" data-i18n="ui.1f441295">Salat Gaib</option><option value="information" data-i18n="ui.e2a8063c">Informasi saja</option></select></label>
+                  <label id="funeralWillPrayerLabel" class="check-line"><input id="funeralWillPrayer" type="checkbox"> <span data-i18n="ui.a2eecb8d">Jenazah akan disholatkan di lokasi ini</span></label>
+                  <label><span data-i18n="ui.7ad4a724">Metode fiqih</span><select id="funeralMethod"></select></label>
+                  <label class="check-line"><input id="funeralShowGuide" type="checkbox" checked> <span data-i18n="ui.8c292619">Tampilkan panduan ilustrasi</span></label>
+                </div>
+                <p id="funeralMethodNotice" class="funeral-method-notice" role="status"></p>
+                <div id="funeralJanazahFields" class="conditional-fields form-grid four">
+                  <label><span data-i18n="ui.1255503c">Nama masjid</span><input id="funeralPrayerMosqueName"></label>
+                  <label><span data-i18n="ui.6f907753">Alamat/lokasi Salat Jenazah</span><input id="funeralPrayerLocation"></label>
+                  <label><span data-i18n="ui.5223e650">Waktu persiapan</span><input id="funeralPreparationAt" type="datetime-local" step="1"></label>
+                  <label><span data-i18n="ui.76093e27">Waktu Salat Jenazah</span><input id="funeralPrayerAt" type="datetime-local" step="1"></label>
+                </div>
+                <div id="funeralGhaibFields" class="conditional-fields form-grid four" hidden>
+                  <label><span data-i18n="ui.2e06d238">Pelaksanaan</span><select id="funeralGhaibMode"><option value="congregational" data-i18n="ui.795104ec">Berjamaah</option><option value="individual" data-i18n="ui.65b7ad2b">Sendiri</option><option value="both" data-i18n="ui.aa970cf3">Berjamaah atau sendiri</option></select></label>
+                  <label id="funeralGhaibLocationLabel"><span data-i18n="ui.612256a1">Tempat berjamaah</span><input id="funeralGhaibLocation"></label>
+                  <label><span data-i18n="ui.4e53fdb3">Waktu Salat Gaib</span><input id="funeralGhaibAt" type="datetime-local" step="1"></label>
+                </div>
+              </fieldset>
+
+              <fieldset data-funeral-workspace="schedule" data-access-key="card:node-cea8c76e71-37"><legend><span data-i18n="ui.5e752e0b">4. Publikasi, sumber, dan verifikasi</span></legend>
+                <div class="form-grid four">
+                  <label><span data-i18n="ui.c7283610">Mode durasi</span><select id="funeralDurationMode"><option value="24h_from_received" data-i18n="ui.67b02f08">24 jam sejak diterima</option><option value="24h_from_start" data-i18n="ui.76e7a510">24 jam sejak waktu tertentu</option><option value="custom_start_end" data-i18n="ui.4b59a4a8">Waktu mulai/akhir khusus</option></select></label>
+                  <label><span data-i18n="ui.8d4ae927">Durasi (menit)</span><input id="funeralDurationMinutes" type="number" min="1" max="525600" value="1440"></label>
+                  <label><span data-i18n="ui.c1a3c4a">Mulai tampil</span><input id="funeralPublishFrom" type="datetime-local" step="1"></label>
+                  <label><span data-i18n="ui.4a1c4fc5">Berhenti tampil</span><input id="funeralPublishUntil" type="datetime-local" step="1"></label>
+                  <label><span data-i18n="ui.5ef20f">Status</span><select id="funeralStatus"><option value="draft" data-i18n="ui.1e6d35d0">Draft</option><option value="pending_verification" data-i18n="ui.f129d86a">Menunggu verifikasi</option><option value="verified" data-i18n="ui.a134c085">Terverifikasi</option><option value="scheduled" data-i18n="ui.e9909359">Terjadwal</option><option value="active" data-i18n="ui.8b423ee8">Aktif</option><option value="expired" data-i18n="ui.194d5bad">Berakhir</option><option value="cancelled" data-i18n="ui.b06dfc5e">Dibatalkan</option><option value="archived" data-i18n="ui.b8997d67">Diarsipkan</option></select></label>
+                  <label><span data-i18n="ui.4a89d732">Prioritas overlay</span><input id="funeralPriority" type="number" min="0" max="10000" value="650"></label>
+                  <label class="check-line"><input id="funeralInsertDuringFardhu" type="checkbox" checked> <span data-i18n="ui.7b75b563">Sisipkan saat rangkaian salat/ibadah</span></label>
+                  <label><span data-i18n="ui.e05195a4">Durasi setiap sisipan (detik)</span><input id="funeralInsertDurationSeconds" type="number" min="10" max="300" value="75"></label>
+                  <label><span data-i18n="ui.8c2505f6">Ulang setiap (menit)</span><input id="funeralInsertIntervalMinutes" type="number" min="1" max="120" value="5"></label>
+                  <label><span data-i18n="ui.2d81b889">Sumber informasi</span><input id="funeralSourceName"></label>
+                  <label><span data-i18n="ui.c26104b">URL sumber HTTPS</span><input id="funeralSourceUrl" type="url" placeholder="https://..."></label>
+                  <label><span data-i18n="ui.640c2c71">Status sumber</span><select id="funeralSourceVerification"><option value="unverified" data-i18n="ui.e688c894">Belum diverifikasi</option><option value="source_verified" data-i18n="ui.7de0b23f">Sumber terverifikasi</option><option value="event_verified" data-i18n="ui.58be4c6">Kejadian terverifikasi</option><option value="admin_verified" data-i18n="ui.f31d552c">Diverifikasi admin</option></select></label>
+                  <label><span data-i18n="ui.d37047b8">Contact person</span><input id="funeralContactPerson"></label>
+                  <label class="wide-field"><span data-i18n="ui.6b4be2c5">Catatan</span><textarea id="funeralNotes" rows="3"></textarea></label>
+                </div>
+                <div id="funeralInsertPhaseFields" class="funeral-insert-settings">
+                  <strong><span data-i18n="ui.b195952c">Tampilkan sisipan pada fase:</span></strong>
+                  <div class="widget-checklist">
+                    <label><input type="checkbox" name="funeralInsertPhase" value="pre_adzan" checked> <span data-i18n="ui.998b0d49">Menuju adzan</span></label>
+                    <label><input type="checkbox" name="funeralInsertPhase" value="adzan"> <span data-i18n="ui.edc507b0">Saat adzan (opsional)</span></label>
+                    <label><input type="checkbox" name="funeralInsertPhase" value="iqamah" checked> <span data-i18n="ui.aadd6d06">Menunggu iqamah</span></label>
+                    <label><input type="checkbox" name="funeralInsertPhase" value="prayer" checked> <span data-i18n="ui.405045d1">Pelaksanaan salat</span></label>
+                    <label><input type="checkbox" name="funeralInsertPhase" value="qiyamul_lail" checked> <span data-i18n="ui.8e9495b7">Waktu Qiyamul Lail</span></label>
+                    <label><input type="checkbox" name="funeralInsertPhase" value="syuruq" checked> <span data-i18n="ui.ab4242a6">Waktu Syuruq</span></label>
+                    <label><input type="checkbox" name="funeralInsertPhase" value="dhuha_awwal" checked> Dhuha Awwal</label>
+                    <label><input type="checkbox" name="funeralInsertPhase" value="dhuha_wustha" checked> Dhuha Wustha</label>
+                    <label><input type="checkbox" name="funeralInsertPhase" value="dhuha_awwabin" checked> Dhuha Awwabin</label>
+                  </div>
+                  <p class="form-help"><span data-i18n="ui.cef86ec3">Default: tampil 75 detik pada awal fase dan setiap 5 menit. Di luar rangkaian fardhu, event tetap dapat tampil selama periode publikasinya. Ubah angka atau fase sesuai kebutuhan.</span></p>
+                </div>
+              </fieldset>
+
+              <fieldset class="funeral-presentation-settings" data-funeral-workspace="schedule" data-access-key="card:node-3e649ecb1a-38"><legend><span data-i18n="ui.9225edf4">5. Kapan presentasi boleh tampil</span></legend>
+                <div class="form-grid four">
+                  <label class="check-line"><input id="funeralPresentationEnabled" type="checkbox" checked> <span data-i18n="ui.23575c5a">Aktifkan informasi Salat Jenazah/Gaib</span></label>
+                  <label><span data-i18n="ui.81b3fb44">Ketika terganggu fase penting</span><select id="funeralInterruptionPolicy"><option value="finish_scene_pause" data-i18n="ui.aa51efa2">Selesaikan laman, lalu jeda (aman)</option><option value="resume_later" data-i18n="ui.953d4877">Jeda sekarang, lanjutkan nanti</option><option value="continue" data-i18n="ui.51c1f83b">Tetap lanjut</option></select></label>
+                  <label><span data-i18n="ui.acf03b12">Aksi setelah seluruh laman</span><select id="funeralCompletionAction"><option value="return_normal" data-i18n="ui.c5f337f5">Kembali ke index normal</option><option value="repeat_information" data-i18n="ui.907d19d1">Ulangi kabar duka</option><option value="repeat_tutorial" data-i18n="ui.5e59aaf7">Ulangi tutorial</option><option value="next_playlist" data-i18n="ui.4b919ff5">Lanjut playlist berikutnya</option><option value="stop" data-i18n="ui.26809bba">Berhenti</option></select></label>
+                  <label class="check-line"><input id="funeralPersistentPrayerEnabled" type="checkbox" checked> <span data-i18n="ui.d0777536">Tampilkan informasi salat persisten</span></label>
+                </div>
+                <div class="funeral-rule-columns">
+                  <section data-access-key="card:node-deee717040-39"><h4><span data-i18n="ui.64775c07">Kapan boleh ditampilkan?</span></h4><div id="funeralAllowedContexts" class="widget-checklist compact">
+                    <label><input type="checkbox" name="funeralAllowedContext" value="anytime"> <span data-i18n="ui.7dcd1ffd">Kapan saja</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="outside_fardhu" checked> <span data-i18n="ui.25159bac">Di luar rangkaian fardhu</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="before_fardhu" checked> <span data-i18n="ui.f64703b9">Sebelum masuk waktu fardhu</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="pre_adzan" checked> <span data-i18n="ui.9703e64">Countdown menuju adzan</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="adzan"> <span data-i18n="ui.9f762952">Saat adzan</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="iqamah" checked> <span data-i18n="ui.c278196b">Setelah adzan / menuju iqamah</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="prayer"> <span data-i18n="ui.ca53e0c6">Saat pelaksanaan salat</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="after_prayer" checked> <span data-i18n="ui.978ba335">Setelah pelaksanaan salat</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="qiyamul_lail" checked> <span data-i18n="ui.8e9495b7">Waktu Qiyamul Lail</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="syuruq" checked> <span data-i18n="ui.ab4242a6">Waktu Syuruq</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="dhuha_awwal" checked> Dhuha Awwal</label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="dhuha_wustha" checked> Dhuha Wustha</label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="dhuha_awwabin" checked> Dhuha Awwabin</label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="sequence_complete"> <span data-i18n="ui.6f481515">Setelah seluruh rangkaian selesai</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="specific_time"> <span data-i18n="ui.e7021894">Pada waktu tertentu</span></label>
+                    <label><input type="checkbox" name="funeralAllowedContext" value="custom_rule"> <span data-i18n="ui.70e0449f">Custom rule</span></label>
+                  </div></section>
+                  <section data-access-key="card:node-deee717040-40"><h4><span data-i18n="ui.952343e1">Fase terlindungi</span></h4><p class="form-help"><span data-i18n="ui.f70f8a16">Laman informasi tidak mengganggu fase berikut kecuali override dicentang atau kebijakan “Tetap lanjut” dipilih.</span></p><div class="protected-phase-grid">
+                    <strong><span data-i18n="ui.743a9d0c">Fase</span></strong><strong><span data-i18n="ui.cbd3ad32">Protected</span></strong><strong><span data-i18n="ui.108336e7">Izinkan override</span></strong>
+                    <span>Adzan</span><input type="checkbox" name="funeralProtectedPhase" value="adzan" checked><input type="checkbox" name="funeralProtectedOverride" value="adzan">
+                    <span>Iqamah</span><input type="checkbox" name="funeralProtectedPhase" value="iqamah" checked><input type="checkbox" name="funeralProtectedOverride" value="iqamah">
+                    <span><span data-i18n="ui.405045d1">Pelaksanaan salat</span></span><input type="checkbox" name="funeralProtectedPhase" value="prayer" checked><input type="checkbox" name="funeralProtectedOverride" value="prayer">
+                    <span><span data-i18n="ui.c7696719">Khutbah/Salat Jumat</span></span><input type="checkbox" name="funeralProtectedPhase" value="friday" checked><input type="checkbox" name="funeralProtectedOverride" value="friday">
+                    <span><span data-i18n="ui.d89a0124">Event critical lain</span></span><input type="checkbox" name="funeralProtectedPhase" value="critical"><input type="checkbox" name="funeralProtectedOverride" value="critical">
+                  </div></section>
+                  <section data-access-key="card:node-deee717040-41"><h4><span data-i18n="ui.ef46735c">Informasi salat yang tetap terlihat</span></h4><div id="funeralPersistentFields" class="widget-checklist compact">
+                    <label><input type="checkbox" name="funeralPersistentField" value="prayer_name" checked> <span data-i18n="ui.639ff1a1">Nama salat berikutnya</span></label>
+                    <label><input type="checkbox" name="funeralPersistentField" value="adzan_time" checked> <span data-i18n="ui.747bef35">Jam adzan</span></label>
+                    <label><input type="checkbox" name="funeralPersistentField" value="actual_time" checked> <span data-i18n="ui.84dd4fa5">Waktu aktual</span></label>
+                    <label><input type="checkbox" name="funeralPersistentField" value="remaining" checked> <span data-i18n="ui.154c49b">Remaining time</span></label>
+                  </div><div class="form-grid two"><label><span data-i18n="ui.f2caaea">Mulai waktu tertentu</span><input id="funeralSpecificTimeStart" type="time" step="60"></label><label><span data-i18n="ui.6a02af25">Selesai</span><input id="funeralSpecificTimeEnd" type="time" step="60"></label></div><label><span data-i18n="ui.fb774b1">Custom rule aman</span><input id="funeralCustomRule" placeholder="weekday=5;time=17:00-19:00"></label></section>
+                </div>
+                <h4><span data-i18n="ui.2f4254be">Aturan per salat</span></h4>
+                <div class="funeral-prayer-rule-wrap"><table class="funeral-prayer-rule-table"><thead><tr><th><span data-i18n="ui.2bdc79fa">Salat</span></th><th><span data-i18n="ui.2da38353">Boleh</span></th><th><span data-i18n="ui.13a102eb">Menit sebelum</span></th><th><span data-i18n="ui.9d3d330a">Sebelum</span></th><th><span data-i18n="ui.998b0d49">Menuju adzan</span></th><th>Adzan</th><th>Iqamah</th><th><span data-i18n="ui.2e06d238">Pelaksanaan</span></th><th><span data-i18n="ui.b0a24ccb">Setelah</span></th><th><span data-i18n="ui.ca6d6db2">Menit setelah</span></th></tr></thead><tbody id="funeralPrayerRuleBody"></tbody></table></div>
+              </fieldset>
+
+              <fieldset class="funeral-sequence-editor" data-funeral-workspace="sequence" data-access-key="card:node-14cc8f801d-42"><legend><span data-i18n="ui.3f28f374">6. Overlay Presentation Sequence</span></legend>
+                <p class="form-help"><span data-i18n="ui.6a7eaf2">Satu laman menyampaikan satu informasi utama. Urutan, isi, media, dan durasi berikut disimpan di SQL dan dijalankan oleh universal overlay engine pada index.html.</span></p>
+                <div class="funeral-sequence-toolbar">
+                  <div class="segmented-control" role="group" aria-label="Preset presentasi" data-i18n-aria-label="ui.dff65cdc"><button type="button" data-funeral-preset="short"><span data-i18n="ui.e36f6fba">Short</span></button><button type="button" data-funeral-preset="standard" class="is-active"><span data-i18n="ui.ea1679c">Standard</span></button><button type="button" data-funeral-preset="full"><span data-i18n="ui.fe009937">Full</span></button><button type="button" data-funeral-preset="custom"><span data-i18n="ui.ce832a56">Custom</span></button></div>
+                  <label class="check-line"><input id="funeralAutoAdjustDuration" type="checkbox" checked> <span data-i18n="ui.c945f6d3">Auto Adjust Duration</span></label>
+                  <label><span data-i18n="ui.feb1daf3">Batas maksimal (detik)</span><input id="funeralMaximumDuration" type="number" min="30" max="86400" value="420"></label>
+                  <label><span data-i18n="ui.d17f2838">Jika melebihi batas</span><select id="funeralOverflowPolicy"><option value="auto_optimize" data-i18n="ui.ebfced4d">Auto Optimize</option><option value="reduce_optional" data-i18n="ui.ce9dae76">Kurangi laman opsional</option><option value="short_mode" data-i18n="ui.38b2a19f">Gunakan Short mode</option><option value="extend_duration" data-i18n="ui.d8ead215">Perpanjang durasi</option></select></label>
+                  <button id="funeralOptimizeButton" class="button button-secondary" type="button"><span data-i18n="ui.510d92d9">Optimalkan sekarang</span></button>
+                </div>
+                <div class="widget-checklist funeral-content-options" aria-label="Konten yang ditampilkan" data-i18n-aria-label="ui.65c61321"><label><input id="funeralShowLawScenes" type="checkbox" checked> <span data-i18n="ui.d5804e51">Hukum</span></label><label><input id="funeralShowEvidenceScenes" type="checkbox" checked> <span data-i18n="ui.23c2fd45">Dalil/referensi</span></label><label><input id="funeralShowArabic" type="checkbox" checked> <span data-i18n="ui.8acbaf9">Arab</span></label><label><input id="funeralShowLatin" type="checkbox" checked> <span data-i18n="ui.13ebca01">Latin</span></label><label><input id="funeralShowTranslation" type="checkbox" checked> <span data-i18n="ui.118c7579">Arti</span></label></div>
+                <div class="funeral-duration-summary"><span><span data-i18n="ui.19c2ba91">Total Presentation Duration</span></span><strong id="funeralTotalDuration">00:00</strong><span id="funeralDurationWarning" class="form-help"></span></div>
+                <section class="funeral-chapter-duration-panel" aria-labelledby="funeralChapterDurationTitle" data-access-key="card:section-6"><h4 id="funeralChapterDurationTitle"><span data-i18n="ui.a3a6f19e">Durasi per bagian</span></h4><p class="form-help"><span data-i18n="ui.d5fe909f">Isi target detik untuk membagi durasi seluruh sublaman dalam bagian secara proporsional menurut bobot, dengan batas minimum dan maksimum tetap dijaga. Kosongkan untuk memakai durasi laman.</span></p><div id="funeralChapterDurations" class="funeral-chapter-durations"></div></section>
+                <div id="funeralSceneTimeline" class="funeral-scene-timeline" aria-label="Urutan laman informasi" data-i18n-aria-label="ui.a35e4a6d"></div>
+              </fieldset>
+              <div class="form-actions funeral-form-actions">
+                <button id="funeralSaveEventButton" class="button button-primary" type="submit"><span data-i18n="ui.cdada88d">Buat event</span></button>
+                <button id="funeralPreviewButton" class="button button-secondary" type="button"><span data-i18n="ui.e322e12f">Preview event</span></button>
+                <button id="funeralDuplicateEventButton" class="button button-secondary" type="button"><span data-i18n="ui.b9db7b4f">Duplikat</span></button>
+                <button id="funeralSampleButton" class="button button-secondary" type="button"><span data-i18n="ui.32b7806d">Isi contoh Si Fulan</span></button>
+                <button id="funeralMassSampleButton" class="button button-secondary" type="button"><span data-i18n="ui.dec9bb65">Contoh bencana 125 korban</span></button>
+                <button id="funeralArchiveButton" class="button button-danger" type="button"><span data-i18n="ui.72f97590">Arsipkan</span></button>
+                <button id="funeralDeleteEventButton" class="button button-danger" type="button"><span data-i18n="ui.ef69177c">Hapus permanen</span></button>
+              </div>
+              <p id="funeralEditorStatus" class="admin-status" role="status" aria-live="polite"><span data-i18n="ui.2ef6b603">Belum ada event dipilih.</span></p>
+            </form>
+
+            <section class="funeral-preview" data-funeral-workspace="preview" aria-labelledby="funeralPreviewTitle" data-access-key="card:node-2ae5114cfa-44">
+              <div class="panel-heading subheading"><div><p class="eyebrow"><span data-i18n="ui.f7333fa6">Preview khusus</span></p><h3 id="funeralPreviewTitle"><span data-i18n="ui.64c3649a">Informasi dan playback panduan</span></h3></div><span id="funeralRealtimeStatus" class="funeral-realtime-status"><span data-i18n="ui.95d0d94c">Menghubungkan realtime...</span></span></div>
+              <article id="funeralNoticePreview" class="funeral-notice-preview" data-access-key="card:funeralNoticePreview"></article>
+              <section class="funeral-scene-simulator" aria-label="Preview Simulation satu viewport" data-access-key="card:node-ed3789c162-46">
+                <div class="funeral-simulation-context"><span><span data-i18n="ui.84b31d07">Simulasi: 17:30</span></span><span>Maghrib: 17:48</span><span>Remaining: 18 menit</span></div>
+                <article id="funeralScenePreview" class="funeral-scene-preview" data-access-key="card:funeralScenePreview"><p class="form-help"><span data-i18n="ui.21a2493a">Laman informasi akan tampil setelah data atau contoh diisi.</span></p></article>
+                <div class="funeral-playback-controls"><button id="funeralScenePrevious" class="button button-secondary" type="button"><span data-i18n="ui.2d104cd">Laman sebelumnya</span></button><button id="funeralScenePlayPause" class="button button-primary" type="button"><span data-i18n="ui.6389e2d4">Putar laman</span></button><button id="funeralSceneNext" class="button button-secondary" type="button"><span data-i18n="ui.1f73536">Laman berikutnya</span></button><button id="funeralSceneRestart" class="button button-secondary" type="button"><span data-i18n="ui.a8f56312">Mulai lagi</span></button></div>
+              </section>
+              <div id="funeralGuidePreview" class="funeral-guide-preview">
+                <div class="funeral-guide-media"><img id="funeralGuideImage" alt="Ilustrasi gerakan salat jenazah"><span id="funeralGuideCounter"></span></div>
+                <div class="funeral-guide-copy">
+                  <p id="funeralGuideStage" class="eyebrow"></p><h4 id="funeralGuideMovement"></h4><p id="funeralGuideDescription"></p>
+                  <strong id="funeralGuideReadingTitle"></strong><p id="funeralGuideArabic" class="funeral-arabic" lang="ar" dir="rtl"></p>
+                  <p id="funeralGuideLatin" class="funeral-latin"></p><p id="funeralGuideTranslation"></p><p id="funeralGuideInstruction" class="form-help"></p>
+                  <a id="funeralGuideReference" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+              </div>
+              <div class="funeral-playback-controls" aria-label="Kontrol playback panduan" data-i18n-aria-label="ui.f0ac9fa4">
+                <button id="funeralPreviousStep" class="button button-secondary" type="button"><span data-i18n="ui.b3ddf62a">Sebelumnya</span></button><button id="funeralPlayPause" class="button button-primary" type="button"><span data-i18n="ui.5775d95d">Putar</span></button><button id="funeralNextStep" class="button button-secondary" type="button"><span data-i18n="ui.c4f4ccf1">Berikutnya</span></button><button id="funeralRestart" class="button button-secondary" type="button"><span data-i18n="ui.8e8a256f">Ulang dari awal</span></button>
+                <label class="check-line"><input id="funeralRepeat" type="checkbox" checked> <span data-i18n="ui.69dfc72f">Ulangi</span></label><label class="check-line"><input id="funeralAutoplay" type="checkbox" checked> <span data-i18n="ui.2e01f5b1">Autoplay</span></label>
+                <label><span data-i18n="ui.44bb2225">Kecepatan</span><select id="funeralPlaybackSpeed"><option value="0.5">0,5x</option><option value="1" selected>1x</option><option value="1.5">1,5x</option><option value="2">2x</option></select></label>
+              </div>
+            </section>
+            <details data-funeral-workspace="preview" data-access-key="card:node-b7eb057433-48"><summary><span data-i18n="ui.4d3440de">Audit perubahan event</span></summary><div id="funeralAuditList" class="audit-list"><p class="form-help"><span data-i18n="ui.4f265e1a">Belum ada log.</span></p></div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="customizer-panel" data-customizer-panel="education" data-access-key="panel:education">
+        <div class="panel-heading">
+          <div><p class="eyebrow"><span data-i18n="ui.cc36e8fc">Playlist edukasi per kategori</span></p><h2><span data-i18n="ui.73ec23dc">Materi Ibadah</span></h2><p><span data-i18n="ui.c268f6ad">Materi khusus salat telah dihapus dari overlay. Materi lain tetap menggunakan dalil Al-Qur’an dan Hadis dari database bersama.</span></p></div>
+          <div class="form-actions"><button id="worshipEducationSaveButton" class="button button-primary" type="button"><span data-i18n="ui.e5602198">Simpan pengaturan</span></button><button id="worshipEducationRestoreButton" class="button button-danger" type="button"><span data-i18n="ui.43974be">Restore materi default</span></button></div>
+        </div>
+        <div class="worship-education-workspace">
+          <aside class="worship-education-settings" data-access-key="card:node-0398e1b222-50">
+            <fieldset data-access-key="card:node-9e0bc9903a-51"><legend><span data-i18n="ui.2c1f97ec">Jadwal tampilan</span></legend>
+              <label class="check-line"><input id="worshipEducationEnabled" type="checkbox" checked> <span data-i18n="ui.2842e0e2">Aktif di index.html</span></label>
+              <label><span data-i18n="ui.d90e0b93">Jeda setelah seluruh kategori (menit)</span><input id="worshipEducationIntervalMinutes" type="number" min="1" max="1440" value="10"><small><span data-i18n="ui.1c044f7c">Setelah semua kategori selesai, dashboard utama tampil selama durasi ini.</span></small></label>
+              <label><span data-i18n="ui.294af72f">Jeda antar kategori (menit)</span><input id="worshipEducationCategoryGapMinutes" type="number" min="0.2" max="60" step="0.1" value="1"></label>
+              <label><span data-i18n="ui.7647b994">Durasi cadangan per laman (detik)</span><input id="worshipEducationDurationSeconds" type="number" min="10" max="300" value="45"></label>
+              <label class="check-line"><input id="worshipEducationPausePrayer" type="checkbox" checked> <span data-i18n="ui.7f5d57cc">Jeda ketika overlay salat aktif</span></label>
+            </fieldset>
+            <fieldset data-access-key="card:node-9e0bc9903a-52"><legend><span data-i18n="ui.59d3ca17">Isi yang ditampilkan</span></legend>
+              <label class="check-line"><input id="worshipEducationShowEvidence" type="checkbox" checked> <span data-i18n="ui.ce6e9cd0">Tampilkan dalil rujukan di index.html</span></label>
+              <label class="check-line"><input id="worshipEducationShowArabic" type="checkbox" checked> <span data-i18n="ui.7e538e64">Teks Arab</span></label>
+              <label class="check-line"><input id="worshipEducationShowLatin" type="checkbox" checked> <span data-i18n="ui.13ebca01">Latin</span></label>
+              <label class="check-line"><input id="worshipEducationShowTranslation" type="checkbox" checked> <span data-i18n="ui.118c7579">Arti</span></label>
+              <label class="check-line"><input id="worshipEducationShowTranslationLabel" type="checkbox" checked> <span data-i18n="ui.28e08b5b">Label “Artinya:” / “Meaning:”</span></label>
+              <label class="check-line"><input id="worshipEducationShowPageIndicator" type="checkbox" checked> <span data-i18n="ui.1bcbfd83">Tampilkan indikator laman dan sisa waktu</span></label>
+              <p class="form-help"><span data-i18n="ui.5d2ef6e4">Urutan kategori diselesaikan dari atas ke bawah. Atur detik per laman untuk menentukan panjang total pembahasan setiap kategori.</span></p>
+              <div id="worshipEducationSectionChecks" class="widget-checklist compact worship-education-section-settings"></div>
+            </fieldset>
+            <details class="worship-education-card-style-settings" data-access-key="card:node-7dbc0a8a47-53"><summary><span data-i18n="ui.e8842f3d">Style card materi dan override bagian</span></summary><p class="form-help"><span data-i18n="ui.40f0adf7">Style overlay materi mengalahkan default global. Override bagian mengalahkan style overlay.</span></p><div id="worshipEducationCardStyleEditor"></div></details>
+            <p id="worshipEducationStatus" class="admin-status" role="status" aria-live="polite"><span data-i18n="ui.84650646">Memuat materi...</span></p>
+          </aside>
+          <section class="worship-education-catalog" aria-labelledby="worshipEducationCatalogTitle" data-access-key="card:node-62c49e7880-54">
+            <div class="worship-education-toolbar"><div><h3 id="worshipEducationCatalogTitle"><span data-i18n="ui.6bf5c61d">Katalog materi tersimpan</span></h3><p id="worshipEducationSummary" class="form-help"></p><button id="worshipEducationNewButton" class="button button-primary button-small" type="button"><span data-i18n="ui.41e50955">+ Tambah materi</span></button></div><label><span data-i18n="ui.7786cc5c">Cari materi</span><input id="worshipEducationSearch" type="search" placeholder="Contoh: iman, zakat, puasa" data-i18n-placeholder="ui.80dd963e"></label><label><span data-i18n="ui.95bed9df">Bagian</span><select id="worshipEducationFilter"><option value="" data-i18n="ui.c216d1c0">Semua bagian</option></select></label></div>
+            <div id="worshipEducationSlideList" class="worship-education-slide-list"></div>
+          </section>
+        </div>
+        <dialog id="worshipEducationSlideDialog" class="worship-education-dialog" aria-labelledby="worshipEducationDialogTitle">
+          <form id="worshipEducationSlideForm">
+            <header><div><p class="eyebrow"><span data-i18n="ui.2ce1d138">CRUD materi berbasis SQL</span></p><h3 id="worshipEducationDialogTitle"><span data-i18n="ui.6676f03">Tambah materi ibadah</span></h3><p class="form-help"><span data-i18n="ui.d4b0b1aa">Isi materi dan dalil tampil di index.html. Status peninjauan hanya terlihat di halaman konfigurasi ini.</span></p></div><button id="worshipEducationDialogClose" class="button button-secondary" type="button" aria-label="Tutup editor" data-i18n-aria-label="ui.9a33a2a0"><span data-i18n="ui.d44581ff">Tutup</span></button></header>
+            <input id="worshipEducationOriginalKey" type="hidden">
+            <div class="worship-education-editor-body">
+            <div class="worship-education-form-scroll">
+              <details open data-access-key="card:node-f8fb1f5abf-55"><summary><span data-i18n="ui.7337fe01">Identitas dan urutan laman</span></summary><div class="worship-education-form-grid">
+                <label><span data-i18n="ui.8d4ea11b">Kunci materi</span><input id="worshipEducationSlideKey" required maxlength="160" pattern="[a-z0-9][a-z0-9._:-]*" placeholder="contoh-rukun-baru"></label>
+                <label><span data-i18n="ui.95bed9df">Bagian</span><select id="worshipEducationSlideSection" required><option value="rukun_iman" data-i18n="ui.c48fa183">Rukun Iman</option><option value="rukun_islam" data-i18n="ui.55aa8d90">Rukun Islam</option><option value="wudhu" data-i18n="ui.92cecb18">Wudhu</option><option value="tayammum">Tayammum</option><option value="puasa" data-i18n="ui.91c59731">Puasa</option><option value="zakat">Zakat</option><option value="haji" data-i18n="ui.69dc2823">Haji</option><option value="doa_dzikir" data-i18n="ui.9feea895">Doa dan Dzikir</option><option value="materi_lain" data-i18n="ui.2c9af018">Materi Ibadah Lain</option></select></label>
+                <label><span data-i18n="ui.ef4e181b">Bab/kategori</span><input id="worshipEducationSlideChapter" required maxlength="80" value="materi"></label>
+                <label><span data-i18n="ui.e3d81e5d">Tipe</span><select id="worshipEducationSlideType"><option value="information" data-i18n="ui.56c07293">Informasi</option><option value="evidence" data-i18n="ui.b6df8101">Dalil pengantar</option><option value="principle" data-i18n="ui.b3a50c34">Prinsip</option><option value="methodology" data-i18n="ui.bd72399a">Metodologi</option><option value="condition" data-i18n="ui.18a2de33">Syarat</option><option value="pillar" data-i18n="ui.d12b88c6">Rukun</option><option value="movement" data-i18n="ui.4ab4ed6a">Gerakan</option><option value="reading" data-i18n="ui.8a943973">Bacaan</option></select></label>
+                <label><span data-i18n="ui.52e5a4d4">Urutan</span><input id="worshipEducationSlideOrder" type="number" min="1" max="1000000" required></label>
+                <label class="check-line"><input id="worshipEducationSlideEnabled" type="checkbox" checked> <span data-i18n="ui.896fe216">Materi aktif</span></label>
+              </div></details>
+              <details open data-access-key="card:node-f8fb1f5abf-56"><summary><span data-i18n="ui.be7ae846">Isi lengkap per laman</span></summary><div class="worship-education-form-grid">
+                <label><span data-i18n="ui.405eeb27">Judul Indonesia</span><input id="worshipEducationTitleId" required maxlength="255"></label><label><span data-i18n="ui.aee1e70d">Judul English</span><input id="worshipEducationTitleEn" maxlength="255"></label>
+                <label class="wide"><span data-i18n="ui.4e08102b">Subjudul/dalil ringkas Indonesia</span><textarea id="worshipEducationSubtitleId" maxlength="500" rows="2"></textarea></label><label class="wide"><span data-i18n="ui.db7aa138">Subtitle English</span><textarea id="worshipEducationSubtitleEn" maxlength="500" rows="2"></textarea></label>
+                <label class="wide"><span data-i18n="ui.cad675eb">Penjabaran lengkap Indonesia</span><textarea id="worshipEducationBodyId" maxlength="20000" rows="6"></textarea></label><label class="wide"><span data-i18n="ui.a59b8e1c">Full explanation English</span><textarea id="worshipEducationBodyEn" maxlength="20000" rows="6"></textarea></label>
+                <label class="wide"><span data-i18n="ui.c11d8eb5">Petunjuk praktik Indonesia</span><textarea id="worshipEducationInstructionId" maxlength="20000" rows="3"></textarea></label><label class="wide"><span data-i18n="ui.e664d3a2">Practice instruction English</span><textarea id="worshipEducationInstructionEn" maxlength="20000" rows="3"></textarea></label>
+              </div></details>
+              <details data-access-key="card:node-53c78ee593-57"><summary><span data-i18n="ui.1b7f729a">Bacaan, latin, arti, dan media</span></summary><div class="worship-education-form-grid">
+                <label class="wide"><span data-i18n="ui.7e538e64">Teks Arab</span><textarea id="worshipEducationArabic" maxlength="20000" rows="3" dir="rtl"></textarea></label><label class="wide"><span data-i18n="ui.13ebca01">Latin</span><textarea id="worshipEducationLatin" maxlength="20000" rows="3"></textarea></label>
+                <label class="wide"><span data-i18n="ui.14446f4b">Arti Indonesia</span><textarea id="worshipEducationTranslationId" maxlength="20000" rows="3"></textarea></label><label class="wide"><span data-i18n="ui.9e4fb4ef">Translation English</span><textarea id="worshipEducationTranslationEn" maxlength="20000" rows="3"></textarea></label>
+                <label class="wide"><span data-i18n="ui.54dc1b6f">Path ilustrasi opsional</span><input id="worshipEducationMediaPath" maxlength="1000" placeholder="assets/images/..."></label>
+                <label class="wide">Background index.html<input id="worshipEducationBackgroundPath" maxlength="1000" value="assets/images/bg/main-bg.png" required><small><span data-i18n="ui.526bd60">Default semua materi: main_background.png. Nilai disimpan per materi di SQL.</span></small></label>
+              </div></details>
+              <details open data-access-key="card:node-f8fb1f5abf-58"><summary><span data-i18n="ui.cbd37c16">Daftar dalil dan peninjauan administrator</span></summary><div class="worship-education-reference-editor">
+                <div class="worship-education-reference-heading"><p class="form-help"><span data-i18n="ui.c807e4ec">Pilih Al-Qur’an, Hadis, Ijma, Qiyas, atau sumber lain. Jika satu riwayat memiliki pengantar, pertanyaan, dan jawaban, masukkan sebagai beberapa block di dalam satu evidence yang sama. Isi Indonesia dan English disimpan berpasangan; index.html hanya menampilkan bahasa aktif.</span></p><button id="worshipEducationAddReference" class="button button-secondary button-small" type="button"><span data-i18n="ui.22f3af74">+ Tambah evidence</span></button></div>
+                <section class="worship-islamic-db-picker" aria-labelledby="worshipIslamicDbPickerTitle" data-access-key="card:node-8410114546-59">
+                  <header class="worship-source-picker-header"><div><strong id="worshipIslamicDbPickerTitle"><span data-i18n="ui.bd5ec607">Sumber materi dari database Al-Qur’an, Tafsir, dan Hadis</span></strong><p class="form-help"><span data-i18n="ui.3c0de431">Referensi internal menjadi identitas utama. Snapshot hanya cache offline; perubahan sumber ditandai dan override manual tidak ditimpa.</span></p></div><span id="worshipIslamicPickerConnectivity" class="worship-source-connectivity"><span data-i18n="ui.12823964">Memeriksa database…</span></span></header>
+                  <input id="worshipIslamicReferenceType" type="hidden" value="manual">
+                  <nav class="worship-source-tabs" aria-label="Sumber materi" data-i18n-aria-label="ui.42fc524f">
+                    <button class="is-active" type="button" data-worship-source-tab="manual"><span data-i18n="ui.f819f303">Manual</span></button>
+                    <button type="button" data-worship-source-tab="quran">Al-Qur’an</button>
+                    <button type="button" data-worship-source-tab="tafsir">Tafsir</button>
+                    <button type="button" data-worship-source-tab="hadith"><span data-i18n="ui.1c8bf1b6">Hadis</span></button>
+                  </nav>
+                  <div class="worship-unified-search"><label><span data-i18n="ui.ee6a6a9c">Cari dalil / ayat / hadis / tafsir</span><input id="worshipIslamicUnifiedQuery" type="search" placeholder="Contoh: waktu salat" data-i18n-placeholder="ui.9e70f367"></label><button id="worshipIslamicUnifiedSearch" class="button button-secondary button-small" type="button"><span data-i18n="ui.742523">Cari semua sumber</span></button></div>
+                  <section data-worship-source-panel="manual" data-access-key="card:node-c54f4268f4-60"><p class="form-help"><span data-i18n="ui.dda15816">Gunakan mode Manual hanya ketika sumber belum tersedia atau memang memerlukan override. Data lama tetap dapat diedit.</span></p><button id="worshipIslamicManualAddButton" class="button button-secondary button-small" type="button"><span data-i18n="ui.1f679f4a">+ Tambah evidence manual</span></button></section>
+                  <section data-worship-source-panel="quran" hidden data-access-key="card:node-d7bb357f6a-61">
+                    <label><span data-i18n="ui.5e4d70cc">Surah</span><select id="worshipIslamicSurahSelect"></select></label>
+                    <label><span data-i18n="ui.5e5f13b6">Ayat / beberapa ayat / range</span><input id="worshipIslamicAyahSelection" value="1" placeholder="Contoh: 1 atau 1,3-5" data-i18n-placeholder="ui.f3e13982"><small><span data-i18n="ui.1b9c62a6">Maksimal 15 ayat dalam satu evidence.</span></small></label>
+                  </section>
+                  <section data-worship-source-panel="tafsir" hidden data-access-key="card:node-55bf9205cc-62">
+                    <label><span data-i18n="ui.fd0596cf">Mufassir</span><select id="worshipIslamicTafsirAuthor"></select></label>
+                    <label><span data-i18n="ui.591abbbb">Kitab tafsir</span><select id="worshipIslamicTafsirWork"></select></label>
+                    <label><span data-i18n="ui.f95196b7">Bahasa</span><select id="worshipIslamicTafsirLanguage"></select></label>
+                    <label><span data-i18n="ui.5e4d70cc">Surah</span><select id="worshipIslamicTafsirSurah"></select></label>
+                    <label><span data-i18n="ui.94c16073">Ayat awal</span><input id="worshipIslamicTafsirStart" type="number" min="1" value="1"></label>
+                    <label><span data-i18n="ui.ea770205">Ayat akhir</span><input id="worshipIslamicTafsirEnd" type="number" min="1" value="1"></label>
+                    <label><span data-i18n="ui.fd03f685">Mode tafsir</span><select id="worshipIslamicTafsirDisplayMode"><option value="full" data-i18n="ui.63aa980a">Tampilkan penuh</option><option value="existing_summary" data-i18n="ui.240b5309">Ringkasan existing saja</option><option value="additional" data-i18n="ui.f179a3e1">Materi tambahan</option><option value="detail" data-i18n="ui.ec228196">Judul dan detail sumber saja</option></select><small><span data-i18n="ui.3fe137ac">Sistem tidak membuat ringkasan AI.</span></small></label>
+                  </section>
+                  <section data-worship-source-panel="hadith" hidden data-access-key="card:node-ea78441359-63">
+                    <label><span data-i18n="ui.8ecd2f9">Koleksi</span><select id="worshipIslamicHadithCollection"><option value="" data-i18n="ui.d9f181e0">Semua koleksi</option></select></label>
+                    <label><span data-i18n="ui.a1aebfc0">Keyword</span><input id="worshipIslamicHadithQuery" placeholder="Contoh: iman" data-i18n-placeholder="ui.2ed4c955"></label>
+                    <label><span data-i18n="ui.6e20b135">Isi teks</span><input id="worshipIslamicHadithContent" placeholder="Potongan matan atau terjemahan" data-i18n-placeholder="ui.dc1ccdce"></label>
+                    <label><span data-i18n="ui.33d09fb9">Nomor hadis</span><input id="worshipIslamicHadithNumber" placeholder="Contoh: 8" data-i18n-placeholder="ui.89cfb18"></label>
+                    <label><span data-i18n="ui.359aecf2">Kitab / book</span><input id="worshipIslamicHadithBook" placeholder="Contoh: Kitab al-Iman" data-i18n-placeholder="ui.3da87796"></label>
+                    <label><span data-i18n="ui.75ca1e13">Perawi / narrator</span><input id="worshipIslamicHadithNarrator" placeholder="Contoh: Umar bin al-Khaththab" data-i18n-placeholder="ui.fb300921"></label>
+                    <label><span data-i18n="ui.2f47f124">Tema</span><input id="worshipIslamicHadithTopic" placeholder="Contoh: rukun iman" data-i18n-placeholder="ui.d8245e6e"></label>
+                  </section>
+                  <button id="worshipIslamicFindButton" class="button button-secondary button-small" type="button" hidden><span data-i18n="ui.8c5d0e0a">Cari di sumber aktif</span></button>
+                  <div id="worshipIslamicSearchGroups" class="worship-source-results" aria-live="polite"></div>
+                  <label id="worshipIslamicResultLabel" hidden><span data-i18n="ui.b2a7a2ef">Hasil lama</span><select id="worshipIslamicResultSelect"></select></label>
+                  <section id="worshipIslamicSelection" class="worship-source-selection" hidden data-access-key="card:worshipIslamicSelection">
+                    <header><div><strong id="worshipIslamicSelectionTitle"><span data-i18n="ui.1004de6e">Sumber terpilih</span></strong><small id="worshipIslamicSelectionReference"></small></div><span id="worshipIslamicSelectionStatus" class="worship-link-status">linked</span></header>
+                    <p id="worshipIslamicSelectionExcerpt"></p>
+                    <div class="worship-source-field-options" aria-label="Komponen yang dimasukkan" data-i18n-aria-label="ui.9fc060ab">
+                      <label><input id="worshipIslamicIncludeArabic" type="checkbox" checked> <span data-i18n="ui.8acbaf9">Arab</span></label>
+                      <label><input id="worshipIslamicIncludeLatin" type="checkbox" checked> <span data-i18n="ui.13ebca01">Latin</span></label>
+                      <label><input id="worshipIslamicIncludeId" type="checkbox" checked> <span data-i18n="ui.14446f4b">Arti Indonesia</span></label>
+                      <label><input id="worshipIslamicIncludeEn" type="checkbox"> English</label>
+                      <label><input id="worshipIslamicIncludeTafsir" type="checkbox" checked> Tafsir</label>
+                      <label><input id="worshipIslamicIncludeReference" type="checkbox" checked> <span data-i18n="ui.81a16e86">Referensi</span></label>
+                      <label><input id="worshipIslamicIncludeIntro" type="checkbox" checked> <span data-i18n="ui.62a27fcf">Intro narration</span></label>
+                    </div>
+                    <div class="worship-component-order-editor">
+                      <label><span data-i18n="ui.191c9943">Preset urutan</span><select id="worshipIslamicComponentOrder"><option value="intro,arabic,transliteration,translation,reference" data-i18n="ui.3a21869e">Intro → Ayat → Latin → Arti → Sumber</option><option value="intro,arabic,transliteration,translation,tafsir,reference" data-i18n="ui.d846bc30">Intro → Arab → Latin → Arti → Tafsir → Sumber</option><option value="title,intro,arabic,transliteration,translation,reference" data-i18n="ui.da7ab71d">Judul → Riwayat → Arab → Latin → Arti → Referensi</option><option value="title,intro,tafsir,reference" data-i18n="ui.bb072314">Judul → Intro → Tafsir → Sumber</option><option value="title,reference,arabic,transliteration,translation,tafsir,intro" data-i18n="ui.f12899a">Judul → Sumber → Arab → Latin → Arti → Tafsir → Intro</option><option value="custom" data-i18n="ui.2ee7136f">Urutan kustom</option></select></label>
+                      <span class="form-help"><span data-i18n="ui.af6eeafe">Gunakan tombol naik/turun untuk menyusun urutan yang dipakai preview dan overlay.</span></span>
+                      <ol id="worshipIslamicComponentOrderList" class="worship-component-order-list" aria-label="Urutan komponen materi" data-i18n-aria-label="ui.6f152deb"></ol>
+                    </div>
+                    <label><span data-i18n="ui.d68d7327">Bahasa preview</span><select id="worshipIslamicPreviewLanguage"><option value="id">Indonesia</option><option value="en">English</option></select></label>
+                    <label><span data-i18n="ui.69ac3f1b">Intro Indonesia (opsional)</span><textarea id="worshipIslamicIntroId" rows="2" maxlength="4000" placeholder="Contoh: Rasulullah ﷺ menjawab:"></textarea></label>
+                    <label><span data-i18n="ui.d3c17a02">Introduction English (optional)</span><textarea id="worshipIslamicIntroEn" rows="2" maxlength="4000"></textarea></label>
+                    <footer><button id="worshipIslamicPreviewButton" class="button button-secondary button-small" type="button"><span data-i18n="ui.35dbb738">Preview pilihan</span></button><button id="worshipIslamicAddButton" class="button button-primary button-small" type="button" disabled><span data-i18n="ui.e17c4672">Tambahkan ke Materi</span></button></footer>
+                  </section>
+                  <span id="worshipIslamicPickerStatus" class="form-help" role="status" aria-live="polite"><span data-i18n="ui.3ad2919b">Database belum diperiksa.</span></span>
+                </section>
+                <div id="worshipEducationReferenceList" class="worship-education-reference-list"></div>
+                <label><span data-i18n="ui.ca6124b2">Status keseluruhan materi</span><select id="worshipEducationScholarlyStatus"><option value="verified" data-i18n="ui.a134c085">Terverifikasi</option><option value="qualified" data-i18n="ui.8c26a42a">Bersyarat/perlu konteks</option><option value="disputed" data-i18n="ui.c6e38f24">Diperselisihkan</option></select></label>
+              </div></details>
+            </div>
+            <aside class="worship-education-live-preview" aria-label="Preview langsung materi" data-i18n-aria-label="ui.5f8d266" data-access-key="card:node-4b6651a0cc-65">
+              <header><div><strong><span data-i18n="ui.8948ca79">Preview langsung index.html</span></strong><small id="worshipEducationPreviewStatus"><span data-i18n="ui.a724761c">Perubahan form tampil otomatis.</span></small></div><div><button id="worshipEducationPreviewPrevious" class="button button-secondary button-small" type="button"><span data-i18n="ui.2d104cd">Laman sebelumnya</span></button><button id="worshipEducationPreviewNext" class="button button-secondary button-small" type="button"><span data-i18n="ui.1f73536">Laman berikutnya</span></button></div></header>
+              <iframe id="worshipEducationPreviewFrame" src="about:blank" data-preview-src="index.html?overlay-preview=1&amp;worship-preview=1" title="Preview langsung materi ibadah" data-i18n-title="ui.5486ed15"></iframe>
+            </aside>
+            </div>
+            <footer><button id="worshipEducationSlideDelete" class="button button-danger" type="button" hidden><span data-i18n="ui.cab739d2">Hapus materi</span></button><button id="worshipEducationRefreshPreview" class="button button-secondary" type="button"><span data-i18n="ui.7e30572f">Perbarui preview</span></button><span class="form-spacer"></span><button id="worshipEducationSlideCancel" class="button button-secondary" type="button"><span data-i18n="ui.d3f9bfa5">Batal</span></button><button id="worshipEducationSlideSave" class="button button-primary" type="submit"><span data-i18n="ui.7e27f379">Simpan materi</span></button></footer>
+          </form>
+        </dialog>
+      </section>
+
+      <section class="customizer-panel" data-customizer-panel="preview" data-access-key="panel:preview">
+        <div class="panel-heading"><div><p class="eyebrow"><span data-i18n="ui.a3281306">Isolated preview</span></p><h2><span data-i18n="ui.90b81d64">Uji tanpa mengubah runtime</span></h2></div></div>
+        <div class="preview-toolbar">
+          <label><span data-i18n="ui.534e7732">Mode</span><select id="previewMode"><option value="runtime" data-i18n="ui.afb619f7">Seluruh scheduler pada waktu simulasi</option><option value="custom" data-i18n="ui.e6839486">Definisi terpilih + trigger</option><option value="prayer" data-i18n="ui.da91cf3c">Salat fardu (pilih fase)</option><option value="friday" data-i18n="ui.f9f2b87e">Hari Jumat (pilih fase)</option><option value="dhuha" data-i18n="ui.8c0ee7b9">Dhuha (pilih fase)</option><option value="qiyamul" data-i18n="ui.2fb64963">Qiyamul Lail (pilih fase)</option></select></label>
+          <label><span data-i18n="ui.4c3f6436">Salat/fase</span><select id="previewPrayer"><option value="subuh">Subuh</option><option value="dhuhur">Dhuhur</option><option value="ashar">Ashar</option><option value="maghrib">Maghrib</option><option value="isha">Isya</option><option value="jumat" data-i18n="ui.7ceebe57">Salat Jumat</option><option value="dhuhaAwwal">Dhuha Awwal</option><option value="dhuhaWoosthaa">Dhuha Wustha</option><option value="dhuhaAwwabin">Dhuha Awwabin</option><option value="qiyamulLail">Qiyamul Lail</option></select></label>
+          <label>State<select id="previewState"><option value="pre_adzan" data-i18n="ui.a76af1a9">Pra-adzan</option><option value="adzan">Adzan</option><option value="iqamah">Iqamah</option><option value="prayer" data-i18n="ui.2e06d238">Pelaksanaan</option><option value="information" data-i18n="ui.1ad9fd92">Informasi Hari Jumat</option><option value="phase" data-i18n="ui.601f4e04">Fase Dhuha</option><option value="first_reminder" data-i18n="ui.b9c3a29b">Pengingat awal malam</option><option value="last_third_warning" data-i18n="ui.72fd2c0b">Menuju sepertiga terakhir</option><option value="last_third_recurring" data-i18n="ui.b8fa99a7">Sepertiga malam terakhir</option><option value="fajr_preparation" data-i18n="ui.d6113b3f">Persiapan Subuh fardhu</option></select></label>
+          <label><span data-i18n="ui.f95196b7">Bahasa</span><select id="previewLanguage"><option value="id">Indonesia</option><option value="en">English</option></select></label>
+          <label><span data-i18n="ui.120e4a7">Simulasikan tanggal/waktu</span><input id="previewSimulationTime" type="datetime-local" step="1"></label>
+          <label><span data-i18n="ui.821d3eb2">Bulan Hijriah (opsional)</span><input id="previewHijriMonth" type="number" min="1" max="12" placeholder="1-12"></label>
+          <label><span data-i18n="ui.4a2b6212">Tanggal Hijriah (opsional)</span><input id="previewHijriDay" type="number" min="1" max="30" placeholder="1-30"></label>
+          <label><span data-i18n="ui.aabed43">Event kalender (opsional)</span><input id="previewCalendarEvent" placeholder="Contoh: ashura" data-i18n-placeholder="ui.336ec42a"></label>
+          <button id="runPreviewButton" class="button button-primary" type="button"><span data-i18n="ui.9497aaeb">Jalankan preview</span></button>
+        </div>
+        <output id="previewDecisionDebug" class="preview-decision-debug"><span data-i18n="ui.c29e33d2">Pilih waktu simulasi untuk melihat alasan overlay aktif atau tertahan.</span></output>
+        <div id="previewDiagnostics" class="preview-diagnostics"></div>
+        <iframe id="overlayPreviewFrame" class="overlay-preview-frame" src="about:blank" data-preview-src="index.html?overlay-preview=1" title="Preview overlay"></iframe>
+      </section>
+
+      <aside id="sectionPreviewWorkspace" class="section-preview-workspace" aria-labelledby="sectionPreviewTitle" hidden data-access-key="card:sectionPreviewWorkspace">
+        <header class="section-preview-header">
+          <div>
+            <p class="eyebrow"><span data-i18n="ui.d1741c4">Shared Preview Engine</span></p>
+            <h2 id="sectionPreviewTitle"><span data-i18n="ui.327c1b26">Preview index.html</span></h2>
+            <p id="sectionPreviewDescription"><span data-i18n="ui.5f92216a">Hasil draft pada panel aktif ditampilkan dengan renderer yang sama seperti layar utama.</span></p>
+          </div>
+          <div class="section-preview-header-actions">
+            <span id="sectionPreviewDirtyState" class="section-preview-dirty is-clean" role="status" aria-live="polite"><span data-i18n="ui.142e97c6">Tersimpan</span></span>
+            <button id="sectionPreviewFullscreenButton" class="button button-secondary button-small" type="button"><span data-i18n="ui.6ed7fa21">Perbesar</span></button>
+            <button id="sectionPreviewCloseButton" class="button button-secondary button-small" type="button" aria-label="Tutup preview" data-i18n-aria-label="ui.79e06d9f"><span data-i18n="ui.d44581ff">Tutup</span></button>
+          </div>
+        </header>
+        <div class="section-preview-toolbar" aria-label="Kontrol preview bersama" data-i18n-aria-label="ui.7fd989d5">
+          <label><span data-i18n="ui.93254a2d">Ukuran</span>
+            <select id="sectionPreviewViewport">
+              <option value="auto">Auto</option>
+              <option value="desktop">Desktop 1366 × 768</option>
+              <option value="tablet">Tablet 768 × 1024</option>
+              <option value="mobile">Mobile 375 × 812</option>
+            </select>
+          </label>
+          <label><span data-i18n="ui.d3e07855">Skala</span>
+            <select id="sectionPreviewScale">
+              <option value="0.75">75%</option>
+              <option value="0.9">90%</option>
+              <option value="1" selected>100%</option>
+              <option value="1.1">110%</option>
+              <option value="1.25">125%</option>
+            </select>
+          </label>
+          <label><span data-i18n="ui.3452bc5c">State / fase</span>
+            <select id="sectionPreviewState"></select>
+          </label>
+          <label><span data-i18n="ui.f95196b7">Bahasa</span>
+            <select id="sectionPreviewLanguage"><option value="id">Indonesia</option><option value="en">English</option></select>
+          </label>
+          <button id="sectionPreviewRefreshButton" class="button button-secondary" type="button"><span data-i18n="ui.27d9ec0f">Perbarui</span></button>
+          <button id="sectionPreviewApplyButton" class="button button-secondary" type="button"><span data-i18n="ui.633ca205">Apply sementara</span></button>
+          <button id="sectionPreviewSaveButton" class="button button-primary" type="button"><span data-i18n="ui.b6540bfb">Save</span></button>
+          <button id="sectionPreviewResetButton" class="button button-danger" type="button"><span data-i18n="ui.f8b7f225">Reset draft</span></button>
+        </div>
+        <p id="sectionPreviewStatus" class="section-preview-status" role="status" aria-live="polite"><span data-i18n="ui.7b13f57c">Menyiapkan preview...</span></p>
+        <div id="sectionPreviewStage" class="section-preview-stage" data-viewport="auto">
+          <div id="sectionPreviewFrameShell" class="section-preview-frame-shell">
+            <iframe id="sectionPreviewFrame" src="about:blank" data-preview-src="index.html?overlay-preview=1&amp;customizer-section-preview=1" title="Preview langsung index.html untuk panel aktif" data-i18n-title="ui.5bdb2625"></iframe>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="assets/js/overlay/overlay.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/overlay/funeral-p-180e.js?v=4"></script>
+  <script src="assets/js/overlay/funeral-p-0693.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/overlay/bereaveme-2200.js?v=20260924-viewer1"></script>
+  <script src="assets/js/islamic-e-6cdb.js?v=2"></script>
+  <script src="assets/js/overlay/worship-e-8d91.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/overlay/customize-f938.js?v=5"></script>
+</body>
+</html>

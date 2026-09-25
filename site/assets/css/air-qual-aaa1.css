@@ -1,0 +1,28 @@
+.air-quality-controls { font-size:12px; line-height:1.45; width:100%; color:#223247; }
+.air-quality-controls.hidden { display:none !important; }
+.air-quality-controls header,.air-actions { display:flex; gap:8px; justify-content:space-between; align-items:center; }
+.air-quality-controls label { display:flex; align-items:center; gap:8px; margin:8px 0; }
+.air-quality-controls label input,.air-quality-controls label select { flex:1; min-width:0; padding:6px; }
+.air-quality-controls button { cursor:pointer; padding:6px 8px; border:1px solid #cbd5e1; border-radius:5px; background:white; color:#223247; }
+.air-source-note,.air-quality-controls small { color:#475569; }
+.air-legend span { display:block; margin:4px 0; }
+.air-legend i { display:inline-block; width:12px; height:12px; margin-right:8px; border-radius:50%; }
+.air-quality-list { max-height:190px; overflow:auto; margin-top:10px; }
+.air-quality-list button { display:flex; width:100%; gap:10px; align-items:center; text-align:left; margin:4px 0; }
+.air-quality-list b { min-width:36px; padding:8px 3px; border-radius:50%; color:#111; text-align:center; }
+.air-quality-list small { display:block; }
+body.air-quality-active .astro-panel-launcher,body.air-quality-active .astro-drawer-heading,body.air-quality-active .control-panel { display:none !important; }
+body.air-quality-active .map-tools { display:flex !important; top:auto !important; bottom:42px !important; left:12px !important; right:auto !important; width:350px !important; max-width:calc(100vw - 24px); max-height:65vh !important; overflow:auto; padding:10px; }
+body.air-quality-active .map-tools > :not(#onlineMapControls) { display:none !important; }
+body.air-quality-active #onlineMapControls { display:flex !important; flex-direction:column; width:100%; }
+body.air-quality-active #onlineMapControls > label:has(#onlineMapToggle),body.air-quality-active #onlineMapControls > label:has(#environmentRangeSelect),body.air-quality-active #onlineMapOpenLink,body.air-quality-active #onlineMapIcon { display:none; }
+body.air-quality-active #onlineMapControls label,body.air-quality-active #onlineMapControls select { min-width:0; max-width:100%; }
+.ol-overlay-container.air-popup-dock { transform:none !important; top:var(--air-popup-top,100px) !important; right:18px !important; left:auto !important; bottom:auto !important; }
+.air-popup-dock .astro-map-popup { max-height:calc(100vh - 160px); overflow:auto; width:320px; max-width:calc(100vw - 36px); }
+@media(max-width:700px) {
+ body.air-quality-active .map-tools { width:calc(100vw - 24px) !important; max-height:260px !important; bottom:30px !important; }
+ .air-quality-list { max-height:130px; }
+ body.air-quality-active #onlineMapControls > label:has(#onlineMapSelect) { display:none; }
+ .ol-overlay-container.air-popup-dock { right:12px !important; }
+ .air-popup-dock .astro-map-popup { max-height:240px; width:280px; }
+}

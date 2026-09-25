@@ -1,0 +1,14 @@
+.topbar:has(.building-selection:not([hidden])) { flex-wrap: wrap; }
+#buildingSelectedIdentity { display:block; max-width:240px; overflow-wrap:anywhere; font-size:11px; line-height:1.4; }
+.building-selection { flex-basis:100%; width:100%; padding-top:8px; font-size:12px; border-top:1px solid #dae3e8; }
+.building-selection[hidden] { display:none; }
+.building-filters { display:flex; gap:8px; flex-wrap:wrap; margin:8px 0; }
+.building-filters label { display:grid; gap:3px; flex:1; min-width:140px; }
+.building-filters select { max-width:100%; min-height:30px; }
+#buildingSelectionList { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; max-height:190px; overflow:auto; }
+.building-choice { display:flex; flex-direction:column; text-align:left; gap:3px; padding:6px 8px; border:1px solid #c9d8df; border-radius:5px; background:#fff; color:#213849; cursor:pointer; min-width:0; }
+.building-choice code { overflow-wrap:anywhere; font-size:10px; }
+.building-pagination { display:flex; align-items:center; gap:10px; justify-content:flex-end; }
+.building-pagination button { padding:4px 8px; }
+#buildingSelectionStatus:empty { margin:0; }
+@media(max-width:650px) { #buildingSelectionList {grid-template-columns:1fr;} .building-filters label{min-width:95px;} }

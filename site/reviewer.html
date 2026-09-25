@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <script src="assets/js/paths.js"></script>
+  <script src="assets/js/deploymen-ed4f.js?v=1"></script>
+  <script src="assets/js/viewer-runtime.js?v=1"></script>
+  <script src="assets/js/account-c-f56d.js?v=20260924-viewer1"></script>
+  <link rel="stylesheet" href="assets/css/site-nav-2a92.css?v=1">
+  <script src="assets/js/site-navi-17b5.js?v=1" defer></script>
+  <script src="assets/js/i18n.js?v=20260920-noop-lang"></script>
+  <script src="assets/js/ui-catalog.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/ui-transl-64c1.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/building-links.js?v=20260919-record2"></script>
+  <script src="assets/js/admin-loc-793c.js?v=20260918-bilingual3"></script>
+  <link rel="stylesheet" href="assets/css/building-68bd.css?v=20260918-bilingual3">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="Muslim Prayer Management With GIS">
+    <meta name="offline-capable" content="true">
+    <title data-i18n="ui.9a2cb6d8">Astronomical Reviewer Display</title>
+    <link rel="stylesheet" href="assets/vendor/ol/ol.css">
+    <link rel="stylesheet" href="assets/css/webgis.css?v=22">
+    <link rel="stylesheet" href="assets/css/weather-ebd4.css?v=4">
+    <link rel="stylesheet" href="assets/css/weather-9fa9.css?v=1">
+    <link rel="stylesheet" href="assets/css/volcano-map.css?v=4">
+    <link rel="stylesheet" href="assets/css/astronom-c1fe.css?v=8">
+    <link rel="stylesheet" href="assets/css/actual-time.css?v=3">
+    <link rel="stylesheet" href="assets/css/time-coo-4ef0.css?v=3">
+    <style>
+        /* Local controls for the astronomical control/display page. */
+        .astro-map-context,
+        .astro-method-summary,
+        .astro-parameter-status,
+        .astro-observation-status {
+            background: #f5f8fa;
+            border: 1px solid #dce5ed;
+            border-radius: 8px;
+            color: #405166;
+            font-size: 12px;
+            line-height: 1.45;
+            margin: 12px 0;
+            padding: 10px;
+        }
+
+        .astro-map-context {
+            display: grid;
+            gap: 6px;
+        }
+
+        .astro-map-context strong,
+        .astro-method-summary strong,
+        .astro-parameter-status strong,
+        .astro-observation-status strong {
+            color: #172033;
+        }
+
+        .astro-details {
+            background: #fbfcfd;
+            border: 1px solid #dce5ed;
+            border-radius: 8px;
+            margin-top: 14px;
+            padding: 0 10px 10px;
+        }
+
+        .astro-details summary {
+            color: #172033;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 850;
+            padding: 11px 0;
+        }
+
+        .astro-details[open] summary {
+            border-bottom: 1px solid #e3eaf0;
+            margin-bottom: 11px;
+        }
+
+        .astro-help {
+            color: #647385;
+            font-size: 11px;
+            line-height: 1.45;
+            margin: 0 0 10px;
+        }
+
+        .astro-inline-toggle {
+            align-items: center;
+            color: #324153;
+            display: inline-flex;
+            font-size: 12px;
+            font-weight: 750;
+            gap: 7px;
+            margin: 2px 0 10px;
+        }
+
+        .astro-inline-toggle input {
+            accent-color: #176a58;
+            height: 16px;
+            margin: 0;
+            width: 16px;
+        }
+
+        .astro-manual-fields[hidden],
+        .astro-method-picker[hidden] {
+            display: none;
+        }
+
+        .astro-compact-grid {
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin: 10px 0;
+        }
+
+        .astro-compact-grid label span {
+            font-size: 10px;
+        }
+
+        .astro-textarea {
+            background: #fff;
+            border: 1px solid #c9d5e2;
+            border-radius: 6px;
+            color: #172033;
+            min-height: 72px;
+            outline: none;
+            padding: 7px 8px;
+            resize: vertical;
+            width: 100%;
+        }
+
+        .astro-textarea:focus {
+            border-color: #176a58;
+            box-shadow: 0 0 0 3px rgba(23, 106, 88, 0.15);
+        }
+
+        .astro-compass-head {
+            align-items: center;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            margin-top: 12px;
+        }
+
+        .astro-compass-head label {
+            max-width: 220px;
+            width: 100%;
+        }
+
+        .astro-compass-preview {
+            align-items: center;
+            background: #f7fafb;
+            border: 1px solid #e0e8ef;
+            border-radius: 8px;
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            padding: 8px;
+        }
+
+        .astro-compass-preview img {
+            animation: astro-compass-pulse 3.6s ease-in-out infinite;
+            border-radius: 50%;
+            height: 42px;
+            object-fit: cover;
+            width: 42px;
+        }
+
+        .astro-compass-preview p {
+            color: #526173;
+            font-size: 11px;
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .astro-compass-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 8px 0 12px;
+        }
+
+        .astro-compass-key {
+            align-items: center;
+            background: #fff;
+            border: 1px solid #cbd6df;
+            border-radius: 999px;
+            color: #223247;
+            cursor: default;
+            display: inline-flex;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 850;
+            min-height: 25px;
+            outline: none;
+            padding: 4px 7px;
+        }
+
+        .astro-compass-key:focus,
+        .astro-compass-key:hover {
+            border-color: #176a58;
+        }
+
+        .astro-compass-name {
+            max-width: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-width 180ms ease, margin-left 180ms ease, opacity 180ms ease;
+            white-space: nowrap;
+        }
+
+        .astro-compass-key:focus .astro-compass-name,
+        .astro-compass-key:hover .astro-compass-name {
+            margin-left: 4px;
+            max-width: 128px;
+            opacity: 1;
+        }
+
+        .astro-observation-preview {
+            background: #111821;
+            border-radius: 8px;
+            color: #dce9ef;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 10px;
+            line-height: 1.4;
+            margin: 10px 0 0;
+            max-height: 220px;
+            overflow: auto;
+            padding: 10px;
+            white-space: pre-wrap;
+        }
+
+        @keyframes astro-compass-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(23, 106, 88, 0.12); transform: scale(1); }
+            50% { box-shadow: 0 0 0 6px rgba(23, 106, 88, 0); transform: scale(1.03); }
+        }
+
+        @media (max-width: 720px) {
+            .astro-compact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .astro-compass-head {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .astro-compass-head label {
+                max-width: none;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="assets/css/air-qual-aaa1.css?v=2">
+    <link rel="stylesheet" href="assets/css/advanced-page.css?v=20260919-volcano-layout">
+<script defer src="assets/js/user-sess-efc4.js?v=1"></script>
+<script src="assets/js/url-acces-9679.js?v=1" defer></script></head>
+<body class="astro-display-mode" data-reviewer-mode="display">
+    <section id="advancedGate" class="advanced-gate" aria-live="polite" data-access-key="card:advancedGate">
+      <header><strong>Astronomical Reviewer</strong><span data-language-slot></span></header>
+      <p id="advancedGateStatus" role="status"></p>
+      <button id="advancedChooseAgain" type="button" hidden data-i18n="advanced.chooseAgain">Pilih gedung lain</button>
+    </section>
+    <dialog id="advancedBuildingGate" aria-labelledby="buildingSelectionQuestion">
+      <div id="advancedGateLanguage"></div>
+            <div id="buildingSelection" class="building-selection">
+              <strong id="buildingSelectionQuestion" data-i18n="selector.question">Apa data yang ingin Anda tampilkan pada layer peta ini?</strong>
+              <div class="building-filters">
+                <label><span data-i18n="selector.adm0">Negara</span><select id="buildingFilteradm0"></select></label>
+                <label><span data-i18n="selector.adm1">Provinsi</span><select id="buildingFilteradm1" disabled></select></label>
+                <label><span data-i18n="selector.adm2">Kabupaten/Kota</span><select id="buildingFilteradm2" disabled></select></label>
+              </div>
+              <div id="buildingSelectionList"></div>
+              <p id="buildingSelectionStatus" role="status"></p>
+              <div class="building-pagination"><button id="buildingPagePrevious" type="button" disabled data-i18n="selector.previous">Sebelumnya</button><span id="buildingPageLabel"></span><button id="buildingPageNext" type="button" disabled data-i18n="selector.next">Berikutnya</button></div>
+            </div>    </dialog>
+    <template id="advancedApplicationTemplate">
+    <main class="app-shell">
+        <div id="map" class="map-canvas" aria-label="Advanced astronomical GIS map" data-i18n-aria-label="ui.b4955e3"></div>
+        <div id="astroMapInfoPopup" class="map-info-popup astro-map-popup hidden" aria-live="polite"></div>
+
+        <header class="topbar">
+            <div class="brand-block">
+                <span class="brand-mark">AG</span>
+                <div>
+                    <h1><span data-i18n="ui.9a2cb6d8">Astronomical Reviewer Display</span></h1>
+                    <p id="statusLine"><span data-i18n="ui.bb1a07fe">Memuat mesin astronomi</span></p>
+                </div>
+            </div>
+            <div class="topbar-actions">
+              <span data-language-slot></span><details class="advanced-building-context" data-access-key="card:node-a19285db94-2"><summary data-i18n="advanced.building">Gedung</summary><span id="buildingSelectedIdentity" translate="no"></span><button type="button" id="advancedChangeBuilding" data-i18n="advanced.changeBuilding">Ganti gedung</button></details>
+                
+                <div class="actual-time-launcher-slot" data-actual-time-launcher-slot></div>
+                <span id="modeBadge" class="status-pill">Mode: Online/Offline</span>
+                <span id="reviewerModeBadge" class="status-pill"><span data-i18n="ui.5a05d9b5">Display</span></span>
+                <a class="icon-button" href="map.html" title="Buka peta ADM statis" aria-label="Buka peta ADM statis" data-i18n-title="ui.18579f1e" data-i18n-aria-label="ui.18579f1e">
+                    <i data-lucide="map"></i>
+                </a>
+                <button id="locateButton" class="icon-button" type="button" title="Gunakan lokasi perangkat" aria-label="Gunakan lokasi perangkat" data-i18n-title="ui.6b8967a0" data-i18n-aria-label="ui.6b8967a0">
+                    <i data-lucide="crosshair"></i>
+                </button>
+                <button id="syncTimeButton" class="icon-button" type="button" title="Sinkron waktu jaringan" aria-label="Sinkron waktu jaringan" data-i18n-title="ui.d31f4769" data-i18n-aria-label="ui.d31f4769">
+                    <i data-lucide="wifi"></i>
+                </button>
+                <button id="exportButton" class="icon-button" type="button" title="Ekspor JSON" aria-label="Ekspor JSON" data-i18n-title="ui.8d644bfb" data-i18n-aria-label="ui.8d644bfb">
+                    <i data-lucide="download"></i>
+                </button>
+            </div>
+        
+</header>
+        <section class="map-tools" aria-label="Kontrol peta" data-i18n-aria-label="ui.25432cf2" data-access-key="card:node-d362cd3399-3">
+            <div class="segmented" role="group" aria-label="Basemap" data-i18n-aria-label="ui.5aec8826">
+                <button class="active" type="button" data-basemap="osm">OSM</button>
+                <button type="button" data-basemap="topo">Topo</button>
+                <button type="button" data-basemap="sat">Sat</button>
+            </div>
+            <div id="onlineMapControls" class="online-map-controls hidden" aria-label="Online map sources" data-i18n-aria-label="ui.acf9a03e">
+                <label class="toggle-chip">
+                    <input id="onlineMapToggle" type="checkbox">
+                    <span><span data-i18n="ui.c0339afd">Gunakan peta online</span></span>
+                </label>
+                <label class="toggle-chip">
+                    <span><span data-i18n="ui.344b3780">Peta online</span></span>
+                    <select id="onlineMapSelect" aria-label="Pilih peta online" data-i18n-aria-label="ui.58952654">
+                        <option value="firemap">FireMap.live Wildfire</option>
+                        <option value="usgs-earthquake">USGS Earthquakes</option>
+                        <option value="bmkg-earthquake-m5">BMKG Indonesia Â· M 5,0+</option>
+                        <option value="bmkg-earthquake-felt" data-i18n="ui.ae456d7d">BMKG Indonesia Â· Gempa dirasakan</option>
+                        <option value="volcanoes" data-i18n="ui.ae33f85f">Gunung api Â· status &amp; lokasi</option>
+                        <option value="air-quality">Global Air Quality</option>
+                    </select>
+                </label>
+                <label class="toggle-chip">
+                    <span><span data-i18n="ui.19333233">Environment display</span></span>
+                    <select id="environmentDisplaySelect" aria-label="Environment display scope" data-i18n-aria-label="ui.a7679fd8">
+                        <option value="local" selected data-i18n="ui.a8015683">Lokal Â· negara terpilih (ADM0)</option>
+                        <option value="global" data-i18n="ui.4a80edf4">Global Environment</option>
+                    </select>
+                </label>
+                <label class="toggle-chip">
+                    <span><span data-i18n="ui.b2a1b2ea">Data range</span></span>
+                    <select id="environmentRangeSelect" aria-label="Environment data range" data-i18n-aria-label="ui.29a9cd72">
+                        <option value="1" selected data-i18n="ui.30fed713">Last 24 hours</option>
+                        <option value="5" data-i18n="ui.8f093d48">Last 5 days</option>
+                        <option value="10" data-i18n="ui.b9b3c40c">Last 10 days</option>
+                        <option value="30" data-i18n="ui.15e14a16">Last 30 days</option>
+                    </select>
+                </label>
+                <a id="onlineMapOpenLink" class="toggle-chip" href="https://firemap.live/" target="_blank" rel="noopener noreferrer"><span data-i18n="ui.5ea0f800">Buka peta</span></a>
+                <span id="onlineMapIcon" class="online-map-icon" aria-label="Ikon kondisi peta" data-i18n-aria-label="ui.cddb29a1"></span>
+            </div>
+            <div id="volcanoMapControls" class="volcano-controls hidden" aria-label="Pemetaan gunung api" data-i18n-aria-label="ui.4700d242">
+                <div class="volcano-controls-heading">
+                    <strong><span class="volcano-triangle" data-status="UNKNOWN" aria-hidden="true"></span> <span data-i18n="ui.79ea65a7">Gunung api</span></strong>
+                    <span id="volcanoDataStatus" class="volcano-data-status" role="status" aria-live="polite"><span data-i18n="ui.ff236a69">Pilih sumber untuk memuat gunung api.</span></span>
+                </div>
+                <div class="volcano-controls-fields">
+                    <label class="volcano-field" for="volcanoProviderSelect"><span><span data-i18n="ui.4e1bb729">Sumber</span></span>
+                        <select id="volcanoProviderSelect">
+                            <option value="volcanodiscovery" data-i18n="ui.10fe275b">VolcanoDiscovery Â· gunung api saja</option>
+                            <option value="combined" data-i18n="ui.1d6d245d">Gabungan sumber (tanpa duplikasi)</option>
+                            <option value="usgs" data-i18n="ui.b92139bb">Status resmi USGS</option>
+                            <option value="magma">Indonesia Â· MAGMA/PVMBG</option>
+                            <option value="gdacs" data-i18n="ui.bab35d28">Lokasi gunung dunia (GDACS)</option>
+                        </select>
+                    </label>
+                    <label class="volcano-field" for="volcanoStatusFilter"><span><span data-i18n="ui.5ef20f">Status</span></span>
+                        <select id="volcanoStatusFilter">
+                            <option value="PRIORITY" selected data-i18n="ui.1ddd1921">Prioritas oranye &amp; merah</option>
+                            <option value="ALL" data-i18n="ui.cfe7c928">Semua status</option>
+                            <option value="NORMAL" data-i18n="ui.d79c6238">NORMAL Â· Tenang</option>
+                            <option value="ADVISORY" data-i18n="ui.22e71a01">ADVISORY Â· Perlu dipantau</option>
+                            <option value="WATCH" data-i18n="ui.37ced5bc">WATCH Â· Waspada tinggi</option>
+                            <option value="WARNING" data-i18n="ui.50d8d866">WARNING Â· Bahaya tinggi</option>
+                            <option value="MAGMA_I">Level I (Normal)</option><option value="MAGMA_II" data-i18n="ui.c184aaf1">Level II (Waspada)</option><option value="MAGMA_III" data-i18n="ui.8cf6f9d2">Level III (Siaga)</option><option value="MAGMA_IV" data-i18n="ui.b6b94b9b">Level IV (Awas)</option>
+                            <option value="UNKNOWN" data-i18n="ui.fe9ff17">UNKNOWN Â· Belum diketahui</option>
+                        </select>
+                    </label>
+                    <label class="volcano-field volcano-search" for="volcanoSearchInput"><span><span data-i18n="ui.fef8f732">Cari gunung</span></span>
+                        <input id="volcanoSearchInput" type="search" placeholder="Nama atau wilayah" autocomplete="off" data-i18n-placeholder="ui.9e3e6c32">
+                    </label>
+                    <div class="volcano-controls-actions">
+                        <button id="volcanoRefreshButton" class="secondary-button" type="button"><span data-i18n="ui.27d9ec0f">Perbarui</span></button>
+                        <button id="volcanoFitButton" class="secondary-button" type="button"><span data-i18n="ui.d9810c6a">Lihat semua</span></button>
+                    </div>
+                </div>
+                <p id="volcanoSourceInfo" class="volcano-source-info"><span data-i18n="ui.a5fcc8dd">Warna segitiga menunjukkan status resmi USGS. Lokasi dunia GDACS tanpa status resmi ditandai abu-abu.</span></p>
+                <details id="volcanoLegend" class="volcano-details" data-access-key="card:volcanoLegend">
+                    <summary><span data-i18n="ui.bbde5fd2">Legenda status dan maknanya</span></summary>
+                    <dl class="volcano-legend-list">
+                        <div><dt><span class="volcano-triangle" data-status="NORMAL" aria-hidden="true"></span> NORMAL</dt><dd><span data-i18n="ui.39ace50e">Aktivitas berada pada kondisi latar belakang normal, tidak erupsi.</span> <strong><span data-i18n="ui.dd120e48">Tenang/normal.</span></strong></dd></div>
+                        <div><dt><span class="volcano-triangle" data-status="ADVISORY" aria-hidden="true"></span> ADVISORY</dt><dd><span data-i18n="ui.5bdb5c4a">Ada peningkatan aktivitas di atas normal, misalnya peningkatan gempa atau deformasi tanah, tetapi belum berarti erupsi akan terjadi.</span> <strong><span data-i18n="ui.eb38416d">Mulai tidak normal, perlu dipantau.</span></strong></dd></div>
+                        <div><dt><span class="volcano-triangle" data-status="WATCH" aria-hidden="true"></span> WATCH</dt><dd><span data-i18n="ui.a5523fb2">Aktivitas meningkat/terus berkembang dan potensi erupsi meningkat, tetapi waktunya belum pasti; atau sudah terjadi erupsi tetapi bahayanya masih terbatas.</span> <strong><span data-i18n="ui.362cc4d7">Waspada tinggi / potensi erupsi meningkat.</span></strong></dd></div>
+                        <div><dt><span class="volcano-triangle" data-status="WARNING" aria-hidden="true"></span> WARNING</dt><dd><span data-i18n="ui.23eec716">Erupsi berbahaya sudah berlangsung, diperkirakan segera terjadi, atau diduga sedang terjadi.</span> <strong><span data-i18n="ui.62f4d631">Bahaya tinggi / erupsi berbahaya.</span></strong></dd></div>
+                        <div><dt><span class="volcano-triangle" data-status="UNKNOWN" aria-hidden="true"></span> UNKNOWN</dt><dd><span data-i18n="ui.732cfa99">Status resmi belum tersedia dari sumber ini. Abu-abu tidak berarti gunung dalam kondisi normal.</span></dd></div>
+                    </dl>
+                </details>
+                <details class="volcano-details volcano-results" data-access-key="card:node-9978107cd0-5">
+                    <summary><span data-i18n="ui.9fb2f98f">Daftar gunung</span></summary>
+                    <div id="volcanoList" class="volcano-list" role="list" aria-label="Hasil pencarian gunung api" data-i18n-aria-label="ui.101fd40f"><p class="volcano-empty"><span data-i18n="ui.94ee33ea">Data belum dimuat.</span></p></div>
+                </details>
+            </div>
+            <label class="toggle-chip">
+                <input id="atmosphereToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.b5261de">Atmosfer</span></span>
+            </label>
+            <label class="toggle-chip atmosphere-opacity-control">
+                <span><span data-i18n="ui.57646aee">Opasitas atmosfer</span></span>
+                <input id="atmosphereOpacityMap" type="range" min="0" max="100" value="40" step="1">
+                <output id="atmosphereOpacityValue" for="atmosphereOpacityMap">40%</output>
+            </label>
+            <label class="toggle-chip">
+                <input id="trajectoryToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.264f15c0">Trajektori</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="sunTrajectoryToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.f4d693b2">Jalur Matahari</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="moonTrajectoryToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.f224b07b">Jalur Bulan</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="prayerZoneToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.6743fd02">Zona Shalat</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="hilalZoneToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.a0678bcf">Hilal</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="directionToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.1fbee030">16 Arah</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="admBoundaryToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.76754dcf">ADM</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="waterFeaturesToggle" type="checkbox">
+                <span><span data-i18n="ui.3b523417">Perairan</span></span>
+            </label>
+            <label class="toggle-chip">
+                <span class="sr-only" for="waterFeaturesScale"><span data-i18n="ui.d5f1f3bd">Skala perairan</span></span>
+                <select id="waterFeaturesScale" aria-label="Skala data perairan" data-i18n-aria-label="ui.3af15b47">
+                    <option value="10m">10m</option>
+                    <option value="50m">50m</option>
+                    <option value="110m">110m</option>
+                </select>
+            </label>
+            <span id="waterFeaturesStatus" class="status-pill" aria-live="polite"><span data-i18n="ui.d1f4ceb7">Perairan nonaktif</span></span>
+            <label class="toggle-chip">
+                <input id="ipMarkerToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.6ae90adc">IP</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="kaabahLineToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.57319887">Kaabah</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="calibrationLineToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.2fd9a449">Calibration</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="weatherToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.3c6d31ab">Weather Forecast</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="temperatureToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.18aad40">Temperature Display</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="cloudToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.1e4f6f17">Cloud Condition</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="earthquakeToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.a00c432">Earthquake</span></span>
+            </label>
+            <label class="toggle-chip">
+                <input id="wildfireToggle" type="checkbox" checked>
+                <span><span data-i18n="ui.173acc8b">Wildfire</span></span>
+            </label>
+        </section>
+
+        <aside class="control-panel" aria-label="Panel data astronomi" data-i18n-aria-label="ui.c40077c1" data-access-key="card:section-1">
+            <nav class="panel-tabs" aria-label="Panel" data-i18n-aria-label="ui.a17337e5">
+                <button class="active" type="button" data-tab="context"><span data-i18n="ui.8b3c11d6">Konteks</span></button>
+                <button type="button" data-tab="observe"><span data-i18n="ui.7c40e80b">Observasi</span></button>
+                <button type="button" data-tab="orbit"><span data-i18n="ui.90f810ef">Orbit</span></button>
+                <button type="button" data-tab="time"><span data-i18n="ui.4293eacd">Waktu</span></button>
+                <button type="button" data-tab="prayer"><span data-i18n="ui.acf4b86">Shalat</span></button>
+                <button type="button" data-tab="rukyat">Rukyat</button>
+                <button type="button" data-tab="weather"><span data-i18n="ui.141e7134">Weather</span></button>
+                <button type="button" data-tab="earthquake"><span data-i18n="ui.a00c432">Earthquake</span></button>
+                <button type="button" data-tab="wildfire"><span data-i18n="ui.173acc8b">Wildfire</span></button>
+                <button type="button" data-tab="api"><span data-i18n="ui.7aa6f0e7">API</span></button>
+            </nav>
+
+            <div class="panel-scroll">
+                <section class="tab-panel active" id="tab-context" data-access-key="panel:context">
+                    <div class="section-head">
+                        <h2><span data-i18n="ui.6e3cb8d">Reviewer Context</span></h2>
+                        <span id="contextSourceBadge" class="status-pill"><span data-i18n="ui.3c3cfe05">Waiting</span></span>
+                    </div>
+                    <div id="reviewerContextSummary" class="astro-map-context">
+                        <span><strong><span data-i18n="ui.f09430d8">Database</span></strong> Menunggu data admin aktif.</span>
+                    </div>
+                    <div class="button-row astro-settings-panel" data-access-key="card:section-3">
+                        <button id="loadAdminContext" class="primary-button" type="button">
+                            <i data-lucide="database"></i>
+                            <span data-i18n="ui.c993cb0b">Muat database</span>
+                        </button>
+                        <button id="applyAdminContext" class="secondary-button" type="button">
+                            <i data-lucide="map-pin"></i>
+                            <span data-i18n="ui.f3292dd3">Pakai gedung</span>
+                        </button>
+                    </div>
+                    <div class="form-grid two astro-settings-panel" data-access-key="card:section-4">
+                        <label>
+                            <span><span data-i18n="ui.a25fa015">Versi reviewer</span></span>
+                            <select id="reviewerModeSelect">
+                                <option value="settings" data-i18n="ui.36584b25">Settings / konfigurasi</option>
+                                <option value="display" selected data-i18n="ui.efcd383a">Display final</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.2c8772bb">ADM overlay</span></span>
+                            <select id="admBoundaryMode">
+                                <option value="adm0-adm1-adm2" selected>ADM0 + ADM1 + ADM2</option>
+                                <option value="adm0-adm1">ADM0 + ADM1</option>
+                                <option value="off" data-i18n="ui.5469c21c">Mati</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.533de1e3">IP comparison</span></span>
+                            <select id="ipComparisonMode">
+                                <option value="provider" selected data-i18n="ui.be96820f">IP provider marker only</option>
+                                <option value="off" data-i18n="ui.5469c21c">Mati</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="astro-icon-strip">
+                        <div>
+                            <img id="buildingContextIcon" src="map/places/mosque.png" alt="Building icon">
+                            <span><span data-i18n="ui.198062b3">Building</span></span>
+                        </div>
+                        <div>
+                            <img id="ipContextIcon" src="map/places/ip-pin.png" alt="IP address marker">
+                            <span><span data-i18n="ui.10d982a1">IP provider</span></span>
+                        </div>
+                        <div>
+                            <img id="kaabahContextIcon" src="map/places/kaabah.png" alt="Kaabah icon">
+                            <span><span data-i18n="ui.57319887">Kaabah</span></span>
+                        </div>
+                    </div>
+                    <div id="providerContextSummary" class="astro-map-context">
+                        <span><strong><span data-i18n="ui.10d982a1">IP provider</span></strong> <span data-i18n="ui.912ec9b">Menunggu estimasi koordinat service provider.</span></span>
+                    </div>
+                    <details class="astro-details" open data-access-key="card:node-1e4ae6f5af-10">
+                        <summary id="islamicMethodPanelTitle"><span data-i18n="ui.62905ffb">Review Metode Rukyat / Hisab</span></summary>
+                        <div id="islamicMethodNarrative" class="astro-method-summary">-</div>
+                    </details>
+                    <details class="astro-details" open data-access-key="card:node-1e4ae6f5af-11">
+                        <summary id="falakEnginePanelTitle"><span data-i18n="ui.41f40f41">Universal Falak Engine</span></summary>
+                        <div id="falakEngineSummary" class="astro-method-summary">-</div>
+                    </details>
+                    <details class="astro-details" data-access-key="card:node-04a2c52c8e-12">
+                        <summary id="falakCalendarPanelTitle"><span data-i18n="ui.bde50e64">Kalender Ibadah Islam</span></summary>
+                        <div id="falakCalendarSummary" class="astro-method-summary">-</div>
+                    </details>
+                    <details class="astro-details" open data-access-key="card:node-1e4ae6f5af-13">
+                        <summary id="eclipsePredictionPanelTitle"><span data-i18n="ui.1b97c19c">Prediksi Gerhana Matahari / Bulan</span></summary>
+                        <div class="form-grid two astro-eclipse-controls">
+                            <label>
+                                <span><span data-i18n="ui.c4d9a6a7">Rentang titik gerhana</span></span>
+                                <select id="eclipseRangeSelect">
+                                    <option value="0" selected data-i18n="ui.87617a21">Tahun aktual</option>
+                                    <option value="1" data-i18n="ui.c9b9c7c8">1 tahun ke depan</option>
+                                    <option value="2" data-i18n="ui.bc51f207">2 tahun ke depan</option>
+                                    <option value="3" data-i18n="ui.de254376">3 tahun ke depan</option>
+                                    <option value="4" data-i18n="ui.a34281b5">4 tahun ke depan</option>
+                                    <option value="5" data-i18n="ui.4dc5c94c">5 tahun ke depan</option>
+                                    <option value="6" data-i18n="ui.9fd906ab">6 tahun ke depan</option>
+                                    <option value="7" data-i18n="ui.8440e14a">7 tahun ke depan</option>
+                                    <option value="8" data-i18n="ui.9c31b2f9">8 tahun ke depan</option>
+                                    <option value="9" data-i18n="ui.87e6dd10">9 tahun ke depan</option>
+                                    <option value="10" data-i18n="ui.4e70c560">10 tahun ke depan</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div id="eclipsePredictionSummary" class="astro-observation-status">-</div>
+                    </details>
+                </section>
+
+                <section class="tab-panel" id="tab-observe" data-access-key="panel:observe">
+                    <div class="section-head">
+                        <h2><span data-i18n="ui.3fac8c77">Observer</span></h2>
+                        <span id="clockBadge" class="status-pill">--:--:-- UTC</span>
+                    </div>
+                    <div class="form-grid two">
+                        <label>
+                            <span><span data-i18n="ui.6d7e4165">Latitude</span></span>
+                            <input id="observerLat" type="number" min="-90" max="90" step="0.000001">
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.671964ee">Longitude</span></span>
+                            <input id="observerLon" type="number" min="-180" max="180" step="0.000001">
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.b0f9a53">Elevasi meter</span></span>
+                            <input id="observerElev" type="number" step="1" value="0">
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.be68394">Jarak analisis km</span></span>
+                            <input id="directionDistance" type="number" min="1" max="1000" step="1" value="50">
+                        </label>
+                    </div>
+                    <div class="button-row">
+                        <button id="applyObserver" class="primary-button" type="button">
+                            <i data-lucide="map-pin"></i>
+                            <span data-i18n="ui.3a902501">Terapkan</span>
+                        </button>
+                        <button id="centerObserver" class="secondary-button" type="button">
+                            <i data-lucide="scan"></i>
+                            <span data-i18n="ui.72e52c0">Pusatkan</span>
+                        </button>
+                    </div>
+
+                    <div class="section-head compact">
+                        <h2><span data-i18n="ui.d704324a">Matahari</span></h2>
+                    </div>
+                    <div id="sunMetrics" class="metric-grid"></div>
+
+                    <div class="section-head compact">
+                        <h2><span data-i18n="ui.c51add33">Bulan</span></h2>
+                        <canvas id="panelMoonCanvas" width="96" height="96" aria-label="Fase bulan" data-i18n-aria-label="ui.ec9f09b0"></canvas>
+                    </div>
+                    <div id="moonMetrics" class="metric-grid"></div>
+                </section>
+
+                <section class="tab-panel" id="tab-orbit" data-access-key="panel:orbit">
+                    <div class="section-head">
+                        <h2><span data-i18n="ui.264f15c0">Trajektori</span></h2>
+                        <span id="trajectoryStatus" class="status-pill"><span data-i18n="ui.91543960">Siap</span></span>
+                    </div>
+                    <div class="form-grid two">
+                        <label>
+                            <span><span data-i18n="ui.58d82c16">Benda langit</span></span>
+                            <select id="trajectoryBody">
+                                <option value="both" data-i18n="ui.7a8a023b">Matahari + Bulan</option>
+                                <option value="sun" data-i18n="ui.d704324a">Matahari</option>
+                                <option value="moon" data-i18n="ui.c51add33">Bulan</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.b147ba5e">Rentang</span></span>
+                            <select id="trajectoryYears">
+                                <option value="5" data-i18n="ui.4869b55">5 tahun mundur/maju</option>
+                                <option value="10" data-i18n="ui.914c26a1">10 tahun mundur/maju</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.cdc2bc31">Sampel hari</span></span>
+                            <select id="trajectoryStep">
+                                <option value="1" data-i18n="ui.69cebb0a">1 hari</option>
+                                <option value="3" data-i18n="ui.47a10e50">3 hari</option>
+                                <option value="7" data-i18n="ui.164c724c">7 hari</option>
+                                <option value="14" selected data-i18n="ui.c66b8b6e">14 hari</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.ef0b4d8">Playback hari/detik</span></span>
+                            <input id="playbackSpeed" type="number" min="0.1" max="365" step="0.5" value="7">
+                        </label>
+                    </div>
+                    <button id="rebuildTrajectory" class="primary-button full" type="button">
+                        <i data-lucide="route"></i>
+                        <span data-i18n="ui.54668663">Hitung Trajektori</span>
+                    </button>
+
+                    <div class="timeline-box">
+                        <label class="toggle-line">
+                            <input id="liveTimeToggle" type="checkbox" checked>
+                            <span><span data-i18n="ui.e3365e5c">Realtime</span></span>
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.82ced006">Waktu dasar</span></span>
+                            <input id="timeInput" type="datetime-local">
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.101653b9">Offset timeline hari</span></span>
+                            <input id="timelineSlider" type="range" min="-3650" max="3650" step="1" value="0">
+                        </label>
+                        <div class="timeline-actions">
+                            <button id="playTimeline" class="icon-button" type="button" title="Putar timeline" aria-label="Putar timeline" data-i18n-title="ui.7f21bc5c" data-i18n-aria-label="ui.7f21bc5c">
+                                <i data-lucide="play"></i>
+                            </button>
+                            <span id="timelineLabel"><span data-i18n="ui.94a5fdd3">0 hari</span></span>
+                        </div>
+                    </div>
+
+                    <div class="legend-list">
+                        <span><b class="line-dot green"></b><span data-i18n="ui.1d33b708">Historis sudah dilewati</span></span>
+                        <span><b class="line-dot red"></b><span data-i18n="ui.34fd67a6">Prediksi masa depan</span></span>
+                        <span><b class="line-dot amber"></b><span data-i18n="ui.51318e83">Posisi timeline</span></span>
+                        <span><b class="line-dot solar-day"></b><span id="sunDailyLegend"><span data-i18n="ui.ca28c663">Lintasan harian matahari</span></span></span>
+                        <span><b class="line-dot solar-analemma"></b><span id="sunAnalemmaLegend"><span data-i18n="ui.7f274676">Analemma matahari</span></span></span>
+                        <span><b class="line-dot moon-path"></b><span id="moonPathLegend"><span data-i18n="ui.150c977">Lintasan bulan</span></span></span>
+                    </div>
+                </section>
+
+                <section class="tab-panel" id="tab-time" data-access-key="panel:time">
+                    <div class="section-head">
+                        <h2><span data-i18n="ui.f63c9352">Komparasi Waktu</span></h2>
+                        <span id="networkBadge" class="status-pill"><span data-i18n="ui.e3a2ad6c">Device clock</span></span>
+                    </div>
+                    <div class="form-grid two">
+                        <label>
+                            <span><span data-i18n="ui.96531f89">Zona waktu</span></span>
+                            <select id="timezoneSelect">
+                                <option value="Asia/Jakarta" data-offset="7" selected data-i18n="ui.c185193f">Memuat zona waktu IANA...</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.57646aee">Opasitas atmosfer</span></span>
+                            <input id="atmosphereOpacity" type="range" min="0" max="100" value="40">
+                        </label>
+                    </div>
+                    <div id="reviewerCalendarClock" class="astronomy-calendar-clock"
+                        data-astronomy-calendar-clock data-timezone-control="timezoneSelect">
+                        <p><span data-i18n="ui.ed60d641">Memuat kalender Masehi, kalender Hijriah, dan jam...</span></p>
+                    </div>
+                    <div id="timeMetrics" class="metric-grid"></div>
+
+                    <div class="section-head compact">
+                        <h2><span data-i18n="ui.ac4679b4">Analisis 16 Arah</span></h2>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><span data-i18n="ui.eacc46b">Arah</span></th>
+                                    <th><span data-i18n="ui.821171ea">Delta Koordinat</span></th>
+                                    <th><span data-i18n="ui.34e82f56">Solar</span></th>
+                                    <th><span data-i18n="ui.acf4b86">Shalat</span></th>
+                                    <th><span data-i18n="ui.a0678bcf">Hilal</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="directionRows"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="tab-panel" id="tab-prayer" data-access-key="panel:prayer">
+                    <div class="section-head">
+                        <h2><span data-i18n="ui.ad2f03bc">Prayer Engine</span></h2>
+                        <span id="nextPrayerBadge" class="status-pill">-</span>
+                    </div>
+                    <div class="form-grid two">
+                        <label>
+                            <span><span data-i18n="ui.9eb68c25">Metode</span></span>
+                            <select id="prayerMethod">
+                                <option value="registry-unavailable" selected data-i18n="ui.d11e343">Memuat metode dari database...</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span><span data-i18n="ui.d7c08f81">Madhab Asr</span></span>
+                            <select id="asrMadhab">
+                                <option value="registry-unavailable-asr" data-shadow-factor="1" selected data-i18n="ui.24a7bc67">Memuat mazhab Ashar dari database...</option>
+                            </select>
+                        </label>
+                    </div>
+                    <section class="falak-publication-config" aria-labelledby="falakPublicationTitle" data-access-key="card:node-2ffd7ad546-18">
+                        <div class="falak-publication-head">
+                            <div>
+                                <h3 id="falakPublicationTitle"><span data-i18n="ui.3a964d6f">Metode yang tampil di index.html</span></h3>
+                                <p><span data-i18n="ui.d726dfa4">Pilih 1 sampai 3 metode Falak. Metode utama dipakai untuk hitung mundur dan overlay.</span></p>
+                            </div>
+                            <span id="falakPublicationCount" class="status-pill">0/3</span>
+                        </div>
+                        <div id="falakPublicationMethodOptions" class="falak-publication-options"
+                            role="group" aria-label="Metode Falak yang ditampilkan" data-i18n-aria-label="ui.7181c451"></div>
+                        <div class="form-grid two">
+                            <label>
+                                <span><span data-i18n="ui.c6ee46ce">Metode utama index.html</span></span>
+                                <select id="falakPublicationPrimary">
+                                    <option value="" data-i18n="ui.10fdd5da">Memuat konfigurasi...</option>
+                                </select>
+                            </label>
+                            <label>
+                                <span><span data-i18n="ui.ce003edb">Metode Ashar publik</span></span>
+                                <select id="falakPublicationAsr">
+                                    <option value="" data-i18n="ui.10fdd5da">Memuat konfigurasi...</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="falak-publication-parameter-intro">
+                            <strong><span data-i18n="ui.d41adafd">Parameter Falak selain Subuh dan Isya</span></strong>
+                            <span><span data-i18n="ui.a5e2f6cf">Atur Syuruq, Dhuha, Maghrib, kondisi atmosfer/elevasi, serta ihtiyat setiap waktu untuk masing-masing metode.</span></span>
+                        </div>
+                        <div id="falakPublicationParameterPanels" class="falak-publication-parameter-panels"></div>
+                        <button id="saveFalakPublication" class="primary-button full" type="button">
+                            Simpan &amp; terapkan ke index.html
+                        </button>
+                        <p id="falakPublicationStatus" class="falak-publication-status" role="status"
+                            aria-live="polite"><span data-i18n="ui.f517ca87">Menunggu registry Falak...</span></p>
+                    </section>
+                    <div id="prayerGrid" class="prayer-grid"></div>
+                    <div id="prayerComparison" class="metric-grid"></div>
+                </section>
+
+                <section class="tab-panel" id="tab-rukyat" data-access-key="panel:rukyat">
+                    <div class="section-head">
+                        <h2><span data-i18n="ui.d57911dd">Rukyat Hilal</span></h2>
+                        <span id="hilalBadge" class="status-pill">-</span>
+                    </div>
+                    <div id="hilalMetrics" class="metric-grid"></div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><span data-i18n="ui.1848bbb0">Parameter</span></th>
+                                    <th><span data-i18n="ui.eb05055a">Nilai</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="rukyatRows"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="tab-panel" id="tab-weather" data-access-key="panel:weather">
+                    <div class="section-head"><h2>Weather Forecast Â· 5 Hari</h2><span id="weatherStatusBadge" class="status-pill"><span data-i18n="ui.3c3cfe05">Waiting</span></span></div>
+                    <div class="environment-toolbar"><label><span><span data-i18n="ui.cd912d40">Temperature unit</span></span><select id="temperatureUnitSelect"><option value="celsius">Celsius (Â°C)</option><option value="fahrenheit">Fahrenheit (Â°F)</option></select></label></div>
+                    <div id="weatherCurrentInfo" class="weather-current-card" data-access-key="card:weatherCurrentInfo"><strong>Weather belum tersedia</strong><span><span data-i18n="ui.5be89008">Menunggu dataset provider.</span></span></div>
+                    <div id="weatherForecastCards" class="weather-forecast-grid"></div>
+                    <div id="weatherCloudInfo" class="environment-note"><span data-i18n="ui.6111e670">Cloud cover numerik; raster/tile awan tidak dipaksakan.</span></div>
+                    <div id="weatherSourceInfo" class="environment-source-card" data-access-key="card:weatherSourceInfo"></div>
+                </section>
+
+                <section class="tab-panel" id="tab-earthquake" data-access-key="panel:earthquake">
+                    <div class="section-head"><h2><span data-i18n="ui.a34e6a5e">Earthquake Monitoring</span></h2><span id="earthquakeStatusBadge" class="status-pill"><span data-i18n="ui.3c3cfe05">Waiting</span></span></div>
+                    <div id="earthquakeList" class="environment-event-list"></div>
+                    <div id="earthquakeSourceInfo" class="environment-source-card" data-access-key="card:earthquakeSourceInfo"></div>
+                </section>
+
+                <section class="tab-panel" id="tab-wildfire" data-access-key="panel:wildfire">
+                    <div class="section-head"><h2><span data-i18n="ui.f5159316">Wildfire / Hotspot</span></h2><span id="wildfireStatusBadge" class="status-pill"><span data-i18n="ui.3c3cfe05">Waiting</span></span></div>
+                    <div id="wildfireList" class="environment-event-list"></div>
+                    <div id="wildfireSourceInfo" class="environment-source-card" data-access-key="card:wildfireSourceInfo"></div>
+                </section>
+
+                <section class="tab-panel" id="tab-api" data-access-key="panel:api">
+                    <div class="section-head">
+                        <h2><span data-i18n="ui.8a686ce">Output JSON</span></h2>
+                        <button id="copyJsonButton" class="icon-button small" type="button" title="Salin JSON" aria-label="Salin JSON" data-i18n-title="ui.d937195e" data-i18n-aria-label="ui.d937195e">
+                            <i data-lucide="copy"></i>
+                        </button>
+                    </div>
+                    <pre id="apiOutput" class="json-output">{}</pre>
+                </section>
+            </div>
+        </aside>
+
+        <div id="coordinateBadge" class="coordinate-badge">Lon 0.0000, Lat 0.0000</div>
+        <div id="temperatureMapDisplay" class="temperature-map-display hidden" aria-live="polite"></div>
+        <section id="presentationHud" class="presentation-hud" aria-live="polite" data-access-key="card:presentationHud">
+            <div id="presentationFeatureIcon" class="presentation-feature-icon hidden" aria-hidden="true"></div>
+            <div class="presentation-kicker" id="presentationKicker"><span data-i18n="ui.224b30c6">Overview</span></div>
+            <h2 id="presentationTitle"><span data-i18n="ui.dd430d38">Astronomical Overview</span></h2>
+            <div id="presentationTemperature" class="presentation-temperature hidden"></div>
+            <div id="presentationInfo" class="presentation-info">Menyiapkan presentasi otomatisâ€¦</div>
+            <div class="presentation-footer">
+                <span id="presentationCounter">Overview Â· 00:00</span>
+                <span id="presentationSourceStatus"><span data-i18n="ui.65f38ee2">Initializing</span></span>
+            </div>
+            <div class="presentation-progress"><span id="presentationProgressBar"></span></div>
+        </section>
+        <div class="map-status">
+            <span id="subsolarBadge">Subsolar -</span>
+            <span id="sublunarBadge">Sublunar -</span>
+            <span id="renderDateBadge"><span data-i18n="ui.a7b81dae">Render -</span></span>
+        </div>
+    </main>
+
+    </template>
+    <script id="advancedScriptManifest" type="application/json">["assets/js/core/runtime-config.js", "assets/js/core/api-client.js", "assets/js/core/actual-ti-6684.js?v=20260919-calibration2", "assets/js/core/time-coor-d47a.js?v=8", "assets/js/core/actual-ti-7cfe.js?v=20260919-calibration2", "assets/vendor/ol/ol.js", "https://unpkg.com/ol-mapbox-style@12.5.0/dist/olms.js", "assets/vendor/astro/astronomy-df31.js?v=2.1.19", "https://unpkg.com/lucide@latest/dist/umd/lucide.min.js", "assets/js/gis/gis-runtime.js", "assets/js/gis/map-prese-b235.js?v=20260918-bilingual3", "assets/js/astro/astronomy-208a.js", "assets/js/adm-bound-ad0a.js?v=4", "assets/js/astro/time-coor-6ca4.js?v=1", "assets/js/earthquak-ce6d.js?v=3", "assets/js/weather-e-cbb0.js?v=20260918-bilingual3", "assets/js/weather-r-a3f9.js?v=3", "assets/js/weather-storms.js?v=2", "assets/js/live-map-data.js?v=1", "assets/js/weather-o-8adc.js?v=20260918-bilingual3", "assets/js/openfreem-b44a.js?v=1", "assets/js/online-ma-4539.js?v=1", "assets/js/earthquak-09ed.js?v=2", "assets/js/adm0-map-scope.js?v=4", "assets/js/air-quali-9d34.js?v=2", "assets/js/volcano-map.js?v=20260918-bilingual3", "assets/js/atmospher-14c7.js?v=3", "assets/js/webgis.js?v=20260920-performance", "assets/js/environme-3f75.js?v=27", "assets/js/astronomy-6caf.js?v=11", "assets/js/core/offline-b-4c9c.js", "assets/js/network-m-d655.js?v=1"]</script>
+    <script src="assets/js/advanced-page.js?v=20260919-reviewer"></script>
+</body>
+</html>

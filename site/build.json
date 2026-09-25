@@ -1,0 +1,19 @@
+{
+  "mode": "viewer",
+  "entry": "main.html",
+  "pages": [
+    "admin.html",
+    "webgis.html",
+    "reviewer.html",
+    "overlay.html",
+    "index.html",
+    "bms.html",
+    "quran.html",
+    "users.html",
+    "main.html"
+  ],
+  "sizeBytes": 569480450,
+  "containsPhp": false,
+  "containsPersonalDatabase": false,
+  "portableNames": 1
+}

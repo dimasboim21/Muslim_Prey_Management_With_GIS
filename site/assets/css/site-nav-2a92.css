@@ -1,0 +1,15 @@
+#mpmSiteNavigation{position:relative;z-index:20000;display:flex;align-items:center;gap:12px;min-height:48px;padding:7px 16px;box-sizing:border-box;background:#123d32;color:#fff;font:14px/1.4 system-ui,sans-serif;flex-wrap:wrap}
+#mpmSiteNavigation a,#mpmSiteNavigation button{padding:6px 12px;border:1px solid #c2dbd3;border-radius:7px;background:#fff;color:#123d32;text-decoration:none;font:inherit;cursor:pointer}
+#mpmSiteNavigation [data-mode]{flex:1;text-align:center;font-size:13px}
+#mpmViewerNotice{flex-basis:100%;margin:0;color:#fff}
+html.mpm-has-navigation [data-mpm-legacy-navigation]{display:none!important}
+.mpm-viewer [data-viewer-locked]{cursor:not-allowed!important;opacity:.65}
+.mpm-static-login{padding:12px;background:#edf5f1;color:#183e32;border-radius:8px}
+html.mpm-has-navigation .advanced-page .app-shell,html.mpm-has-navigation .advanced-page .app-shell.has-panel{height:calc(100dvh - var(--mpm-navigation-height,48px))}
+.mpm-demo-example{margin:16px;padding:20px;background:#fff;border:1px solid #b8d0c4;border-radius:10px;color:#183e32}
+.mpm-demo-example table{width:100%;border-collapse:collapse}.mpm-demo-example td,.mpm-demo-example th{text-align:left;padding:10px;border-bottom:1px solid #d7e5df}
+.mpm-dialog-navigation{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px}.mpm-dialog-navigation a,.mpm-dialog-navigation button{padding:6px 12px;border:1px solid #9dbbad;border-radius:6px;background:white;color:#123d32;font:inherit;text-decoration:none;cursor:pointer}
+@media(max-width:480px){#mpmSiteNavigation{gap:6px;padding:6px 8px}#mpmSiteNavigation [data-mode]{font-size:11px}}
+
+/* Keep full-screen previews and map dialogs above the page navigation. */
+.customizer-page>#mpmSiteNavigation,.advanced-page>#mpmSiteNavigation{z-index:40}

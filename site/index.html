@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <script src="assets/js/paths.js"></script>
+  <script src="assets/js/deploymen-ed4f.js?v=1"></script>
+  <script src="assets/js/viewer-runtime.js?v=1"></script>
+  <script src="assets/js/account-c-f56d.js?v=20260924-viewer1"></script>
+  <link rel="stylesheet" href="assets/css/site-nav-2a92.css?v=1">
+  <script src="assets/js/site-navi-17b5.js?v=1" defer></script>
+  <script src="assets/js/i18n.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/ui-catalog.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/ui-transl-64c1.js?v=20260918-bilingual3"></script>
+  <script src="assets/js/building-links.js?v=20260919-record2"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexibel Building And Asset Management For Monitoring System</title>
+  <meta name="theme-color" content="#0f3d2e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css?v=7">
+  <link rel="stylesheet" href="assets/css/prayer-cards.css?v=7">
+  <link rel="stylesheet" href="assets/css/config-panel.css">
+  <link rel="stylesheet" href="assets/css/force-display.css?v=2">
+  <link rel="stylesheet" href="assets/css/dynamic-c346.css?v=24">
+  <link rel="stylesheet" href="assets/css/actual-time.css?v=3">
+  <link rel="stylesheet" href="assets/css/time-coo-4ef0.css?v=3">
+<script defer src="assets/js/user-sess-efc4.js?v=1"></script>
+<script src="assets/js/admin-loc-793c.js?v=20260918-bilingual3"></script>
+<link rel="stylesheet" href="assets/css/building-68bd.css?v=20260918-bilingual3">
+<link rel="stylesheet" href="assets/css/index-bu-0183.css?v=1">
+<script src="assets/js/url-acces-9679.js?v=1" defer></script></head>
+<body>
+<dialog id="indexBuildingDialog" aria-labelledby="indexBuildingTitle">
+<h1 id="indexBuildingTitle">Pilih gedung</h1>
+<div class="index-gate-language"><span data-language-slot></span></div>
+<div id="buildingSelection" class="building-selection">
+              <strong id="buildingSelectionQuestion" data-i18n="selector.question">Apa data yang ingin Anda tampilkan pada layer peta ini?</strong>
+              <div class="building-filters">
+                <label><span data-i18n="selector.adm0">Negara</span><select id="buildingFilteradm0"></select></label>
+                <label><span data-i18n="selector.adm1">Provinsi</span><select id="buildingFilteradm1" disabled></select></label>
+                <label><span data-i18n="selector.adm2">Kabupaten/Kota</span><select id="buildingFilteradm2" disabled></select></label>
+              </div>
+              <div id="buildingSelectionList"></div>
+              <p id="buildingSelectionStatus" role="status"></p>
+              <div class="building-pagination"><button id="buildingPagePrevious" type="button" disabled data-i18n="selector.previous">Sebelumnya</button><span id="buildingPageLabel"></span><button id="buildingPageNext" type="button" disabled data-i18n="selector.next">Berikutnya</button></div>
+            </div>    
+<p id="indexBuildingError" role="status"></p><button id="indexBuildingChoose" type="button" hidden>Pilih gedung lain</button>
+</dialog>
+<template id="indexDashboardTemplate">
+  <div class="app-shell">
+    <main class="dashboard-grid">
+      <section class="schedule-section" aria-labelledby="scheduleTitle" data-access-key="card:node-ac7df1acba-1">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="sourceTime">Sumber Waktu</p>
+            <h2 id="scheduleTitle" data-i18n="scheduleTitle">Jadwal Sholat</h2>
+          </div>
+          <div class="schedule-heading-controls">
+            <div class="actual-time-launcher-slot" data-actual-time-launcher-slot></div>
+            <label class="source-picker">
+              <span data-i18n="activeMethod">Metode Falak aktif</span>
+              <select id="activeSourceSelect"></select>
+            </label>
+          </div>
+        </div>
+        <div class="prayer-grid" id="prayerGrid"></div>
+        <div class="schedule-scenic-window" aria-hidden="true"></div>
+      </section>
+
+      <section class="hero-panel mosque-time-panel" id="heroPanel" aria-label="Waktu aktual" data-i18n-aria-label="ui.84dd4fa5" data-access-key="card:heroPanel">
+        <div class="hero-content">
+          <div class="identity-block hero-identity">
+            <p class="eyebrow" id="locationText">Indonesia</p>
+            <h1 id="mosqueName"><span data-i18n="ui.2ec0838b">Masjid</span></h1>
+            <p class="mosque-address" id="mosqueAddress" data-i18n="addressEmpty">Alamat belum diisi</p>
+          </div>
+          <div class="clock-block calibrated-clock-block">
+            <span class="clock-label" data-i18n="currentTime">Waktu Aktual</span>
+            <time class="clock-time" id="clockTime" datetime="00:00:00" aria-live="off">
+              <span class="actual-time-date-part" id="actualTimeDatePart">--/--/----</span>
+              <span class="actual-time-clock-part" id="actualTimeClockPart">--:--:--.---</span>
+            </time>
+            <div class="actual-time-source-meta">
+              <span class="actual-time-source-label" id="actualTimeSourceLabel"><span data-i18n="ui.7438229">Waktu ISP / Provider</span></span>
+              <span class="actual-time-source-status" id="actualTimeSourceStatus" data-status="unavailable"><span data-i18n="ui.35fc7021">Unavailable</span></span>
+            </div>
+            <div class="index-time-calibration" id="indexTimeCalibration">
+              <label for="actualTimeDisplayMode">
+                <span id="actualTimeDisplayLabel"><span data-i18n="ui.75db3147">Sumber Waktu</span></span>
+                <select id="actualTimeDisplayMode" aria-describedby="actualTimeCoordinateDifference">
+                  <option value="isp">ISP / Provider</option>
+                  <option value="building-coordinate-calibrated" data-i18n="ui.22391297">Kalibrasi Gedung</option>
+                </select>
+              </label>
+              <span class="index-time-calibration-output" id="actualTimeCoordinateDifference" role="status" aria-live="polite"><span data-i18n="ui.d467e43c">Memuat sumber waktu...</span></span>
+            </div>
+            <div class="date-lines">
+              <span id="gregorianDate"><span data-i18n="ui.1b25d9b0">Tanggal Masehi</span></span>
+              <span id="hijriDate"><span data-i18n="ui.15c99935">Tanggal Islam</span></span>
+            </div>
+          </div>
+          <div class="next-prayer-block">
+            <span class="clock-label" data-i18n="nextPrayer">Sholat Berikutnya</span>
+            <strong id="nextPrayerLabel">-</strong>
+            <div class="next-prayer-time-source">
+              <span id="nextPrayerTime">-</span>
+              <span class="next-prayer-separator" aria-hidden="true">&middot;</span>
+              <span class="next-prayer-source" id="nextPrayerSource" title="">-</span>
+            </div>
+            <span class="countdown" id="nextPrayerCountdown">00:00:00</span>
+            <div id="currentPrayerNote" class="current-prayer-note" aria-live="polite"></div>
+          </div>
+          <div class="hero-actions">
+            <span class="sync-status" id="syncStatus" role="status" aria-live="polite"><span data-i18n="ui.90cd41a5">Mode lokal</span></span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <section id="dynamicOverlayRoot" class="dynamic-overlay" aria-label="Informasi terjadwal" aria-hidden="true" hidden data-i18n-aria-label="ui.24d1efdd" data-access-key="card:dynamicOverlayRoot">
+    <div id="dynamicOverlayBackground" class="dynamic-overlay-background" aria-hidden="true"></div>
+    <video id="dynamicOverlayVideo" class="dynamic-overlay-media" muted loop playsinline preload="metadata" hidden></video>
+    <iframe id="dynamicOverlayProvider" class="dynamic-overlay-media" title="Media overlay" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" hidden data-i18n-title="ui.d02d87af"></iframe>
+    <div class="dynamic-overlay-tint" aria-hidden="true"></div>
+    <header class="dynamic-overlay-timebar">
+      <time id="dynamicOverlayClock" class="dynamic-overlay-clock"></time>
+      <div id="dynamicOverlayPrayerContext" class="dynamic-overlay-prayer-context" aria-label="Konteks waktu sholat" data-i18n-aria-label="ui.7abb7fdd"></div>
+      <div id="dynamicOverlayDates" class="dynamic-overlay-dates">
+        <span id="dynamicOverlayGregorian"></span>
+        <span id="dynamicOverlayHijri"></span>
+      </div>
+    </header>
+    <article id="dynamicOverlayContent" class="dynamic-overlay-content" role="status" aria-live="polite" data-access-key="card:dynamicOverlayContent">
+      <p id="dynamicOverlayEyebrow" class="dynamic-overlay-eyebrow"></p>
+      <h2 id="dynamicOverlayTitle" class="dynamic-overlay-title"></h2>
+      <p id="dynamicOverlaySubtitle" class="dynamic-overlay-subtitle"></p>
+      <p id="dynamicOverlayBody" class="dynamic-overlay-body"></p>
+      <p id="dynamicOverlayAdditional" class="dynamic-overlay-additional"></p>
+      <div id="dynamicOverlayWidgets" class="dynamic-overlay-widgets" aria-label="Komponen informasi tambahan" data-i18n-aria-label="ui.1886d50e"></div>
+      <div id="dynamicOverlaySceneProgress" class="dynamic-overlay-scene-progress" hidden></div>
+    </article>
+    <div id="dynamicOverlayPersistentLayer" class="dynamic-overlay-persistent-layer" aria-label="Informasi yang tetap terlihat" data-i18n-aria-label="ui.93a56db5"></div>
+    <div id="dynamicOverlayStackLayer" class="dynamic-overlay-stack-layer" aria-label="Konten tambahan bertumpuk" data-i18n-aria-label="ui.f67efa9f"></div>
+    <div id="dynamicOverlayAlertLayer" class="dynamic-overlay-alert-layer" role="alert" aria-live="assertive"></div>
+  </section>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</template>
+<script id="indexDashboardScripts" type="application/json">["assets/js/core/runtime-config.js", "assets/js/core/api-client.js", "assets/js/core/actual-ti-6684.js?v=20260919-calibration2", "assets/js/core/time-coor-d47a.js?v=8", "assets/js/core/actual-ti-7cfe.js?v=20260919-calibration2", "assets/js/core/sync-manager.js", "assets/js/core/activity-09d6.js", "assets/js/default-config.js?v=2", "assets/js/time-utils.js?v=2", "assets/js/storage-m-5b37.js?v=2", "assets/js/config-loader.js?v=2", "assets/js/backgroun-225e.js", "assets/js/prayer-sc-fa37.js?v=66", "assets/js/force-cou-5059.js", "assets/js/config-form.js?v=2", "assets/js/time-coor-37f1.js?v=2", "assets/js/app.js?v=20260922-building1", "assets/js/overlay/overlay-api.js?v=2", "assets/js/overlay/overlay-t-27ae.js?v=2", "assets/js/overlay/prayer-ov-69cc.js?v=3", "assets/js/overlay/dhuha-ove-1445.js?v=3", "assets/js/overlay/friday-ov-3f91.js?v=1", "assets/js/overlay/qiyamul-o-0049.js?v=2", "assets/js/overlay/overlay-d-17b2.js?v=2", "assets/js/overlay/funeral-p-180e.js?v=4", "assets/js/overlay/funeral-o-3286.js?v=20260924-viewer1", "assets/js/overlay/worship-e-ba29.js?v=15", "assets/js/overlay/overlay-t-2a61.js?v=10", "assets/js/overlay/overlay-r-4056.js?v=24", "assets/js/overlay/overlay-m-e3d9.js?v=13", "assets/js/overlay/overlay-b-bcb7.js?v=2", "assets/js/core/offline-b-4c9c.js"]</script>
+<script src="assets/js/building-bb4d.js?v=20260918-bilingual3"></script>
+<script src="assets/js/index-bui-0792.js?v=2"></script>
+</body>
+</html>

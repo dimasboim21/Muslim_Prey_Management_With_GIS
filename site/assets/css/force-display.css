@@ -1,0 +1,133 @@
+.program-display-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: none;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  color: #ffffff;
+  background: rgba(10, 24, 21, 0.94);
+}
+
+.program-display-overlay.is-active {
+  display: grid;
+}
+
+.program-display-content {
+  width: min(100%, 1120px);
+  display: grid;
+  gap: clamp(0.8rem, 2vw, 1.2rem);
+}
+
+.program-overlay-header {
+  display: grid;
+  gap: 0.2rem;
+  text-align: center;
+}
+
+.program-overlay-header span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(0.9rem, 2vw, 1.25rem);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.program-overlay-header strong {
+  color: #ffffff;
+  font-size: clamp(1.8rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.program-overlay-list {
+  max-height: 70dvh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.7rem;
+}
+
+.program-overlay-list .program-item {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.program-overlay-list .program-item h3,
+.program-overlay-list .program-detail strong {
+  color: #ffffff;
+}
+
+.program-overlay-list .program-item p,
+.program-overlay-list .program-meta,
+.program-overlay-list .program-detail span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.force-countdown {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(11, 42, 37, 0.98), rgba(18, 38, 68, 0.98));
+}
+
+.force-countdown.is-active {
+  display: grid;
+}
+
+.force-countdown-card {
+  width: min(100%, 1040px);
+  display: grid;
+  justify-items: center;
+  gap: clamp(0.7rem, 2vw, 1.2rem);
+  text-align: center;
+}
+
+.force-kicker {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 0.42rem 0.8rem;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.force-countdown-card h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 7vw, 5.2rem);
+  line-height: 1;
+}
+
+.force-time {
+  font-size: clamp(4.2rem, 18vw, 14rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.force-message {
+  max-width: 760px;
+  font-size: clamp(1rem, 2.4vw, 1.55rem);
+  font-weight: 700;
+}
+
+.force-meta {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(0.88rem, 1.8vw, 1.15rem);
+  font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .force-countdown {
+    padding: 1rem;
+  }
+
+  .force-time {
+    font-size: clamp(3.6rem, 22vw, 6rem);
+  }
+}

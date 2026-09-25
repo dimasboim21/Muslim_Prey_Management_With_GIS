@@ -1,0 +1,397 @@
+.dynamic-overlay[hidden] {
+  display: none !important;
+}
+
+.dynamic-overlay {
+  --overlay-x: 50%;
+  --overlay-y: 50%;
+  --overlay-width: 86%;
+  --overlay-height: 78%;
+  --overlay-image-fit: cover;
+  --overlay-image-position: center center;
+  --overlay-image-scale: 1;
+  --overlay-image-opacity: 1;
+  --overlay-tint: #081b18;
+  --overlay-tint-opacity: 0.52;
+  --overlay-card: #102a25;
+  --overlay-card-opacity: 0.78;
+  --overlay-text-align: center;
+  --overlay-font-family: Arial, Helvetica, sans-serif;
+  --overlay-title-size: clamp(2rem, 7vw, 6rem);
+  --overlay-body-size: clamp(1rem, 2.4vw, 1.7rem);
+  --overlay-translate-x: -50%;
+  --overlay-translate-y: -50%;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  color: #fff;
+  background: #071713;
+  font-family: var(--overlay-font-family);
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+
+.dynamic-overlay[data-anchor="top-left"] { --overlay-translate-x: 0%; --overlay-translate-y: 0%; }
+.dynamic-overlay[data-anchor="top-right"] { --overlay-translate-x: -100%; --overlay-translate-y: 0%; }
+.dynamic-overlay[data-anchor="bottom-left"] { --overlay-translate-x: 0%; --overlay-translate-y: -100%; }
+.dynamic-overlay[data-anchor="bottom-right"] { --overlay-translate-x: -100%; --overlay-translate-y: -100%; }
+
+.dynamic-overlay.is-active {
+  opacity: 1;
+}
+
+.dynamic-overlay-background,
+.dynamic-overlay-media,
+.dynamic-overlay-tint {
+  position: absolute;
+  inset: 0;
+}
+
+.dynamic-overlay-media { width:100%; height:100%; border:0; object-fit:var(--overlay-image-fit); object-position:var(--overlay-image-position); opacity:var(--overlay-image-opacity); transform:scale(var(--overlay-image-scale)); }
+.dynamic-overlay-media[hidden] { display:none; }
+
+.dynamic-overlay-background {
+  background-position: var(--overlay-image-position);
+  background-size: var(--overlay-image-fit);
+  background-repeat: no-repeat;
+  opacity: var(--overlay-image-opacity);
+  transform: scale(var(--overlay-image-scale));
+}
+
+.dynamic-overlay-tint {
+  background: var(--overlay-tint);
+  opacity: var(--overlay-tint-opacity);
+}
+
+.dynamic-overlay-timebar {
+  position: absolute;
+  z-index: 2;
+  top: clamp(0.75rem, 2vw, 1.5rem);
+  left: clamp(0.75rem, 2vw, 1.5rem);
+  right: clamp(0.75rem, 2vw, 1.5rem);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,.7);
+}
+
+.dynamic-overlay-prayer-context{min-width:0;display:flex;flex:1 1 auto;align-items:stretch;justify-content:center;gap:clamp(.3rem,.8vw,.7rem)}
+.dynamic-overlay-prayer-context[hidden]{display:none}
+.dynamic-overlay-prayer-context-item{min-width:0;max-width:30rem;display:grid;align-content:center;gap:.08rem;padding:.38rem clamp(.45rem,1vw,.8rem);border:1px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(4,24,20,.7);backdrop-filter:blur(9px);text-align:center}
+.dynamic-overlay-prayer-context-item small{color:#a7ead8;font-size:clamp(.48rem,.72vw,.68rem);font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.dynamic-overlay-prayer-context-item strong{overflow:hidden;text-overflow:ellipsis;color:#fff;font-size:clamp(.62rem,1vw,.92rem);line-height:1.15}
+.dynamic-overlay-prayer-context-item span{color:rgba(255,255,255,.78);font-size:clamp(.5rem,.72vw,.68rem);font-variant-numeric:tabular-nums}
+
+.dynamic-overlay-clock {
+  font-size: clamp(1.6rem, 4vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.dynamic-overlay-dates {
+  display: grid;
+  gap: .1rem;
+  text-align: right;
+  font-size: clamp(.78rem, 1.4vw, 1.1rem);
+  font-weight: 700;
+}
+
+.dynamic-overlay-content {
+  position: absolute;
+  z-index: 2;
+  left: var(--overlay-x);
+  top: var(--overlay-y);
+  width: min(var(--overlay-width), 1180px);
+  min-height: min(var(--overlay-height), 760px);
+  max-height: calc(100dvh - 9rem);
+  overflow: hidden;
+  display: grid;
+  align-content: center;
+  justify-items: var(--overlay-text-align);
+  gap: clamp(.45rem, 1.5vw, 1rem);
+  transform: translate(var(--overlay-translate-x), var(--overlay-translate-y));
+  border: var(--overlay-card-border-width,1px) solid var(--overlay-card-border,rgba(255,255,255,.22));
+  border-radius: var(--overlay-card-radius,clamp(12px,2vw,28px));
+  padding: var(--overlay-card-padding,clamp(1.1rem,4vw,4rem));
+  text-align: var(--overlay-text-align);
+  color: var(--overlay-card-text,#fff);
+  background: transparent;
+  box-shadow: var(--overlay-card-shadow,0 28px 80px rgba(0,0,0,.32));
+  backdrop-filter: blur(var(--overlay-card-backdrop-blur,14px));
+}
+
+.dynamic-overlay-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--overlay-card-background,var(--overlay-card));
+  background-position:center;
+  background-size:cover;
+  opacity: var(--overlay-card-opacity);
+}
+
+.dynamic-overlay-content.without-card {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.dynamic-overlay-content.without-card::before { display: none; }
+
+.dynamic-overlay-eyebrow {
+  border: 1px solid rgba(255,255,255,.32);
+  border-radius: 999px;
+  padding: .35rem .8rem;
+  font-size: clamp(.8rem, 1.5vw, 1.15rem);
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.dynamic-overlay-title {
+  color: var(--overlay-card-title,inherit);
+  font-size: var(--overlay-title-size);
+  line-height: .98;
+  text-wrap: balance;
+}
+
+.dynamic-overlay-subtitle {
+  font-size: clamp(2.8rem, 13vw, 10rem);
+  font-weight: 900;
+  line-height: .92;
+  font-variant-numeric: tabular-nums;
+}
+
+.dynamic-overlay-body {
+  max-width: 900px;
+  font-size: var(--overlay-body-size);
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.dynamic-overlay-additional {
+  color: rgba(255,255,255,.78);
+  font-size: clamp(.76rem, 1.3vw, 1rem);
+  font-weight: 700;
+}
+
+.dynamic-overlay-widgets { width:100%; display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; }
+.dynamic-overlay-subtitle{color:var(--overlay-card-subtitle,inherit)}
+.dynamic-overlay-widget { position:relative; isolation:isolate; min-width:min(14rem,100%); max-width:100%; border:var(--overlay-card-border-width,1px) solid var(--overlay-card-border,rgba(255,255,255,.25)); border-radius:var(--overlay-card-radius,10px); padding:var(--overlay-card-padding,.55rem .8rem); color:var(--overlay-card-text,#fff); background:transparent; box-shadow:var(--overlay-card-shadow,none); backdrop-filter:blur(var(--overlay-card-backdrop-blur,0)); font-size:clamp(.75rem,1.3vw,1rem); font-weight:700; overflow:hidden; }
+.dynamic-overlay-widget::before,.dynamic-overlay-stack-card::before,.dynamic-overlay-alert-card::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:var(--overlay-card-background,var(--overlay-card));background-position:center;background-size:cover;opacity:var(--overlay-card-opacity,.78);pointer-events:none}
+.dynamic-overlay-widget small { color:rgba(255,255,255,.75); font-size:.78em; }
+.dynamic-overlay-widget.is-positioned { position:absolute; left:var(--widget-x,50%); top:var(--widget-y,50%); width:var(--widget-width,30%); transform:translate(-50%,-50%); }
+.dynamic-overlay-widget-title,.dynamic-overlay-widget-body,.dynamic-overlay-widget-meta,.dynamic-overlay-widget-source,.dynamic-overlay-widget-latin,.dynamic-overlay-widget-translation { display:block; margin:.15rem 0; color:inherit; }
+.dynamic-overlay-widget-title { font-size:1.08em; }
+.dynamic-overlay-widget-arabic { margin:.25rem 0; font-family:"Noto Naskh Arabic","Amiri",serif; font-size:clamp(1.25rem,2.8vw,2.5rem); line-height:1.7; }
+.dynamic-overlay-widget-source { color:rgba(255,255,255,.78); font-size:.78em; }
+.dynamic-overlay-widget-media-element { width:100%; max-height:min(48vh,420px); display:block; border-radius:.55rem; object-fit:contain; background:#071713; }
+.dynamic-overlay-analog-clock { position:relative; width:clamp(76px,10vw,150px); aspect-ratio:1; margin:.25rem auto; border:clamp(3px,.35vw,6px) solid currentColor; border-radius:50%; background:radial-gradient(circle at center,currentColor 0 4%,transparent 5%),rgba(0,0,0,.18); }
+.dynamic-overlay-clock-hand { position:absolute; left:50%; bottom:50%; width:3px; height:34%; border-radius:999px; background:currentColor; transform-origin:50% 100%; }
+.dynamic-overlay-clock-hand.hour { height:25%; width:5px; }
+.dynamic-overlay-clock-hand.second { width:2px; height:39%; color:#f6c453; background:#f6c453; }
+.dynamic-overlay.has-critical-fallback { background:#071713; }
+.dynamic-overlay-widget.is-ticker .dynamic-overlay-widget-body { display:inline-block; min-width:100%; white-space:nowrap; animation:overlay-ticker 18s linear infinite; }
+.dynamic-overlay-widget.uses-safe-area.is-positioned { left:clamp(5%,var(--widget-x,50%),95%); top:clamp(7%,var(--widget-y,50%),93%); }
+.dynamic-overlay-widget.has-animation-fade { animation:overlay-widget-fade .5s ease both; }
+.dynamic-overlay-widget.has-animation-slide { animation:overlay-widget-slide .5s ease both; }
+.dynamic-overlay-widget.has-animation-pulse { animation:overlay-widget-pulse 2.2s ease-in-out infinite; }
+@keyframes overlay-widget-fade { from { opacity:0; } }
+@keyframes overlay-widget-slide { from { opacity:0; translate:0 1.2rem; } }
+@keyframes overlay-widget-pulse { 50% { box-shadow:0 0 0 .45rem rgba(255,255,255,.08); } }
+
+.dynamic-overlay-persistent-layer,
+.dynamic-overlay-stack-layer,
+.dynamic-overlay-alert-layer { position:absolute; z-index:4; pointer-events:none; }
+.dynamic-overlay-persistent-layer { inset:clamp(.75rem,2vw,1.5rem); display:flex; align-items:flex-end; justify-content:space-between; gap:.65rem; flex-wrap:wrap; }
+.dynamic-overlay-persistent-layer .dynamic-overlay-widget { pointer-events:auto; background:transparent; box-shadow:var(--overlay-card-shadow,0 10px 28px rgba(0,0,0,.28)); }
+.dynamic-overlay-stack-layer { z-index:3; left:clamp(.75rem,2vw,1.5rem); bottom:clamp(5rem,12vh,8rem); display:grid; gap:.6rem; max-width:min(34rem,45vw); }
+.dynamic-overlay-stack-card,
+.dynamic-overlay-alert-card { position:relative;isolation:isolate;border:var(--overlay-card-border-width,1px) solid var(--overlay-card-border,rgba(255,255,255,.26));border-radius:var(--overlay-card-radius,16px);padding:var(--overlay-card-padding,clamp(.8rem,1.8vw,1.4rem));color:var(--overlay-card-text,#fff);background:transparent;box-shadow:var(--overlay-card-shadow,0 18px 48px rgba(0,0,0,.38)); }
+.dynamic-overlay-layer-title { margin:.15rem 0; color:inherit; font-size:clamp(1.15rem,2.4vw,2rem); }
+.dynamic-overlay-layer-subtitle,.dynamic-overlay-layer-body,.dynamic-overlay-layer-additional { margin:.2rem 0; }
+.dynamic-overlay-alert-layer { z-index:6; top:clamp(.75rem,2vw,1.5rem); left:50%; width:min(92%,70rem); transform:translateX(-50%); display:grid; gap:.65rem; }
+.dynamic-overlay-alert-card { pointer-events:auto; text-align:center; }
+
+@keyframes overlay-ticker { from { transform:translateX(100%); } to { transform:translateX(-100%); } }
+
+.dynamic-overlay[data-animation="slide"].is-active .dynamic-overlay-content {
+  animation: overlay-slide-in 360ms ease both;
+}
+
+@keyframes overlay-slide-in {
+  from { opacity: 0; transform: translate(var(--overlay-translate-x), var(--overlay-translate-y)) scale(.97); }
+  to { opacity: 1; transform: translate(var(--overlay-translate-x), var(--overlay-translate-y)) scale(1); }
+}
+
+@media (max-width: 640px) {
+  .dynamic-overlay-timebar { align-items: center; }
+  .dynamic-overlay-dates { max-width: 55%; }
+  .dynamic-overlay-content {
+    width: min(94%, 1180px);
+    min-height: min(72%, 760px);
+    padding: 1rem;
+  }
+  .dynamic-overlay-persistent-layer { align-content:flex-end; }
+  .dynamic-overlay-persistent-layer .dynamic-overlay-widget { min-width:0; flex:1 1 45%; }
+  .dynamic-overlay-stack-layer { max-width:calc(100% - 1.5rem); bottom:7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dynamic-overlay,
+  .dynamic-overlay-content { transition: none; animation: none !important; }
+}
+.dynamic-overlay-widget-funeral_guide{width:min(100%,1100px)!important;max-width:1100px;margin-inline:auto;padding:clamp(10px,1.7vw,22px)!important}
+.dynamic-overlay-funeral-guide{display:grid;grid-template-columns:minmax(220px,42%) minmax(0,1fr);gap:clamp(12px,2vw,28px);align-items:center;text-align:left!important}
+.dynamic-overlay-funeral-media{position:relative;margin:0;border-radius:16px;overflow:hidden;background:rgba(240,248,245,.94)}
+.dynamic-overlay-funeral-media img{display:block;width:100%;max-height:48vh;object-fit:contain}
+.dynamic-overlay-funeral-counter{position:absolute;top:8px;right:8px;padding:5px 9px;border-radius:999px;background:rgba(5,32,27,.84);color:#fff;font-size:clamp(.72rem,1.2vw,.95rem);font-weight:800}
+.dynamic-overlay-funeral-copy{min-width:0;overflow-wrap:anywhere}.dynamic-overlay-funeral-stage{margin:0;color:#a7ead8;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.dynamic-overlay-funeral-movement{margin:.2rem 0 .45rem;font-size:clamp(1.25rem,3vw,2.5rem)}.dynamic-overlay-funeral-reading-title{display:block;margin-top:.55rem}
+.dynamic-overlay-funeral-copy .dynamic-overlay-widget-arabic{font-size:clamp(1.35rem,3vw,2.6rem);line-height:1.75;max-height:25vh;overflow:hidden;white-space:pre-line}.dynamic-overlay-funeral-copy .dynamic-overlay-widget-latin,.dynamic-overlay-funeral-copy .dynamic-overlay-widget-translation{white-space:pre-line}.dynamic-overlay-funeral-copy .dynamic-overlay-widget-latin{font-style:italic}
+@media(max-width:760px){.dynamic-overlay-funeral-guide{grid-template-columns:1fr;text-align:center!important}.dynamic-overlay-funeral-media img{max-height:30vh}.dynamic-overlay-funeral-copy .dynamic-overlay-widget-arabic{max-height:18vh}}
+.dynamic-overlay-scene-progress{position:absolute;right:clamp(.7rem,2vw,1.4rem);bottom:clamp(.55rem,1.5vw,1rem);z-index:2;padding:.3rem .65rem;border-radius:999px;background:rgba(0,0,0,.35);color:#bff9e9;font-size:clamp(.7rem,1.15vw,.95rem);font-weight:900;font-variant-numeric:tabular-nums}
+.dynamic-overlay.is-funeral-presentation .dynamic-overlay-content{width:min(94vw,1180px);height:min(86dvh,840px);min-height:0;max-height:calc(100dvh - clamp(1.5rem,4vw,3rem));overflow:hidden;padding:clamp(1rem,3vw,2.4rem) clamp(1rem,4vw,3.5rem) clamp(4.5rem,9vh,6.5rem);gap:clamp(.25rem,1vh,.75rem)}
+.dynamic-overlay.is-funeral-presentation .dynamic-overlay-eyebrow{margin:0;font-size:clamp(.7rem,1.2vw,1rem)}
+.dynamic-overlay.is-funeral-presentation .dynamic-overlay-title{margin:0;font-size:clamp(1.55rem,min(5.5vw,8dvh),5rem);line-height:1.02}
+.dynamic-overlay.is-funeral-presentation .dynamic-overlay-subtitle{margin:0;font-size:clamp(.92rem,min(2.8vw,4.2dvh),2.35rem);line-height:1.12;white-space:pre-line}
+.dynamic-overlay.is-funeral-presentation .dynamic-overlay-body{margin:0;max-width:min(100%,900px);font-size:clamp(.84rem,min(2.1vw,3dvh),1.6rem);line-height:1.35;white-space:pre-line}
+.dynamic-overlay.is-funeral-presentation .dynamic-overlay-additional{margin:0;max-width:90%;font-size:clamp(.65rem,1vw,.88rem);line-height:1.3;white-space:pre-line}
+.dynamic-overlay.is-funeral-presentation .dynamic-overlay-widgets{min-height:0;max-height:52vh;flex-wrap:nowrap;align-items:center}
+.dynamic-overlay-widget-presentation_scene,.dynamic-overlay-widget-funeral_scene{width:min(100%,1000px)!important;max-height:50vh;margin:auto;background:transparent}
+.dynamic-overlay-funeral-scene{display:grid;grid-template-columns:minmax(180px,40%) minmax(0,1fr);align-items:center;gap:clamp(.7rem,2vw,1.75rem)}
+.dynamic-overlay-funeral-scene:has(.dynamic-overlay-funeral-scene-copy:only-child),.dynamic-overlay-funeral-scene:not(:has(.dynamic-overlay-funeral-scene-media)){grid-template-columns:1fr}
+.dynamic-overlay-funeral-scene-media{margin:0;min-width:0;min-height:0;display:grid;place-items:center;border-radius:14px;overflow:hidden;background:rgba(238,246,242,.96)}
+.dynamic-overlay-funeral-scene-media img{display:block;width:100%;max-height:42vh;object-fit:contain}
+.dynamic-overlay-funeral-scene-media.is-deceased-photo{width:min(100%,420px);justify-self:center;background:rgba(230,240,236,.98)}.dynamic-overlay-funeral-scene-media.is-deceased-photo img{aspect-ratio:4/5;max-height:min(46vh,560px);object-fit:cover}.dynamic-overlay-funeral-scene.has-deceased-photo{grid-template-columns:minmax(170px,34%) minmax(0,1fr)}
+.dynamic-overlay-funeral-scene-copy{min-width:0;display:grid;align-content:center;gap:clamp(.2rem,.7vh,.5rem);text-align:center}
+.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-arabic{margin:0;max-height:none;overflow:visible;font-size:clamp(1.35rem,min(4.5vw,6dvh),4.2rem);line-height:1.45;white-space:pre-line;overflow-wrap:anywhere}
+.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-latin{margin:0;font-size:clamp(.78rem,min(1.8vw,2.6dvh),1.35rem);line-height:1.28;font-style:italic;white-space:pre-line}
+.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-translation{margin:0;font-size:clamp(.76rem,min(1.65vw,2.45dvh),1.25rem);line-height:1.28;white-space:pre-line}
+.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-meta{margin:0;color:rgba(255,255,255,.74);font-size:clamp(.65rem,1vw,.88rem);line-height:1.3;white-space:pre-line}
+.dynamic-overlay-persistent-prayer{min-width:0!important;display:flex;align-items:center;gap:.55rem;padding:.45rem .7rem!important;border-radius:999px!important;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dynamic-overlay-persistent-prayer-main{font-size:clamp(.78rem,1.45vw,1.1rem)}.dynamic-overlay-persistent-prayer-remaining{color:#bff9e9;font-size:clamp(.72rem,1.25vw,1rem)}.dynamic-overlay-persistent-prayer-clock{font-weight:900;font-size:clamp(.78rem,1.4vw,1.08rem)}
+.dynamic-overlay.is-funeral-presentation .dynamic-overlay-persistent-layer{inset:auto clamp(.6rem,2vw,1.5rem) clamp(.55rem,1.5vw,1rem);justify-content:flex-start;flex-wrap:nowrap}
+.dynamic-overlay.is-worship-education .dynamic-overlay-timebar{z-index:4;padding:.45rem .7rem;border:1px solid rgba(255,255,255,.22);border-radius:12px;background:rgba(4,24,20,.74);backdrop-filter:blur(10px)}
+.dynamic-overlay.is-worship-education .dynamic-overlay-content{top:55%;width:min(94vw,1180px);height:min(80dvh,780px);min-height:0;max-height:calc(100dvh - clamp(6.2rem,17dvh,9.2rem));overflow:hidden;padding:clamp(.55rem,1.5vw,1.2rem);gap:clamp(.1rem,.55vh,.4rem)}
+.dynamic-overlay.is-worship-education .dynamic-overlay-title{margin:0;font-size:clamp(1.15rem,min(4vw,5.5dvh),3.4rem);line-height:1.04}
+.dynamic-overlay.is-worship-education .dynamic-overlay-subtitle{margin:0;font-size:clamp(.72rem,min(1.55vw,2.1dvh),1.15rem);line-height:1.25;font-weight:800}
+.dynamic-overlay.is-worship-education .dynamic-overlay-body{margin:0;max-width:min(100%,1020px);font-size:clamp(.68rem,min(1.55vw,2.15dvh),1.18rem);line-height:1.25}
+.dynamic-overlay.is-worship-education .dynamic-overlay-additional{margin:0;font-size:clamp(.58rem,.9vw,.76rem)}
+.dynamic-overlay.is-worship-education .dynamic-overlay-widgets{min-height:0;max-height:57dvh;display:flex;flex-direction:column;flex-wrap:nowrap;align-items:stretch;justify-content:flex-start;overflow:hidden}
+.dynamic-overlay.is-worship-education .dynamic-overlay-presentation-scene{width:100%!important;max-height:43dvh;flex:1 1 auto;padding:clamp(.35rem,.8vw,.65rem)!important}
+.dynamic-overlay.is-worship-education .dynamic-overlay-funeral-scene-media img{max-height:35dvh}
+.dynamic-overlay.is-worship-education .dynamic-overlay-widget-source{font-size:clamp(.54rem,.82vw,.72rem);line-height:1.15}
+.dynamic-overlay.is-worship-education:has(.dynamic-overlay-presentation-scene.has-sequence-flow) .dynamic-overlay-body{display:none}
+.dynamic-overlay.is-worship-education .dynamic-overlay-presentation-scene.has-sequence-flow{grid-template-columns:minmax(0,1.18fr) minmax(180px,.82fr);align-items:stretch;gap:clamp(.35rem,1vw,.8rem);max-height:54dvh}
+.dynamic-overlay.is-worship-education .has-sequence-flow:not(:has(.dynamic-overlay-funeral-scene-media)){grid-template-columns:1fr}
+.dynamic-overlay-worship-flow-trail{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.25rem;align-items:center}
+.dynamic-overlay-worship-flow-trail span{position:relative;min-width:0;padding:.22rem .42rem;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:rgba(255,255,255,.62);background:rgba(255,255,255,.06);font-size:clamp(.48rem,.68vw,.64rem);font-weight:900;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dynamic-overlay-worship-flow-trail span.is-active{border-color:#79e5c6;color:#eafff8;background:rgba(24,132,101,.38);box-shadow:0 0 0 2px rgba(121,229,198,.08)}
+.dynamic-overlay.is-worship-education .has-sequence-flow .dynamic-overlay-funeral-scene-copy{min-height:0;max-height:46dvh;align-content:start;gap:clamp(.08rem,.35vh,.24rem);overflow:hidden}
+.dynamic-overlay-worship-flow-label{justify-self:center;padding:.12rem .42rem;border-radius:999px;color:#caffef;background:rgba(21,121,93,.45);font-size:clamp(.48rem,.66vw,.62rem);font-weight:950;text-transform:uppercase;letter-spacing:.035em}
+.dynamic-overlay-worship-flow-label.is-evidence{color:#ffe9b5;background:rgba(139,91,15,.42)}
+.dynamic-overlay-worship-explanation{margin:0;color:var(--overlay-card-text,#fff);font-size:clamp(.6rem,min(1.15vw,1.65dvh),.92rem);line-height:1.2;text-align:left;white-space:pre-line}
+.dynamic-overlay-worship-evidence-summary{color:var(--overlay-card-source,#bff9e9);font-size:clamp(.46rem,.62vw,.58rem);line-height:1.12}
+.dynamic-overlay.is-worship-education .has-sequence-flow .dynamic-overlay-funeral-scene-media{position:relative;align-self:stretch;max-height:46dvh;background:rgba(238,246,242,.98)}
+.dynamic-overlay.is-worship-education .has-sequence-flow .dynamic-overlay-funeral-scene-media img{max-height:42dvh}
+.dynamic-overlay-worship-flow-caption{position:absolute;left:.35rem;right:.35rem;bottom:.35rem;padding:.25rem .4rem;border-radius:8px;color:#fff;background:rgba(4,28,22,.82);font-size:clamp(.5rem,.7vw,.66rem);font-weight:900;text-align:center}
+.dynamic-overlay-widget-sources{display:flex;flex-wrap:wrap;justify-content:center;gap:.2rem .55rem;max-width:100%}.dynamic-overlay-widget-sources .dynamic-overlay-widget-source{display:inline-block}
+.dynamic-overlay-widget-source.is-quran{border-bottom-color:#73e5c5;color:#bff9e9}.dynamic-overlay-widget-source.is-hadith{border-bottom-color:#f1c66e;color:#ffe7ad}
+.dynamic-overlay-evidence-grid{width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(.32rem,.8vw,.7rem);margin-top:.2rem}
+.dynamic-overlay-evidence-block{min-width:0;display:grid;align-content:start;gap:clamp(.08rem,.35vh,.25rem);margin:0;padding:clamp(.38rem,.8vw,.7rem);border:1px solid rgba(255,255,255,.18);border-left:5px solid #92b9ad;border-radius:10px;background:rgba(0,0,0,.2);text-align:center}
+.dynamic-overlay-evidence-block.is-quran{border-left-color:#73e5c5;background:rgba(14,92,69,.22)}.dynamic-overlay-evidence-block.is-hadith{border-left-color:#f1c66e;background:rgba(110,73,12,.2)}.dynamic-overlay-evidence-block.is-tafsir{border-left-color:#b7a7ff;background:rgba(68,48,129,.22)}
+.dynamic-overlay-evidence-badge{justify-self:center;padding:.16rem .45rem;border-radius:999px;background:rgba(255,255,255,.12);color:#bff9e9;font-size:clamp(.48rem,.65vw,.62rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em}.dynamic-overlay-evidence-block.is-hadith .dynamic-overlay-evidence-badge{color:#ffe7ad}
+.dynamic-overlay-evidence-title{color:var(--overlay-card-title,#fff);font-size:clamp(.66rem,1vw,.9rem)}
+.dynamic-overlay-evidence-source,.dynamic-overlay-evidence-source-detail{color:var(--overlay-card-source,rgba(255,255,255,.67));font-size:clamp(.48rem,.64vw,.61rem)}
+.dynamic-overlay-evidence-field-label{color:var(--overlay-card-source,#bff9e9);font-size:clamp(.48rem,.65vw,.62rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em}
+.dynamic-overlay-evidence-intro{font-size:clamp(.6rem,.92vw,.82rem);line-height:1.2}.dynamic-overlay-evidence-tafsir{color:var(--overlay-card-translation,#fff);font-size:clamp(.58rem,.86vw,.78rem);line-height:1.22;text-align:left}.dynamic-overlay-evidence-link-status{justify-self:center;color:#ffe7ad;font-size:clamp(.45rem,.58vw,.56rem);text-transform:uppercase}
+.dynamic-overlay-evidence-arabic{margin:.04rem 0;color:var(--overlay-card-arabic,#fff);font-family:"Noto Naskh Arabic","Amiri",serif;font-size:clamp(1.05rem,min(2.25vw,3.4dvh),2rem);font-weight:800;line-height:1.55;text-align:center;overflow-wrap:anywhere}
+.dynamic-overlay-evidence-arabic.has-tajwid{unicode-bidi:isolate}.dynamic-overlay-tajwid-token{color:var(--tajwid-overlay-color,#f4c95d);text-shadow:0 1px 2px rgba(0,0,0,.45);border-radius:.08em}
+.dynamic-overlay-evidence-latin{color:var(--overlay-card-latin,#e7f5f0);font-size:clamp(.58rem,.82vw,.76rem);font-style:italic;line-height:1.2}.dynamic-overlay-evidence-translation{color:var(--overlay-card-translation,#fff);font-size:clamp(.58rem,.86vw,.78rem);line-height:1.2}
+@media(max-width:760px) and (orientation:portrait){.dynamic-overlay-evidence-grid{grid-template-columns:1fr}.dynamic-overlay-evidence-block{padding:.3rem}.dynamic-overlay-evidence-arabic{font-size:clamp(.92rem,4vw,1.35rem)}}
+@media(max-height:600px) and (orientation:landscape){.dynamic-overlay-evidence-block{padding:.24rem .35rem}.dynamic-overlay-evidence-intro,.dynamic-overlay-evidence-latin,.dynamic-overlay-evidence-translation{font-size:.56rem;line-height:1.08}.dynamic-overlay-evidence-arabic{font-size:clamp(.9rem,2vw,1.3rem);line-height:1.3}.dynamic-overlay-evidence-source{display:none}}
+.dynamic-overlay-worship-time-context{width:100%!important;flex:0 0 auto;background:transparent}.dynamic-overlay-worship-time-grid{display:grid;grid-template-columns:.9fr 1.05fr 1.3fr .95fr .95fr;gap:.3rem}.dynamic-overlay-worship-time-cell{min-width:0;display:grid;align-content:center;gap:.05rem;padding:.28rem .38rem;border-left:3px solid rgba(115,229,197,.58);text-align:left}.dynamic-overlay-worship-time-label,.dynamic-overlay-worship-time-main,.dynamic-overlay-worship-time-meta{margin:0!important;overflow:hidden;text-overflow:ellipsis}.dynamic-overlay-worship-time-label{color:#a7ead8!important;font-size:clamp(.48rem,.68vw,.64rem)!important;text-transform:uppercase;letter-spacing:.04em}.dynamic-overlay-worship-time-main{font-size:clamp(.61rem,.9vw,.82rem);line-height:1.14}.dynamic-overlay-worship-time-meta{color:rgba(255,255,255,.76);font-size:clamp(.48rem,.66vw,.62rem);line-height:1.15}.dynamic-overlay-worship-time-source{margin:.18rem 0 0;color:rgba(255,255,255,.62);font-size:clamp(.48rem,.65vw,.6rem);text-align:right}
+@media(max-width:760px) and (orientation:portrait){.dynamic-overlay.is-worship-education .dynamic-overlay-content{top:56%;height:min(82dvh,760px);max-height:calc(100dvh - 7.2rem)}.dynamic-overlay.is-worship-education .dynamic-overlay-presentation-scene,.dynamic-overlay.is-worship-education .dynamic-overlay-presentation-scene.has-sequence-flow{grid-template-columns:1fr;max-height:49dvh}.dynamic-overlay.is-worship-education .dynamic-overlay-funeral-scene-media img,.dynamic-overlay.is-worship-education .has-sequence-flow .dynamic-overlay-funeral-scene-media img{max-height:16dvh}.dynamic-overlay.is-worship-education .has-sequence-flow .dynamic-overlay-funeral-scene-copy{max-height:27dvh}.dynamic-overlay-worship-flow-trail{gap:.15rem}.dynamic-overlay-worship-flow-trail span{padding:.15rem .25rem;font-size:.46rem}.dynamic-overlay-worship-time-grid{grid-template-columns:1fr 1fr}.dynamic-overlay-worship-time-cell{padding:.2rem .3rem}.dynamic-overlay-worship-time-source{display:none}}
+@media(max-width:760px) and (orientation:portrait){.dynamic-overlay-timebar{align-items:stretch;flex-wrap:wrap}.dynamic-overlay-prayer-context{order:3;flex-basis:100%;gap:.2rem}.dynamic-overlay-prayer-context-item{flex:1 1 30%;padding:.24rem .3rem}.dynamic-overlay.is-worship-education .dynamic-overlay-content{top:59%;height:min(77dvh,720px);max-height:calc(100dvh - 9rem)}}
+@media(max-height:560px) and (orientation:landscape){.dynamic-overlay.is-worship-education .dynamic-overlay-timebar{top:.3rem;padding:.25rem .45rem}.dynamic-overlay.is-worship-education .dynamic-overlay-content{top:6.7rem;bottom:.3rem;height:auto;max-height:none;transform:translate(var(--overlay-translate-x),0);padding:.3rem .5rem;align-content:start}.dynamic-overlay.is-worship-education .dynamic-overlay-eyebrow,.dynamic-overlay.is-worship-education .dynamic-overlay-additional{display:none}.dynamic-overlay.is-worship-education .dynamic-overlay-widgets{max-height:61dvh}.dynamic-overlay.is-worship-education .dynamic-overlay-presentation-scene{max-height:45dvh}.dynamic-overlay-worship-time-context{padding:.2rem!important}}
+@media(max-width:760px) and (orientation:portrait){.dynamic-overlay.is-funeral-presentation .dynamic-overlay-content{height:min(90dvh,820px);padding:.85rem .85rem 4.7rem}.dynamic-overlay.is-funeral-presentation .dynamic-overlay-widgets{max-height:55vh}.dynamic-overlay-funeral-scene,.dynamic-overlay-funeral-scene.has-deceased-photo{grid-template-columns:1fr}.dynamic-overlay-funeral-scene-media img{max-height:18dvh}.dynamic-overlay-funeral-scene-media.is-deceased-photo{width:min(42vw,180px)}.dynamic-overlay-funeral-scene-media.is-deceased-photo img{max-height:20dvh}.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-arabic{font-size:clamp(1.35rem,min(8vw,5dvh),3rem)}.dynamic-overlay-persistent-prayer{max-width:calc(100vw - 1.2rem);overflow:hidden}.dynamic-overlay-persistent-prayer-remaining{margin-left:auto}}
+@media(max-height:560px) and (orientation:landscape){.dynamic-overlay.is-funeral-presentation .dynamic-overlay-content{height:94dvh;padding:.55rem 1rem 3.3rem;gap:.15rem}.dynamic-overlay.is-funeral-presentation .dynamic-overlay-title{font-size:clamp(1.35rem,4.5vw,2.7rem)}.dynamic-overlay.is-funeral-presentation .dynamic-overlay-body{font-size:clamp(.72rem,1.5vw,1rem)}.dynamic-overlay.is-funeral-presentation .dynamic-overlay-widgets{max-height:52vh}.dynamic-overlay-widget-presentation_scene,.dynamic-overlay-widget-funeral_scene{max-height:50vh;padding:.4rem!important}.dynamic-overlay-funeral-scene-media img{max-height:45vh}.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-arabic{font-size:clamp(1.25rem,3.5vw,2.3rem)}.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-latin,.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-translation{font-size:clamp(.7rem,1.3vw,.9rem)}.dynamic-overlay.is-funeral-presentation .dynamic-overlay-persistent-layer{bottom:.3rem}.dynamic-overlay-scene-progress{bottom:.3rem}}
+@media(max-height:360px) and (orientation:landscape){.dynamic-overlay.is-funeral-presentation .dynamic-overlay-content{height:98dvh;max-height:98dvh;padding:.2rem .65rem 2.35rem;gap:.05rem}.dynamic-overlay.is-funeral-presentation .dynamic-overlay-eyebrow,.dynamic-overlay.is-funeral-presentation .dynamic-overlay-subtitle{display:none}.dynamic-overlay.is-funeral-presentation .dynamic-overlay-title{font-size:clamp(1rem,3vw,1.45rem);line-height:1}.dynamic-overlay.is-funeral-presentation .dynamic-overlay-body{font-size:.65rem;line-height:1.1}.dynamic-overlay.is-funeral-presentation .dynamic-overlay-widgets{max-height:68dvh}.dynamic-overlay-widget-presentation_scene,.dynamic-overlay-widget-funeral_scene{max-height:66dvh;padding:.2rem!important}.dynamic-overlay-funeral-scene{gap:.4rem}.dynamic-overlay-funeral-scene-media img{max-height:58dvh}.dynamic-overlay-funeral-scene-copy{gap:.08rem}.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-arabic{font-size:clamp(1.125rem,min(3vw,8dvh),1.8rem);line-height:1.22}.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-latin,.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-translation{font-size:clamp(.625rem,1.2vw,.78rem);line-height:1.12}.dynamic-overlay-funeral-scene-copy .dynamic-overlay-widget-meta{font-size:.58rem;line-height:1.08}.dynamic-overlay-persistent-prayer{padding:.2rem .45rem!important;gap:.35rem}.dynamic-overlay-persistent-prayer-main,.dynamic-overlay-persistent-prayer-clock{font-size:.68rem}.dynamic-overlay-persistent-prayer-remaining{font-size:.64rem}.dynamic-overlay-scene-progress{padding:.18rem .45rem;font-size:.62rem}}
+
+/* Countdown and presentation overlays scale to the viewport; they never expose a scrollbar. */
+.dynamic-overlay-content {
+  min-height: min(var(--overlay-height), calc(100dvh - clamp(2rem, 12dvh, 8rem)));
+  max-height: calc(100dvh - clamp(2rem, 12dvh, 8rem));
+  overflow: hidden;
+  gap: clamp(0.2rem, min(1.5vw, 1.5dvh), 1rem);
+  padding: clamp(0.6rem, min(4vw, 4dvh), 4rem);
+}
+
+.dynamic-overlay-title {
+  font-size: min(var(--overlay-title-size), clamp(1.25rem, min(7vw, 10dvh), 6rem));
+}
+
+.dynamic-overlay-subtitle {
+  font-size: clamp(1.5rem, min(13vw, 20dvh), 10rem);
+}
+
+.dynamic-overlay-body {
+  font-size: min(var(--overlay-body-size), clamp(0.72rem, min(2.4vw, 3.2dvh), 1.7rem));
+}
+
+.dynamic-overlay-additional {
+  font-size: clamp(0.64rem, min(1.3vw, 2.2dvh), 1rem);
+}
+
+.dynamic-overlay-widgets {
+  min-height: 0;
+  max-height: 42dvh;
+  overflow: hidden;
+}
+
+@media (max-height: 430px) and (orientation: landscape) {
+  .dynamic-overlay-timebar {
+    top: 0.35rem;
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .dynamic-overlay-clock {
+    font-size: 1rem;
+  }
+
+  .dynamic-overlay-dates {
+    font-size: 0.56rem;
+  }
+
+  .dynamic-overlay-content {
+    max-height: calc(100dvh - 1rem);
+    gap: 0.1rem;
+    padding: 0.4rem 0.65rem;
+  }
+
+  .dynamic-overlay-eyebrow {
+    padding: 0.14rem 0.4rem;
+    font-size: 0.54rem;
+  }
+
+  .dynamic-overlay-title {
+    font-size: clamp(1rem, min(4vw, 9dvh), 2rem);
+  }
+
+  .dynamic-overlay-subtitle {
+    font-size: clamp(1.5rem, min(8vw, 18dvh), 3rem);
+  }
+
+  .dynamic-overlay-body {
+    font-size: clamp(0.64rem, min(1.5vw, 3dvh), 0.9rem);
+    line-height: 1.15;
+  }
+}

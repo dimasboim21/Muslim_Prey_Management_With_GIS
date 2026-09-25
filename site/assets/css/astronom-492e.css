@@ -1,0 +1,22 @@
+/* Advanced uses native drawer dialogs, with no legacy panel wrappers. */
+.astro-drawer-layout .topbar,.astro-drawer-layout .map-status{right:14px;max-width:calc(100vw - 28px)}
+.astro-panel-launcher{position:absolute;top:var(--astro-launcher-top,90px);left:14px;z-index:2150;display:flex;gap:8px}
+.astro-panel-launcher button{min-height:36px;padding:7px 12px;border:1px solid #cad6df;border-radius:7px;background:#fff;color:#223247;font-size:13px}
+.astro-panel-launcher button[aria-expanded=true]{background:#176b5b;color:white}
+.astro-drawer-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:8px 2px;border-bottom:1px solid #d9e1ea}
+.astro-drawer-heading button{background:white;border:1px solid #cbd6df;border-radius:6px;padding:5px 9px}
+.astro-map-drawer[open],.astro-info-drawer[open]{position:absolute;inset:var(--astro-drawer-top,138px) auto auto 14px;margin:0;width:390px;max-width:calc(100vw - 28px);max-height:min(65vh,calc(100dvh - var(--astro-drawer-top,138px) - 52px));padding:10px;overflow:auto;overscroll-behavior:contain;z-index:2200;background:#fff;color:#223247;border:1px solid #cad6df;border-radius:10px;box-shadow:0 8px 24px #17203324}
+.astro-map-drawer[open]{display:flex;flex-wrap:wrap;gap:8px;align-items:start}
+.astro-info-drawer[open]{display:flex;flex-direction:column}
+.astro-map-drawer>.segmented{width:100%;grid-template-columns:repeat(6,minmax(0,1fr))}
+.astro-map-drawer>.segmented button{padding:7px 3px;font-size:11px}
+.astro-map-drawer #onlineMapControls,.astro-map-drawer .weather-controls,.astro-map-drawer .map-presentation-controls{width:100%;flex-wrap:wrap}
+.astro-map-drawer #onlineMapControls>label{width:100%;display:flex;justify-content:space-between}
+.astro-map-drawer select{min-width:0;max-width:100%}
+.astro-map-drawer #onlineMapControls select{max-width:70%}
+.astro-map-drawer .toggle-chip{min-height:30px;padding:5px 7px;font-size:11px}
+.astro-info-drawer .panel-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+.map-presentation-controls label{display:flex;justify-content:space-between;gap:8px;margin:7px 0;font-size:12px}
+.map-presentation-controls input:not([type=checkbox]),.map-presentation-controls select{max-width:180px}
+.astro-panel-launcher button:focus-visible,.astro-drawer-heading button:focus-visible{outline:3px solid #288cb5;outline-offset:2px}
+@media(max-width:700px){.astro-drawer-layout .topbar{left:10px;right:10px;max-width:calc(100vw - 20px)}.astro-drawer-layout .topbar h1{font-size:14px}.astro-map-drawer[open],.astro-info-drawer[open]{left:10px;right:10px;width:auto;max-width:none;max-height:55dvh}}

@@ -1,0 +1,2533 @@
+[
+  {
+    "key": "admin.html",
+    "page": "admin.html",
+    "parent": null,
+    "kind": "page",
+    "label": "admin.html",
+    "selector": null,
+    "match": {},
+    "url": "admin.html"
+  },
+  {
+    "key": "admin.html#card:node-5a742a0638-1",
+    "page": "admin.html",
+    "parent": "admin.html",
+    "kind": "card",
+    "label": "notice-strip",
+    "selector": "[data-access-key=\"card:node-5a742a0638-1\"]",
+    "match": {},
+    "url": "admin.html?access=card:node-5a742a0638-1"
+  },
+  {
+    "key": "admin.html#card:section-1",
+    "page": "admin.html",
+    "parent": "admin.html",
+    "kind": "card",
+    "label": "Place record",
+    "selector": "[data-access-key=\"card:section-1\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-1"
+  },
+  {
+    "key": "admin.html#card:node-ef737a3f6c-3",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-1",
+    "kind": "card",
+    "label": "1 Administrator and language",
+    "selector": "[data-access-key=\"card:node-ef737a3f6c-3\"]",
+    "match": {},
+    "url": "admin.html?access=card:node-ef737a3f6c-3"
+  },
+  {
+    "key": "admin.html#card:node-08ee0c49eb-4",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-1",
+    "kind": "card",
+    "label": "2 Location acquisition",
+    "selector": "[data-access-key=\"card:node-08ee0c49eb-4\"]",
+    "match": {},
+    "url": "admin.html?access=card:node-08ee0c49eb-4"
+  },
+  {
+    "key": "admin.html#card:node-36b9c3e78f-5",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-1",
+    "kind": "card",
+    "label": "3 Building and detail",
+    "selector": "[data-access-key=\"card:node-36b9c3e78f-5\"]",
+    "match": {},
+    "url": "admin.html?access=card:node-36b9c3e78f-5"
+  },
+  {
+    "key": "admin.html#card:section-2",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-1",
+    "kind": "card",
+    "label": "Saved base records",
+    "selector": "[data-access-key=\"card:section-2\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-2"
+  },
+  {
+    "key": "admin.html#card:section-3",
+    "page": "admin.html",
+    "parent": "admin.html",
+    "kind": "card",
+    "label": "Web-GIS final check Fullsize ADM0 map",
+    "selector": "[data-access-key=\"card:section-3\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-3"
+  },
+  {
+    "key": "admin.html#card:section-4",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-4\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-4"
+  },
+  {
+    "key": "admin.html#card:section-5",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-5\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-5"
+  },
+  {
+    "key": "admin.html#card:section-6",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-6\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-6"
+  },
+  {
+    "key": "admin.html#card:section-7",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-7\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-7"
+  },
+  {
+    "key": "admin.html#card:section-8",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-3",
+    "kind": "card",
+    "label": "16-direction compass layer",
+    "selector": "[data-access-key=\"card:section-8\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-8"
+  },
+  {
+    "key": "admin.html#card:section-9",
+    "page": "admin.html",
+    "parent": "admin.html#card:section-3",
+    "kind": "card",
+    "label": "info-panel",
+    "selector": "[data-access-key=\"card:section-9\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-9"
+  },
+  {
+    "key": "admin.html#card:section-10",
+    "page": "admin.html",
+    "parent": "admin.html",
+    "kind": "card",
+    "label": "Sync queue",
+    "selector": "[data-access-key=\"card:section-10\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-10"
+  },
+  {
+    "key": "admin.html#card:section-11",
+    "page": "admin.html",
+    "parent": "admin.html",
+    "kind": "card",
+    "label": "Audit and revision trail",
+    "selector": "[data-access-key=\"card:section-11\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-11"
+  },
+  {
+    "key": "admin.html#card:section-12",
+    "page": "admin.html",
+    "parent": "admin.html",
+    "kind": "card",
+    "label": "SQL-ready payload",
+    "selector": "[data-access-key=\"card:section-12\"]",
+    "match": {},
+    "url": "admin.html?access=card:section-12"
+  },
+  {
+    "key": "webgis.html",
+    "page": "webgis.html",
+    "parent": null,
+    "kind": "page",
+    "label": "webgis.html",
+    "selector": null,
+    "match": {},
+    "url": "webgis.html"
+  },
+  {
+    "key": "webgis.html#card:advancedGate",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "card",
+    "label": "advancedGate",
+    "selector": "[data-access-key=\"card:advancedGate\"]",
+    "match": {},
+    "url": "webgis.html?access=card:advancedGate"
+  },
+  {
+    "key": "webgis.html#card:node-a19285db94-2",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "card",
+    "label": "Gedung",
+    "selector": "[data-access-key=\"card:node-a19285db94-2\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-a19285db94-2"
+  },
+  {
+    "key": "webgis.html#card:volcanoLegend",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "card",
+    "label": "Legenda status dan maknanya",
+    "selector": "[data-access-key=\"card:volcanoLegend\"]",
+    "match": {},
+    "url": "webgis.html?access=card:volcanoLegend"
+  },
+  {
+    "key": "webgis.html#card:node-9978107cd0-4",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "card",
+    "label": "Daftar gunung",
+    "selector": "[data-access-key=\"card:node-9978107cd0-4\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-9978107cd0-4"
+  },
+  {
+    "key": "webgis.html#card:node-59ee10c535-5",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "card",
+    "label": "Weather overlay",
+    "selector": "[data-access-key=\"card:node-59ee10c535-5\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-59ee10c535-5"
+  },
+  {
+    "key": "webgis.html#card:node-cee359dc31-6",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "card",
+    "label": "Tampilan peta untuk reviewer",
+    "selector": "[data-access-key=\"card:node-cee359dc31-6\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-cee359dc31-6"
+  },
+  {
+    "key": "webgis.html#panel:context",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "panel",
+    "label": "Reviewer Context",
+    "selector": "[data-access-key=\"panel:context\"]",
+    "match": {
+      "panel": "context"
+    },
+    "url": "webgis.html?access=panel:context",
+    "trigger": "button[data-tab=\"context\"]"
+  },
+  {
+    "key": "webgis.html#card:node-3fc1a3a8f3-8",
+    "page": "webgis.html",
+    "parent": "webgis.html#panel:context",
+    "kind": "card",
+    "label": "Pengaturan tampilan dan sumber",
+    "selector": "[data-access-key=\"card:node-3fc1a3a8f3-8\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-3fc1a3a8f3-8"
+  },
+  {
+    "key": "webgis.html#card:section-2",
+    "page": "webgis.html",
+    "parent": "webgis.html#card:node-3fc1a3a8f3-8",
+    "kind": "card",
+    "label": "button-row astro-settings-panel",
+    "selector": "[data-access-key=\"card:section-2\"]",
+    "match": {},
+    "url": "webgis.html?access=card:section-2"
+  },
+  {
+    "key": "webgis.html#card:section-3",
+    "page": "webgis.html",
+    "parent": "webgis.html#card:node-3fc1a3a8f3-8",
+    "kind": "card",
+    "label": "form-grid two astro-settings-panel",
+    "selector": "[data-access-key=\"card:section-3\"]",
+    "match": {},
+    "url": "webgis.html?access=card:section-3"
+  },
+  {
+    "key": "webgis.html#card:node-a45d865f36-11",
+    "page": "webgis.html",
+    "parent": "webgis.html#panel:context",
+    "kind": "card",
+    "label": "Review Metode Rukyat / Hisab",
+    "selector": "[data-access-key=\"card:node-a45d865f36-11\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-a45d865f36-11"
+  },
+  {
+    "key": "webgis.html#card:node-1dd5e18920-12",
+    "page": "webgis.html",
+    "parent": "webgis.html#panel:context",
+    "kind": "card",
+    "label": "Universal Falak Engine",
+    "selector": "[data-access-key=\"card:node-1dd5e18920-12\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-1dd5e18920-12"
+  },
+  {
+    "key": "webgis.html#card:node-1dd5e18920-13",
+    "page": "webgis.html",
+    "parent": "webgis.html#panel:context",
+    "kind": "card",
+    "label": "Kalender Ibadah Islam",
+    "selector": "[data-access-key=\"card:node-1dd5e18920-13\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-1dd5e18920-13"
+  },
+  {
+    "key": "webgis.html#card:node-1dd5e18920-14",
+    "page": "webgis.html",
+    "parent": "webgis.html#panel:context",
+    "kind": "card",
+    "label": "Prediksi Gerhana Matahari / Bulan",
+    "selector": "[data-access-key=\"card:node-1dd5e18920-14\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-1dd5e18920-14"
+  },
+  {
+    "key": "webgis.html#panel:observe",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "panel",
+    "label": "Observer Matahari Bulan",
+    "selector": "[data-access-key=\"panel:observe\"]",
+    "match": {
+      "panel": "observe"
+    },
+    "url": "webgis.html?access=panel:observe",
+    "trigger": "button[data-tab=\"observe\"]"
+  },
+  {
+    "key": "webgis.html#panel:orbit",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "panel",
+    "label": "Trajektori",
+    "selector": "[data-access-key=\"panel:orbit\"]",
+    "match": {
+      "panel": "orbit"
+    },
+    "url": "webgis.html?access=panel:orbit",
+    "trigger": "button[data-tab=\"orbit\"]"
+  },
+  {
+    "key": "webgis.html#panel:time",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "panel",
+    "label": "Komparasi Waktu Analisis 16 Arah",
+    "selector": "[data-access-key=\"panel:time\"]",
+    "match": {
+      "panel": "time"
+    },
+    "url": "webgis.html?access=panel:time",
+    "trigger": "button[data-tab=\"time\"]"
+  },
+  {
+    "key": "webgis.html#panel:prayer",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "panel",
+    "label": "Prayer Engine",
+    "selector": "[data-access-key=\"panel:prayer\"]",
+    "match": {
+      "panel": "prayer"
+    },
+    "url": "webgis.html?access=panel:prayer",
+    "trigger": "button[data-tab=\"prayer\"]"
+  },
+  {
+    "key": "webgis.html#card:node-2ffd7ad546-19",
+    "page": "webgis.html",
+    "parent": "webgis.html#panel:prayer",
+    "kind": "card",
+    "label": "Metode yang tampil di index.html",
+    "selector": "[data-access-key=\"card:node-2ffd7ad546-19\"]",
+    "match": {},
+    "url": "webgis.html?access=card:node-2ffd7ad546-19"
+  },
+  {
+    "key": "webgis.html#panel:rukyat",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "panel",
+    "label": "Rukyat Hilal",
+    "selector": "[data-access-key=\"panel:rukyat\"]",
+    "match": {
+      "panel": "rukyat"
+    },
+    "url": "webgis.html?access=panel:rukyat",
+    "trigger": "button[data-tab=\"rukyat\"]"
+  },
+  {
+    "key": "webgis.html#panel:api",
+    "page": "webgis.html",
+    "parent": "webgis.html",
+    "kind": "panel",
+    "label": "Output JSON",
+    "selector": "[data-access-key=\"panel:api\"]",
+    "match": {
+      "panel": "api"
+    },
+    "url": "webgis.html?access=panel:api",
+    "trigger": "button[data-tab=\"api\"]"
+  },
+  {
+    "key": "reviewer.html",
+    "page": "reviewer.html",
+    "parent": null,
+    "kind": "page",
+    "label": "reviewer.html",
+    "selector": null,
+    "match": {},
+    "url": "reviewer.html"
+  },
+  {
+    "key": "reviewer.html#card:advancedGate",
+    "page": "reviewer.html",
+    "parent": "reviewer.html",
+    "kind": "card",
+    "label": "advancedGate",
+    "selector": "[data-access-key=\"card:advancedGate\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:advancedGate"
+  },
+  {
+    "key": "reviewer.html#card:node-a19285db94-2",
+    "page": "reviewer.html",
+    "parent": "reviewer.html",
+    "kind": "card",
+    "label": "Gedung",
+    "selector": "[data-access-key=\"card:node-a19285db94-2\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:node-a19285db94-2"
+  },
+  {
+    "key": "reviewer.html#card:node-d362cd3399-3",
+    "page": "reviewer.html",
+    "parent": "reviewer.html",
+    "kind": "card",
+    "label": "Kontrol peta",
+    "selector": "[data-access-key=\"card:node-d362cd3399-3\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:node-d362cd3399-3"
+  },
+  {
+    "key": "reviewer.html#card:volcanoLegend",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:node-d362cd3399-3",
+    "kind": "card",
+    "label": "Legenda status dan maknanya",
+    "selector": "[data-access-key=\"card:volcanoLegend\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:volcanoLegend"
+  },
+  {
+    "key": "reviewer.html#card:node-9978107cd0-5",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:node-d362cd3399-3",
+    "kind": "card",
+    "label": "Daftar gunung",
+    "selector": "[data-access-key=\"card:node-9978107cd0-5\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:node-9978107cd0-5"
+  },
+  {
+    "key": "reviewer.html#card:section-1",
+    "page": "reviewer.html",
+    "parent": "reviewer.html",
+    "kind": "card",
+    "label": "Panel data astronomi",
+    "selector": "[data-access-key=\"card:section-1\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:section-1"
+  },
+  {
+    "key": "reviewer.html#panel:context",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Reviewer Context",
+    "selector": "[data-access-key=\"panel:context\"]",
+    "match": {
+      "panel": "context"
+    },
+    "url": "reviewer.html?access=panel:context",
+    "trigger": "button[data-tab=\"context\"]"
+  },
+  {
+    "key": "reviewer.html#card:section-3",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:context",
+    "kind": "card",
+    "label": "button-row astro-settings-panel",
+    "selector": "[data-access-key=\"card:section-3\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:section-3"
+  },
+  {
+    "key": "reviewer.html#card:section-4",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:context",
+    "kind": "card",
+    "label": "form-grid two astro-settings-panel",
+    "selector": "[data-access-key=\"card:section-4\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:section-4"
+  },
+  {
+    "key": "reviewer.html#card:node-1e4ae6f5af-10",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:context",
+    "kind": "card",
+    "label": "Review Metode Rukyat / Hisab",
+    "selector": "[data-access-key=\"card:node-1e4ae6f5af-10\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:node-1e4ae6f5af-10"
+  },
+  {
+    "key": "reviewer.html#card:node-1e4ae6f5af-11",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:context",
+    "kind": "card",
+    "label": "Universal Falak Engine",
+    "selector": "[data-access-key=\"card:node-1e4ae6f5af-11\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:node-1e4ae6f5af-11"
+  },
+  {
+    "key": "reviewer.html#card:node-04a2c52c8e-12",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:context",
+    "kind": "card",
+    "label": "Kalender Ibadah Islam",
+    "selector": "[data-access-key=\"card:node-04a2c52c8e-12\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:node-04a2c52c8e-12"
+  },
+  {
+    "key": "reviewer.html#card:node-1e4ae6f5af-13",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:context",
+    "kind": "card",
+    "label": "Prediksi Gerhana Matahari / Bulan",
+    "selector": "[data-access-key=\"card:node-1e4ae6f5af-13\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:node-1e4ae6f5af-13"
+  },
+  {
+    "key": "reviewer.html#panel:observe",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Observer Matahari Bulan",
+    "selector": "[data-access-key=\"panel:observe\"]",
+    "match": {
+      "panel": "observe"
+    },
+    "url": "reviewer.html?access=panel:observe",
+    "trigger": "button[data-tab=\"observe\"]"
+  },
+  {
+    "key": "reviewer.html#panel:orbit",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Trajektori",
+    "selector": "[data-access-key=\"panel:orbit\"]",
+    "match": {
+      "panel": "orbit"
+    },
+    "url": "reviewer.html?access=panel:orbit",
+    "trigger": "button[data-tab=\"orbit\"]"
+  },
+  {
+    "key": "reviewer.html#panel:time",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Komparasi Waktu Analisis 16 Arah",
+    "selector": "[data-access-key=\"panel:time\"]",
+    "match": {
+      "panel": "time"
+    },
+    "url": "reviewer.html?access=panel:time",
+    "trigger": "button[data-tab=\"time\"]"
+  },
+  {
+    "key": "reviewer.html#panel:prayer",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Prayer Engine",
+    "selector": "[data-access-key=\"panel:prayer\"]",
+    "match": {
+      "panel": "prayer"
+    },
+    "url": "reviewer.html?access=panel:prayer",
+    "trigger": "button[data-tab=\"prayer\"]"
+  },
+  {
+    "key": "reviewer.html#card:node-2ffd7ad546-18",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:prayer",
+    "kind": "card",
+    "label": "Metode yang tampil di index.html",
+    "selector": "[data-access-key=\"card:node-2ffd7ad546-18\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:node-2ffd7ad546-18"
+  },
+  {
+    "key": "reviewer.html#panel:rukyat",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Rukyat Hilal",
+    "selector": "[data-access-key=\"panel:rukyat\"]",
+    "match": {
+      "panel": "rukyat"
+    },
+    "url": "reviewer.html?access=panel:rukyat",
+    "trigger": "button[data-tab=\"rukyat\"]"
+  },
+  {
+    "key": "reviewer.html#panel:weather",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Weather Forecast Â· 5 Hari",
+    "selector": "[data-access-key=\"panel:weather\"]",
+    "match": {
+      "panel": "weather"
+    },
+    "url": "reviewer.html?access=panel:weather",
+    "trigger": "button[data-tab=\"weather\"]"
+  },
+  {
+    "key": "reviewer.html#card:weatherCurrentInfo",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:weather",
+    "kind": "card",
+    "label": "weatherCurrentInfo",
+    "selector": "[data-access-key=\"card:weatherCurrentInfo\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:weatherCurrentInfo"
+  },
+  {
+    "key": "reviewer.html#card:weatherSourceInfo",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:weather",
+    "kind": "card",
+    "label": "weatherSourceInfo",
+    "selector": "[data-access-key=\"card:weatherSourceInfo\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:weatherSourceInfo"
+  },
+  {
+    "key": "reviewer.html#panel:earthquake",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Earthquake Monitoring",
+    "selector": "[data-access-key=\"panel:earthquake\"]",
+    "match": {
+      "panel": "earthquake"
+    },
+    "url": "reviewer.html?access=panel:earthquake",
+    "trigger": "button[data-tab=\"earthquake\"]"
+  },
+  {
+    "key": "reviewer.html#card:earthquakeSourceInfo",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:earthquake",
+    "kind": "card",
+    "label": "earthquakeSourceInfo",
+    "selector": "[data-access-key=\"card:earthquakeSourceInfo\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:earthquakeSourceInfo"
+  },
+  {
+    "key": "reviewer.html#panel:wildfire",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Wildfire / Hotspot",
+    "selector": "[data-access-key=\"panel:wildfire\"]",
+    "match": {
+      "panel": "wildfire"
+    },
+    "url": "reviewer.html?access=panel:wildfire",
+    "trigger": "button[data-tab=\"wildfire\"]"
+  },
+  {
+    "key": "reviewer.html#card:wildfireSourceInfo",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#panel:wildfire",
+    "kind": "card",
+    "label": "wildfireSourceInfo",
+    "selector": "[data-access-key=\"card:wildfireSourceInfo\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:wildfireSourceInfo"
+  },
+  {
+    "key": "reviewer.html#panel:api",
+    "page": "reviewer.html",
+    "parent": "reviewer.html#card:section-1",
+    "kind": "panel",
+    "label": "Output JSON",
+    "selector": "[data-access-key=\"panel:api\"]",
+    "match": {
+      "panel": "api"
+    },
+    "url": "reviewer.html?access=panel:api",
+    "trigger": "button[data-tab=\"api\"]"
+  },
+  {
+    "key": "reviewer.html#card:presentationHud",
+    "page": "reviewer.html",
+    "parent": "reviewer.html",
+    "kind": "card",
+    "label": "Astronomical Overview",
+    "selector": "[data-access-key=\"card:presentationHud\"]",
+    "match": {},
+    "url": "reviewer.html?access=card:presentationHud"
+  },
+  {
+    "key": "overlay.html",
+    "page": "overlay.html",
+    "parent": null,
+    "kind": "page",
+    "label": "overlay.html",
+    "selector": null,
+    "match": {},
+    "url": "overlay.html"
+  },
+  {
+    "key": "overlay.html#card:node-defffc2a3e-1",
+    "page": "overlay.html",
+    "parent": "overlay.html",
+    "kind": "card",
+    "label": "Overlay",
+    "selector": "[data-access-key=\"card:node-defffc2a3e-1\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-defffc2a3e-1"
+  },
+  {
+    "key": "overlay.html#card:node-9be6c31a6e-2",
+    "page": "overlay.html",
+    "parent": "overlay.html",
+    "kind": "card",
+    "label": "overlay-admin-content",
+    "selector": "[data-access-key=\"card:node-9be6c31a6e-2\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9be6c31a6e-2"
+  },
+  {
+    "key": "overlay.html#panel:prayer",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-9be6c31a6e-2",
+    "kind": "panel",
+    "label": "Pilih kelompok yang akan diatur Durasi per state Informasi dan Pelaksanaan Salat Jumat Dhuha Awwal / Wustha / Awwabin Qiyamul Lail",
+    "selector": "[data-access-key=\"panel:prayer\"]",
+    "match": {
+      "panel": "prayer"
+    },
+    "url": "overlay.html?access=panel:prayer",
+    "trigger": "button[data-panel=\"prayer\"]"
+  },
+  {
+    "key": "overlay.html#panel:definition",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-9be6c31a6e-2",
+    "kind": "panel",
+    "label": "Konten, prioritas, dan trigger",
+    "selector": "[data-access-key=\"panel:definition\"]",
+    "match": {
+      "panel": "definition"
+    },
+    "url": "overlay.html?access=panel:definition",
+    "trigger": "button[data-panel=\"definition\"]"
+  },
+  {
+    "key": "overlay.html#card:node-ce3947b296-5",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:definition",
+    "kind": "card",
+    "label": "preset-picker",
+    "selector": "[data-access-key=\"card:node-ce3947b296-5\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-ce3947b296-5"
+  },
+  {
+    "key": "overlay.html#card:node-41b6a2d25c-6",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:definition",
+    "kind": "card",
+    "label": "Identitas teknis, prioritas, konflik, dan lapisan",
+    "selector": "[data-access-key=\"card:node-41b6a2d25c-6\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-41b6a2d25c-6"
+  },
+  {
+    "key": "overlay.html#card:node-fe15d1b963-7",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:definition",
+    "kind": "card",
+    "label": "Cakupan lokasi",
+    "selector": "[data-access-key=\"card:node-fe15d1b963-7\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-fe15d1b963-7"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-8",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:definition",
+    "kind": "card",
+    "label": "Konten Indonesia",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-8\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-8"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-9",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:definition",
+    "kind": "card",
+    "label": "English content",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-9\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-9"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-10",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:definition",
+    "kind": "card",
+    "label": "Urutan slide (opsional)",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-10\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-10"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-11",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:definition",
+    "kind": "card",
+    "label": "Trigger",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-11\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-11"
+  },
+  {
+    "key": "overlay.html#panel:layout",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-9be6c31a6e-2",
+    "kind": "panel",
+    "label": "Background dan posisi overlay",
+    "selector": "[data-access-key=\"panel:layout\"]",
+    "match": {
+      "panel": "layout"
+    },
+    "url": "overlay.html?access=panel:layout",
+    "trigger": "button[data-panel=\"layout\"]"
+  },
+  {
+    "key": "overlay.html#card:node-7250f164b2-13",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:layout",
+    "kind": "card",
+    "label": "Pilih background bawaan",
+    "selector": "[data-access-key=\"card:node-7250f164b2-13\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-7250f164b2-13"
+  },
+  {
+    "key": "overlay.html#card:node-97dba7d69e-14",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:layout",
+    "kind": "card",
+    "label": "Library media: gambar, animasi, video, dan YouTube",
+    "selector": "[data-access-key=\"card:node-97dba7d69e-14\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-97dba7d69e-14"
+  },
+  {
+    "key": "overlay.html#card:node-2c153ce0b5-15",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-97dba7d69e-14",
+    "kind": "card",
+    "label": "Upload atau pilih media",
+    "selector": "[data-access-key=\"card:node-2c153ce0b5-15\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-2c153ce0b5-15"
+  },
+  {
+    "key": "overlay.html#card:node-1f3a749008-16",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:layout",
+    "kind": "card",
+    "label": "Pratinjau background",
+    "selector": "[data-access-key=\"card:node-1f3a749008-16\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-1f3a749008-16"
+  },
+  {
+    "key": "overlay.html#card:node-0e2bfee988-17",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-1f3a749008-16",
+    "kind": "card",
+    "label": "Atur dengan angka X/Y dan ukuran (opsional)",
+    "selector": "[data-access-key=\"card:node-0e2bfee988-17\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-0e2bfee988-17"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-18",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-0e2bfee988-17",
+    "kind": "card",
+    "label": "Gambar background",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-18\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-18"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-19",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-0e2bfee988-17",
+    "kind": "card",
+    "label": "Overlay teks",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-19\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-19"
+  },
+  {
+    "key": "overlay.html#card:node-168613b6c6-20",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:layout",
+    "kind": "card",
+    "label": "Default visual card untuk seluruh overlay",
+    "selector": "[data-access-key=\"card:node-168613b6c6-20\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-168613b6c6-20"
+  },
+  {
+    "key": "overlay.html#card:node-e55737679c-21",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:layout",
+    "kind": "card",
+    "label": "Override visual card untuk overlay terpilih",
+    "selector": "[data-access-key=\"card:node-e55737679c-21\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-e55737679c-21"
+  },
+  {
+    "key": "overlay.html#panel:orchestration",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-9be6c31a6e-2",
+    "kind": "panel",
+    "label": "orchestration",
+    "selector": "[data-access-key=\"panel:orchestration\"]",
+    "match": {
+      "panel": "orchestration"
+    },
+    "url": "overlay.html?access=panel:orchestration",
+    "trigger": "button[data-panel=\"orchestration\"]"
+  },
+  {
+    "key": "overlay.html#card:node-83715f80d5-23",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:orchestration",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-23\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-83715f80d5-23"
+  },
+  {
+    "key": "overlay.html#card:node-83715f80d5-24",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:orchestration",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-24\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-83715f80d5-24"
+  },
+  {
+    "key": "overlay.html#card:node-83715f80d5-25",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:orchestration",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-25\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-83715f80d5-25"
+  },
+  {
+    "key": "overlay.html#card:node-83715f80d5-26",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:orchestration",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-26\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-83715f80d5-26"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-27",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:orchestration",
+    "kind": "card",
+    "label": "Komponen modular",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-27\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-27"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-28",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:orchestration",
+    "kind": "card",
+    "label": "Fase terlindungi",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-28\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-28"
+  },
+  {
+    "key": "overlay.html#card:node-b55bef9199-29",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:orchestration",
+    "kind": "card",
+    "label": "Saran data eksternal",
+    "selector": "[data-access-key=\"card:node-b55bef9199-29\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-b55bef9199-29"
+  },
+  {
+    "key": "overlay.html#card:node-e55737679c-30",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:orchestration",
+    "kind": "card",
+    "label": "Audit konfigurasi dan runtime",
+    "selector": "[data-access-key=\"card:node-e55737679c-30\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-e55737679c-30"
+  },
+  {
+    "key": "overlay.html#panel:funeral",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-9be6c31a6e-2",
+    "kind": "panel",
+    "label": "Kabar duka, Salat Jenazah, dan Salat Gaib",
+    "selector": "[data-access-key=\"panel:funeral\"]",
+    "match": {
+      "panel": "funeral"
+    },
+    "url": "overlay.html?access=panel:funeral",
+    "trigger": "button[data-panel=\"funeral\"]"
+  },
+  {
+    "key": "overlay.html#card:node-5b51cdd39f-32",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:funeral",
+    "kind": "card",
+    "label": "Daftar event",
+    "selector": "[data-access-key=\"card:node-5b51cdd39f-32\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-5b51cdd39f-32"
+  },
+  {
+    "key": "overlay.html#card:node-d7338e2b53-33",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:funeral",
+    "kind": "card",
+    "label": "1. Kejadian dan orang/korban",
+    "selector": "[data-access-key=\"card:node-d7338e2b53-33\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-d7338e2b53-33"
+  },
+  {
+    "key": "overlay.html#card:funeralDeceasedPhotoField",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-d7338e2b53-33",
+    "kind": "card",
+    "label": "funeralDeceasedPhotoField",
+    "selector": "[data-access-key=\"card:funeralDeceasedPhotoField\"]",
+    "match": {},
+    "url": "overlay.html?access=card:funeralDeceasedPhotoField"
+  },
+  {
+    "key": "overlay.html#card:node-d7338e2b53-35",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:funeral",
+    "kind": "card",
+    "label": "2. Disemayamkan dan pemakaman",
+    "selector": "[data-access-key=\"card:node-d7338e2b53-35\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-d7338e2b53-35"
+  },
+  {
+    "key": "overlay.html#card:node-d7338e2b53-36",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:funeral",
+    "kind": "card",
+    "label": "3. Tindak lanjut",
+    "selector": "[data-access-key=\"card:node-d7338e2b53-36\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-d7338e2b53-36"
+  },
+  {
+    "key": "overlay.html#card:node-cea8c76e71-37",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:funeral",
+    "kind": "card",
+    "label": "4. Publikasi, sumber, dan verifikasi",
+    "selector": "[data-access-key=\"card:node-cea8c76e71-37\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-cea8c76e71-37"
+  },
+  {
+    "key": "overlay.html#card:node-3e649ecb1a-38",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:funeral",
+    "kind": "card",
+    "label": "5. Kapan presentasi boleh tampil Aturan per salat",
+    "selector": "[data-access-key=\"card:node-3e649ecb1a-38\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-3e649ecb1a-38"
+  },
+  {
+    "key": "overlay.html#card:node-deee717040-39",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-3e649ecb1a-38",
+    "kind": "card",
+    "label": "Kapan boleh ditampilkan?",
+    "selector": "[data-access-key=\"card:node-deee717040-39\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-deee717040-39"
+  },
+  {
+    "key": "overlay.html#card:node-deee717040-40",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-3e649ecb1a-38",
+    "kind": "card",
+    "label": "Fase terlindungi",
+    "selector": "[data-access-key=\"card:node-deee717040-40\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-deee717040-40"
+  },
+  {
+    "key": "overlay.html#card:node-deee717040-41",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-3e649ecb1a-38",
+    "kind": "card",
+    "label": "Informasi salat yang tetap terlihat",
+    "selector": "[data-access-key=\"card:node-deee717040-41\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-deee717040-41"
+  },
+  {
+    "key": "overlay.html#card:node-14cc8f801d-42",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:funeral",
+    "kind": "card",
+    "label": "6. Overlay Presentation Sequence",
+    "selector": "[data-access-key=\"card:node-14cc8f801d-42\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-14cc8f801d-42"
+  },
+  {
+    "key": "overlay.html#card:section-6",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-14cc8f801d-42",
+    "kind": "card",
+    "label": "Durasi per bagian",
+    "selector": "[data-access-key=\"card:section-6\"]",
+    "match": {},
+    "url": "overlay.html?access=card:section-6"
+  },
+  {
+    "key": "overlay.html#card:node-2ae5114cfa-44",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:funeral",
+    "kind": "card",
+    "label": "Informasi dan playback panduan",
+    "selector": "[data-access-key=\"card:node-2ae5114cfa-44\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-2ae5114cfa-44"
+  },
+  {
+    "key": "overlay.html#card:funeralNoticePreview",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-2ae5114cfa-44",
+    "kind": "card",
+    "label": "funeralNoticePreview",
+    "selector": "[data-access-key=\"card:funeralNoticePreview\"]",
+    "match": {},
+    "url": "overlay.html?access=card:funeralNoticePreview"
+  },
+  {
+    "key": "overlay.html#card:node-ed3789c162-46",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-2ae5114cfa-44",
+    "kind": "card",
+    "label": "Preview Simulation satu viewport",
+    "selector": "[data-access-key=\"card:node-ed3789c162-46\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-ed3789c162-46"
+  },
+  {
+    "key": "overlay.html#card:funeralScenePreview",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-ed3789c162-46",
+    "kind": "card",
+    "label": "funeralScenePreview",
+    "selector": "[data-access-key=\"card:funeralScenePreview\"]",
+    "match": {},
+    "url": "overlay.html?access=card:funeralScenePreview"
+  },
+  {
+    "key": "overlay.html#card:node-b7eb057433-48",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:funeral",
+    "kind": "card",
+    "label": "Audit perubahan event",
+    "selector": "[data-access-key=\"card:node-b7eb057433-48\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-b7eb057433-48"
+  },
+  {
+    "key": "overlay.html#panel:education",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-9be6c31a6e-2",
+    "kind": "panel",
+    "label": "Materi Ibadah Tambah materi ibadah",
+    "selector": "[data-access-key=\"panel:education\"]",
+    "match": {
+      "panel": "education"
+    },
+    "url": "overlay.html?access=panel:education",
+    "trigger": "button[data-panel=\"education\"]"
+  },
+  {
+    "key": "overlay.html#card:node-0398e1b222-50",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:education",
+    "kind": "card",
+    "label": "worship-education-settings",
+    "selector": "[data-access-key=\"card:node-0398e1b222-50\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-0398e1b222-50"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-51",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-0398e1b222-50",
+    "kind": "card",
+    "label": "Jadwal tampilan",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-51\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-51"
+  },
+  {
+    "key": "overlay.html#card:node-9e0bc9903a-52",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-0398e1b222-50",
+    "kind": "card",
+    "label": "Isi yang ditampilkan",
+    "selector": "[data-access-key=\"card:node-9e0bc9903a-52\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-9e0bc9903a-52"
+  },
+  {
+    "key": "overlay.html#card:node-7dbc0a8a47-53",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-0398e1b222-50",
+    "kind": "card",
+    "label": "Style card materi dan override bagian",
+    "selector": "[data-access-key=\"card:node-7dbc0a8a47-53\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-7dbc0a8a47-53"
+  },
+  {
+    "key": "overlay.html#card:node-62c49e7880-54",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:education",
+    "kind": "card",
+    "label": "Katalog materi tersimpan",
+    "selector": "[data-access-key=\"card:node-62c49e7880-54\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-62c49e7880-54"
+  },
+  {
+    "key": "overlay.html#card:node-f8fb1f5abf-55",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:education",
+    "kind": "card",
+    "label": "Identitas dan urutan laman",
+    "selector": "[data-access-key=\"card:node-f8fb1f5abf-55\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-f8fb1f5abf-55"
+  },
+  {
+    "key": "overlay.html#card:node-f8fb1f5abf-56",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:education",
+    "kind": "card",
+    "label": "Isi lengkap per laman",
+    "selector": "[data-access-key=\"card:node-f8fb1f5abf-56\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-f8fb1f5abf-56"
+  },
+  {
+    "key": "overlay.html#card:node-53c78ee593-57",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:education",
+    "kind": "card",
+    "label": "Bacaan, latin, arti, dan media",
+    "selector": "[data-access-key=\"card:node-53c78ee593-57\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-53c78ee593-57"
+  },
+  {
+    "key": "overlay.html#card:node-f8fb1f5abf-58",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:education",
+    "kind": "card",
+    "label": "Daftar dalil dan peninjauan administrator",
+    "selector": "[data-access-key=\"card:node-f8fb1f5abf-58\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-f8fb1f5abf-58"
+  },
+  {
+    "key": "overlay.html#card:node-8410114546-59",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-f8fb1f5abf-58",
+    "kind": "card",
+    "label": "worship-islamic-db-picker",
+    "selector": "[data-access-key=\"card:node-8410114546-59\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-8410114546-59"
+  },
+  {
+    "key": "overlay.html#card:node-c54f4268f4-60",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-8410114546-59",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-c54f4268f4-60\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-c54f4268f4-60"
+  },
+  {
+    "key": "overlay.html#card:node-d7bb357f6a-61",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-8410114546-59",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-d7bb357f6a-61\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-d7bb357f6a-61"
+  },
+  {
+    "key": "overlay.html#card:node-55bf9205cc-62",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-8410114546-59",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-55bf9205cc-62\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-55bf9205cc-62"
+  },
+  {
+    "key": "overlay.html#card:node-ea78441359-63",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-8410114546-59",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-ea78441359-63\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-ea78441359-63"
+  },
+  {
+    "key": "overlay.html#card:worshipIslamicSelection",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-8410114546-59",
+    "kind": "card",
+    "label": "worshipIslamicSelection",
+    "selector": "[data-access-key=\"card:worshipIslamicSelection\"]",
+    "match": {},
+    "url": "overlay.html?access=card:worshipIslamicSelection"
+  },
+  {
+    "key": "overlay.html#card:node-4b6651a0cc-65",
+    "page": "overlay.html",
+    "parent": "overlay.html#panel:education",
+    "kind": "card",
+    "label": "Preview langsung materi",
+    "selector": "[data-access-key=\"card:node-4b6651a0cc-65\"]",
+    "match": {},
+    "url": "overlay.html?access=card:node-4b6651a0cc-65"
+  },
+  {
+    "key": "overlay.html#panel:preview",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-9be6c31a6e-2",
+    "kind": "panel",
+    "label": "Uji tanpa mengubah runtime",
+    "selector": "[data-access-key=\"panel:preview\"]",
+    "match": {
+      "panel": "preview"
+    },
+    "url": "overlay.html?access=panel:preview",
+    "trigger": "button[data-panel=\"preview\"]"
+  },
+  {
+    "key": "overlay.html#card:sectionPreviewWorkspace",
+    "page": "overlay.html",
+    "parent": "overlay.html#card:node-9be6c31a6e-2",
+    "kind": "card",
+    "label": "Preview index.html",
+    "selector": "[data-access-key=\"card:sectionPreviewWorkspace\"]",
+    "match": {},
+    "url": "overlay.html?access=card:sectionPreviewWorkspace"
+  },
+  {
+    "key": "index.html",
+    "page": "index.html",
+    "parent": null,
+    "kind": "page",
+    "label": "index.html",
+    "selector": null,
+    "match": {},
+    "url": "index.html"
+  },
+  {
+    "key": "index.html#card:node-ac7df1acba-1",
+    "page": "index.html",
+    "parent": "index.html",
+    "kind": "card",
+    "label": "Jadwal Sholat",
+    "selector": "[data-access-key=\"card:node-ac7df1acba-1\"]",
+    "match": {},
+    "url": "index.html?access=card:node-ac7df1acba-1"
+  },
+  {
+    "key": "index.html#card:heroPanel",
+    "page": "index.html",
+    "parent": "index.html",
+    "kind": "card",
+    "label": "Masjid",
+    "selector": "[data-access-key=\"card:heroPanel\"]",
+    "match": {},
+    "url": "index.html?access=card:heroPanel"
+  },
+  {
+    "key": "index.html#card:dynamicOverlayRoot",
+    "page": "index.html",
+    "parent": "index.html",
+    "kind": "card",
+    "label": "Informasi terjadwal",
+    "selector": "[data-access-key=\"card:dynamicOverlayRoot\"]",
+    "match": {},
+    "url": "index.html?access=card:dynamicOverlayRoot"
+  },
+  {
+    "key": "index.html#card:dynamicOverlayContent",
+    "page": "index.html",
+    "parent": "index.html#card:dynamicOverlayRoot",
+    "kind": "card",
+    "label": "dynamicOverlayContent",
+    "selector": "[data-access-key=\"card:dynamicOverlayContent\"]",
+    "match": {},
+    "url": "index.html?access=card:dynamicOverlayContent"
+  },
+  {
+    "key": "bms.html",
+    "page": "bms.html",
+    "parent": null,
+    "kind": "page",
+    "label": "bms.html",
+    "selector": null,
+    "match": {},
+    "url": "bms.html"
+  },
+  {
+    "key": "bms.html#card:node-922519753c-1",
+    "page": "bms.html",
+    "parent": "bms.html",
+    "kind": "card",
+    "label": "Inventaris, energi, meter, dan perawatan",
+    "selector": "[data-access-key=\"card:node-922519753c-1\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-922519753c-1"
+  },
+  {
+    "key": "bms.html#card:meepSelectionRequired",
+    "page": "bms.html",
+    "parent": "bms.html",
+    "kind": "card",
+    "label": "meepSelectionRequired",
+    "selector": "[data-access-key=\"card:meepSelectionRequired\"]",
+    "match": {},
+    "url": "bms.html?access=card:meepSelectionRequired"
+  },
+  {
+    "key": "bms.html#card:node-3fabd329a7-3",
+    "page": "bms.html",
+    "parent": "bms.html",
+    "kind": "card",
+    "label": "Ringkasan MEEP",
+    "selector": "[data-access-key=\"card:node-3fabd329a7-3\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-3fabd329a7-3"
+  },
+  {
+    "key": "bms.html#card:section-1",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-3fabd329a7-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-1\"]",
+    "match": {},
+    "url": "bms.html?access=card:section-1"
+  },
+  {
+    "key": "bms.html#card:section-2",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-3fabd329a7-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-2\"]",
+    "match": {},
+    "url": "bms.html?access=card:section-2"
+  },
+  {
+    "key": "bms.html#card:section-3",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-3fabd329a7-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-3\"]",
+    "match": {},
+    "url": "bms.html?access=card:section-3"
+  },
+  {
+    "key": "bms.html#card:section-4",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-3fabd329a7-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-4\"]",
+    "match": {},
+    "url": "bms.html?access=card:section-4"
+  },
+  {
+    "key": "bms.html#card:section-5",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-3fabd329a7-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-5\"]",
+    "match": {},
+    "url": "bms.html?access=card:section-5"
+  },
+  {
+    "key": "bms.html#card:section-6",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-3fabd329a7-3",
+    "kind": "card",
+    "label": "metric-card",
+    "selector": "[data-access-key=\"card:section-6\"]",
+    "match": {},
+    "url": "bms.html?access=card:section-6"
+  },
+  {
+    "key": "bms.html#card:node-c16277cd7c-10",
+    "page": "bms.html",
+    "parent": "bms.html",
+    "kind": "card",
+    "label": "workspace meep-workspace",
+    "selector": "[data-access-key=\"card:node-c16277cd7c-10\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-c16277cd7c-10"
+  },
+  {
+    "key": "bms.html#panel:devices",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-c16277cd7c-10",
+    "kind": "panel",
+    "label": "Device Table",
+    "selector": "[data-access-key=\"panel:devices\"]",
+    "match": {
+      "panel": "devices"
+    },
+    "url": "bms.html?access=panel:devices",
+    "trigger": "button[data-meep-tab=\"devices\"]"
+  },
+  {
+    "key": "bms.html#panel:calculator",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-c16277cd7c-10",
+    "kind": "panel",
+    "label": "Perhitungan listrik otomatis",
+    "selector": "[data-access-key=\"panel:calculator\"]",
+    "match": {
+      "panel": "calculator"
+    },
+    "url": "bms.html?access=panel:calculator",
+    "trigger": "button[data-meep-tab=\"calculator\"]"
+  },
+  {
+    "key": "bms.html#card:energy-budget",
+    "page": "bms.html",
+    "parent": "bms.html#panel:calculator",
+    "kind": "card",
+    "label": "Estimasi pengeluaran listrik",
+    "selector": "[data-access-key=\"card:energy-budget\"]",
+    "match": {},
+    "url": "bms.html?access=card:energy-budget"
+  },
+  {
+    "key": "bms.html#card:node-2997666a1b-13",
+    "page": "bms.html",
+    "parent": "bms.html#panel:calculator",
+    "kind": "card",
+    "label": "calculation-results",
+    "selector": "[data-access-key=\"card:node-2997666a1b-13\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-2997666a1b-13"
+  },
+  {
+    "key": "bms.html#card:node-83715f80d5-14",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-2997666a1b-13",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-14\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-83715f80d5-14"
+  },
+  {
+    "key": "bms.html#card:node-83715f80d5-15",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-2997666a1b-13",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-15\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-83715f80d5-15"
+  },
+  {
+    "key": "bms.html#card:node-83715f80d5-16",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-2997666a1b-13",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-16\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-83715f80d5-16"
+  },
+  {
+    "key": "bms.html#card:node-83715f80d5-17",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-2997666a1b-13",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-17\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-83715f80d5-17"
+  },
+  {
+    "key": "bms.html#card:node-83715f80d5-18",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-2997666a1b-13",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-18\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-83715f80d5-18"
+  },
+  {
+    "key": "bms.html#card:node-83715f80d5-19",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-2997666a1b-13",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-19\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-83715f80d5-19"
+  },
+  {
+    "key": "bms.html#card:node-83715f80d5-20",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-2997666a1b-13",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-20\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-83715f80d5-20"
+  },
+  {
+    "key": "bms.html#card:node-83715f80d5-21",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-2997666a1b-13",
+    "kind": "card",
+    "label": "",
+    "selector": "[data-access-key=\"card:node-83715f80d5-21\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-83715f80d5-21"
+  },
+  {
+    "key": "bms.html#panel:meters",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-c16277cd7c-10",
+    "kind": "panel",
+    "label": "Monitoring kWh Meter",
+    "selector": "[data-access-key=\"panel:meters\"]",
+    "match": {
+      "panel": "meters"
+    },
+    "url": "bms.html?access=panel:meters",
+    "trigger": "button[data-meep-tab=\"meters\"]"
+  },
+  {
+    "key": "bms.html#card:section-7",
+    "page": "bms.html",
+    "parent": "bms.html#panel:meters",
+    "kind": "card",
+    "label": "Histori pembacaan semua meter",
+    "selector": "[data-access-key=\"card:section-7\"]",
+    "match": {},
+    "url": "bms.html?access=card:section-7"
+  },
+  {
+    "key": "bms.html#panel:maintenance",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-c16277cd7c-10",
+    "kind": "panel",
+    "label": "Service / Maintenance Monitoring",
+    "selector": "[data-access-key=\"panel:maintenance\"]",
+    "match": {
+      "panel": "maintenance"
+    },
+    "url": "bms.html?access=panel:maintenance",
+    "trigger": "button[data-meep-tab=\"maintenance\"]"
+  },
+  {
+    "key": "bms.html#panel:specifications",
+    "page": "bms.html",
+    "parent": "bms.html#card:node-c16277cd7c-10",
+    "kind": "panel",
+    "label": "Automatic Device Specification Search",
+    "selector": "[data-access-key=\"panel:specifications\"]",
+    "match": {
+      "panel": "specifications"
+    },
+    "url": "bms.html?access=panel:specifications",
+    "trigger": "button[data-meep-tab=\"specifications\"]"
+  },
+  {
+    "key": "bms.html#card:section-8",
+    "page": "bms.html",
+    "parent": "bms.html#panel:specifications",
+    "kind": "card",
+    "label": "Verified specification cache",
+    "selector": "[data-access-key=\"card:section-8\"]",
+    "match": {},
+    "url": "bms.html?access=card:section-8"
+  },
+  {
+    "key": "bms.html#card:node-f8fb1f5abf-27",
+    "page": "bms.html",
+    "parent": "bms.html",
+    "kind": "card",
+    "label": "Data listrik dan kapasitas",
+    "selector": "[data-access-key=\"card:node-f8fb1f5abf-27\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-f8fb1f5abf-27"
+  },
+  {
+    "key": "bms.html#card:node-f8fb1f5abf-28",
+    "page": "bms.html",
+    "parent": "bms.html",
+    "kind": "card",
+    "label": "Operasi, estimasi aktual, dan sumber",
+    "selector": "[data-access-key=\"card:node-f8fb1f5abf-28\"]",
+    "match": {},
+    "url": "bms.html?access=card:node-f8fb1f5abf-28"
+  },
+  {
+    "key": "quran.html",
+    "page": "quran.html",
+    "parent": null,
+    "kind": "page",
+    "label": "quran.html",
+    "selector": null,
+    "match": {},
+    "url": "quran.html"
+  },
+  {
+    "key": "quran.html#card:node-979c4d4101-1",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "card",
+    "label": "Pencarian sumber Islam",
+    "selector": "[data-access-key=\"card:node-979c4d4101-1\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-979c4d4101-1"
+  },
+  {
+    "key": "quran.html#card:searchFilterDetails",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-979c4d4101-1",
+    "kind": "card",
+    "label": "Filter",
+    "selector": "[data-access-key=\"card:searchFilterDetails\"]",
+    "match": {},
+    "url": "quran.html?access=card:searchFilterDetails"
+  },
+  {
+    "key": "quran.html#card:node-b5944d2fb7-3",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "card",
+    "label": "Status database",
+    "selector": "[data-access-key=\"card:node-b5944d2fb7-3\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-b5944d2fb7-3"
+  },
+  {
+    "key": "quran.html#panel:profile-user",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "panel",
+    "label": "Akun pembaca",
+    "selector": "[data-access-key=\"panel:profile-user\"]",
+    "match": {
+      "panel": "profile-user"
+    },
+    "url": "quran.html?access=panel:profile-user",
+    "trigger": "button[data-tab=\"profile-user\"]"
+  },
+  {
+    "key": "quran.html#panel:quran",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "panel",
+    "label": "quran",
+    "selector": "[data-access-key=\"panel:quran\"]",
+    "match": {
+      "panel": "quran"
+    },
+    "url": "quran.html?access=panel:quran",
+    "trigger": "button[data-tab=\"quran\"]"
+  },
+  {
+    "key": "quran.html#card:node-b5cbca2355-6",
+    "page": "quran.html",
+    "parent": "quran.html#panel:quran",
+    "kind": "card",
+    "label": "Pilih bacaan",
+    "selector": "[data-access-key=\"card:node-b5cbca2355-6\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-b5cbca2355-6"
+  },
+  {
+    "key": "quran.html#card:node-e83b178aa5-7",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-b5cbca2355-6",
+    "kind": "card",
+    "label": "Warna Tajwid",
+    "selector": "[data-access-key=\"card:node-e83b178aa5-7\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-e83b178aa5-7"
+  },
+  {
+    "key": "quran.html#card:node-cba2c15146-8",
+    "page": "quran.html",
+    "parent": "quran.html#panel:quran",
+    "kind": "card",
+    "label": "Pilih surah",
+    "selector": "[data-access-key=\"card:node-cba2c15146-8\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-cba2c15146-8"
+  },
+  {
+    "key": "quran.html#card:quranAudioToolbar",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-cba2c15146-8",
+    "kind": "card",
+    "label": "Pemutar murattal",
+    "selector": "[data-access-key=\"card:quranAudioToolbar\"]",
+    "match": {},
+    "url": "quran.html?access=card:quranAudioToolbar"
+  },
+  {
+    "key": "quran.html#card:quranReader",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-cba2c15146-8",
+    "kind": "card",
+    "label": "quranReader",
+    "selector": "[data-access-key=\"card:quranReader\"]",
+    "match": {},
+    "url": "quran.html?access=card:quranReader"
+  },
+  {
+    "key": "quran.html#panel:tafsir",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "panel",
+    "label": "tafsir",
+    "selector": "[data-access-key=\"panel:tafsir\"]",
+    "match": {
+      "panel": "tafsir"
+    },
+    "url": "quran.html?access=panel:tafsir",
+    "trigger": "button[data-tab=\"tafsir\"]"
+  },
+  {
+    "key": "quran.html#card:node-2a53ea29c0-12",
+    "page": "quran.html",
+    "parent": "quran.html#panel:tafsir",
+    "kind": "card",
+    "label": "Pilih karya",
+    "selector": "[data-access-key=\"card:node-2a53ea29c0-12\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-2a53ea29c0-12"
+  },
+  {
+    "key": "quran.html#card:node-cba2c15146-13",
+    "page": "quran.html",
+    "parent": "quran.html#panel:tafsir",
+    "kind": "card",
+    "label": "Belum memilih karya",
+    "selector": "[data-access-key=\"card:node-cba2c15146-13\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-cba2c15146-13"
+  },
+  {
+    "key": "quran.html#card:tafsirReader",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-cba2c15146-13",
+    "kind": "card",
+    "label": "tafsirReader",
+    "selector": "[data-access-key=\"card:tafsirReader\"]",
+    "match": {},
+    "url": "quran.html?access=card:tafsirReader"
+  },
+  {
+    "key": "quran.html#card:node-318787191c-15",
+    "page": "quran.html",
+    "parent": "quran.html#panel:tafsir",
+    "kind": "card",
+    "label": "Tafsir Data Manager Katalog karya, edisi bahasa, sumber, lisensi, arsip offline, dan pemeriksaan integritas Discovery & import adapters Import dan verifikasi te",
+    "selector": "[data-access-key=\"card:node-318787191c-15\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-318787191c-15"
+  },
+  {
+    "key": "quran.html#panel:hadith",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "panel",
+    "label": "Koleksi lokal",
+    "selector": "[data-access-key=\"panel:hadith\"]",
+    "match": {
+      "panel": "hadith"
+    },
+    "url": "quran.html?access=panel:hadith",
+    "trigger": "button[data-tab=\"hadith\"]"
+  },
+  {
+    "key": "quran.html#card:hadithReader",
+    "page": "quran.html",
+    "parent": "quran.html#panel:hadith",
+    "kind": "card",
+    "label": "hadithReader",
+    "selector": "[data-access-key=\"card:hadithReader\"]",
+    "match": {},
+    "url": "quran.html?access=card:hadithReader"
+  },
+  {
+    "key": "quran.html#panel:presentasi",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "panel",
+    "label": "Materi siap presentasi Tambah Materi Presentasi",
+    "selector": "[data-access-key=\"panel:presentasi\"]",
+    "match": {
+      "panel": "presentasi"
+    },
+    "url": "quran.html?access=panel:presentasi",
+    "trigger": "button[data-tab=\"presentasi\"]"
+  },
+  {
+    "key": "quran.html#card:presentationItemListView",
+    "page": "quran.html",
+    "parent": "quran.html#panel:presentasi",
+    "kind": "card",
+    "label": "Daftar laman materi",
+    "selector": "[data-access-key=\"card:presentationItemListView\"]",
+    "match": {},
+    "url": "quran.html?access=card:presentationItemListView"
+  },
+  {
+    "key": "quran.html#card:section-13",
+    "page": "quran.html",
+    "parent": "quran.html#panel:presentasi",
+    "kind": "card",
+    "label": "Daftar materi ibadah",
+    "selector": "[data-access-key=\"card:section-13\"]",
+    "match": {},
+    "url": "quran.html?access=card:section-13"
+  },
+  {
+    "key": "quran.html#card:section-14",
+    "page": "quran.html",
+    "parent": "quran.html#panel:presentasi",
+    "kind": "card",
+    "label": "presentation-viewer-intro it-operation-card",
+    "selector": "[data-access-key=\"card:section-14\"]",
+    "match": {},
+    "url": "quran.html?access=card:section-14"
+  },
+  {
+    "key": "quran.html#card:presentationReview",
+    "page": "quran.html",
+    "parent": "quran.html#panel:presentasi",
+    "kind": "card",
+    "label": "presentationReview",
+    "selector": "[data-access-key=\"card:presentationReview\"]",
+    "match": {},
+    "url": "quran.html?access=card:presentationReview"
+  },
+  {
+    "key": "quran.html#panel:learning",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "panel",
+    "label": "Dasar Membaca Al-Qur'an",
+    "selector": "[data-access-key=\"panel:learning\"]",
+    "match": {
+      "panel": "learning"
+    },
+    "url": "quran.html?access=panel:learning",
+    "trigger": "button[data-tab=\"learning\"]"
+  },
+  {
+    "key": "quran.html#card:learningMaterialPanel",
+    "page": "quran.html",
+    "parent": "quran.html#panel:learning",
+    "kind": "card",
+    "label": "Jilid dan bab Iqro",
+    "selector": "[data-access-key=\"card:learningMaterialPanel\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningMaterialPanel"
+  },
+  {
+    "key": "quran.html#card:node-f1c4db316e-29",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningMaterialPanel",
+    "kind": "card",
+    "label": "Huruf Hijaiyah",
+    "selector": "[data-access-key=\"card:node-f1c4db316e-29\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-f1c4db316e-29"
+  },
+  {
+    "key": "quran.html#card:learningContentManager",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningMaterialPanel",
+    "kind": "card",
+    "label": "Kelola jilid, bab, materi, dan contoh",
+    "selector": "[data-access-key=\"card:learningContentManager\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningContentManager"
+  },
+  {
+    "key": "quran.html#card:learningWorkspace",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningMaterialPanel",
+    "kind": "card",
+    "label": "Belum ada materi terbuka",
+    "selector": "[data-access-key=\"card:learningWorkspace\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningWorkspace"
+  },
+  {
+    "key": "quran.html#card:learningItemCard",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningWorkspace",
+    "kind": "card",
+    "label": "learningItemCard",
+    "selector": "[data-access-key=\"card:learningItemCard\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningItemCard"
+  },
+  {
+    "key": "quran.html#card:learningItemProvenance",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningItemCard",
+    "kind": "card",
+    "label": "Sumber, lisensi, dan status",
+    "selector": "[data-access-key=\"card:learningItemProvenance\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningItemProvenance"
+  },
+  {
+    "key": "quran.html#card:node-71f7870b6a-34",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningWorkspace",
+    "kind": "card",
+    "label": "it-learning-side",
+    "selector": "[data-access-key=\"card:node-71f7870b6a-34\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-71f7870b6a-34"
+  },
+  {
+    "key": "quran.html#card:node-deee717040-35",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-71f7870b6a-34",
+    "kind": "card",
+    "label": "Tentang materi",
+    "selector": "[data-access-key=\"card:node-deee717040-35\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-deee717040-35"
+  },
+  {
+    "key": "quran.html#card:node-deee717040-36",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-71f7870b6a-34",
+    "kind": "card",
+    "label": "Legenda kontekstual",
+    "selector": "[data-access-key=\"card:node-deee717040-36\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-deee717040-36"
+  },
+  {
+    "key": "quran.html#card:learningCompletionSummary",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-71f7870b6a-34",
+    "kind": "card",
+    "label": "learningCompletionSummary",
+    "selector": "[data-access-key=\"card:learningCompletionSummary\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningCompletionSummary"
+  },
+  {
+    "key": "quran.html#card:learningReviewPanel",
+    "page": "quran.html",
+    "parent": "quran.html#panel:learning",
+    "kind": "card",
+    "label": "Review",
+    "selector": "[data-access-key=\"card:learningReviewPanel\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningReviewPanel"
+  },
+  {
+    "key": "quran.html#card:learningReviewWorkspace",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningReviewPanel",
+    "kind": "card",
+    "label": "Belum dimulai",
+    "selector": "[data-access-key=\"card:learningReviewWorkspace\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningReviewWorkspace"
+  },
+  {
+    "key": "quran.html#card:section-22",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningReviewWorkspace",
+    "kind": "card",
+    "label": "it-learning-assessment-card",
+    "selector": "[data-access-key=\"card:section-22\"]",
+    "match": {},
+    "url": "quran.html?access=card:section-22"
+  },
+  {
+    "key": "quran.html#card:node-a752ed4bcc-41",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningReviewPanel",
+    "kind": "card",
+    "label": "Kelola bank item Review",
+    "selector": "[data-access-key=\"card:node-a752ed4bcc-41\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-a752ed4bcc-41"
+  },
+  {
+    "key": "quran.html#card:node-8a6ad16025-42",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningReviewPanel",
+    "kind": "card",
+    "label": "Diagnostik lama",
+    "selector": "[data-access-key=\"card:node-8a6ad16025-42\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-8a6ad16025-42"
+  },
+  {
+    "key": "quran.html#card:learningTestPanel",
+    "page": "quran.html",
+    "parent": "quran.html#panel:learning",
+    "kind": "card",
+    "label": "Test",
+    "selector": "[data-access-key=\"card:learningTestPanel\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningTestPanel"
+  },
+  {
+    "key": "quran.html#card:learningTestWorkspace",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningTestPanel",
+    "kind": "card",
+    "label": "Belum dimulai",
+    "selector": "[data-access-key=\"card:learningTestWorkspace\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningTestWorkspace"
+  },
+  {
+    "key": "quran.html#card:section-25",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningTestWorkspace",
+    "kind": "card",
+    "label": "it-learning-assessment-card",
+    "selector": "[data-access-key=\"card:section-25\"]",
+    "match": {},
+    "url": "quran.html?access=card:section-25"
+  },
+  {
+    "key": "quran.html#card:node-a752ed4bcc-46",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningTestPanel",
+    "kind": "card",
+    "label": "Kelola bank item Test formal",
+    "selector": "[data-access-key=\"card:node-a752ed4bcc-46\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-a752ed4bcc-46"
+  },
+  {
+    "key": "quran.html#card:learningStudentsPanel",
+    "page": "quran.html",
+    "parent": "quran.html#panel:learning",
+    "kind": "card",
+    "label": "Siswa",
+    "selector": "[data-access-key=\"card:learningStudentsPanel\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningStudentsPanel"
+  },
+  {
+    "key": "quran.html#card:learningStudentDetail",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningStudentsPanel",
+    "kind": "card",
+    "label": "learningStudentDetail",
+    "selector": "[data-access-key=\"card:learningStudentDetail\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningStudentDetail"
+  },
+  {
+    "key": "quran.html#card:learningHistoryPanel",
+    "page": "quran.html",
+    "parent": "quran.html#panel:learning",
+    "kind": "card",
+    "label": "Riwayat Riwayat Review Riwayat Test formal",
+    "selector": "[data-access-key=\"card:learningHistoryPanel\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningHistoryPanel"
+  },
+  {
+    "key": "quran.html#card:learningSettingsPanel",
+    "page": "quran.html",
+    "parent": "quran.html#panel:learning",
+    "kind": "card",
+    "label": "learningSettingsPanel",
+    "selector": "[data-access-key=\"card:learningSettingsPanel\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningSettingsPanel"
+  },
+  {
+    "key": "quran.html#card:node-f4927a4148-51",
+    "page": "quran.html",
+    "parent": "quran.html#card:learningSettingsPanel",
+    "kind": "card",
+    "label": "Pengaturan, offline, impor/ekspor, dan sumber Tampilan belajar",
+    "selector": "[data-access-key=\"card:node-f4927a4148-51\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-f4927a4148-51"
+  },
+  {
+    "key": "quran.html#card:section-30",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-f4927a4148-51",
+    "kind": "card",
+    "label": "Paket offline",
+    "selector": "[data-access-key=\"card:section-30\"]",
+    "match": {},
+    "url": "quran.html?access=card:section-30"
+  },
+  {
+    "key": "quran.html#card:section-31",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-f4927a4148-51",
+    "kind": "card",
+    "label": "Progres pribadi",
+    "selector": "[data-access-key=\"card:section-31\"]",
+    "match": {},
+    "url": "quran.html?access=card:section-31"
+  },
+  {
+    "key": "quran.html#card:section-32",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-f4927a4148-51",
+    "kind": "card",
+    "label": "Importer materi JSON/CSV",
+    "selector": "[data-access-key=\"card:section-32\"]",
+    "match": {},
+    "url": "quran.html?access=card:section-32"
+  },
+  {
+    "key": "quran.html#card:node-ab79ed1965-55",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-f4927a4148-51",
+    "kind": "card",
+    "label": "Aturan & warna anotasi",
+    "selector": "[data-access-key=\"card:node-ab79ed1965-55\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-ab79ed1965-55"
+  },
+  {
+    "key": "quran.html#card:node-deee717040-56",
+    "page": "quran.html",
+    "parent": "quran.html#card:node-f4927a4148-51",
+    "kind": "card",
+    "label": "Sumber materi Learning",
+    "selector": "[data-access-key=\"card:node-deee717040-56\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-deee717040-56"
+  },
+  {
+    "key": "quran.html#card:learningPrintSheet",
+    "page": "quran.html",
+    "parent": "quran.html#panel:learning",
+    "kind": "card",
+    "label": "learningPrintSheet",
+    "selector": "[data-access-key=\"card:learningPrintSheet\"]",
+    "match": {},
+    "url": "quran.html?access=card:learningPrintSheet"
+  },
+  {
+    "key": "quran.html#panel:worship",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "panel",
+    "label": "Belajar dasar-dasar ibadah",
+    "selector": "[data-access-key=\"panel:worship\"]",
+    "match": {
+      "panel": "worship"
+    },
+    "url": "quran.html?access=panel:worship",
+    "trigger": "button[data-tab=\"worship\"]"
+  },
+  {
+    "key": "quran.html#card:worshipChapterContent",
+    "page": "quran.html",
+    "parent": "quran.html#panel:worship",
+    "kind": "card",
+    "label": "worshipChapterContent",
+    "selector": "[data-access-key=\"card:worshipChapterContent\"]",
+    "match": {},
+    "url": "quran.html?access=card:worshipChapterContent"
+  },
+  {
+    "key": "quran.html#card:node-c62335ce70-60",
+    "page": "quran.html",
+    "parent": "quran.html#panel:worship",
+    "kind": "card",
+    "label": "Kelola sub-bab (CRUD) Tambah sub-bab Tambah gambar",
+    "selector": "[data-access-key=\"card:node-c62335ce70-60\"]",
+    "match": {},
+    "url": "quran.html?access=card:node-c62335ce70-60"
+  },
+  {
+    "key": "users.html",
+    "page": "users.html",
+    "parent": null,
+    "kind": "page",
+    "label": "users.html",
+    "selector": null,
+    "match": {},
+    "url": "users.html"
+  },
+  {
+    "key": "users.html#card:loginSection",
+    "page": "users.html",
+    "parent": "users.html",
+    "kind": "card",
+    "label": "Login",
+    "selector": "[data-access-key=\"card:loginSection\"]",
+    "match": {},
+    "url": "users.html?access=card:loginSection"
+  },
+  {
+    "key": "users.html#card:accountSection",
+    "page": "users.html",
+    "parent": "users.html",
+    "kind": "card",
+    "label": "accountSection",
+    "selector": "[data-access-key=\"card:accountSection\"]",
+    "match": {},
+    "url": "users.html?access=card:accountSection"
+  },
+  {
+    "key": "users.html#card:section-2",
+    "page": "users.html",
+    "parent": "users.html#card:accountSection",
+    "kind": "card",
+    "label": "card account-heading",
+    "selector": "[data-access-key=\"card:section-2\"]",
+    "match": {},
+    "url": "users.html?access=card:section-2"
+  },
+  {
+    "key": "users.html#card:section-3",
+    "page": "users.html",
+    "parent": "users.html#card:accountSection",
+    "kind": "card",
+    "label": "Pengguna",
+    "selector": "[data-access-key=\"card:section-3\"]",
+    "match": {},
+    "url": "users.html?access=card:section-3"
+  },
+  {
+    "key": "users.html#card:urlAccessManagement",
+    "page": "users.html",
+    "parent": "users.html",
+    "kind": "card",
+    "label": "urlAccessManagement",
+    "selector": "[data-access-key=\"card:urlAccessManagement\"]",
+    "match": {},
+    "url": "users.html?access=card:urlAccessManagement"
+  },
+  {
+    "key": "users.html#card:permissionFields",
+    "page": "users.html",
+    "parent": "users.html",
+    "kind": "card",
+    "label": "Izin pengelolaan pengguna",
+    "selector": "[data-access-key=\"card:permissionFields\"]",
+    "match": {},
+    "url": "users.html?access=card:permissionFields"
+  },
+  {
+    "key": "users.html#card:accessLogSection",
+    "page": "users.html",
+    "parent": "users.html",
+    "kind": "card",
+    "label": "Riwayat akses",
+    "selector": "[data-access-key=\"card:accessLogSection\"]",
+    "match": {},
+    "url": "users.html?access=card:accessLogSection"
+  },
+  {
+    "key": "main.html",
+    "page": "main.html",
+    "parent": null,
+    "kind": "page",
+    "label": "main.html",
+    "selector": null,
+    "match": {},
+    "url": "main.html"
+  },
+  {
+    "key": "main.html#card:node-e52bfbaea2-1",
+    "page": "main.html",
+    "parent": "main.html",
+    "kind": "card",
+    "label": "Muslim Prey Management With Gis",
+    "selector": "[data-access-key=\"card:node-e52bfbaea2-1\"]",
+    "match": {},
+    "url": "main.html?access=card:node-e52bfbaea2-1"
+  },
+  {
+    "key": "main.html#card:services",
+    "page": "main.html",
+    "parent": "main.html",
+    "kind": "card",
+    "label": "Pilih layanan Anda",
+    "selector": "[data-access-key=\"card:services\"]",
+    "match": {},
+    "url": "main.html?access=card:services"
+  },
+  {
+    "key": "main.html#card:node-0419cbe4fb-3",
+    "page": "main.html",
+    "parent": "main.html#card:services",
+    "kind": "card",
+    "label": "Ibadah, pembelajaran astronomi Jadwal salat layar utama Qur’an, Tafsir Hadis Advanced Astronomical WebGIS Astronomical Reviewer",
+    "selector": "[data-access-key=\"card:node-0419cbe4fb-3\"]",
+    "match": {},
+    "url": "main.html?access=card:node-0419cbe4fb-3"
+  },
+  {
+    "key": "main.html#card:node-00addcf31b-4",
+    "page": "main.html",
+    "parent": "main.html#card:services",
+    "kind": "card",
+    "label": "Pengelolaan personalisasi Administrasi lokasi gedung Background Overlay MEEP Simplify BMS Akun profil pengguna",
+    "selector": "[data-access-key=\"card:node-00addcf31b-4\"]",
+    "match": {},
+    "url": "main.html?access=card:node-00addcf31b-4"
+  },
+  {
+    "key": "quran.html#panel:book-import",
+    "page": "quran.html",
+    "parent": "quran.html",
+    "kind": "panel",
+    "label": "Impor Kitab / Book import",
+    "selector": "[data-access-key=\"panel:book-import\"]",
+    "match": {
+      "panel": "book-import"
+    },
+    "url": "quran.html?panel=book-import",
+    "trigger": "button[data-tab=\"book-import\"]"
+  }
+]

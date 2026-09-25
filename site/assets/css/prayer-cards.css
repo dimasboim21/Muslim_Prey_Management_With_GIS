@@ -1,0 +1,1040 @@
+.prayer-grid {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(148px, 1fr);
+  gap: 8px;
+}
+
+.prayer-card {
+  min-width: 0;
+  min-height: 148px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  color: #ffffff;
+  background:
+    linear-gradient(160deg, rgba(7, 17, 14, 0.48), rgba(7, 17, 14, 0.24)),
+    var(--card-image, none),
+    var(--card-color, #176a58);
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.46);
+}
+
+.prayer-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.1));
+  opacity: 0.45;
+}
+
+.prayer-card.is-next {
+  box-shadow: 0 0 0 3px rgba(247, 181, 0, 0.55);
+}
+
+.prayer-card-inner {
+  height: 100%;
+  min-width: 0;
+  min-height: 148px;
+  display: grid;
+  align-content: space-between;
+  gap: 0.14rem;
+  padding: 0.46rem;
+}
+
+.prayer-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+}
+
+.prayer-name {
+  min-width: 0;
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.prayer-order {
+  width: 25px;
+  height: 25px;
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.prayer-time {
+  font-size: clamp(1.22rem, 1.65vw, 1.78rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.prayer-makruh {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  padding-top: 0.05rem;
+}
+
+.prayer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+}
+
+.method-pill {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  padding: 0.13rem 0.34rem;
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.64rem;
+  font-weight: 800;
+}
+
+.method-pill.active {
+  background: rgba(255, 255, 255, 0.9);
+  color: #17211d;
+}
+
+.schedule-bottom {
+  grid-column: 2 / 3;
+  grid-row: 3;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-top: 0;
+}
+
+.inline-method-comparison {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.inline-method-row {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.24rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 5px;
+  padding: 0.12rem 0.22rem;
+  background: rgba(5, 12, 14, 0.46);
+  font-size: 0.56rem;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.inline-method-row.is-active {
+  border-color: rgba(248, 205, 82, 0.68);
+  background: rgba(75, 55, 12, 0.58);
+}
+
+.inline-method-row span,
+.inline-method-row strong,
+.inline-method-row em {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inline-method-row span {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.inline-method-row strong {
+  color: #ffffff;
+  font-size: 0.58rem;
+  font-weight: 900;
+}
+
+.inline-method-row em {
+  color: rgba(255, 255, 255, 0.76);
+  font-style: normal;
+}
+
+.method-comparison-panel {
+  min-height: 0;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: var(--radius);
+  padding: 0.28rem;
+  color: #ffffff;
+  background: rgba(13, 27, 34, 0.54);
+  backdrop-filter: blur(10px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.46);
+}
+
+.method-comparison-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.45rem;
+  margin-bottom: 0.2rem;
+}
+
+.method-comparison-heading h3 {
+  font-size: 0.78rem;
+  line-height: 1.1;
+}
+
+.method-comparison-heading span:last-child {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.58rem;
+  font-weight: 800;
+}
+
+.method-comparison-grid {
+  display: grid;
+  grid-template-columns: minmax(104px, 0.74fr) repeat(var(--comparison-columns, 9), minmax(0, 1fr));
+  gap: 3px;
+}
+
+.method-comparison-cell {
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 5px;
+  padding: 0.15rem 0.22rem;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.method-comparison-cell.is-active {
+  border-color: rgba(248, 205, 82, 0.7);
+  background: rgba(248, 205, 82, 0.2);
+}
+
+.method-comparison-method {
+  display: grid;
+  align-content: center;
+  gap: 0.04rem;
+  font-size: 0.62rem;
+  font-weight: 900;
+}
+
+.method-comparison-method span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.48rem;
+  text-transform: uppercase;
+}
+
+.method-comparison-prayer {
+  display: grid;
+  gap: 0.03rem;
+}
+
+.method-comparison-label {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.48rem;
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.method-comparison-time {
+  font-size: 0.62rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.method-comparison-delta {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.48rem;
+  font-weight: 800;
+}
+
+.tahajud-panel {
+  min-width: 0;
+  min-height: 148px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: stretch;
+  gap: 0.52rem;
+  border: 1px solid #cfd9d4;
+  border-radius: var(--radius);
+  padding: 0.42rem;
+  background:
+    linear-gradient(135deg, rgba(15, 27, 47, 0.7), rgba(18, 70, 63, 0.58)),
+    var(--tahajud-image, none),
+    #1f5350;
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.48);
+}
+
+.tahajud-card-in-grid {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.tahajud-card-in-grid .tahajud-source-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tahajud-card-in-grid .tahajud-source-row {
+  flex: initial;
+}
+
+.tahajud-main {
+  display: grid;
+  align-content: center;
+  gap: 0.08rem;
+}
+
+.tahajud-main h3 {
+  font-size: 0.9rem;
+}
+
+.tahajud-time {
+  font-size: clamp(1.12rem, 1.8vw, 1.6rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.tahajud-note {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+
+.tahajud-source-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  gap: 0.32rem;
+}
+
+.tahajud-source-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex: 1 1 128px;
+  gap: 0.06rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  padding: 0.24rem 0.34rem;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.64rem;
+}
+
+.tahajud-source-row strong,
+.tahajud-source-row span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tahajud-source-row strong {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.tahajud-source-row span {
+  font-weight: 800;
+}
+
+/* Dhuha Group Styling */
+.dhuha-group {
+  min-width: 0;
+  min-height: 304px;
+  grid-column: span 2;
+  grid-row: span 2;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(160deg, rgba(7, 17, 14, 0.48), rgba(7, 17, 14, 0.24)),
+    var(--card-image, none),
+    var(--card-color, #b7791f);
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.46);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.34rem;
+}
+
+.dhuha-group::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.1));
+  opacity: 0.7;
+}
+
+.dhuha-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+}
+
+.dhuha-group-header h3 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.dhuha-group-header .prayer-order {
+  width: 25px;
+  height: 25px;
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.dhuha-items {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0.32rem;
+}
+
+.dhuha-item {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.18rem;
+  min-height: 0;
+  padding: 0.34rem;
+  background:
+    linear-gradient(160deg, rgba(7, 17, 14, 0.34), rgba(7, 17, 14, 0.18)),
+    var(--card-image, none),
+    var(--card-color, rgba(255, 255, 255, 0.12));
+  background-position: center;
+  background-size: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  align-items: center;
+  text-align: center;
+}
+
+.dhuha-label {
+  font-size: clamp(0.7rem, 0.82vw, 0.86rem);
+  font-weight: 700;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dhuha-time {
+  font-size: clamp(0.82rem, 1vw, 1rem);
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.dhuha-item .inline-method-comparison {
+  width: 100%;
+  margin-top: 0.02rem;
+}
+
+.dhuha-item .inline-method-row {
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.18rem;
+  padding: 0.1rem 0.16rem;
+  font-size: 0.48rem;
+}
+
+.dhuha-item .inline-method-row span {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.dhuha-item .inline-method-row em {
+  display: none;
+}
+
+.dhuha-duration {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding-top: 0.24rem;
+  margin-top: 0.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+.dhuha-duration-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.dhuha-duration-time {
+  font-size: 0.76rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.dhuha-duration-detail {
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 1320px) and (min-width: 981px) {
+  .prayer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(148px, 1fr);
+  }
+
+  .dhuha-group {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .method-pill:not(.active) {
+    display: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .prayer-grid {
+    grid-column: auto;
+    grid-row: auto;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-auto-rows: minmax(132px, auto);
+  }
+
+  .dhuha-group {
+    grid-column: span 2;
+    min-height: 290px;
+  }
+
+  .tahajud-card-in-grid {
+    grid-column: span 2;
+  }
+
+  .schedule-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .method-comparison-panel {
+    overflow-x: auto;
+  }
+
+  .method-comparison-grid {
+    min-width: 820px;
+  }
+}
+
+@media (max-width: 640px) {
+  .prayer-grid,
+  .tahajud-panel,
+  .schedule-bottom {
+    grid-template-columns: 1fr;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .prayer-grid {
+    gap: 6px;
+  }
+
+  .dhuha-group {
+    grid-column: span 1;
+    grid-row: auto;
+    min-height: 0;
+  }
+
+  .tahajud-card-in-grid {
+    grid-column: span 1;
+  }
+
+  .tahajud-card-in-grid .tahajud-source-list {
+    grid-template-columns: 1fr;
+  }
+
+  .dhuha-items {
+    grid-template-columns: 1fr;
+  }
+
+  .dhuha-item {
+    min-height: 132px;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .inline-method-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "method delta"
+      "time time";
+    gap: 0.06rem 0.24rem;
+    padding: 0.14rem 0.24rem;
+    background: rgba(5, 12, 14, 0.58);
+    font-size: 0.6rem;
+  }
+
+  .inline-method-row span {
+    grid-area: method;
+  }
+
+  .inline-method-row strong {
+    grid-area: time;
+    justify-self: start;
+  }
+
+  .inline-method-row em {
+    grid-area: delta;
+    justify-self: end;
+  }
+
+  .inline-method-row strong {
+    font-size: 0.6rem;
+  }
+
+  .dhuha-item .inline-method-row {
+    font-size: 0.56rem;
+  }
+
+  .dhuha-item .inline-method-row em {
+    display: block;
+  }
+
+  .prayer-card-inner {
+    height: auto;
+    min-height: 132px;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    align-content: center;
+    gap: 0.22rem;
+    padding: 0.58rem 0.65rem;
+  }
+
+  .prayer-topline {
+    min-width: 0;
+    justify-content: start;
+  }
+
+  .prayer-order {
+    order: -1;
+    width: 24px;
+    height: 24px;
+    font-size: 0.72rem;
+  }
+
+  .prayer-name {
+    font-size: 0.95rem;
+  }
+
+  .prayer-time {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: center;
+    font-size: 1.7rem;
+  }
+
+  .prayer-meta {
+    grid-column: auto;
+  }
+
+  .method-pill {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .tahajud-panel {
+    gap: 0.58rem;
+    margin-top: 6px;
+    padding: 0.62rem;
+  }
+
+  .tahajud-source-row {
+    flex-basis: 100%;
+  }
+}
+
+/* Dense, non-scroll presentation layout for tablet and phone displays. */
+@media (max-width: 980px), (max-height: 720px) {
+  .prayer-grid {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    gap: 4px;
+    overflow: hidden;
+  }
+
+  .prayer-card,
+  .prayer-card-inner,
+  .dhuha-group,
+  .tahajud-panel {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .prayer-card-inner {
+    align-content: space-between;
+    gap: 0.06rem;
+    padding: 0.3rem;
+  }
+
+  .prayer-name {
+    font-size: clamp(0.62rem, 1.5vw, 0.76rem);
+  }
+
+  .prayer-order,
+  .dhuha-group-header .prayer-order {
+    width: 20px;
+    height: 20px;
+    font-size: 0.58rem;
+  }
+
+  .prayer-time {
+    font-size: clamp(0.92rem, 2.5vw, 1.3rem);
+  }
+
+  .prayer-makruh {
+    font-size: 0.52rem;
+  }
+
+  .inline-method-comparison {
+    gap: 1px;
+  }
+
+  .inline-method-row,
+  .dhuha-item .inline-method-row {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: none;
+    gap: 0.08rem;
+    padding: 0.05rem 0.1rem;
+    font-size: 0.46rem;
+    line-height: 1;
+  }
+
+  .inline-method-row span,
+  .inline-method-row strong,
+  .inline-method-row em {
+    grid-area: auto;
+    font-size: inherit;
+  }
+
+  .inline-method-row em {
+    display: none;
+  }
+
+  .dhuha-group {
+    grid-column: span 2;
+    grid-row: span 2;
+    gap: 0.16rem;
+    padding: 0.3rem;
+  }
+
+  .dhuha-group-header h3 {
+    font-size: clamp(0.62rem, 1.6vw, 0.76rem);
+  }
+
+  .dhuha-items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.16rem;
+  }
+
+  .dhuha-item {
+    min-height: 0;
+    gap: 0.06rem;
+    padding: 0.16rem;
+  }
+
+  .dhuha-label,
+  .dhuha-time {
+    font-size: clamp(0.52rem, 1.35vw, 0.68rem);
+    line-height: 1.05;
+  }
+
+  .dhuha-duration {
+    gap: 0;
+    margin-top: 0;
+    padding-top: 0.1rem;
+  }
+
+  .dhuha-duration-label,
+  .dhuha-duration-detail {
+    font-size: 0.48rem;
+  }
+
+  .dhuha-duration-time {
+    font-size: 0.58rem;
+  }
+
+  .tahajud-card-in-grid {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .tahajud-panel {
+    grid-template-columns: minmax(90px, 0.72fr) minmax(0, 1.28fr);
+    grid-template-rows: minmax(0, 1fr);
+    align-items: center;
+    align-content: center;
+    gap: 0.16rem;
+    margin: 0;
+    padding: 0.28rem;
+  }
+
+  .tahajud-main {
+    min-height: 0;
+    gap: 0.02rem;
+  }
+
+  .tahajud-main h3 {
+    font-size: 0.66rem;
+  }
+
+  .tahajud-time {
+    font-size: clamp(0.8rem, 2vw, 1.05rem);
+  }
+
+  .tahajud-note {
+    font-size: 0.5rem;
+    line-height: 1.05;
+  }
+
+  .tahajud-card-in-grid .tahajud-source-list {
+    min-height: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.12rem;
+  }
+
+  .tahajud-source-row {
+    min-width: 0;
+    padding: 0.1rem 0.16rem;
+    font-size: 0.48rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .prayer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+  }
+
+  .prayer-card,
+  .prayer-card-inner {
+    min-height: 0;
+  }
+
+  .prayer-card-inner {
+    height: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: space-between;
+    gap: 0.04rem;
+    padding: 0.22rem;
+  }
+
+  .prayer-topline {
+    justify-content: space-between;
+  }
+
+  .prayer-order {
+    order: initial;
+  }
+
+  .prayer-name {
+    font-size: clamp(0.58rem, 2.8vw, 0.7rem);
+  }
+
+  .prayer-time {
+    font-size: clamp(0.86rem, 4.2vw, 1.12rem);
+  }
+
+  .dhuha-group {
+    grid-column: span 2;
+    grid-row: span 2;
+    min-height: 0;
+  }
+
+  .dhuha-items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .dhuha-item {
+    min-height: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tahajud-card-in-grid {
+    grid-column: span 2;
+  }
+
+  .tahajud-card-in-grid .tahajud-source-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-height: 430px) and (orientation: landscape) {
+  .prayer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2px;
+  }
+
+  .prayer-card-inner,
+  .dhuha-group,
+  .tahajud-panel {
+    grid-template-columns: 1fr;
+    padding: 0.12rem;
+  }
+
+  .prayer-name,
+  .dhuha-group-header h3,
+  .tahajud-main h3 {
+    font-size: 0.5rem;
+  }
+
+  .prayer-order,
+  .dhuha-group-header .prayer-order {
+    width: 14px;
+    height: 14px;
+    font-size: 0.44rem;
+  }
+
+  .prayer-time,
+  .tahajud-time {
+    font-size: 0.7rem;
+  }
+
+  .prayer-makruh,
+  .inline-method-row:not(.is-active),
+  .dhuha-duration-label,
+  .dhuha-duration-detail,
+  .tahajud-note,
+  .tahajud-main .clock-label,
+  .tahajud-source-list {
+    display: none;
+  }
+
+  .tahajud-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .inline-method-row.is-active,
+  .dhuha-item .inline-method-row.is-active {
+    display: grid;
+    padding: 0.02rem 0.06rem;
+    font-size: 0.4rem;
+  }
+
+  .dhuha-label,
+  .dhuha-time,
+  .dhuha-duration-time {
+    font-size: 0.46rem;
+  }
+}
+
+@media (max-height: 720px) {
+  .prayer-card-inner {
+    gap: 0;
+    padding: 0.1rem;
+  }
+
+  .prayer-order,
+  .dhuha-group-header .prayer-order {
+    width: 16px;
+    height: 16px;
+    font-size: 0.48rem;
+  }
+
+  .inline-method-row,
+  .dhuha-item .inline-method-row {
+    padding: 0 0.06rem;
+    font-size: 0.42rem;
+    line-height: 0.96;
+  }
+
+  .dhuha-item {
+    gap: 0;
+    padding: 0.08rem;
+  }
+
+  .dhuha-duration {
+    padding-top: 0.03rem;
+  }
+
+  .tahajud-panel {
+    gap: 0.08rem;
+    padding: 0.14rem;
+  }
+
+  .tahajud-main .clock-label {
+    font-size: 0.45rem;
+    line-height: 1;
+  }
+
+  .tahajud-main h3 {
+    font-size: 0.55rem;
+    line-height: 1;
+  }
+
+  .tahajud-time {
+    font-size: 0.72rem;
+    line-height: 1;
+  }
+
+  .tahajud-source-row {
+    padding: 0 0.08rem;
+    font-size: 0.4rem;
+    line-height: 0.9;
+  }
+
+  .tahajud-note {
+    display: none;
+  }
+
+  .tahajud-source-row strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1;
+  }
+}

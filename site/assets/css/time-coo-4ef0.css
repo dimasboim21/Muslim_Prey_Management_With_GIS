@@ -1,0 +1,282 @@
+.time-coordinate-calibration {
+  --calibration-cyan: #00ffff;
+  border: 1px solid rgba(18, 112, 111, 0.2);
+  border-radius: 14px;
+  background: rgba(244, 252, 251, 0.88);
+  color: #173a38;
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+.time-coordinate-calibration > header {
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(23, 88, 83, 0.05));
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 12px 14px;
+}
+
+.time-coordinate-calibration h3,
+.time-coordinate-calibration p { margin: 0; }
+.time-coordinate-calibration h3 { font-size: 14px; }
+.time-coordinate-calibration header p { color: #4e6b68; font-size: 11px; margin-top: 3px; }
+
+.calibration-status {
+  border-radius: 999px;
+  background: #dcece9;
+  color: #24524e;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 5px 8px;
+  text-transform: uppercase;
+}
+
+.calibration-status[data-status="verified"] { background: #d7f4e4; color: #17643a; }
+.calibration-status[data-status="estimated"] { background: #fff0c7; color: #775000; }
+.calibration-status[data-status="unavailable"] { background: #f4dddd; color: #7c2525; }
+
+.calibration-config {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 12px 14px 4px;
+}
+
+.calibration-config label { display: grid; gap: 4px; min-width: 0; }
+.calibration-config label > span { color: #476663; font-size: 10px; font-weight: 800; }
+.calibration-config select,
+.calibration-config input {
+  border: 1px solid rgba(26, 89, 83, 0.22);
+  border-radius: 8px;
+  background: #fff;
+  color: #173a38;
+  font: inherit;
+  min-width: 0;
+  padding: 7px 8px;
+}
+
+.calibration-actions { display: flex; gap: 7px; grid-column: 1 / -1; }
+.calibration-actions button {
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 8px 11px;
+}
+.calibration-actions button:first-child { background: #17665f; color: #fff; }
+.calibration-actions button:last-child { background: #dcece9; color: #24524e; }
+
+.calibration-summary {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: rgba(18, 112, 111, 0.12);
+  margin-top: 8px;
+}
+.calibration-summary div { background: rgba(255,255,255,.92); min-width: 0; padding: 9px 11px; }
+.calibration-summary span { color: #58726f; display: block; font-size: 9px; font-weight: 800; text-transform: uppercase; }
+.calibration-summary strong { display: block; font-size: 12px; margin-top: 3px; overflow-wrap: anywhere; }
+
+.calibration-narrative,
+.calibration-warning,
+.calibration-disclosure { font-size: 11px; line-height: 1.55; margin: 10px 14px !important; }
+.calibration-warning { background: #fff0c7; border-left: 3px solid #d39200; padding: 8px; }
+.calibration-disclosure { color: #516a67; }
+
+.calibration-details { border-top: 1px solid rgba(18,112,111,.12); }
+.calibration-details details { border-bottom: 1px solid rgba(18,112,111,.09); }
+.calibration-details summary { cursor: pointer; font-size: 11px; font-weight: 800; padding: 10px 14px; }
+.calibration-detail-grid { display: grid; gap: 6px; grid-template-columns: repeat(2,minmax(0,1fr)); padding: 0 14px 12px; }
+.calibration-detail-grid div { background: rgba(255,255,255,.72); border-radius: 7px; padding: 7px; }
+.calibration-detail-grid span { color: #617b78; display: block; font-size: 9px; }
+.calibration-detail-grid strong { display: block; font-size: 11px; margin-top: 2px; overflow-wrap: anywhere; }
+.calibration-formula { background: #102b29; border-radius: 8px; color: #d9fffb; font: 10px/1.6 Consolas, monospace; margin: 0 14px 12px; overflow: auto; padding: 10px; white-space: pre-wrap; }
+
+.index-time-calibration {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: .28rem;
+  margin-top: .18rem;
+  min-width: 0;
+  width: 100%;
+}
+.calibrated-clock-block {
+  justify-items: center;
+  min-width: 0;
+  overflow: visible;
+  width: 100%;
+}
+.calibrated-clock-block .clock-time {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: clamp(.88rem, 1.42vw, 1.28rem);
+  font-variant-numeric: tabular-nums;
+  gap: 0 .42em;
+  justify-content: center;
+  line-height: 1.12;
+  max-width: 100%;
+  min-width: 0;
+  overflow: visible;
+  padding-block: .1em;
+  text-align: center;
+  white-space: normal;
+}
+.actual-time-date-part,
+.actual-time-clock-part {
+  display: inline-block;
+  white-space: nowrap;
+}
+.actual-time-source-meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem .38rem;
+  justify-content: center;
+  max-width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+.actual-time-source-label {
+  font-size: clamp(.58rem, .72vw, .76rem);
+  font-weight: 800;
+  line-height: 1.15;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.actual-time-source-status {
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 999px;
+  flex: 0 0 auto;
+  font-size: clamp(.48rem, .58vw, .62rem);
+  font-weight: 800;
+  line-height: 1;
+  padding: .16rem .34rem;
+  text-transform: uppercase;
+}
+.actual-time-source-status[data-status="verified"] { background: rgba(37, 180, 103, .34); }
+.actual-time-source-status[data-status="estimated"] { background: rgba(214, 151, 28, .38); }
+.actual-time-source-status[data-status="unverified"] { background: rgba(201, 118, 28, .34); }
+.actual-time-source-status[data-status="unavailable"] { background: rgba(180, 55, 55, .4); }
+.hero-panel[data-bg-tone="light"] .actual-time-source-status {
+  border-color: rgba(16,24,21,.2);
+  background: rgba(16,24,21,.08);
+}
+.index-time-calibration label {
+  align-items: center;
+  display: flex;
+  gap: .35rem;
+  justify-content: center;
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+  font-size: clamp(.56rem, .68vw, .74rem);
+}
+.index-time-calibration label > span {
+  flex: 0 1 auto;
+  font-weight: 700;
+  min-width: 0;
+}
+.index-time-calibration select {
+  background: rgba(0,0,0,.24);
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  color: inherit;
+  flex: 0 1 13rem;
+  font: inherit;
+  max-width: 100%;
+  min-width: 0;
+  padding: .2rem .55rem;
+}
+.index-time-calibration option { color: #122; }
+.index-time-calibration-output {
+  font-size: clamp(.5rem,.62vw,.68rem);
+  line-height: 1.15;
+  max-width: 100%;
+  min-width: 0;
+  opacity: .9;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.index-time-calibration-output[data-status="unavailable"] { color: #ffd2d2; }
+
+.actual-time-calibration-display select {
+  background: #fff;
+  border: 1px solid rgba(15,61,46,.22);
+  border-radius: 8px;
+  color: #173a38;
+  font: inherit;
+  margin: 5px 0;
+  max-width: 100%;
+  padding: 7px 8px;
+}
+
+@media (max-width: 720px) {
+  .calibration-config,
+  .calibration-summary,
+  .calibration-detail-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .calibrated-clock-block {
+    align-content: center;
+    justify-items: start;
+    overflow: visible;
+  }
+  .calibrated-clock-block .clock-time {
+    align-items: start;
+    display: grid;
+    font-size: clamp(.68rem, 3.1vw, .9rem);
+    gap: .02rem;
+    justify-content: start;
+    justify-items: start;
+    line-height: 1.08;
+    overflow: visible;
+    text-align: left;
+  }
+  .actual-time-source-meta { justify-content: flex-start; row-gap: .04rem; text-align: left; }
+  .actual-time-source-label { font-size: clamp(.43rem, 1.85vw, .56rem); }
+  .actual-time-source-status { font-size: clamp(.36rem, 1.55vw, .46rem); padding: .1rem .22rem; }
+  .index-time-calibration {
+    align-items: stretch;
+    gap: .08rem;
+    margin-top: .04rem;
+    overflow: visible;
+  }
+  .index-time-calibration label { align-items: stretch; flex-direction: column; gap: .04rem; width: 100%; }
+  .index-time-calibration label > span { font-size: .42rem; line-height: 1; }
+  .index-time-calibration select {
+    flex-basis: auto;
+    font-size: clamp(.45rem, 1.75vw, .54rem);
+    height: 19px;
+    max-width: 100%;
+    padding: 0 .24rem;
+    width: 100%;
+  }
+  .index-time-calibration-output {
+    font-size: clamp(.4rem, 1.55vw, .48rem);
+    line-height: 1.05;
+    overflow: visible;
+    text-align: left;
+  }
+}
+
+@media (max-height: 430px) and (orientation: landscape) {
+  .calibrated-clock-block { gap: .02rem; }
+  .calibrated-clock-block > .clock-label { font-size: .38rem; }
+  .calibrated-clock-block .clock-time {
+    display: grid;
+    font-size: .43rem;
+    line-height: 1;
+    overflow: visible;
+  }
+  .actual-time-source-label { display: none; }
+  .actual-time-source-status { font-size: .3rem; padding: .06rem .14rem; }
+  .index-time-calibration { gap: 0; margin: 0; overflow: visible; }
+  .index-time-calibration label > span { display: none; }
+  .index-time-calibration select { font-size: .34rem; height: 14px; }
+  .index-time-calibration-output { font-size: .31rem; line-height: 1; white-space: nowrap; }
+}

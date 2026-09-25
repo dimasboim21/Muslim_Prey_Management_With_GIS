@@ -1,0 +1,570 @@
+{
+  "schemaVersion": "mpm.facility-catalog.v1",
+  "source": "json-fallback",
+  "assetCategories": [
+    {
+      "key": "ac",
+      "name": "AC",
+      "prefix": "AC",
+      "isElectric": true,
+      "types": [
+        {
+          "key": "ac-05pk-split-wall",
+          "name": "0.5 PK split wall",
+          "defaultPowerWatts": 390,
+          "btuPerHour": 5000,
+          "pk": 0.5,
+          "models": [
+            { "brand": "Daikin", "model": "FTKQ/FTC 0.5 PK", "series": "Standard split wall", "claimPowerWatts": 390, "btuPerHour": 5000, "pk": 0.5 },
+            { "brand": "Panasonic", "model": "CS 0.5 PK", "series": "Standard split wall", "claimPowerWatts": 390, "btuPerHour": 5000, "pk": 0.5 },
+            { "brand": "Sharp", "model": "AH 0.5 PK", "series": "Standard split wall", "claimPowerWatts": 390, "btuPerHour": 5000, "pk": 0.5 }
+          ]
+        },
+        {
+          "key": "ac-075pk-split-wall",
+          "name": "0.75 PK split wall",
+          "defaultPowerWatts": 600,
+          "btuPerHour": 7000,
+          "pk": 0.75,
+          "models": [
+            { "brand": "Daikin", "model": "FTKQ/FTC 0.75 PK", "series": "Standard split wall", "claimPowerWatts": 600, "btuPerHour": 7000, "pk": 0.75 },
+            { "brand": "LG", "model": "Dual Cool 0.75 PK", "series": "Inverter split wall", "claimPowerWatts": 560, "btuPerHour": 7000, "pk": 0.75 },
+            { "brand": "Gree", "model": "F1 0.75 PK", "series": "Low watt split wall", "claimPowerWatts": 560, "btuPerHour": 7000, "pk": 0.75 }
+          ]
+        },
+        {
+          "key": "ac-1pk-split-wall",
+          "name": "1 PK split wall",
+          "defaultPowerWatts": 900,
+          "btuPerHour": 9000,
+          "pk": 1,
+          "models": [
+            { "brand": "Daikin", "model": "FTKQ/FTC 1 PK", "series": "Standard split wall", "claimPowerWatts": 900, "btuPerHour": 9000, "pk": 1 },
+            { "brand": "Panasonic", "model": "CS 1 PK", "series": "Standard split wall", "claimPowerWatts": 900, "btuPerHour": 9000, "pk": 1 },
+            { "brand": "LG", "model": "Dual Cool 1 PK", "series": "Inverter split wall", "claimPowerWatts": 720, "btuPerHour": 9000, "pk": 1 },
+            { "brand": "Gree", "model": "F1 1 PK", "series": "Low watt split wall", "claimPowerWatts": 760, "btuPerHour": 9000, "pk": 1 }
+          ]
+        },
+        {
+          "key": "ac-15pk-split-wall",
+          "name": "1.5 PK split wall",
+          "defaultPowerWatts": 1250,
+          "btuPerHour": 12000,
+          "pk": 1.5,
+          "models": [
+            { "brand": "Daikin", "model": "FTKQ/FTC 1.5 PK", "series": "Standard split wall", "claimPowerWatts": 1250, "btuPerHour": 12000, "pk": 1.5 },
+            { "brand": "Panasonic", "model": "CS 1.5 PK", "series": "Standard split wall", "claimPowerWatts": 1250, "btuPerHour": 12000, "pk": 1.5 },
+            { "brand": "Sharp", "model": "AH 1.5 PK", "series": "Standard split wall", "claimPowerWatts": 1250, "btuPerHour": 12000, "pk": 1.5 }
+          ]
+        },
+        {
+          "key": "ac-2pk-split-wall",
+          "name": "2 PK split wall",
+          "defaultPowerWatts": 1800,
+          "btuPerHour": 18000,
+          "pk": 2,
+          "models": [
+            { "brand": "Daikin", "model": "FTKQ/FTC 2 PK", "series": "Standard split wall", "claimPowerWatts": 1800, "btuPerHour": 18000, "pk": 2 },
+            { "brand": "Panasonic", "model": "CS 2 PK", "series": "Standard split wall", "claimPowerWatts": 1800, "btuPerHour": 18000, "pk": 2 },
+            { "brand": "LG", "model": "Dual Cool 2 PK", "series": "Inverter split wall", "claimPowerWatts": 1500, "btuPerHour": 18000, "pk": 2 }
+          ]
+        },
+        {
+          "key": "ac-25pk-split-wall",
+          "name": "2.5 PK split wall",
+          "defaultPowerWatts": 2200,
+          "btuPerHour": 24000,
+          "pk": 2.5,
+          "models": [
+            { "brand": "Daikin", "model": "FTKQ/FTC 2.5 PK", "series": "Standard split wall", "claimPowerWatts": 2200, "btuPerHour": 24000, "pk": 2.5 },
+            { "brand": "Gree", "model": "F1 2.5 PK", "series": "Split wall", "claimPowerWatts": 2100, "btuPerHour": 24000, "pk": 2.5 }
+          ]
+        },
+        {
+          "key": "ac-2pk-standing-floor",
+          "name": "2 PK standing floor",
+          "defaultPowerWatts": 1900,
+          "btuPerHour": 18000,
+          "pk": 2,
+          "models": [
+            { "brand": "Daikin", "model": "Standing floor 2 PK", "series": "Floor standing", "claimPowerWatts": 1900, "btuPerHour": 18000, "pk": 2 },
+            { "brand": "Panasonic", "model": "Standing floor 2 PK", "series": "Floor standing", "claimPowerWatts": 1900, "btuPerHour": 18000, "pk": 2 }
+          ]
+        },
+        {
+          "key": "ac-3pk-standing-floor",
+          "name": "3 PK standing floor",
+          "defaultPowerWatts": 2850,
+          "btuPerHour": 28000,
+          "pk": 3,
+          "models": [
+            { "brand": "Daikin", "model": "Standing floor 3 PK", "series": "Floor standing", "claimPowerWatts": 2850, "btuPerHour": 28000, "pk": 3 },
+            { "brand": "Gree", "model": "Standing floor 3 PK", "series": "Floor standing", "claimPowerWatts": 2850, "btuPerHour": 28000, "pk": 3 }
+          ]
+        },
+        {
+          "key": "ac-2pk-cassette",
+          "name": "Cassette 2 PK",
+          "defaultPowerWatts": 1850,
+          "btuPerHour": 18000,
+          "pk": 2,
+          "models": [
+            { "brand": "Daikin", "model": "Cassette 2 PK", "series": "Ceiling cassette", "claimPowerWatts": 1850, "btuPerHour": 18000, "pk": 2 },
+            { "brand": "Panasonic", "model": "Cassette 2 PK", "series": "Ceiling cassette", "claimPowerWatts": 1850, "btuPerHour": 18000, "pk": 2 }
+          ]
+        },
+        {
+          "key": "ac-1pk-inverter-low-watt",
+          "name": "Inverter low watt 1 PK",
+          "defaultPowerWatts": 650,
+          "btuPerHour": 9000,
+          "pk": 1,
+          "models": [
+            { "brand": "LG", "model": "Dual Cool 1 PK", "series": "Inverter low watt", "claimPowerWatts": 650, "btuPerHour": 9000, "pk": 1 },
+            { "brand": "Gree", "model": "F1 1 PK", "series": "Inverter low watt", "claimPowerWatts": 650, "btuPerHour": 9000, "pk": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "television",
+      "name": "Televisi",
+      "prefix": "TV",
+      "isElectric": true,
+      "types": [
+        { "key": "tv-led-32", "name": "LED 32 inch", "defaultPowerWatts": 45, "models": [
+          { "brand": "Samsung", "model": "LED 32 inch", "series": "Smart/HD display", "capacityLabel": "32 inch", "claimPowerWatts": 45 },
+          { "brand": "LG", "model": "LED 32 inch", "series": "Smart/HD display", "capacityLabel": "32 inch", "claimPowerWatts": 45 },
+          { "brand": "Polytron", "model": "LED 32 inch", "series": "Digital TV", "capacityLabel": "32 inch", "claimPowerWatts": 45 },
+          { "brand": "Sharp", "model": "LED 32 inch", "series": "AQUOS/HD", "capacityLabel": "32 inch", "claimPowerWatts": 45 },
+          { "brand": "TCL", "model": "LED 32 inch", "series": "Smart TV", "capacityLabel": "32 inch", "claimPowerWatts": 45 },
+          { "brand": "Xiaomi", "model": "LED 32 inch", "series": "Smart TV", "capacityLabel": "32 inch", "claimPowerWatts": 45 },
+          { "brand": "Coocaa", "model": "LED 32 inch", "series": "Smart TV", "capacityLabel": "32 inch", "claimPowerWatts": 45 }
+        ] },
+        { "key": "tv-led-43", "name": "LED 43 inch", "defaultPowerWatts": 75, "models": [
+          { "brand": "Samsung", "model": "LED 43 inch", "series": "Smart/FHD display", "capacityLabel": "43 inch", "claimPowerWatts": 75 },
+          { "brand": "LG", "model": "LED 43 inch", "series": "Smart/FHD display", "capacityLabel": "43 inch", "claimPowerWatts": 75 },
+          { "brand": "Polytron", "model": "LED 43 inch", "series": "Digital TV", "capacityLabel": "43 inch", "claimPowerWatts": 75 },
+          { "brand": "Sharp", "model": "LED 43 inch", "series": "AQUOS/Smart TV", "capacityLabel": "43 inch", "claimPowerWatts": 75 },
+          { "brand": "TCL", "model": "LED 43 inch", "series": "Smart TV", "capacityLabel": "43 inch", "claimPowerWatts": 75 },
+          { "brand": "Xiaomi", "model": "LED 43 inch", "series": "Smart TV", "capacityLabel": "43 inch", "claimPowerWatts": 75 },
+          { "brand": "Hisense", "model": "LED 43 inch", "series": "Smart TV", "capacityLabel": "43 inch", "claimPowerWatts": 75 }
+        ] },
+        { "key": "tv-led-55", "name": "LED 55 inch", "defaultPowerWatts": 120, "models": [
+          { "brand": "Samsung", "model": "LED 55 inch", "series": "UHD/Crystal display", "capacityLabel": "55 inch", "claimPowerWatts": 120 },
+          { "brand": "LG", "model": "LED 55 inch", "series": "UHD display", "capacityLabel": "55 inch", "claimPowerWatts": 120 },
+          { "brand": "Sony", "model": "LED 55 inch", "series": "BRAVIA/UHD", "capacityLabel": "55 inch", "claimPowerWatts": 120 },
+          { "brand": "Sharp", "model": "LED 55 inch", "series": "AQUOS/UHD", "capacityLabel": "55 inch", "claimPowerWatts": 120 },
+          { "brand": "TCL", "model": "LED 55 inch", "series": "Smart/UHD display", "capacityLabel": "55 inch", "claimPowerWatts": 120 }
+        ] },
+        { "key": "tv-led-65-info", "name": "Display informasi 65 inch", "defaultPowerWatts": 170, "capacityLabel": "65 inch", "models": [
+          { "brand": "Samsung", "model": "Display informasi 65 inch", "series": "Signage/Smart display", "capacityLabel": "65 inch", "claimPowerWatts": 170 },
+          { "brand": "LG", "model": "Display informasi 65 inch", "series": "Signage/Smart display", "capacityLabel": "65 inch", "claimPowerWatts": 170 },
+          { "brand": "TCL", "model": "Display informasi 65 inch", "series": "Smart display", "capacityLabel": "65 inch", "claimPowerWatts": 170 },
+          { "brand": "Hisense", "model": "Display informasi 65 inch", "series": "Smart display", "capacityLabel": "65 inch", "claimPowerWatts": 170 }
+        ] },
+        { "key": "projector", "name": "Proyektor masjid", "defaultPowerWatts": 280, "models": [
+          { "brand": "Epson", "model": "Projector XGA/WXGA", "series": "Ruang kajian", "capacityLabel": "Proyektor", "claimPowerWatts": 280 },
+          { "brand": "BenQ", "model": "Projector WXGA", "series": "Ruang kajian", "capacityLabel": "Proyektor", "claimPowerWatts": 280 },
+          { "brand": "ViewSonic", "model": "Projector WXGA", "series": "Ruang kajian", "capacityLabel": "Proyektor", "claimPowerWatts": 280 },
+          { "brand": "Acer", "model": "Projector XGA", "series": "Ruang kajian", "capacityLabel": "Proyektor", "claimPowerWatts": 280 }
+        ] }
+      ]
+    },
+    {
+      "key": "audio",
+      "name": "Pengeras suara",
+      "prefix": "AUD",
+      "isElectric": true,
+      "types": [
+        { "key": "amplifier-250w", "name": "Amplifier masjid 250 W", "defaultPowerWatts": 250, "models": [
+          { "brand": "TOA", "model": "Mixer amplifier 250 W", "series": "Paging masjid", "capacityLabel": "250 W audio", "claimPowerWatts": 250 },
+          { "brand": "Ashley", "model": "Power amplifier 250 W", "series": "Audio indoor", "capacityLabel": "250 W audio", "claimPowerWatts": 250 },
+          { "brand": "BMB", "model": "Power amplifier 250 W", "series": "Audio indoor", "capacityLabel": "250 W audio", "claimPowerWatts": 250 },
+          { "brand": "Ahuja", "model": "Amplifier 250 W", "series": "Paging masjid", "capacityLabel": "250 W audio", "claimPowerWatts": 250 }
+        ] },
+        { "key": "amplifier-500w", "name": "Amplifier masjid 500 W", "defaultPowerWatts": 500, "models": [
+          { "brand": "TOA", "model": "Power amplifier 500 W", "series": "Paging masjid", "capacityLabel": "500 W audio", "claimPowerWatts": 500 },
+          { "brand": "Ashley", "model": "Power amplifier 500 W", "series": "Audio indoor", "capacityLabel": "500 W audio", "claimPowerWatts": 500 },
+          { "brand": "Yamaha", "model": "Power amplifier 500 W", "series": "Audio indoor", "capacityLabel": "500 W audio", "claimPowerWatts": 500 },
+          { "brand": "Peavey", "model": "Power amplifier 500 W", "series": "Audio indoor", "capacityLabel": "500 W audio", "claimPowerWatts": 500 }
+        ] },
+        { "key": "speaker-active-12", "name": "Speaker aktif 12 inch", "defaultPowerWatts": 150, "models": [
+          { "brand": "Yamaha", "model": "Speaker aktif 12 inch", "series": "Indoor kajian", "capacityLabel": "12 inch aktif", "claimPowerWatts": 150 },
+          { "brand": "JBL", "model": "Speaker aktif 12 inch", "series": "Indoor kajian", "capacityLabel": "12 inch aktif", "claimPowerWatts": 150 },
+          { "brand": "Soundqueen", "model": "Speaker aktif 12 inch", "series": "Indoor kajian", "capacityLabel": "12 inch aktif", "claimPowerWatts": 150 },
+          { "brand": "Peavey", "model": "Speaker aktif 12 inch", "series": "Indoor kajian", "capacityLabel": "12 inch aktif", "claimPowerWatts": 150 },
+          { "brand": "BMB", "model": "Speaker aktif 12 inch", "series": "Indoor kajian", "capacityLabel": "12 inch aktif", "claimPowerWatts": 150 }
+        ] },
+        { "key": "speaker-horn", "name": "Speaker horn luar", "defaultPowerWatts": 80, "models": [
+          { "brand": "TOA", "model": "Horn speaker", "series": "Outdoor adzan", "capacityLabel": "Horn speaker", "claimPowerWatts": 80 },
+          { "brand": "Ahuja", "model": "Horn speaker", "series": "Outdoor adzan", "capacityLabel": "Horn speaker", "claimPowerWatts": 80 },
+          { "brand": "Bosch", "model": "Horn speaker", "series": "Outdoor adzan", "capacityLabel": "Horn speaker", "claimPowerWatts": 80 }
+        ] },
+        { "key": "audio-mixer", "name": "Mixer audio", "defaultPowerWatts": 30, "models": [
+          { "brand": "Yamaha", "model": "Mixer compact", "series": "Ruang operator", "capacityLabel": "Audio mixer", "claimPowerWatts": 30 },
+          { "brand": "Behringer", "model": "Mixer compact", "series": "Ruang operator", "capacityLabel": "Audio mixer", "claimPowerWatts": 30 },
+          { "brand": "Soundcraft", "model": "Mixer compact", "series": "Ruang operator", "capacityLabel": "Audio mixer", "claimPowerWatts": 30 }
+        ] },
+        { "key": "wireless-mic", "name": "Receiver microphone wireless", "defaultPowerWatts": 15, "models": [
+          { "brand": "Shure", "model": "Wireless receiver", "series": "Khotib/imam", "capacityLabel": "Wireless microphone", "claimPowerWatts": 15 },
+          { "brand": "Sennheiser", "model": "Wireless receiver", "series": "Khotib/imam", "capacityLabel": "Wireless microphone", "claimPowerWatts": 15 },
+          { "brand": "TOA", "model": "Wireless receiver", "series": "Khotib/imam", "capacityLabel": "Wireless microphone", "claimPowerWatts": 15 },
+          { "brand": "Krezt", "model": "Wireless receiver", "series": "Khotib/imam", "capacityLabel": "Wireless microphone", "claimPowerWatts": 15 }
+        ] }
+      ]
+    },
+    {
+      "key": "refrigerator",
+      "name": "Kulkas",
+      "prefix": "REF",
+      "isElectric": true,
+      "types": [
+        { "key": "fridge-1-door", "name": "Kulkas 1 pintu", "defaultPowerWatts": 100, "models": [
+          { "brand": "Sharp", "model": "Kulkas 1 pintu", "series": "Dapur masjid", "capacityLabel": "1 pintu", "claimPowerWatts": 100 },
+          { "brand": "Polytron", "model": "Kulkas 1 pintu", "series": "Dapur masjid", "capacityLabel": "1 pintu", "claimPowerWatts": 100 },
+          { "brand": "LG", "model": "Kulkas 1 pintu", "series": "Dapur masjid", "capacityLabel": "1 pintu", "claimPowerWatts": 100 },
+          { "brand": "Samsung", "model": "Kulkas 1 pintu", "series": "Dapur masjid", "capacityLabel": "1 pintu", "claimPowerWatts": 100 },
+          { "brand": "Aqua Japan", "model": "Kulkas 1 pintu", "series": "Dapur masjid", "capacityLabel": "1 pintu", "claimPowerWatts": 100 },
+          { "brand": "Panasonic", "model": "Kulkas 1 pintu", "series": "Dapur masjid", "capacityLabel": "1 pintu", "claimPowerWatts": 100 },
+          { "brand": "Toshiba", "model": "Kulkas 1 pintu", "series": "Dapur masjid", "capacityLabel": "1 pintu", "claimPowerWatts": 100 },
+          { "brand": "Sanken", "model": "Kulkas 1 pintu", "series": "Dapur masjid", "capacityLabel": "1 pintu", "claimPowerWatts": 100 }
+        ] },
+        { "key": "fridge-2-door", "name": "Kulkas 2 pintu", "defaultPowerWatts": 170, "models": [
+          { "brand": "Sharp", "model": "Kulkas 2 pintu", "series": "Dapur masjid", "capacityLabel": "2 pintu", "claimPowerWatts": 170 },
+          { "brand": "LG", "model": "Kulkas 2 pintu", "series": "Dapur masjid", "capacityLabel": "2 pintu", "claimPowerWatts": 170 },
+          { "brand": "Samsung", "model": "Kulkas 2 pintu", "series": "Dapur masjid", "capacityLabel": "2 pintu", "claimPowerWatts": 170 },
+          { "brand": "Polytron", "model": "Kulkas 2 pintu", "series": "Dapur masjid", "capacityLabel": "2 pintu", "claimPowerWatts": 170 },
+          { "brand": "Aqua Japan", "model": "Kulkas 2 pintu", "series": "Dapur masjid", "capacityLabel": "2 pintu", "claimPowerWatts": 170 },
+          { "brand": "Panasonic", "model": "Kulkas 2 pintu", "series": "Dapur masjid", "capacityLabel": "2 pintu", "claimPowerWatts": 170 },
+          { "brand": "Hitachi", "model": "Kulkas 2 pintu", "series": "Dapur masjid", "capacityLabel": "2 pintu", "claimPowerWatts": 170 }
+        ] },
+        { "key": "freezer-box", "name": "Freezer box kecil", "defaultPowerWatts": 150, "models": [
+          { "brand": "Aqua Japan", "model": "Freezer box kecil", "series": "Dapur/kurban", "capacityLabel": "Freezer box kecil", "claimPowerWatts": 150 },
+          { "brand": "Gea", "model": "Freezer box kecil", "series": "Dapur/kurban", "capacityLabel": "Freezer box kecil", "claimPowerWatts": 150 },
+          { "brand": "Sharp", "model": "Freezer box kecil", "series": "Dapur/kurban", "capacityLabel": "Freezer box kecil", "claimPowerWatts": 150 },
+          { "brand": "Modena", "model": "Freezer box kecil", "series": "Dapur/kurban", "capacityLabel": "Freezer box kecil", "claimPowerWatts": 150 }
+        ] },
+        { "key": "showcase", "name": "Showcase minuman", "defaultPowerWatts": 260, "models": [
+          { "brand": "Gea", "model": "Showcase minuman", "series": "Dapur/kantin", "capacityLabel": "Showcase", "claimPowerWatts": 260 },
+          { "brand": "Sanken", "model": "Showcase minuman", "series": "Dapur/kantin", "capacityLabel": "Showcase", "claimPowerWatts": 260 },
+          { "brand": "Modena", "model": "Showcase minuman", "series": "Dapur/kantin", "capacityLabel": "Showcase", "claimPowerWatts": 260 }
+        ] }
+      ]
+    },
+    {
+      "key": "water-pump",
+      "name": "Pompa air",
+      "prefix": "PMP",
+      "isElectric": true,
+      "types": [
+        { "key": "shallow-pump-125w", "name": "Pompa sumur dangkal 125 W", "defaultPowerWatts": 125, "models": [
+          { "brand": "Shimizu", "model": "Pompa sumur dangkal 125 W", "series": "Tandon/wudhu", "capacityLabel": "125 W", "claimPowerWatts": 125 },
+          { "brand": "Panasonic", "model": "Pompa sumur dangkal 125 W", "series": "Tandon/wudhu", "capacityLabel": "125 W", "claimPowerWatts": 125 },
+          { "brand": "Sanyo", "model": "Pompa sumur dangkal 125 W", "series": "Tandon/wudhu", "capacityLabel": "125 W", "claimPowerWatts": 125 },
+          { "brand": "Wasser", "model": "Pompa sumur dangkal 125 W", "series": "Tandon/wudhu", "capacityLabel": "125 W", "claimPowerWatts": 125 }
+        ] },
+        { "key": "shallow-pump-250w", "name": "Pompa sumur dangkal 250 W", "defaultPowerWatts": 250, "models": [
+          { "brand": "Shimizu", "model": "Pompa sumur dangkal 250 W", "series": "Tandon/wudhu", "capacityLabel": "250 W", "claimPowerWatts": 250 },
+          { "brand": "Wasser", "model": "Pompa sumur dangkal 250 W", "series": "Tandon/wudhu", "capacityLabel": "250 W", "claimPowerWatts": 250 },
+          { "brand": "Panasonic", "model": "Pompa sumur dangkal 250 W", "series": "Tandon/wudhu", "capacityLabel": "250 W", "claimPowerWatts": 250 },
+          { "brand": "Hitachi", "model": "Pompa sumur dangkal 250 W", "series": "Tandon/wudhu", "capacityLabel": "250 W", "claimPowerWatts": 250 }
+        ] },
+        { "key": "jet-pump-370w", "name": "Pompa jet pump 370 W", "defaultPowerWatts": 370, "models": [
+          { "brand": "Shimizu", "model": "Jet pump 370 W", "series": "Sumur dalam ringan", "capacityLabel": "370 W", "claimPowerWatts": 370 },
+          { "brand": "Wasser", "model": "Jet pump 370 W", "series": "Sumur dalam ringan", "capacityLabel": "370 W", "claimPowerWatts": 370 },
+          { "brand": "DAB", "model": "Jet pump 370 W", "series": "Sumur dalam ringan", "capacityLabel": "370 W", "claimPowerWatts": 370 },
+          { "brand": "Pedrollo", "model": "Jet pump 370 W", "series": "Sumur dalam ringan", "capacityLabel": "370 W", "claimPowerWatts": 370 }
+        ] },
+        { "key": "submersible-750w", "name": "Pompa submersible 750 W", "defaultPowerWatts": 750, "models": [
+          { "brand": "Grundfos", "model": "Submersible 750 W", "series": "Sumur dalam", "capacityLabel": "750 W", "claimPowerWatts": 750 },
+          { "brand": "Shimizu", "model": "Submersible 750 W", "series": "Sumur dalam", "capacityLabel": "750 W", "claimPowerWatts": 750 },
+          { "brand": "DAB", "model": "Submersible 750 W", "series": "Sumur dalam", "capacityLabel": "750 W", "claimPowerWatts": 750 },
+          { "brand": "Pedrollo", "model": "Submersible 750 W", "series": "Sumur dalam", "capacityLabel": "750 W", "claimPowerWatts": 750 }
+        ] },
+        { "key": "booster-200w", "name": "Booster pump 200 W", "defaultPowerWatts": 200, "models": [
+          { "brand": "Wasser", "model": "Booster pump 200 W", "series": "Tekanan air", "capacityLabel": "200 W booster", "claimPowerWatts": 200 },
+          { "brand": "Grundfos", "model": "Booster pump 200 W", "series": "Tekanan air", "capacityLabel": "200 W booster", "claimPowerWatts": 200 },
+          { "brand": "Shimizu", "model": "Booster pump 200 W", "series": "Tekanan air", "capacityLabel": "200 W booster", "claimPowerWatts": 200 }
+        ] },
+        { "key": "transfer-pump-125w", "name": "Pompa transfer toren 125 W", "defaultPowerWatts": 125, "capacityLabel": "125 W / transfer toren", "models": [
+          { "brand": "Shimizu", "model": "Pompa transfer toren 125 W", "series": "Transfer toren", "capacityLabel": "125 W transfer", "claimPowerWatts": 125 },
+          { "brand": "Wasser", "model": "Pompa transfer toren 125 W", "series": "Transfer toren", "capacityLabel": "125 W transfer", "claimPowerWatts": 125 }
+        ] }
+      ]
+    },
+    {
+      "key": "lighting",
+      "name": "Lampu",
+      "prefix": "LGT",
+      "isElectric": true,
+      "types": [
+        { "key": "led-bulb-9w", "name": "LED bulb 9 W", "defaultPowerWatts": 9, "models": [
+          { "brand": "Philips", "model": "LED bulb 9 W", "series": "Indoor", "capacityLabel": "9 W", "claimPowerWatts": 9 },
+          { "brand": "Hannochs", "model": "LED bulb 9 W", "series": "Indoor", "capacityLabel": "9 W", "claimPowerWatts": 9 },
+          { "brand": "In-Lite", "model": "LED bulb 9 W", "series": "Indoor", "capacityLabel": "9 W", "claimPowerWatts": 9 },
+          { "brand": "OSRAM / LEDVANCE", "model": "LED bulb 9 W", "series": "Indoor", "capacityLabel": "9 W", "claimPowerWatts": 9 },
+          { "brand": "Panasonic", "model": "LED bulb 9 W", "series": "Indoor", "capacityLabel": "9 W", "claimPowerWatts": 9 },
+          { "brand": "Broco", "model": "LED bulb 9 W", "series": "Indoor", "capacityLabel": "9 W", "claimPowerWatts": 9 }
+        ] },
+        { "key": "led-bulb-12w", "name": "LED bulb 12 W", "defaultPowerWatts": 12, "capacityLabel": "12 W", "models": [
+          { "brand": "Philips", "model": "LED bulb 12 W", "series": "Indoor", "capacityLabel": "12 W", "claimPowerWatts": 12 },
+          { "brand": "Hannochs", "model": "LED bulb 12 W", "series": "Indoor", "capacityLabel": "12 W", "claimPowerWatts": 12 },
+          { "brand": "In-Lite", "model": "LED bulb 12 W", "series": "Indoor", "capacityLabel": "12 W", "claimPowerWatts": 12 },
+          { "brand": "Visalux", "model": "LED bulb 12 W", "series": "Indoor", "capacityLabel": "12 W", "claimPowerWatts": 12 }
+        ] },
+        { "key": "led-tube-18w", "name": "LED tube 18 W", "defaultPowerWatts": 18, "models": [
+          { "brand": "Philips", "model": "LED tube 18 W", "series": "Indoor", "capacityLabel": "18 W tube", "claimPowerWatts": 18 },
+          { "brand": "Hannochs", "model": "LED tube 18 W", "series": "Indoor", "capacityLabel": "18 W tube", "claimPowerWatts": 18 },
+          { "brand": "OSRAM / LEDVANCE", "model": "LED tube 18 W", "series": "Indoor", "capacityLabel": "18 W tube", "claimPowerWatts": 18 },
+          { "brand": "Panasonic", "model": "LED tube 18 W", "series": "Indoor", "capacityLabel": "18 W tube", "claimPowerWatts": 18 }
+        ] },
+        { "key": "led-panel-36w", "name": "LED panel 36 W", "defaultPowerWatts": 36, "models": [
+          { "brand": "Philips", "model": "LED panel 36 W", "series": "Plafon", "capacityLabel": "36 W panel", "claimPowerWatts": 36 },
+          { "brand": "In-Lite", "model": "LED panel 36 W", "series": "Plafon", "capacityLabel": "36 W panel", "claimPowerWatts": 36 },
+          { "brand": "OPP", "model": "LED panel 36 W", "series": "Plafon", "capacityLabel": "36 W panel", "claimPowerWatts": 36 },
+          { "brand": "Opple", "model": "LED panel 36 W", "series": "Plafon", "capacityLabel": "36 W panel", "claimPowerWatts": 36 },
+          { "brand": "Shinyoku", "model": "LED panel 36 W", "series": "Plafon", "capacityLabel": "36 W panel", "claimPowerWatts": 36 }
+        ] },
+        { "key": "floodlight-50w", "name": "Floodlight halaman 50 W", "defaultPowerWatts": 50, "capacityLabel": "50 W", "models": [
+          { "brand": "Philips", "model": "Floodlight 50 W", "series": "Halaman", "capacityLabel": "50 W outdoor", "claimPowerWatts": 50 },
+          { "brand": "Krisbow", "model": "Floodlight 50 W", "series": "Halaman", "capacityLabel": "50 W outdoor", "claimPowerWatts": 50 },
+          { "brand": "Hannochs", "model": "Floodlight 50 W", "series": "Halaman", "capacityLabel": "50 W outdoor", "claimPowerWatts": 50 },
+          { "brand": "Broco", "model": "Floodlight 50 W", "series": "Halaman", "capacityLabel": "50 W outdoor", "claimPowerWatts": 50 }
+        ] },
+        { "key": "floodlight-100w", "name": "Floodlight halaman 100 W", "defaultPowerWatts": 100, "models": [
+          { "brand": "Philips", "model": "Floodlight 100 W", "series": "Halaman", "capacityLabel": "100 W outdoor", "claimPowerWatts": 100 },
+          { "brand": "Krisbow", "model": "Floodlight 100 W", "series": "Halaman", "capacityLabel": "100 W outdoor", "claimPowerWatts": 100 },
+          { "brand": "Hannochs", "model": "Floodlight 100 W", "series": "Halaman", "capacityLabel": "100 W outdoor", "claimPowerWatts": 100 },
+          { "brand": "Visalux", "model": "Floodlight 100 W", "series": "Halaman", "capacityLabel": "100 W outdoor", "claimPowerWatts": 100 }
+        ] }
+      ]
+    },
+    {
+      "key": "fan",
+      "name": "Kipas angin",
+      "prefix": "FAN",
+      "isElectric": true,
+      "types": [
+        { "key": "wall-fan-16", "name": "Kipas dinding 16 inch", "defaultPowerWatts": 55, "models": [
+          { "brand": "Maspion", "model": "Kipas dinding 16 inch", "series": "Ruang sholat", "capacityLabel": "16 inch dinding", "claimPowerWatts": 55 },
+          { "brand": "Sekai", "model": "Kipas dinding 16 inch", "series": "Ruang sholat", "capacityLabel": "16 inch dinding", "claimPowerWatts": 55 },
+          { "brand": "Miyako", "model": "Kipas dinding 16 inch", "series": "Ruang sholat", "capacityLabel": "16 inch dinding", "claimPowerWatts": 55 },
+          { "brand": "Cosmos", "model": "Kipas dinding 16 inch", "series": "Ruang sholat", "capacityLabel": "16 inch dinding", "claimPowerWatts": 55 },
+          { "brand": "Panasonic", "model": "Kipas dinding 16 inch", "series": "Ruang sholat", "capacityLabel": "16 inch dinding", "claimPowerWatts": 55 },
+          { "brand": "KDK", "model": "Kipas dinding 16 inch", "series": "Ruang sholat", "capacityLabel": "16 inch dinding", "claimPowerWatts": 55 }
+        ] },
+        { "key": "standing-fan", "name": "Kipas berdiri", "defaultPowerWatts": 60, "models": [
+          { "brand": "Miyako", "model": "Kipas berdiri", "series": "Portable", "capacityLabel": "Kipas berdiri", "claimPowerWatts": 60 },
+          { "brand": "Maspion", "model": "Kipas berdiri", "series": "Portable", "capacityLabel": "Kipas berdiri", "claimPowerWatts": 60 },
+          { "brand": "Sekai", "model": "Kipas berdiri", "series": "Portable", "capacityLabel": "Kipas berdiri", "claimPowerWatts": 60 },
+          { "brand": "Cosmos", "model": "Kipas berdiri", "series": "Portable", "capacityLabel": "Kipas berdiri", "claimPowerWatts": 60 },
+          { "brand": "Sharp", "model": "Kipas berdiri", "series": "Portable", "capacityLabel": "Kipas berdiri", "claimPowerWatts": 60 },
+          { "brand": "Sanken", "model": "Kipas berdiri", "series": "Portable", "capacityLabel": "Kipas berdiri", "claimPowerWatts": 60 }
+        ] },
+        { "key": "exhaust-fan", "name": "Exhaust fan", "defaultPowerWatts": 35, "models": [
+          { "brand": "Panasonic", "model": "Exhaust fan", "series": "Toilet/wudhu", "capacityLabel": "Exhaust fan", "claimPowerWatts": 35 },
+          { "brand": "KDK", "model": "Exhaust fan", "series": "Toilet/wudhu", "capacityLabel": "Exhaust fan", "claimPowerWatts": 35 },
+          { "brand": "Maspion", "model": "Exhaust fan", "series": "Toilet/wudhu", "capacityLabel": "Exhaust fan", "claimPowerWatts": 35 },
+          { "brand": "Sekai", "model": "Exhaust fan", "series": "Toilet/wudhu", "capacityLabel": "Exhaust fan", "claimPowerWatts": 35 },
+          { "brand": "Sharp", "model": "Exhaust fan", "series": "Toilet/wudhu", "capacityLabel": "Exhaust fan", "claimPowerWatts": 35 }
+        ] },
+        { "key": "ceiling-fan", "name": "Ceiling fan", "defaultPowerWatts": 75, "capacityLabel": "Ceiling fan", "models": [
+          { "brand": "KDK", "model": "Ceiling fan", "series": "Ruang sholat", "capacityLabel": "Ceiling fan", "claimPowerWatts": 75 },
+          { "brand": "Panasonic", "model": "Ceiling fan", "series": "Ruang sholat", "capacityLabel": "Ceiling fan", "claimPowerWatts": 75 },
+          { "brand": "Regency", "model": "Ceiling fan", "series": "Ruang sholat", "capacityLabel": "Ceiling fan", "claimPowerWatts": 75 },
+          { "brand": "Maspion", "model": "Ceiling fan", "series": "Ruang sholat", "capacityLabel": "Ceiling fan", "claimPowerWatts": 75 }
+        ] },
+        { "key": "industrial-fan", "name": "Industrial fan", "defaultPowerWatts": 180, "models": [
+          { "brand": "Maspion", "model": "Industrial fan", "series": "Aula", "capacityLabel": "Industrial fan", "claimPowerWatts": 180 },
+          { "brand": "Sekai", "model": "Industrial fan", "series": "Aula", "capacityLabel": "Industrial fan", "claimPowerWatts": 180 },
+          { "brand": "Krisbow", "model": "Industrial fan", "series": "Aula", "capacityLabel": "Industrial fan", "claimPowerWatts": 180 },
+          { "brand": "GMC", "model": "Industrial fan", "series": "Aula", "capacityLabel": "Industrial fan", "claimPowerWatts": 180 },
+          { "brand": "Tori", "model": "Industrial fan", "series": "Aula", "capacityLabel": "Industrial fan", "claimPowerWatts": 180 },
+          { "brand": "Arashi", "model": "Industrial fan", "series": "Aula", "capacityLabel": "Industrial fan", "claimPowerWatts": 180 }
+        ] }
+      ]
+    },
+    {
+      "key": "network-cctv",
+      "name": "CCTV dan jaringan",
+      "prefix": "NET",
+      "isElectric": true,
+      "types": [
+        { "key": "cctv-ip-camera", "name": "Kamera CCTV IP", "defaultPowerWatts": 8, "models": [
+          { "brand": "Hikvision", "model": "IP camera", "series": "PoE 2MP/4MP", "capacityLabel": "1 kamera IP PoE", "claimPowerWatts": 8 },
+          { "brand": "Dahua", "model": "IP camera", "series": "PoE 2MP/4MP", "capacityLabel": "1 kamera IP PoE", "claimPowerWatts": 8 },
+          { "brand": "Hilook", "model": "IP camera", "series": "PoE 2MP", "capacityLabel": "1 kamera IP PoE", "claimPowerWatts": 8 },
+          { "brand": "Uniview", "model": "IP camera", "series": "PoE 4MP", "capacityLabel": "1 kamera IP PoE", "claimPowerWatts": 8 },
+          { "brand": "TP-Link VIGI", "model": "IP camera", "series": "PoE 4MP", "capacityLabel": "1 kamera IP PoE", "claimPowerWatts": 8 },
+          { "brand": "Ezviz", "model": "IP camera WiFi", "series": "Indoor/outdoor", "capacityLabel": "1 kamera WiFi", "claimPowerWatts": 7 },
+          { "brand": "Imou", "model": "IP camera WiFi", "series": "Indoor/outdoor", "capacityLabel": "1 kamera WiFi", "claimPowerWatts": 7 },
+          { "brand": "Tapo", "model": "IP camera WiFi", "series": "Indoor/outdoor", "capacityLabel": "1 kamera WiFi", "claimPowerWatts": 7 }
+        ] },
+        { "key": "cctv-analog-camera", "name": "Kamera CCTV analog", "defaultPowerWatts": 6, "capacityLabel": "1 kamera analog", "models": [
+          { "brand": "Hikvision", "model": "Analog camera", "series": "HD-TVI", "capacityLabel": "1 kamera analog", "claimPowerWatts": 6 },
+          { "brand": "Dahua", "model": "Analog camera", "series": "HDCVI", "capacityLabel": "1 kamera analog", "claimPowerWatts": 6 },
+          { "brand": "Hilook", "model": "Analog camera", "series": "HD-TVI", "capacityLabel": "1 kamera analog", "claimPowerWatts": 6 },
+          { "brand": "Avtech", "model": "Analog camera", "series": "HD CCTV", "capacityLabel": "1 kamera analog", "claimPowerWatts": 6 },
+          { "brand": "SPC", "model": "Analog camera", "series": "HD CCTV", "capacityLabel": "1 kamera analog", "claimPowerWatts": 6 }
+        ] },
+        { "key": "nvr-4-channel", "name": "NVR 4 channel", "defaultPowerWatts": 25, "capacityLabel": "4 channel / 1 bay HDD", "models": [
+          { "brand": "Hikvision", "model": "NVR 4 channel", "series": "PoE/non-PoE", "capacityLabel": "4 channel / 1 bay / sampai 10 TB", "claimPowerWatts": 25 },
+          { "brand": "Dahua", "model": "NVR 4 channel", "series": "PoE/non-PoE", "capacityLabel": "4 channel / 1 bay / sampai 10 TB", "claimPowerWatts": 25 },
+          { "brand": "TP-Link VIGI", "model": "NVR 4 channel", "series": "VIGI", "capacityLabel": "4 channel / 1 bay / sampai 10 TB", "claimPowerWatts": 25 }
+        ] },
+        { "key": "nvr-8-channel", "name": "NVR 8 channel", "defaultPowerWatts": 35, "capacityLabel": "8 channel / 1-2 bay HDD", "models": [
+          { "brand": "Hikvision", "model": "NVR 8 channel", "series": "CCTV PoE/non-PoE", "capacityLabel": "8 channel / 1-2 bay / sampai 20 TB", "claimPowerWatts": 35 },
+          { "brand": "Dahua", "model": "NVR 8 channel", "series": "CCTV PoE/non-PoE", "capacityLabel": "8 channel / 1-2 bay / sampai 20 TB", "claimPowerWatts": 35 },
+          { "brand": "Hilook", "model": "NVR 8 channel", "series": "CCTV", "capacityLabel": "8 channel / 1 bay / sampai 10 TB", "claimPowerWatts": 30 },
+          { "brand": "Uniview", "model": "NVR 8 channel", "series": "CCTV", "capacityLabel": "8 channel / 1-2 bay / sampai 20 TB", "claimPowerWatts": 35 },
+          { "brand": "TP-Link VIGI", "model": "NVR 8 channel", "series": "VIGI", "capacityLabel": "8 channel / 1 bay / sampai 10 TB", "claimPowerWatts": 30 }
+        ] },
+        { "key": "nvr-16-channel", "name": "NVR 16 channel", "defaultPowerWatts": 50, "capacityLabel": "16 channel / 2 bay HDD", "models": [
+          { "brand": "Hikvision", "model": "NVR 16 channel", "series": "CCTV", "capacityLabel": "16 channel / 2 bay / sampai 20 TB", "claimPowerWatts": 50 },
+          { "brand": "Dahua", "model": "NVR 16 channel", "series": "CCTV", "capacityLabel": "16 channel / 2 bay / sampai 20 TB", "claimPowerWatts": 50 },
+          { "brand": "Uniview", "model": "NVR 16 channel", "series": "CCTV", "capacityLabel": "16 channel / 2 bay / sampai 20 TB", "claimPowerWatts": 50 },
+          { "brand": "TP-Link VIGI", "model": "NVR 16 channel", "series": "VIGI", "capacityLabel": "16 channel / 2 bay / sampai 20 TB", "claimPowerWatts": 45 }
+        ] },
+        { "key": "nvr-32-channel", "name": "NVR 32 channel", "defaultPowerWatts": 70, "capacityLabel": "32 channel / 4 bay HDD", "models": [
+          { "brand": "Hikvision", "model": "NVR 32 channel", "series": "CCTV", "capacityLabel": "32 channel / 4 bay / sampai 40 TB", "claimPowerWatts": 70 },
+          { "brand": "Dahua", "model": "NVR 32 channel", "series": "CCTV", "capacityLabel": "32 channel / 4 bay / sampai 40 TB", "claimPowerWatts": 70 },
+          { "brand": "Uniview", "model": "NVR 32 channel", "series": "CCTV", "capacityLabel": "32 channel / 4 bay / sampai 40 TB", "claimPowerWatts": 70 }
+        ] },
+        { "key": "dvr-4-channel", "name": "DVR 4 channel", "defaultPowerWatts": 18, "capacityLabel": "4 channel analog / 1 bay HDD", "models": [
+          { "brand": "Hikvision", "model": "DVR 4 channel", "series": "Analog HD", "capacityLabel": "4 channel analog / 1 bay / sampai 10 TB", "claimPowerWatts": 18 },
+          { "brand": "Dahua", "model": "DVR 4 channel", "series": "Analog HD", "capacityLabel": "4 channel analog / 1 bay / sampai 10 TB", "claimPowerWatts": 18 },
+          { "brand": "Avtech", "model": "DVR 4 channel", "series": "Analog HD", "capacityLabel": "4 channel analog / 1 bay", "claimPowerWatts": 18 }
+        ] },
+        { "key": "dvr-8-channel", "name": "DVR 8 channel", "defaultPowerWatts": 25, "capacityLabel": "8 channel analog / 1 bay HDD", "models": [
+          { "brand": "Hikvision", "model": "DVR 8 channel", "series": "Analog HD", "capacityLabel": "8 channel analog / 1 bay / sampai 10 TB", "claimPowerWatts": 25 },
+          { "brand": "Dahua", "model": "DVR 8 channel", "series": "Analog HD", "capacityLabel": "8 channel analog / 1 bay / sampai 10 TB", "claimPowerWatts": 25 },
+          { "brand": "Avtech", "model": "DVR 8 channel", "series": "Analog HD", "capacityLabel": "8 channel analog / 1 bay", "claimPowerWatts": 25 },
+          { "brand": "SPC", "model": "DVR 8 channel", "series": "Analog HD", "capacityLabel": "8 channel analog / 1 bay", "claimPowerWatts": 25 }
+        ] },
+        { "key": "dvr-16-channel", "name": "DVR 16 channel", "defaultPowerWatts": 35, "capacityLabel": "16 channel analog / 2 bay HDD", "models": [
+          { "brand": "Hikvision", "model": "DVR 16 channel", "series": "Analog HD", "capacityLabel": "16 channel analog / 1-2 bay / sampai 20 TB", "claimPowerWatts": 35 },
+          { "brand": "Dahua", "model": "DVR 16 channel", "series": "Analog HD", "capacityLabel": "16 channel analog / 1-2 bay / sampai 20 TB", "claimPowerWatts": 35 },
+          { "brand": "Avtech", "model": "DVR 16 channel", "series": "Analog HD", "capacityLabel": "16 channel analog / 2 bay", "claimPowerWatts": 35 }
+        ] },
+        { "key": "cctv-hdd-1tb", "name": "HDD CCTV 1 TB", "defaultPowerWatts": 6, "capacityLabel": "1 TB", "models": [
+          { "brand": "Seagate SkyHawk", "model": "HDD CCTV 1 TB", "series": "Surveillance", "capacityLabel": "1 TB", "claimPowerWatts": 6 },
+          { "brand": "WD Purple", "model": "HDD CCTV 1 TB", "series": "Surveillance", "capacityLabel": "1 TB", "claimPowerWatts": 6 }
+        ] },
+        { "key": "cctv-hdd-2tb", "name": "HDD CCTV 2 TB", "defaultPowerWatts": 7, "capacityLabel": "2 TB", "models": [
+          { "brand": "Seagate SkyHawk", "model": "HDD CCTV 2 TB", "series": "Surveillance", "capacityLabel": "2 TB", "claimPowerWatts": 7 },
+          { "brand": "WD Purple", "model": "HDD CCTV 2 TB", "series": "Surveillance", "capacityLabel": "2 TB", "claimPowerWatts": 7 }
+        ] },
+        { "key": "cctv-hdd-4tb", "name": "HDD CCTV 4 TB", "defaultPowerWatts": 8, "capacityLabel": "4 TB", "models": [
+          { "brand": "Seagate SkyHawk", "model": "HDD CCTV 4 TB", "series": "Surveillance", "capacityLabel": "4 TB", "claimPowerWatts": 8 },
+          { "brand": "WD Purple", "model": "HDD CCTV 4 TB", "series": "Surveillance", "capacityLabel": "4 TB", "claimPowerWatts": 8 }
+        ] },
+        { "key": "cctv-hdd-8tb", "name": "HDD CCTV 8 TB", "defaultPowerWatts": 9, "capacityLabel": "8 TB", "models": [
+          { "brand": "Seagate SkyHawk", "model": "HDD CCTV 8 TB", "series": "Surveillance", "capacityLabel": "8 TB", "claimPowerWatts": 9 },
+          { "brand": "WD Purple", "model": "HDD CCTV 8 TB", "series": "Surveillance", "capacityLabel": "8 TB", "claimPowerWatts": 9 }
+        ] },
+        { "key": "router-internet", "name": "Router internet", "defaultPowerWatts": 12, "models": [
+          { "brand": "TP-Link", "model": "Router internet", "series": "Jaringan", "claimPowerWatts": 12 },
+          { "brand": "Mikrotik", "model": "Router internet", "series": "Jaringan", "claimPowerWatts": 12 },
+          { "brand": "Ruijie", "model": "Router internet", "series": "Jaringan", "claimPowerWatts": 12 },
+          { "brand": "Ubiquiti", "model": "Router internet", "series": "Jaringan", "claimPowerWatts": 12 }
+        ] },
+        { "key": "switch-poe-8-port", "name": "Switch PoE 8 port", "defaultPowerWatts": 70, "models": [
+          { "brand": "TP-Link", "model": "Switch PoE 8 port", "series": "Jaringan CCTV", "claimPowerWatts": 70 },
+          { "brand": "Ruijie", "model": "Switch PoE 8 port", "series": "Jaringan CCTV", "claimPowerWatts": 70 },
+          { "brand": "Hikvision", "model": "Switch PoE 8 port", "series": "Jaringan CCTV", "claimPowerWatts": 70 },
+          { "brand": "Dahua", "model": "Switch PoE 8 port", "series": "Jaringan CCTV", "claimPowerWatts": 70 }
+        ] },
+        { "key": "switch-poe-16-port", "name": "Switch PoE 16 port", "defaultPowerWatts": 150, "capacityLabel": "16 port PoE", "models": [
+          { "brand": "TP-Link", "model": "Switch PoE 16 port", "series": "Jaringan CCTV", "capacityLabel": "16 port PoE", "claimPowerWatts": 150 },
+          { "brand": "Ruijie", "model": "Switch PoE 16 port", "series": "Jaringan CCTV", "capacityLabel": "16 port PoE", "claimPowerWatts": 150 },
+          { "brand": "Hikvision", "model": "Switch PoE 16 port", "series": "Jaringan CCTV", "capacityLabel": "16 port PoE", "claimPowerWatts": 150 }
+        ] },
+        { "key": "ups-cctv", "name": "UPS CCTV / jaringan", "defaultPowerWatts": 25, "capacityLabel": "650-1200 VA", "models": [
+          { "brand": "APC", "model": "UPS CCTV", "series": "650 VA", "capacityLabel": "650 VA", "claimPowerWatts": 25 },
+          { "brand": "ICA", "model": "UPS CCTV", "series": "1200 VA", "capacityLabel": "1200 VA", "claimPowerWatts": 25 },
+          { "brand": "Prolink", "model": "UPS CCTV", "series": "650 VA", "capacityLabel": "650 VA", "claimPowerWatts": 25 }
+        ] }
+      ]
+    },
+    {
+      "key": "water-kitchen",
+      "name": "Peralatan air dan dapur",
+      "prefix": "KIT",
+      "isElectric": true,
+      "types": [
+        { "key": "dispenser-bottom-gallon", "name": "Dispenser galon bawah", "defaultPowerWatts": 350, "models": [
+          { "brand": "Miyako", "model": "Dispenser galon bawah", "series": "Dapur masjid", "claimPowerWatts": 350 },
+          { "brand": "Sharp", "model": "Dispenser galon bawah", "series": "Dapur masjid", "claimPowerWatts": 350 }
+        ] },
+        { "key": "rice-cooker-large", "name": "Rice cooker besar", "defaultPowerWatts": 700, "models": [
+          { "brand": "Miyako", "model": "Rice cooker besar", "series": "Dapur masjid", "claimPowerWatts": 700 },
+          { "brand": "Cosmos", "model": "Rice cooker besar", "series": "Dapur masjid", "claimPowerWatts": 700 }
+        ] },
+        { "key": "water-heater-wudhu", "name": "Water heater wudhu", "defaultPowerWatts": 350, "models": [
+          { "brand": "Ariston", "model": "Water heater kecil", "series": "Wudhu", "claimPowerWatts": 350 }
+        ] }
+      ]
+    },
+    {
+      "key": "non-electric-inventory",
+      "name": "Inventaris non-listrik",
+      "prefix": "INV",
+      "isElectric": false,
+      "types": [
+        { "key": "cabinet", "name": "Lemari / bupet", "defaultPowerWatts": 0, "models": [
+          { "brand": "Custom", "model": "Lemari kayu/aluminium", "series": "Inventaris", "claimPowerWatts": 0 }
+        ] },
+        { "key": "quran-rack", "name": "Rak Al-Quran", "defaultPowerWatts": 0, "models": [
+          { "brand": "Custom", "model": "Rak Al-Quran", "series": "Inventaris", "claimPowerWatts": 0 }
+        ] },
+        { "key": "quran-copy", "name": "Mushaf Al-Quran", "defaultPowerWatts": 0, "models": [
+          { "brand": "Penerbit", "model": "Mushaf Al-Quran", "series": "Inventaris", "claimPowerWatts": 0 }
+        ] },
+        { "key": "carpet", "name": "Sajadah / karpet", "defaultPowerWatts": 0, "models": [
+          { "brand": "Custom", "model": "Karpet masjid", "series": "Inventaris", "claimPowerWatts": 0 }
+        ] }
+      ]
+    },
+    {
+      "key": "other",
+      "name": "Lainnya",
+      "prefix": "OTH",
+      "isElectric": true,
+      "types": [
+        { "key": "other-electric", "name": "Perangkat listrik lain", "defaultPowerWatts": 0, "models": [
+          { "brand": "Custom", "model": "Perangkat listrik lain", "series": "Isi sesuai nameplate", "claimPowerWatts": 0 }
+        ] },
+        { "key": "other-record", "name": "Aset catatan saja", "defaultPowerWatts": 0, "models": [
+          { "brand": "Custom", "model": "Aset catatan saja", "series": "Inventaris", "claimPowerWatts": 0 }
+        ] }
+      ]
+    }
+  ],
+  "meterTypes": [
+    { "key": "prepaid", "label": "Prabayar / token" },
+    { "key": "postpaid", "label": "Pascabayar" },
+    { "key": "smart-ami", "label": "Smart meter / AMI" },
+    { "key": "sub-meter", "label": "Sub-meter panel" },
+    { "key": "sensor-ready", "label": "Sensor otomatis disiapkan" }
+  ],
+  "powerCapacities": [
+    { "va": 450, "phase": "1-phase", "label": "450 VA" },
+    { "va": 900, "phase": "1-phase", "label": "900 VA" },
+    { "va": 1300, "phase": "1-phase", "label": "1.300 VA" },
+    { "va": 2200, "phase": "1-phase", "label": "2.200 VA" },
+    { "va": 3500, "phase": "1-phase", "label": "3.500 VA" },
+    { "va": 4400, "phase": "1-phase", "label": "4.400 VA" },
+    { "va": 5500, "phase": "1-phase", "label": "5.500 VA" },
+    { "va": 6600, "phase": "1-phase", "label": "6.600 VA" },
+    { "va": 7700, "phase": "1-phase", "label": "7.700 VA" },
+    { "va": 10600, "phase": "1-phase", "label": "10.600 VA" },
+    { "va": 11000, "phase": "3-phase", "label": "11.000 VA" },
+    { "va": 13200, "phase": "3-phase", "label": "13.200 VA" },
+    { "va": 16500, "phase": "3-phase", "label": "16.500 VA" },
+    { "va": 23000, "phase": "3-phase", "label": "23.000 VA" },
+    { "va": 33000, "phase": "3-phase", "label": "33.000 VA" },
+    { "va": 41500, "phase": "3-phase", "label": "41.500 VA" },
+    { "va": 53000, "phase": "3-phase", "label": "53.000 VA" }
+  ]
+}

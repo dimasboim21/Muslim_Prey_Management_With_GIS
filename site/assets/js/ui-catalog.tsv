@@ -1,0 +1,1499 @@
+Waktu aktual	Actual time
+Waktu ISP / Provider	ISP / provider time
+Tidak tersedia	Unavailable
+Sumber Waktu	Time source
+Kalibrasi Gedung	Building calibration
+Memuat sumber waktu...	Loading time sources...
+Tanggal Masehi	Gregorian date
+Tanggal Islam	Islamic date
+Mode lokal	Local mode
+Informasi terjadwal	Scheduled information
+Media overlay	Overlay media
+Konteks waktu sholat	Prayer time context
+Komponen informasi tambahan	Additional information components
+Informasi yang tetap terlihat	Persistent information
+Konten tambahan bertumpuk	Stacked additional content
+Sistem Pengelolaan dan Pembelajaran Teks Islam	Islamic Text Data Management & Learning System
+Reader lokal, sumber transparan, sinkronisasi bertahap, dan tetap dapat digunakan tanpa koneksi internet.	Local reader, transparent sources, incremental synchronization, and offline access.
+Pencarian sumber Islam	Islamic source search
+Cari Qur'an, Tafsir, Hadith, atau materi belajar	Search Qur'an, Tafsir, Hadith, or learning material
+Contoh: cara membaca tasydid	Example: how to read shaddah
+Cari	Search
+Mode pencarian	Search mode
+Mode:	Mode:
+Cerdas	Smart
+Persis	Exact
+Filter	Filter
+Sumber	Source
+Semua	All
+Hadis	Hadith
+Bahasa	Language
+Otomatis	Automatic
+Arab	Arabic
+Koleksi hadis	Hadith collection
+Penulis/karya tafsir	Tafsir author/work
+Penilaian hadis	Hadith grading
+Ada penilaian Sahih	Has a Sahih grading
+Ada penilaian Hasan	Has a Hasan grading
+Ada penilaian Hasan-Sahih	Has a Hasan-Sahih grading
+Ada penilaian Daif	Has a Daif grading
+Ada penilaian sangat daif	Has a very weak grading
+Ada penilaian Munkar	Has a Munkar grading
+Ada penilaian Mawdu'	Has a Mawdu' grading
+Ada penilaian Batil	Has a Batil grading
+Ada penilaian Syadz	Has a Shadh grading
+Penilaian saling bertentangan	Conflicting gradings
+Rujukan grading belum langsung terverifikasi	Direct grading reference not yet verified
+Belum ada penilaian derajat per record	No grading recorded for this record
+Materi & overlay	Materials & overlays
+Layar utama	Main display
+Profil dan progres pembaca	Reader profiles and progress
+Pilih profil pembaca	Select reader profile
+Pengguna pada perangkat ini	Users on this device
+Memuat profil…	Loading profiles…
+Tambah pengguna	Add user
+Nama & foto	Name & photo
+Kelola pengguna	Manage users
+Sinkronkan	Synchronize
+Centang dan catatan bacaan disimpan terpisah untuk setiap pengguna.	Reading checkmarks and notes are stored separately for each user.
+Status database	Database status
+Memuat	Loading
+Memeriksa database lokal…	Checking local database…
+Jaringan: memeriksa	Network: checking
+Sinkron terakhir: —	Last sync: —
+Ukuran: —	Size: —
+Muat ulang	Reload
+Bagian Islamic Text System	Islamic Text System sections
+Presentasi Ibadah	Worship presentations
+Materi Ibadah	Worship materials
+Pembaruan otomatis	Auto Update
+Sumber & Sinkronisasi	Sources & Sync
+Pengaturan Qur'an reader	Qur'an reader settings
+Pembaca Qur'an	Qur'an Reader
+Pilih bacaan	Select reading
+Surah	Surah
+Mulai ayat	Starting verse
+Jumlah	Count
+1 surah penuh	One complete surah
+Transliterasi	Transliteration
+Otomatis / tidak tersedia	Automatic / unavailable
+Qari / riwayat	Reciter / transmission
+Memuat qari…	Loading reciters…
+Tata letak	Layout
+Sebaris	Inline
+Kartu	Cards
+Latin	Latin
+Ukuran Arab	Arabic size
+Jarak baris	Line spacing
+Warna Tajwid	Tajwid colors
+Tema	Theme
+Terang	Light
+Gelap	Dark
+Opasitas	Opacity
+Tampilkan legenda	Show legend
+Simpan warna	Save colors
+Reset default	Reset defaults
+Tampilkan ayat	Show verses
+Pilih surah	Select surah
+Sebelumnya	Previous
+Berikutnya	Next
+Layar penuh	Full screen
+Data kanonik ditampilkan dari database lokal. Status validasi teknis tidak otomatis berarti verifikasi ilmiah.	Canonical data is displayed from the local database. Technical validation does not imply scholarly verification.
+Pemutar murattal	Qur'an audio player
+Ayat sebelumnya	Previous verse
+Putar	Play
+Ulang dari awal	Restart
+Ayat berikutnya	Next verse
+Putar 1 surah	Play one surah
+Pilih tombol putar pada ayat	Select the play button on a verse
+Posisi audio	Audio position
+Ulang	Repeat
+Tidak	No
+Ayat ini	This verse
+Rentang tampil	Displayed range
+Kecepatan	Speed
+Lanjut otomatis	Auto-advance
+Online/lokal otomatis	Automatic online/local
+Legenda warna Tajwid	Tajwid color legend
+Pembaca Tafsir	Tafsir Reader
+Pilih karya	Select work
+Karya tafsir	Tafsir work
+Bahasa edisi	Edition language
+Edisi lokal / sumber dokumen	Local edition / document source
+Tampilkan tafsir	Show tafsir
+Teks dari edisi lokal maupun dokumen/PDF yang sudah diproses ditampilkan bersama sumbernya.	Text from local editions and processed documents/PDFs is displayed with its source.
+Belum memilih karya	No work selected
+Pilih karya untuk membaca teks sumber dan provenance-nya.	Select a work to read its source text and provenance.
+Halaman tafsir	Tafsir page
+Pengelola Data Tafsir	Tafsir Data Manager
+Katalog karya, edisi bahasa, sumber, lisensi, arsip offline, dan pemeriksaan integritas	Works, language editions, sources, licenses, offline archives, and integrity checks
+Cari karya / mufassir / provider	Search work / commentator / provider
+Contoh: Ibn Kathir atau al-Tabari	Example: Ibn Kathir or al-Tabari
+Bahasa edisi sumber	Source edition language
+Semua edisi sumber	All source editions
+Ada data lokal	Local data available
+Referensi online	Online reference
+Belum ditemukan	Not found
+Perlu review	Needs review
+Template paket JSON	JSON package template
+Pemisahan status:	Separate statuses:
+sumber terverifikasi, validasi teknis, izin lisensi, dan review isi adalah empat hal berbeda. File yang ada tidak otomatis dianggap lengkap atau resmi.	Source verification, technical validation, licensing, and content review are four distinct checks. An existing file is not automatically complete or official.
+Adaptor penyedia	Provider adapters
+Adaptor penemuan & impor	Discovery & import adapters
+Jejak audit	Audit trail
+Import dan verifikasi terakhir	Latest import and verification
+Koleksi	Collection
+Semua koleksi	All collections
+Nomor / teks	Number / text
+Cari dalam koleksi	Search collection
+Tampilkan Latin	Show Latin text
+Per halaman	Per page
+Tampilkan	Show
+Pembaca Hadis	Hadith Reader
+Koleksi lokal	Local collection
+Memuat audit integritas penilaian hadis…	Loading hadith grading integrity audit…
+Cara membaca:	How to read:
+setiap badge adalah penilaian yang dinisbatkan kepada penilai/sumber yang tertulis—bukan vonis sistem. Perbedaan antarsumber disimpan berdampingan. Label dari agregator yang belum menyediakan rujukan langsung ditandai secara khusus.	Each badge attributes a grading to its stated grader/source; it is not a system ruling. Differences between sources are retained side by side. Aggregator labels without direct references are marked separately.
+Materi siap presentasi	Presentation-ready material
+Tampilkan materi Qur'an, tafsir, dan hadis sebagai slide yang rapi dengan navigasi sebelumnya dan berikutnya.	Display Qur'an, tafsir, and hadith material as slides with previous and next navigation.
+Penyuntingan antarmuka	Interface Editing
+Tambah Materi Presentasi	Add presentation material
+Mode tambah: buat materi baru.	Add mode: create new material.
+Judul	Title
+Contoh: Kajian Sabar	Example: A study of patience
+Deskripsi	Description
+Tambahkan ringkasan atau tujuan presentasi…	Add a summary or presentation objective…
+Draf	Draft
+Terbit	Published
+Arsip	Archived
+Bahasa sumber	Source language
+Pilih bahasa	Select language
+Bahasa Arab	Arabic language
+Bahasa Inggris	English language
+Jenis sumber	Source type
+Pilih jenis sumber	Select source type
+Text / materi penceramah	Text / speaker material
+Gambar (JPG, PNG, GIF, WebP, SVG)	Image (JPG, PNG, GIF, WebP, SVG)
+Tambah slide	Add slide
+Daftar laman materi	Material page list
+Simpan Materi Baru	Save new material
+Kembali	Back
+Daftar materi ibadah	Worship material list
+Tambah Materi	Add material
+Muat	Load
+Mode presentasi siap digunakan	Presentation mode is ready
+Materi ditampilkan sebagai slide. Gunakan tombol navigasi untuk berpindah slide.	Material is displayed as slides. Use the navigation buttons to move between slides.
+Review / mode presentasi	Review / presentation mode
+Kembali ke daftar	Back to list
+Mode fokus	Focus mode
+← Sebelumnya	← Previous
+Berikutnya →	Next →
+Dasar Membaca Al-Qur'an	Qur'an reading basics
+Materi bertahap dari huruf hingga ayat lengkap.	Progressive material from letters to complete verses.
+Pengguna aktif	Active user
+Pengguna aktif modul Iqro	Active Iqro user
+Memuat pengguna…	Loading users…
+Lanjutkan materi	Continue learning
+Mulai review	Start review
+Riwayat tes	Test history
+Cetak materi	Print material
+Batas kemampuan:	Capability limits:
+Latin dan suara perangkat hanya bantuan awal. Sistem menilai jawaban latihan, tidak menilai ketepatan suara atau makhraj; mintalah koreksi guru yang kompeten.	Latin text and device audio are introductory aids. The system grades exercise answers, not pronunciation or articulation; seek correction from a qualified teacher.
+Pintasan Materi:	Learning shortcuts:
+panah kiri/kanan memindahkan contoh dan Spasi memutar audio. Pintasan diabaikan ketika kursor berada pada form atau tombol.	Left/right arrows navigate examples and Space plays audio. Shortcuts are ignored while a form field or button has focus.
+Ringkasan progres Learning	Learning progress summary
+Bagian modul Iqro	Iqro module sections
+Materi	Material
+Siswa	Students
+Pengajar	Teachers
+Riwayat	History
+Pengaturan	Settings
+Pengenalan sebelum latihan baca	Introduction before reading practice
+Huruf Hijaiyah	Arabic letters
+Kenali nama serta bentuk tunggal, awal, tengah, dan akhir. Alif tetap dipelajari di sini; latihan baca awal Iqro tetap dimulai dari Ba, Ta, Tsa.	Learn names and isolated, initial, medial, and final forms. Alif is introduced here; early Iqro reading practice starts with Ba, Ta, and Tha.
+Tambah huruf	Add letter
+Memuat huruf Hijaiyah…	Loading Arabic letters…
+Daftar isi lengkap	Complete contents
+Jilid dan bab Iqro	Iqro volumes and chapters
+Seluruh materi dapat dibuka. Status selesai mempelajari materi tidak sama dengan lulus ujian formal.	All material is accessible. Completing material is separate from passing a formal test.
+Siswa yang belajar	Student learning
+Pilih siswa untuk progres materi	Select student for learning progress
+Pilih siswa untuk mencatat progres	Select a student to record progress
+Pengajar pendamping	Supporting teacher
+Pilih pengajar pendamping materi	Select supporting teacher
+Pilih pengajar untuk mencatat progres	Select a teacher to record progress
+Jilid	Volume
+Pilih jilid Iqro	Select Iqro volume
+Bab	Chapter
+Pilih bab Iqro	Select Iqro chapter
+Buka materi	Open material
+Lihat semua materi	View all material
+Daftar jilid Iqro	Iqro volume list
+Daftar isi seluruh materi Iqro	Contents of all Iqro material
+Kelola jilid, bab, materi, dan contoh	Manage volumes, chapters, material, and examples
+Perubahan memakai nonaktifkan/aktifkan, bukan menghapus riwayat. Pilih jenis data lalu tambah atau edit dari daftar.	Records are activated or deactivated while history is preserved. Select a data type, then add or edit from the list.
+Jenis data	Data type
+Contoh	Example
+Jilid induk	Parent volume
+Bab induk	Parent chapter
+Materi induk	Parent material
+Urutan	Order
+Kunci data	Data key
+otomatis-bila-kosong	automatic-if-empty
+Judul Indonesia	Indonesian title
+Judul English	English title
+Teks Arab	Arabic text
+Instruksi / catatan	Instructions / notes
+Tingkat kesulitan	Difficulty level
+Pemula	Beginner
+Menengah	Intermediate
+Lanjut	Advanced
+Aktif	Active
+Simpan	Save
+Form baru	New form
+Pilih jenis data.	Select a data type.
+Pilih jilid dan bab	Select volume and chapter
+Belum ada materi terbuka	No material open
+Tekan Lanjutkan materi atau pilih salah satu bab pada daftar isi.	Press Continue learning or select a chapter from the contents.
+Navigasi bab	Chapter navigation
+Daftar isi	Contents
+Bab sebelumnya	Previous chapter
+Bab berikutnya	Next chapter
+Progres contoh materi	Example progress
+BARU	NEW
+Indikator pola pembelajaran	Learning pattern indicator
+Bantuan Latin akan tampil sesuai pengaturan.	Latin assistance follows your settings.
+Dengarkan	Listen
+Ulang 2×	Repeat 2×
+Ulang 3×	Repeat 3×
+Tampilkan/sembunyikan Latin	Show/hide Latin text
+Status sumber dan bukti materi	Material source and evidence status
+Sumber, lisensi, dan status	Source, license, and status
+Navigasi contoh	Example navigation
+Contoh sebelumnya	Previous example
+Contoh berikutnya	Next example
+Tentang materi	About this material
+Materi berisi penjelasan dan contoh. Review dan Test tersedia pada tab tersendiri.	Material contains explanations and examples. Review and Test have separate tabs.
+Legenda kontekstual	Contextual legend
+Tandai bab setelah seluruh contoh dipelajari. Ini hanya progres materi, bukan nilai atau kelulusan Test.	Mark the chapter after studying all examples. This records learning progress, not a test grade or pass.
+Periksa progres materi	Check learning progress
+Latihan penguatan	Reinforcement practice
+Review memakai bank soal khusus dan tidak membuat atau mengubah nilai Test formal.	Review uses a dedicated question bank and does not create or change formal test grades.
+Bab yang direview	Chapter under review
+Jenis review	Review type
+Review terjadwal	Scheduled review
+Review satu bab	Single-chapter review
+Review remedial	Remedial review
+Acak urutan item	Shuffle items
+Mulai sesi review	Start review session
+Terpisah dari ujian:	Separate from tests:
+bantuan dan koreksi langsung boleh dipakai di sini. Hasil review memperbarui penguasaan materi, tetapi bukan nilai kelulusan resmi.	Assistance and immediate corrections are allowed here. Review updates mastery, not an official passing grade.
+Sesi review	Review session
+Belum dimulai	Not started
+Catatan pengajar untuk item ini	Teacher notes for this item
+Catatan koreksi atau pengulangan	Correction or repetition notes
+Memakai petunjuk	Used a hint
+Pengulangan	Repetition
+Tandai ulangi	Mark for repetition
+Tandai benar	Mark correct
+Selesaikan review	Finish review
+Catatan akhir sesi	End-of-session notes
+Ringkasan Review tanpa nilai formal	Review summary without formal grades
+Kelola bank item Review	Manage review question bank
+Bab sumber	Source chapter
+Materi sumber	Source material
+Bacaan yang diharapkan	Expected reading
+Kesulitan	Difficulty
+Catatan editor	Editor notes
+Simpan item Review	Save review item
+Diagnostik lama	Legacy diagnostic
+Tes penempatan ini bersifat diagnostik dan tidak masuk riwayat ujian formal.	This placement test is diagnostic and is excluded from formal test history.
+Buka tes penempatan diagnostik	Open diagnostic placement test
+Penilaian resmi	Formal assessment
+Satu sesi menghasilkan satu attempt baru. Jawaban benar dan skor baru ditampilkan setelah examiner memfinalisasi.	Each session creates a new attempt. Correct answers and scores appear only after examiner finalization.
+Pengajar pendamping (opsional)	Supporting teacher (optional)
+Tanpa pengajar pendamping	No supporting teacher
+Penguji / examiner	Examiner
+Jenis test	Test type
+Ujian jilid	Volume test
+Ujian bab	Chapter test
+Ujian penempatan	Placement test
+Ujian remedial	Remedial test
+Cakupan materi	Material scope
+Seluruh jilid terpilih	Entire selected volume
+Seluruh Bab terpilih	Entire selected chapter
+Satu Materi	One material unit
+Rentang Materi dalam Bab	Material range within a chapter
+Materi awal	Starting material
+Materi akhir	Ending material
+Semua tingkat	All levels
+Jumlah item	Item count
+0 = seluruh item dalam cakupan	0 = all items in scope
+Mulai attempt baru	Start new attempt
+Memuat cakupan bank Test…	Loading test bank scope…
+Mode ujian:	Test mode:
+bantuan Latin, audio, petunjuk, dan koreksi langsung dinonaktifkan. Jawaban setiap soal dikunci setelah dikirim.	Latin text, audio, hints, and immediate corrections are disabled. Each answer is locked after submission.
+Attempt formal	Formal attempt
+Catatan kesalahan examiner (opsional)	Examiner error notes (optional)
+Catat jenis kekeliruan tanpa membocorkan kunci kepada peserta.	Record the error type without revealing answers to the participant.
+Kelancaran (1–5)	Fluency (1–5)
+Catatan kelancaran	Fluency notes
+Catatan examiner	Examiner notes
+Catatan evaluasi keseluruhan	Overall evaluation notes
+Rekomendasi	Recommendation
+Materi yang perlu dilanjutkan atau diulang	Material to continue or repeat
+Finalisasi dan simpan nilai	Finalize and save grade
+Kelola bank item Test formal	Manage formal test bank
+Simpan item Test	Save test item
+Data peserta individual	Individual participant data
+Setiap siswa memiliki profil, progres Materi, Review, dan attempt Test yang terpisah.	Each student has a separate profile, material progress, reviews, and test attempts.
+Tambah siswa	Add student
+Cari siswa	Search students
+Nama, panggilan, atau nomor identitas	Name, nickname, or identity number
+Memuat siswa…	Loading students…
+Pilih siswa untuk melihat profil dan riwayatnya.	Select a student to view their profile and history.
+Data pendamping dan penilai	Teacher and examiner data
+Pengajar & Penguji	Teachers & examiners
+Peran dapat diatur sebagai pengajar, penguji, atau keduanya; riwayat sesi tetap dipertahankan saat profil dinonaktifkan.	Roles can be teacher, examiner, or both; session history remains when a profile is deactivated.
+Tambah pengajar/penguji	Add teacher/examiner
+Cari pengajar	Search teachers
+Nama, panggilan, atau peran	Name, nickname, or role
+Memuat pengajar…	Loading teachers…
+Pilih pengajar atau penguji untuk melihat riwayatnya.	Select a teacher or examiner to view their history.
+Jejak pembelajaran individual	Individual learning history
+Review dan Test ditampilkan terpisah. Review tidak memiliki skor ujian formal; setiap attempt Test baru tidak menimpa hasil sebelumnya.	Review and Test appear separately. Reviews have no formal test score; new test attempts preserve previous results.
+Riwayat Review	Review history
+Pilih siswa untuk melihat Review.	Select a student to view reviews.
+Riwayat Test formal	Formal test history
+Pilih siswa untuk melihat riwayat.	Select a student to view history.
+Pengaturan, offline, impor/ekspor, dan sumber	Settings, offline access, import/export, and sources
+Tampilan belajar	Learning display
+Ukuran huruf Arab	Arabic font size
+Bantuan Latin	Latin assistance
+Selalu	Always
+Hanya mode Belajar	Learning mode only
+Jika diminta	On request
+Nonaktif	Disabled
+Tampilkan arti	Show meaning
+Tampilkan harakat	Show vowel marks
+Warna pembelajaran	Learning colors
+Pola pembeda aksesibel	Accessible distinguishing patterns
+Simpan pengaturan	Save settings
+Paket offline	Offline package
+Cakupan	Scope
+Semua pelajaran teks	All text lessons
+Satu jilid	One volume
+Rentang jilid	Volume range
+Semua teks + audio tersedia	All text + available audio
+Jilid awal	Starting volume
+Jilid akhir	Ending volume
+Sertakan/cache audio yang tersedia	Include/cache available audio
+Sertakan contoh dan referensi Qur'an	Include examples and Qur'an references
+Memuat estimasi…	Loading estimate…
+Buat & pasang paket offline	Create & install offline package
+Progres pribadi	Personal progress
+Ekspor/impor progres tanpa menimpa kurikulum.	Export/import progress without replacing the curriculum.
+Ekspor progres	Export progress
+Impor progres	Import progress
+Importer materi JSON/CSV	JSON/CSV material importer
+Unduh template JSON	Download JSON template
+Unduh template CSV	Download CSV template
+Validasi	Validate
+Validasi & simpan	Validate & save
+Registri Aturan Tajwid	Tajwid Rule Registry
+Aturan & warna anotasi	Annotation rules & colors
+Sumber materi Learning	Learning material sources
+Belajar dasar-dasar ibadah	Learn worship basics
+Susun materi ibadah sesuai kebutuhan. Sub-bab dapat ditambah, diubah, dihapus, dan diposisikan ulang.	Arrange worship material as needed. Subchapters can be added, edited, deleted, and reordered.
+Pulihkan materi awal	Restore initial material
+Sub-bab Materi Ibadah	Worship material subchapters
+Tampilkan full screen	Show full screen
+Kelola sub-bab (CRUD)	Manage subchapters (CRUD)
+Tambah sub-bab	Add subchapter
+Nama sub-bab	Subchapter name
+Contoh: Rukun iman	Example: Articles of faith
+Tuliskan materi sub-bab...	Write subchapter material...
+Tampilkan sub-bab	Show subchapter
+Simpan sub-bab	Save subchapter
+Tambah gambar	Add image
+Sub-bab	Subchapter
+Path gambar	Image path
+Nama gerakan	Movement name
+Penjelasan	Explanation
+Simpan gambar	Save image
+Terjemahan lokal · MADLAD-400-3B-MT	Local translation · MADLAD-400-3B-MT
+Auto Update Tafsir & Hadis	Automatic Tafsir & Hadith updates
+Terjemahan Indonesia untuk teks Arab/Inggris yang belum memiliki edisi Indonesia resmi. Diproses bertahap di background, satu bagian paragraf setiap giliran.	Indonesian translations for Arabic/English texts without an official Indonesian edition. Processed incrementally in the background, one paragraph segment at a time.
+Panel otomatisasi	Automation panel
+Terjemahan & progres	Translations & progress
+Impor & review dokumen	Document import & review
+Memuat kontrol…	Loading controls…
+Muat ulang status	Refresh status
+Memeriksa worker…	Checking worker…
+Worker berjalan tanpa jendela, memakai satu antrean GPU dengan jeda antarbagiannya. Saat SQL/XAMPP berhenti, hasil dan checkpoint tersimpan di disk; proses menyambung otomatis saat SQL tersedia kembali. Tombol jeda berlaku setelah bagian yang sedang dikerjakan selesai.	The worker runs without a window using one GPU queue with pauses between segments. When SQL/XAMPP stops, results and checkpoints remain on disk; processing resumes when SQL returns. Pause takes effect after the current segment finishes.
+Bahasa Indonesia — edisi resmi sumber	Indonesian — official source edition
+Teks Indonesia dari edisi sumber yang tercatat beserta penerbit/penerjemahnya.	Indonesian text from a recorded source edition with its publisher/translator.
+Bahasa Indonesia — hasil translate MADLAD-400-3B-MT	Indonesian — MADLAD-400-3B-MT translation
+Versi bantuan baca hasil mesin, belum ditinjau manusia. Disimpan terpisah dan tidak mengganti teks Arab, Inggris, atau edisi resmi.	Machine-generated reading aid, not yet human-reviewed. Stored separately without replacing Arabic, English, or official editions.
+Pekerjaan terbaru & hasil	Recent jobs & results
+Log background & pemulihan koneksi	Background logs & connection recovery
+Operasi Database	Database Operations
+Sumber, sinkronisasi, dan pemulihan	Sources, synchronization, and recovery
+Token admin	Admin token
+Opsional pada localhost	Optional on localhost
+Verifikasi database	Verify database
+Buat backup	Create backup
+Sinkronisasi Qur'an bertahap	Incremental Qur'an synchronization
+Unduh ke staging, validasi 114/6236, lihat diff, lalu terima atau tolak. Data produksi tidak langsung ditimpa.	Download to staging, validate 114/6236, inspect differences, then accept or reject. Production data is not directly overwritten.
+Arab kanonik	Canonical Arabic
+Versi	Version
+Download ke staging	Download to staging
+Sinkron per-surah dengan checkpoint, retry, dan fallback sumber CDN yang sama. Proses dapat dilanjutkan tanpa mengulang file yang selesai.	Synchronize per surah with checkpoints, retries, and fallback to the same CDN source. Resume without repeating completed files.
+Sinkron transliterasi	Synchronize transliteration
+Audio Qur'an online & offline	Online & offline Qur'an audio
+Provider dan URL dibaca dari registry terpusat. Pilih satu, beberapa (mis. 1,2,36), rentang (1-10), atau semua 114 surah. Queue mencegah duplikat dan dapat dilanjutkan.	Providers and URLs come from the central registry. Select one, several (e.g. 1,2,36), a range (1-10), or all 114 surahs. The queue prevents duplicates and supports resuming.
+Qari	Reciter
+Cakupan surah	Surah scope
+1,2,36 atau 1-114	1,2,36 or 1-114
+Mode file	File mode
+Per ayat (kontrol lengkap)	Per verse (full controls)
+Satu file per surah	One file per surah
+Paralel	Parallel
+Tambahkan ke queue	Add to queue
+Proses batch berikutnya	Process next batch
+Verifikasi file	Verify files
+Hapus file lokal	Delete local files
+Data warna Tajwid lengkap	Complete Tajwid color data
+Impor 6.236 presentasi ayat dari markup terstruktur sumber resmi. Teks Arab kanonik tidak disentuh; checksum diperiksa sebelum dan sesudah.	Import 6,236 verse presentations from structured official-source markup. Canonical Arabic is preserved; checksums are verified before and after.
+Impor / perbarui Tajwid	Import / update Tajwid
+Status validasi	Validation status
+Belum diperiksa.	Not checked yet.
+Schema-validated, source-attributed, dan scholarly-verified adalah status berbeda.	Schema-validated, source-attributed, and scholarly-verified are distinct statuses.
+Indeks Pencarian Hibrida	Hybrid Search Index
+Bangun ulang indeks	Rebuild index
+Jalankan benchmark	Run benchmark
+Kamus Pencarian	Search Dictionary
+Registri Sumber	Source Registry
+Sumber terdaftar	Registered sources
+Kandidat perubahan	Candidate changes
+Pengelola Unduhan	Download Manager
+Pekerjaan dan checkpoint	Jobs and checkpoints
+Cadangkan / Pulihkan	Backup / Restore
+Snapshot database	Database snapshot
+Tutup	Close
+Profil pembaca	Reader profile
+Nama pengguna	User name
+Foto (opsional)	Photo (optional)
+Hapus foto	Remove photo
+Simpan profil	Save profile
+Hasil	Results
+Tampilkan lebih banyak	Show more
+Kamus istilah & alias terkurasi	Curated terminology & alias dictionary
+Alias membantu pencarian, tetapi tidak otomatis mengubah hubungan dalil yang authoritative.	Aliases assist search without automatically changing authoritative evidence relationships.
+Registri	Registry
+Alias pencarian	Search aliases
+Istilah Islam	Islamic terms
+Istilah kanonik	Canonical term
+mis. pemimpin	e.g. leader
+mis. penguasa	e.g. ruler
+Tipe	Type
+Semantik	Semantic
+Agama	Religious
+Nama populer	Popular name
+Simpan alias	Save alias
+CRUD Pengenalan Hijaiyah	Arabic letter introduction CRUD
+Kunci	Key
+Huruf tunggal	Isolated letter
+Nama Indonesia	Indonesian name
+Nama English	English name
+Bentuk awal	Initial form
+Bentuk tengah	Medial form
+Bentuk akhir	Final form
+URL audio	Audio URL
+Contoh, pisahkan dengan koma/baris	Examples, separated by commas/lines
+Catatan pembelajaran	Learning notes
+Jenis sambungan	Joining type
+Dua arah	Both directions
+Ke huruf sebelumnya	To the preceding letter
+Tidak menyambung	Non-joining
+Menyambung ke sebelumnya	Joins to previous
+Menyambung ke berikutnya	Joins to next
+Simpan huruf	Save letter
+Batal	Cancel
+CRUD siswa individual	Individual student CRUD
+Nama lengkap	Full name
+Nama panggilan	Nickname
+Nomor identitas	Identity number
+Tanggal lahir	Date of birth
+Kelas / kelompok	Class / group
+Wali	Guardian
+Kontak	Contact
+Tanggal mulai	Start date
+Jilid aktif	Active volume
+Belum ditentukan	Not specified
+Catatan	Notes
+Simpan siswa	Save student
+CRUD pengajar dan penguji	Teacher and examiner CRUD
+Peran	Role
+Penguji	Examiner
+Pengajar & penguji	Teacher & examiner
+Simpan pengajar/penguji	Save teacher/examiner
+Pengatur Latar & Overlay Universal	Universal Background & Overlay Customizer
+Pengaturan tampilan universal	Universal display orchestration
+Background, Informasi & Overlay	Background, Information & Overlay
+Pilih media, susun informasi, tentukan waktu tampil, lalu uji. Mode lanjutan tersedia tanpa mengganggu alur sederhana.	Select media, arrange information, set display times, then test. Advanced mode is available alongside the simple workflow.
+Daftar overlay	Overlay list
+Mode tampilan	Display mode
+Sederhana	Simple
+Lanjutan	Advanced
+Opsional di localhost	Optional on localhost
+Muat ulang semua	Reload all
+Database Qur'an & Hadith	Qur'an & Hadith database
+Buka layar utama	Open main display
+Tambah custom	Add custom overlay
+Restore semua default	Restore all defaults
+Memuat konfigurasi...	Loading configuration...
+Bagian konfigurasi	Configuration sections
+Waktu salat	Prayer times
+Konten	Content
+Tampilan	Appearance
+Prioritas	Priority
+Jenazah/Ghaib	Funeral/absentee prayer
+Pratinjau	Preview
+Pratinjau index.html	Preview index.html
+Buka semua bagian	Open all sections
+Pilih kelompok yang akan diatur	Select a group to configure
+Restore default	Restore defaults
+Kelompok pengaturan waktu salat	Prayer time settings groups
+Fardhu	Obligatory prayers
+Jumat	Friday
+Durasi per state	Duration per state
+Pra-adzan semua (menit)	All pre-adzan periods (minutes)
+Adzan semua (menit)	All adzan periods (minutes)
+Iqamah semua (menit)	All iqamah periods (minutes)
+Pelaksanaan semua (menit)	All prayer periods (minutes)
+Terapkan ke semua salat	Apply to all prayers
+Salat	Prayer
+Durasi (menit)	Duration (minutes)
+Latar belakang	Background
+Khusus Jumat	Friday settings
+Informasi dan Pelaksanaan Salat Jumat	Friday prayer information and performance
+Informasi tampil setelah rangkaian Subuh selesai sampai 15 menit sebelum Dzuhur. Pada hari Jumat seluruh rangkaian Dzuhur diganti hanya oleh pelaksanaan Jumat 45 menit mulai tepat waktu Dzuhur.	Information appears after the Fajr sequence until 15 minutes before Dhuhr. On Fridays, the Dhuhr sequence is replaced by a 45-minute Friday prayer period starting at Dhuhr.
+Tahap	Stage
+Durasi / batas (menit)	Duration / limit (minutes)
+Durasi tampil hanya mengatur lamanya reminder terlihat. Countdown menunjukkan remaining menuju transisi berikutnya: Awwal ke Wustha, Wustha ke Awwabin, dan Awwabin ke waktu Dzuhur.	Display duration controls how long reminders appear. The countdown shows time until the next transition: Awwal to Wustha, Wustha to Awwabin, and Awwabin to Dhuhr.
+Fase	Phase
+Overlay tampil (detik)	Overlay display (seconds)
+Interval reminder (menit)	Reminder interval (minutes)
+Ibadah malam	Night worship
+Anchor dihitung dari Maghrib sampai Subuh berikutnya. Kolom tampil mengatur lamanya overlay muncul; countdown pada sepertiga malam terakhir menunjukkan sisa waktu Qiyamul sampai batas persiapan Subuh, bukan sisa durasi overlay.	Anchors are calculated from Maghrib to the following Fajr. Display fields control overlay duration; the last-third countdown shows remaining Qiyamul time until Fajr preparation.
+Jarak / interval (menit)	Offset / interval (minutes)
+Perubahan pada seluruh kelompok disimpan bersama.	Changes across all groups are saved together.
+Simpan timing ke SQL	Save timing to SQL
+Definisi generik	Generic definition
+Konten, prioritas, dan trigger	Content, priority, and triggers
+Mulai dari contoh siap pakai	Start with a ready-made example
+Pilih bentuk tampilan; semua isinya tetap dapat diedit sesudah diterapkan.	Select a display format; all content remains editable after applying it.
+Terapkan preset	Apply preset
+Identitas teknis, prioritas, konflik, dan lapisan	Technical identity, priority, conflicts, and layers
+Jenis	Type
+Saat terinterupsi	When interrupted
+Jeda lalu lanjut	Pause then resume
+Masuk antrean	Queue
+Hentikan	Stop
+Ganti	Replace
+Tetap bertumpuk	Keep stacked
+Rotasi	Rotate
+Sembunyikan	Hide
+Konflik dengan overlay lain	Conflicts with other overlays
+Ganti overlay prioritas lebih rendah	Replace lower-priority overlays
+Tumpuk sebagai lapisan	Stack as a layer
+Antrekan	Enqueue
+Rotasi bergantian	Rotate in turn
+Jangan tampil saat konflik	Do not display during conflicts
+Lapisan	Layer
+Informasi tetap	Persistent information
+Konten utama	Main content
+Peringatan	Alert
+Urutan lapisan	Layer order
+Durasi default (detik)	Default duration (seconds)
+Animasi	Animation
+Pudar	Fade
+Aktif pada layar utama	Enabled on main display
+Boleh diinterupsi overlay dengan prioritas lebih tinggi	Allow interruption by higher-priority overlays
+Cakupan lokasi	Location scope
+Efek scope	Scope effect
+Tampilkan di area ini	Display in this area
+Jangan tampil di area ini	Exclude this area
+Seluruh sistem	Entire system
+Halaman tertentu	Specific page
+Salat tertentu	Specific prayer
+Kelompok salat	Prayer group
+Fase salat	Prayer phase
+Event kalender	Calendar event
+Negara	Country
+Provinsi/negara bagian	Province/state
+Kota/kabupaten	City/regency
+Radius koordinat	Coordinate radius
+Lokasi database	Database location
+Gedung database	Database building
+Halaman	Page
+Semua fardhu	All obligatory prayers
+Semua sunnah	All voluntary prayers
+ISO2 negara	Country ISO2
+Nama negara	Country name
+ADM1/provinsi	ADM1/province
+ADM2/kota	ADM2/city
+Lintang	Latitude
+Bujur	Longitude
+Radius (meter)	Radius (meters)
+Tambahkan scope lain	Add another scope
+Konten Indonesia	Indonesian content
+Label kecil	Eyebrow
+Subjudul	Subtitle
+Isi	Body
+Tambahan	Additional
+Konten Inggris	English content
+Placeholder tersedia: {overlayName}, {countdown}, {sourceName}. Overlay salat memakai placeholder state dari engine.	Available placeholders: {overlayName}, {countdown}, {sourceName}. Prayer overlays use state placeholders from the engine.
+Urutan slide (opsional)	Slide sequence (optional)
+Jika diisi, slide berputar sesuai durasi masing-masing. Kosong berarti hanya konten utama.	Slides rotate according to their individual durations. Leave empty to show only main content.
+Mode putar	Playback mode
+Berurutan	Sequential
+Acak stabil	Stable shuffle
+Rotasi konflik/acak (detik)	Conflict/shuffle rotation (seconds)
+Ulangi playlist	Repeat playlist
+Jenis trigger	Trigger type
+Waktu lokal	Local time
+Offset (detik)	Offset (seconds)
+Durasi (detik)	Duration (seconds)
+Mulai UTC	UTC start
+Bulan/tanggal Masehi	Gregorian month/day
+Bulan/tanggal Hijriah	Hijri month/day
+Tanggal akhir Masehi	Gregorian end date
+Tanggal akhir Hijriah	Hijri end date
+Hari aktif	Active days
+1,2,3,4,5 (Senin-Jumat)	1,2,3,4,5 (Monday-Friday)
+Sampai waktu	Until time
+Ulang tiap (menit)	Repeat every (minutes)
+Fase/anchor	Phase/anchor
+Event astronomi/eksternal	Astronomical/external event
+Data/kondisi	Data/condition
+Bernilai aktif	Truthy
+Sama dengan	Equals
+Tidak sama	Not equal
+Mengandung	Contains
+Lebih besar	Greater than
+Lebih kecil	Less than
+Tidak aktif/kosong	Inactive/empty
+Nilai kondisi	Condition value
+Tambah trigger	Add trigger
+Simpan definisi ke SQL	Save definition to SQL
+Aktifkan manual 60 detik	Activate manually for 60 seconds
+Editor visual	Visual editor
+Background dan posisi overlay	Background and overlay position
+Cara paling cepat	Quickest method
+Pilih background, klik	Select a background, click
+Edit gambar ini	Edit this image
+, geser atau zoom pada pratinjau, lalu klik	, drag or zoom in the preview, then click
+Simpan tampilan ke SQL	Save appearance to SQL
+. File asli tidak berubah.	. The original file is preserved.
+Edit cepat	Quick edit
+Pilih background bawaan	Select built-in background
+Nama background	Background name
+Belum ada background di database	No backgrounds in the database
+Gunakan	Use
+Unggah	Upload
+Hapus	Delete
+Library media: gambar, animasi, video, dan YouTube	Media library: images, animations, video, and YouTube
+Upload atau pilih media	Upload or select media
+Path file disimpan sistem dan tidak perlu diketik pengguna.	The system stores file paths automatically.
+Cari media	Search media
+Cari nama media	Search media name
+Kategori	Category
+Semua kategori	All categories
+Halaman utama	Main page
+Pengumuman	Announcement
+Darurat	Emergency
+Upload pengguna	User uploads
+Jenis media	Media type
+Semua jenis	All types
+Gambar	Image
+GIF / animasi	GIF / animation
+Media online / YouTube	Online media / YouTube
+Pilih media dari perangkat	Select media from device
+Gambar/animasi atau video MP4/WebM/OGV hingga 35 MB. SVG diperiksa keamanannya.	Images/animations or MP4/WebM/OGV video up to 35 MB. SVG files are checked for safety.
+Kategori upload	Upload category
+Upload media	Upload media
+Nama media	Media name
+Contoh: Siaran kajian	Example: Study broadcast
+URL langsung	Direct URL
+Fallback gambar (opsional)	Fallback image (optional)
+Tambahkan URL ke library	Add URL to library
+Belum ada gambar yang dipilih untuk diedit.	No image selected for editing.
+Galeri background	Background gallery
+Geser langsung	Drag directly
+Pratinjau background	Background preview
+Gunakan sebagai background	Use as background
+Background tersimpan belum dipilih.	No saved background selected.
+Editor background. Geser area kosong untuk mengatur posisi gambar, gulir roda mouse untuk zoom, dan geser kotak overlay untuk mengatur posisi konten.	Background editor. Drag empty space to position the image, scroll to zoom, and drag overlay boxes to position content.
+Overlay teks	Text overlay
+Geser untuk memindahkan	Drag to move
+Geser untuk mengubah ukuran	Drag to resize
+Posisi komponen modular	Modular component positions
+Area kosong: geser gambar · roda mouse: zoom · kotak komponen: geser posisi · sudut kotak: ubah ukuran	Empty space: drag image · mouse wheel: zoom · component box: move · corner: resize
+Kontrol cepat background	Quick background controls
+Perkecil gambar	Zoom image out
+− Perkecil	− Zoom out
+Perbesar gambar	Zoom image in
++ Perbesar	+ Zoom in
+Tengahkan gambar	Center image
+Atur dengan angka X/Y dan ukuran (opsional)	Set X/Y values and size (optional)
+Gambar background	Background image
+Geser gambar dengan mouse atau isi nilai X/Y. Nilai 50 berarti tepat di tengah.	Drag the image or enter X/Y values. A value of 50 means centered.
+Posisi gambar X (%)	Image X position (%)
+Posisi gambar Y (%)	Image Y position (%)
+Zoom dengan slider	Zoom with slider
+Penyesuaian gambar	Image fit
+Penuhi layar (disarankan)	Fill screen (recommended)
+Tampilkan seluruh gambar	Show entire image
+Regangkan	Stretch
+Ukuran asli	Original size
+Perkecil bila perlu	Shrink if needed
+Opacity gambar	Image opacity
+Geser kotak hijau untuk memindahkan. Geser sudut kanan bawah untuk mengubah ukurannya.	Drag the green box to move it. Drag its bottom-right corner to resize.
+Titik acuan	Anchor point
+Tengah	Center
+Kiri atas	Top left
+Kanan atas	Top right
+Kiri bawah	Bottom left
+Kanan bawah	Bottom right
+Posisi overlay X (%)	Overlay X position (%)
+Posisi overlay Y (%)	Overlay Y position (%)
+Lebar overlay (%)	Overlay width (%)
+Tinggi overlay (%)	Overlay height (%)
+Reset posisi overlay	Reset overlay position
+Default visual card untuk seluruh overlay	Default card appearance for all overlays
+Nilai ini menjadi fallback semua card. Opacity hanya memengaruhi lapisan background card, bukan teks atau isinya.	These values are fallbacks for all cards. Opacity affects only the card background, preserving text and content.
+Warna background	Background color
+Gambar background card	Card background image
+assets/images/... atau https://...	assets/images/... or https://...
+Opacity background	Background opacity
+Warna border	Border color
+Opacity border	Border opacity
+Lebar border (px)	Border width (px)
+Radius card (px)	Card radius (px)
+Warna teks	Text color
+Warna judul	Title color
+Warna subjudul	Subtitle color
+Warna Arab	Arabic color
+Warna Latin	Latin color
+Warna arti	Meaning color
+Warna sumber	Source color
+Simpan default seluruh card	Save defaults for all cards
+Override visual card untuk overlay terpilih	Card appearance overrides for the selected overlay
+Override ini menang atas default global. Kosongkan field teks opsional jika tidak memerlukan gambar atau gradient.	Overrides take precedence over global defaults. Clear optional text fields if no image or gradient is needed.
+Warna tint	Tint color
+Opacity tint	Tint opacity
+Warna card	Card color
+Opacity card	Card opacity
+Gradient card	Card gradient
+Rata teks	Text alignment
+Kiri	Left
+Kanan	Right
+Ukuran judul responsif	Responsive title size
+Ukuran isi responsif	Responsive body size
+Tampilkan panel/card konten	Show content panel/card
+Panel teks	Text panel
+Jam aktual	Actual clock
+Tanggal Masehi & Hijriah	Gregorian & Hijri dates
+Tidak ada	None
+Langkah 4	Step 4
+Simpan pilihan background, posisi, ukuran, dan zoom ke database.	Save the background, position, size, and zoom to the database.
+Susun komponen tanpa pemrograman	Arrange components without programming
+Centang informasi yang ingin tampil. Konten utama tetap dikelola pada tab Konten & trigger; komponen dapat hidup pada lapisan background, tetap, utama, atau peringatan.	Check the information to display. Main content is managed in Content & triggers; components can use background, persistent, main, or alert layers.
+Panduan prioritas	Priority guide
+Darurat dan keselamatan	Emergency and safety
+Adzan, iqamah, pelaksanaan salat	Adzan, iqamah, prayer performance
+Pengumuman penting dan kalender	Important announcements and calendar
+Media, ticker, cuaca, dan informasi umum	Media, ticker, weather, and general information
+Komponen modular	Modular components
+Jam digital/analog	Digital/analog clock
+Jadwal salat	Prayer schedule
+Teks	Text
+Teks berjalan	Running text
+FYI / kartu informasi	FYI / information card
+Tafsir + sumber	Tafsir + source
+Hadis + rujukan	Hadith + reference
+Kalender Islam	Islamic calendar
+Informasi puasa	Fasting information
+Salat sunnah	Voluntary prayers
+Cuaca	Weather
+Astronomi	Astronomy
+Kabar duka	Bereavement notice
+Setelah dicentang, atur isi, sumber, lapisan, serta posisi setiap komponen di bawah. Quran, tafsir, dan hadis tidak akan diberi klaim sumber otomatis.	After selecting components, set their content, source, layer, and position below. Qur'an, tafsir, and hadith receive no automatic source claims.
+Catatan sumber bersama (fallback)	Shared source note (fallback)
+Dipakai hanya jika komponen belum mempunyai sumber sendiri.	Used only when a component has no source of its own.
+Fase terlindungi	Protected phases
+Overlay biasa tidak boleh mengganti fase yang dicentang kecuali prioritasnya lebih tinggi dan layer peringatan.	Regular overlays cannot replace checked phases unless they have higher priority and use the alert layer.
+Pelaksanaan salat	Prayer performance
+Pelaksanaan Jumat	Friday prayer performance
+Persiapan Subuh	Fajr preparation
+Saran data eksternal	External data suggestions
+Berita bencana atau kabar duka tidak ditayangkan otomatis. Masukkan sumber HTTPS, tinjau, lalu ubah menjadi overlay editable atau abaikan.	Disaster and bereavement news is not displayed automatically. Enter an HTTPS source, review it, then create an editable overlay or dismiss it.
+Bencana/darurat	Disaster/emergency
+Wilayah kejadian	Event area
+Contoh: Kabupaten Sleman	Example: Sleman Regency
+Waktu kejadian	Event time
+Waktu publikasi sumber	Source publication time
+Terakhir diperbarui	Last updated
+Status verifikasi	Verification status
+Belum diverifikasi admin	Not yet verified by admin
+Sumber sudah diverifikasi	Source verified
+Kejadian sudah diverifikasi	Event verified
+Ringkasan	Summary
+Masukkan ke antrean review	Add to review queue
+Belum ada saran menunggu review.	No suggestions awaiting review.
+Audit konfigurasi dan runtime	Configuration and runtime audit
+Belum ada log.	No logs yet.
+Simpan komponen & prioritas	Save components & priorities
+Kedukaan & Salat Jenazah	Bereavement & Funeral Prayer
+Kabar duka, Salat Jenazah, dan Salat Gaib	Bereavement, funeral prayer, and absentee funeral prayer
+Satu event dapat berupa wafat individual, korban jamak, atau bencana. Admin tetap menentukan tindak lanjut; sistem tidak pernah memilih Salat Gaib secara otomatis.	An event can concern an individual death, multiple casualties, or a disaster. Admin decides follow-up actions; the system never selects absentee funeral prayer automatically.
+Tambah event	Add event
+Muat ulang event	Reload events
+Daftar event	Event list
+Cari event	Search events
+Nama atau lokasi	Name or location
+Memuat event...	Loading events...
+Bagian editor event	Event editor sections
+Data event	Event data
+Jadwal tampil	Display schedule
+Urutan tayangan	Sequence
+1. Kejadian dan orang/korban	1. Event and person/casualties
+Jenis kejadian	Event type
+Wafat individual	Individual death
+Wafat beberapa orang	Multiple deaths
+Bencana dengan korban jiwa	Disaster with fatalities
+Insiden fatal lainnya	Other fatal incident
+Nama almarhum/almarhumah	Deceased person's name
+Jenis kelamin korban	Sex of deceased
+Satu laki-laki / almarhum	One male deceased
+Satu perempuan / almarhumah	One female deceased
+Beberapa laki-laki	Multiple males
+Beberapa perempuan	Multiple females
+Kelompok campuran	Mixed group
+Belum diketahui	Unknown
+Jumlah korban jiwa	Fatality count
+Nama kejadian	Event name
+Contoh: Gempa Bumi	Example: Earthquake
+Lokasi kejadian	Event location
+Waktu wafat/kejadian	Time of death/event
+Informasi dilaporkan	Information reported
+Informasi diterima sistem	Information received by system
+Informasi diverifikasi	Information verified
+Zona waktu	Timezone
+Foto almarhum/almarhumah (opsional)	Photo of deceased (optional)
+Foto tidak wajib. Pilih dan periksa preview dahulu; foto baru tampil pada laman Kabar Duka setelah di-upload, dikonfirmasi, dan event disimpan.	A photo is optional. Select and preview it first; it appears on the bereavement page only after upload, confirmation, and saving the event.
+Belum ada foto. Overlay otomatis memakai layout teks penuh.	No photo. The overlay automatically uses the full-text layout.
+Pilih foto	Select photo
+Upload & gunakan	Upload & use
+Tampilkan foto pada overlay	Show photo on overlay
+JPEG, PNG, atau WebP; maksimum 8 MB.	JPEG, PNG, or WebP; maximum 8 MB.
+2. Disemayamkan dan pemakaman	2. Lying in repose and burial
+Alamat/tempat disemayamkan	Repose address/location
+Mulai disemayamkan	Repose start
+Waktu pemakaman	Burial time
+Lokasi pemakaman	Burial location
+3. Tindak lanjut	3. Follow-up
+Tindak lanjut	Follow-up
+Salat Jenazah	Funeral prayer
+Salat Gaib	Absentee funeral prayer
+Informasi saja	Information only
+Jenazah akan disholatkan di lokasi ini	Funeral prayer will be held at this location
+Metode fiqih	Fiqh method
+Tampilkan panduan ilustrasi	Show illustrated guide
+Nama masjid	Mosque name
+Alamat/lokasi Salat Jenazah	Funeral prayer address/location
+Waktu persiapan	Preparation time
+Waktu Salat Jenazah	Funeral prayer time
+Pelaksanaan	Performance
+Berjamaah	Congregational
+Sendiri	Individual
+Berjamaah atau sendiri	Congregational or individual
+Tempat berjamaah	Congregation venue
+Waktu Salat Gaib	Absentee prayer time
+4. Publikasi, sumber, dan verifikasi	4. Publication, sources, and verification
+Mode durasi	Duration mode
+24 jam sejak diterima	24 hours after receipt
+24 jam sejak waktu tertentu	24 hours from a specified time
+Waktu mulai/akhir khusus	Custom start/end times
+Mulai tampil	Display start
+Berhenti tampil	Display end
+Menunggu verifikasi	Awaiting verification
+Terverifikasi	Verified
+Terjadwal	Scheduled
+Berakhir	Ended
+Dibatalkan	Cancelled
+Diarsipkan	Archived
+Prioritas overlay	Overlay priority
+Sisipkan saat rangkaian salat/ibadah	Insert during prayer/worship sequences
+Durasi setiap sisipan (detik)	Duration per insertion (seconds)
+Ulang setiap (menit)	Repeat every (minutes)
+Sumber informasi	Information source
+URL sumber HTTPS	HTTPS source URL
+Status sumber	Source status
+Belum diverifikasi	Unverified
+Sumber terverifikasi	Verified source
+Kejadian terverifikasi	Verified event
+Diverifikasi admin	Admin-verified
+Narahubung	Contact person
+Tampilkan sisipan pada fase:	Insert during phases:
+Menuju adzan	Before adzan
+Saat adzan (opsional)	During adzan (optional)
+Menunggu iqamah	Awaiting iqamah
+Waktu Qiyamul Lail	Qiyamul Lail period
+Waktu Syuruq	Sunrise period
+Default: tampil 75 detik pada awal fase dan setiap 5 menit. Di luar rangkaian fardhu, event tetap dapat tampil selama periode publikasinya. Ubah angka atau fase sesuai kebutuhan.	Default: show for 75 seconds at phase start and every 5 minutes. Outside obligatory prayer sequences, events may appear during their publication period. Adjust durations or phases as needed.
+5. Kapan presentasi boleh tampil	5. When presentations may appear
+Aktifkan informasi Salat Jenazah/Gaib	Enable funeral/absentee prayer information
+Ketika terganggu fase penting	When interrupted by an important phase
+Selesaikan laman, lalu jeda (aman)	Finish page, then pause (safe)
+Jeda sekarang, lanjutkan nanti	Pause now, resume later
+Tetap lanjut	Continue
+Aksi setelah seluruh laman	Action after all pages
+Kembali ke index normal	Return to normal index
+Ulangi kabar duka	Repeat bereavement notice
+Ulangi tutorial	Repeat tutorial
+Lanjut playlist berikutnya	Continue to next playlist
+Berhenti	Stop
+Tampilkan informasi salat persisten	Show persistent prayer information
+Kapan boleh ditampilkan?	When may it appear?
+Kapan saja	Any time
+Di luar rangkaian fardhu	Outside obligatory prayer sequences
+Sebelum masuk waktu fardhu	Before obligatory prayer time
+Countdown menuju adzan	Countdown to adzan
+Saat adzan	During adzan
+Setelah adzan / menuju iqamah	After adzan / before iqamah
+Saat pelaksanaan salat	During prayer
+Setelah pelaksanaan salat	After prayer
+Setelah seluruh rangkaian selesai	After the entire sequence
+Pada waktu tertentu	At a specified time
+Aturan khusus	Custom rule
+Laman informasi tidak mengganggu fase berikut kecuali override dicentang atau kebijakan “Tetap lanjut” dipilih.	Information pages do not interrupt these phases unless override is checked or Continue is selected.
+Terlindungi	Protected
+Izinkan override	Allow override
+Khutbah/Salat Jumat	Friday sermon/prayer
+Event critical lain	Other critical events
+Informasi salat yang tetap terlihat	Persistent prayer information
+Nama salat berikutnya	Next prayer name
+Jam adzan	Adzan time
+Sisa waktu	Remaining time
+Mulai waktu tertentu	Start at specified time
+Selesai	Finished
+Custom rule aman	Safe custom rule
+Aturan per salat	Rules per prayer
+Boleh	Allowed
+Menit sebelum	Minutes before
+Sebelum	Before
+Setelah	After
+Menit setelah	Minutes after
+6. Urutan Presentasi Overlay	6. Overlay Presentation Sequence
+Satu laman menyampaikan satu informasi utama. Urutan, isi, media, dan durasi berikut disimpan di SQL dan dijalankan oleh universal overlay engine pada index.html.	Each page conveys one main message. Sequence, content, media, and durations are stored in SQL and played by the universal overlay engine on index.html.
+Preset presentasi	Presentation preset
+Singkat	Short
+Standar	Standard
+Lengkap	Full
+Khusus	Custom
+Sesuaikan Durasi Otomatis	Auto Adjust Duration
+Batas maksimal (detik)	Maximum duration (seconds)
+Jika melebihi batas	If the limit is exceeded
+Optimalkan Otomatis	Auto Optimize
+Kurangi laman opsional	Reduce optional pages
+Gunakan Short mode	Use Short mode
+Perpanjang durasi	Extend duration
+Optimalkan sekarang	Optimize now
+Konten yang ditampilkan	Displayed content
+Hukum	Ruling
+Dalil/referensi	Evidence/reference
+Arti	Meaning
+Total Durasi Presentasi	Total Presentation Duration
+Durasi per bagian	Duration per section
+Isi target detik untuk membagi durasi seluruh sublaman dalam bagian secara proporsional menurut bobot, dengan batas minimum dan maksimum tetap dijaga. Kosongkan untuk memakai durasi laman.	Enter target seconds to divide duration proportionally across subpages by weight while respecting minimum and maximum limits. Leave empty to use page durations.
+Urutan laman informasi	Information page sequence
+Buat event	Create event
+Preview event	Preview event
+Duplikat	Duplicate
+Isi contoh Si Fulan	Fill example person
+Contoh bencana 125 korban	Disaster example with 125 casualties
+Arsipkan	Archive
+Hapus permanen	Delete permanently
+Belum ada event dipilih.	No event selected.
+Preview khusus	Dedicated preview
+Informasi dan playback panduan	Information and guide playback
+Menghubungkan realtime...	Connecting in real time...
+Simulasi preview satu viewport	Single-viewport preview simulation
+Simulasi: 17:30	Simulation: 17:30
+Sisa: 18 menit	Remaining: 18 minutes
+Laman informasi akan tampil setelah data atau contoh diisi.	Information pages appear after entering data or an example.
+Laman sebelumnya	Previous page
+Putar laman	Play pages
+Laman berikutnya	Next page
+Mulai lagi	Restart
+Kontrol playback panduan	Guide playback controls
+Ulangi	Repeat
+Putar otomatis	Autoplay
+Audit perubahan event	Event change audit
+Playlist edukasi per kategori	Educational playlist by category
+Materi khusus salat telah dihapus dari overlay. Materi lain tetap menggunakan dalil Al-Qur’an dan Hadis dari database bersama.	Prayer-specific material has been removed from the overlay. Other material continues to use Qur'an and Hadith evidence from the shared database.
+Restore materi default	Restore default material
+Jadwal tampilan	Display schedule
+Aktif di index.html	Enabled on index.html
+Jeda setelah seluruh kategori (menit)	Pause after all categories (minutes)
+Setelah semua kategori selesai, dashboard utama tampil selama durasi ini.	After all categories finish, the main dashboard appears for this duration.
+Jeda antar kategori (menit)	Pause between categories (minutes)
+Durasi cadangan per laman (detik)	Fallback page duration (seconds)
+Jeda ketika overlay salat aktif	Pause while prayer overlay is active
+Isi yang ditampilkan	Displayed content
+Tampilkan dalil rujukan di index.html	Show evidence references on index.html
+Label “Artinya:” / “Meaning:”	“Artinya:” / “Meaning:” label
+Tampilkan indikator laman dan sisa waktu	Show page indicator and remaining time
+Urutan kategori diselesaikan dari atas ke bawah. Atur detik per laman untuk menentukan panjang total pembahasan setiap kategori.	Categories play from top to bottom. Set seconds per page to determine each category's total duration.
+Style card materi dan override bagian	Material card style and section overrides
+Style overlay materi mengalahkan default global. Override bagian mengalahkan style overlay.	Material overlay styles override global defaults. Section overrides take precedence over overlay styles.
+Memuat materi...	Loading material...
+Katalog materi tersimpan	Saved material catalog
++ Tambah materi	+ Add material
+Cari materi	Search material
+Contoh: iman, zakat, puasa	Example: faith, zakat, fasting
+Bagian	Section
+Semua bagian	All sections
+CRUD materi berbasis SQL	SQL-backed material CRUD
+Tambah materi ibadah	Add worship material
+Isi materi dan dalil tampil di index.html. Status peninjauan hanya terlihat di halaman konfigurasi ini.	Material and evidence appear on index.html. Review status is shown only on this configuration page.
+Tutup editor	Close editor
+Identitas dan urutan laman	Page identity and order
+Kunci materi	Material key
+Rukun Iman	Articles of faith
+Rukun Islam	Pillars of Islam
+Wudhu	Ablution
+Puasa	Fasting
+Haji	Hajj
+Doa dan Dzikir	Supplication and remembrance
+Materi Ibadah Lain	Other worship material
+Bab/kategori	Chapter/category
+Informasi	Information
+Dalil pengantar	Introductory evidence
+Prinsip	Principle
+Metodologi	Methodology
+Syarat	Conditions
+Rukun	Pillars
+Gerakan	Movement
+Bacaan	Reading
+Materi aktif	Material enabled
+Isi lengkap per laman	Complete content per page
+Subjudul/dalil ringkas Indonesia	Indonesian subtitle/brief evidence
+Subjudul Inggris	Subtitle English
+Penjabaran lengkap Indonesia	Full Indonesian explanation
+Penjabaran lengkap Inggris	Full explanation English
+Petunjuk praktik Indonesia	Indonesian practice instructions
+Petunjuk praktik Inggris	Practice instruction English
+Bacaan, latin, arti, dan media	Reading, Latin text, meaning, and media
+Arti Indonesia	Indonesian meaning
+Terjemahan Inggris	Translation English
+Path ilustrasi opsional	Optional illustration path
+Default semua materi: main_background.png. Nilai disimpan per materi di SQL.	Default for all material: main_background.png. Values are stored per material in SQL.
+Daftar dalil dan peninjauan administrator	Evidence list and administrator review
+Pilih Al-Qur’an, Hadis, Ijma, Qiyas, atau sumber lain. Jika satu riwayat memiliki pengantar, pertanyaan, dan jawaban, masukkan sebagai beberapa block di dalam satu evidence yang sama. Isi Indonesia dan English disimpan berpasangan; index.html hanya menampilkan bahasa aktif.	Select Qur'an, Hadith, Ijma, Qiyas, or another source. If a narration has an introduction, questions, and answers, enter multiple blocks within the same evidence item. Indonesian and English content is paired; index.html shows only the active language.
++ Tambah evidence	+ Add evidence
+Sumber materi dari database Al-Qur’an, Tafsir, dan Hadis	Material sources from the Qur'an, Tafsir, and Hadith database
+Referensi internal menjadi identitas utama. Snapshot hanya cache offline; perubahan sumber ditandai dan override manual tidak ditimpa.	Internal references are the primary identity. Snapshots are offline caches; source changes are flagged and manual overrides are preserved.
+Memeriksa database…	Checking database…
+Sumber materi	Material source
+Cari dalil / ayat / hadis / tafsir	Search evidence / verses / hadith / tafsir
+Contoh: waktu salat	Example: prayer times
+Cari semua sumber	Search all sources
+Gunakan mode Manual hanya ketika sumber belum tersedia atau memang memerlukan override. Data lama tetap dapat diedit.	Use Manual mode only when a source is unavailable or an override is needed. Existing data remains editable.
++ Tambah evidence manual	+ Add manual evidence
+Ayat / beberapa ayat / range	Verse / verses / range
+Contoh: 1 atau 1,3-5	Example: 1 or 1,3-5
+Maksimal 15 ayat dalam satu evidence.	Maximum 15 verses per evidence item.
+Mufassir	Commentator
+Kitab tafsir	Tafsir work
+Ayat awal	Starting verse
+Ayat akhir	Ending verse
+Mode tafsir	Tafsir mode
+Tampilkan penuh	Show full text
+Ringkasan existing saja	Existing summary only
+Materi tambahan	Additional material
+Judul dan detail sumber saja	Title and source details only
+Sistem tidak membuat ringkasan AI.	The system does not generate AI summaries.
+Kata kunci	Keyword
+Contoh: iman	Example: faith
+Isi teks	Text content
+Potongan matan atau terjemahan	Narration or translation excerpt
+Nomor hadis	Hadith number
+Contoh: 8	Example: 8
+Kitab / book	Book
+Contoh: Kitab al-Iman	Example: Kitab al-Iman
+Perawi / narrator	Narrator
+Contoh: Umar bin al-Khaththab	Example: Umar ibn al-Khattab
+Contoh: rukun iman	Example: articles of faith
+Cari di sumber aktif	Search active source
+Hasil lama	Previous results
+Sumber terpilih	Selected source
+Komponen yang dimasukkan	Included components
+Referensi	Reference
+Narasi pengantar	Intro narration
+Preset urutan	Sequence preset
+Intro → Ayat → Latin → Arti → Sumber	Intro → Verse → Latin → Meaning → Source
+Intro → Arab → Latin → Arti → Tafsir → Sumber	Intro → Arabic → Latin → Meaning → Tafsir → Source
+Judul → Riwayat → Arab → Latin → Arti → Referensi	Title → Narration → Arabic → Latin → Meaning → Reference
+Judul → Intro → Tafsir → Sumber	Title → Intro → Tafsir → Source
+Judul → Sumber → Arab → Latin → Arti → Tafsir → Intro	Title → Source → Arabic → Latin → Meaning → Tafsir → Intro
+Urutan kustom	Custom sequence
+Gunakan tombol naik/turun untuk menyusun urutan yang dipakai preview dan overlay.	Use up/down buttons to arrange the sequence used in previews and overlays.
+Urutan komponen materi	Material component sequence
+Bahasa preview	Preview language
+Intro Indonesia (opsional)	Indonesian introduction (optional)
+Pengantar Inggris (opsional)	Introduction English (optional)
+Preview pilihan	Selection preview
+Tambahkan ke Materi	Add to material
+Database belum diperiksa.	Database not checked yet.
+Status keseluruhan materi	Overall material status
+Bersyarat/perlu konteks	Conditional/context required
+Diperselisihkan	Disputed
+Preview langsung materi	Live material preview
+Preview langsung index.html	Live index.html preview
+Perubahan form tampil otomatis.	Form changes appear automatically.
+Preview langsung materi ibadah	Live worship material preview
+Hapus materi	Delete material
+Perbarui preview	Update preview
+Simpan materi	Save material
+Pratinjau terisolasi	Isolated preview
+Uji tanpa mengubah runtime	Test without changing runtime
+Seluruh scheduler pada waktu simulasi	Entire scheduler at simulation time
+Definisi terpilih + trigger	Selected definition + triggers
+Salat fardu (pilih fase)	Obligatory prayer (select phase)
+Hari Jumat (pilih fase)	Friday (select phase)
+Dhuha (pilih fase)	Dhuha (select phase)
+Qiyamul Lail (pilih fase)	Qiyamul Lail (select phase)
+Salat/fase	Prayer/phase
+Salat Jumat	Friday prayer
+Pra-adzan	Pre-adzan
+Informasi Hari Jumat	Friday information
+Fase Dhuha	Dhuha phase
+Pengingat awal malam	Early-night reminder
+Menuju sepertiga terakhir	Approaching the last third
+Sepertiga malam terakhir	Last third of the night
+Persiapan Subuh fardhu	Obligatory Fajr preparation
+Simulasikan tanggal/waktu	Simulate date/time
+Bulan Hijriah (opsional)	Hijri month (optional)
+Tanggal Hijriah (opsional)	Hijri day (optional)
+Event kalender (opsional)	Calendar event (optional)
+Contoh: ashura	Example: ashura
+Jalankan preview	Run preview
+Pilih waktu simulasi untuk melihat alasan overlay aktif atau tertahan.	Select a simulation time to see why overlays are active or held.
+Pratinjau overlay	Overlay preview
+Mesin Pratinjau Bersama	Shared Preview Engine
+Hasil draft pada panel aktif ditampilkan dengan renderer yang sama seperti layar utama.	Draft results from the active panel use the same renderer as the main display.
+Tersimpan	Saved
+Perbesar	Enlarge
+Tutup preview	Close preview
+Kontrol preview bersama	Shared preview controls
+Ukuran	Size
+Otomatis	Auto
+Skala	Scale
+State / fase	State / phase
+Perbarui	Update
+Apply sementara	Apply temporarily
+Reset draf	Reset draft
+Menyiapkan preview...	Preparing preview...
+Preview langsung index.html untuk panel aktif	Live index.html preview for the active panel
+Administrasi Web-GIS	Web-GIS Administration
+Mode draf offline	Offline draft mode
+0 dalam antrean	0 queued
+Peta ADM	ADM map
+Manajemen Building	Building management
+Metode perolehan lokasi	Location acquisition method
+Ketik koordinat atau klik peta koordinat offline. Koneksi internet tidak diperlukan.	Type coordinates or click the offline coordinate map. No internet connection is required.
+Sumber: manual. Pilih titik dan konfirmasikan di bawah.	Source: manual. Select a point and confirm it below.
+Terdeteksi atau dimasukkan manual	Detected or entered manually
+Provinsi, negara bagian, wilayah	Province, state, region
+Kota, kabupaten	City, county, regency
+Pembacaan awal perangkat: belum direkam.	Initial device reading: not captured.
+Musholla / ruang salat	Prayer room / musholla
+Panti asuhan	Orphanage
+Bandara	Airport
+Terminal bus	Bus terminal
+Stasiun kereta	Train station
+Pelabuhan	Seaport
+Kafe / restoran	Cafe / restaurant
+Toko / minimarket	Shop / mart
+Pusat perbelanjaan	Shopping mall
+Pabrik	Factory
+Hotel / penginapan	Hotel / inn
+Bengkel mobil	Car shop
+Nama masjid / bangunan	Masjid / building name
+Jalan, kecamatan, kota, kode pos	Street, district, city, postal code
+Detail tempat, kontak, akses, atau catatan operasional	Place detail, contact, access, or operating note
+Profil perangkat browser disimpan pada revisi konfigurasi.	Browser device profile will be stored in the configuration revision.
+Tinjau satu	Review single
+Tinjau beberapa	Review multiple
+Kontrol lapisan dasar peta	Map base layer controls
+Dasar	Basic
+Topografi	Topography
+Satelit	Satellite
+Skala data perairan	Water data scale
+Belum ada titik bangunan	No building point
+Kontrol lapisan dasar peta KML	KML map base layer controls
+Detail Fitur KML	KML Feature Details
+Kontrol lapisan dasar peta penuh	Full map base layer controls
+Kompas 16 arah	16 direction compass
+KIBLAT	QIBLA
+Utara	North
+Buka peta ADM statis	Open static ADM map
+Peta dasar	Basemap
+Sumber peta online	Online map sources
+Gunakan peta online	Use online map
+Peta online	Online map
+Pilih peta online	Select online map
+BMKG Indonesia · Gempa dirasakan	BMKG Indonesia · Felt earthquakes
+Gunung api · status & lokasi	Volcanoes · status & location
+Tampilan lingkungan	Environment display
+Cakupan tampilan lingkungan	Environment display scope
+Lokal · negara terpilih (ADM0)	Local · selected country (ADM0)
+Lingkungan global	Global Environment
+Rentang data	Data range
+Rentang data lingkungan	Environment data range
+24 jam terakhir	Last 24 hours
+5 hari terakhir	Last 5 days
+10 hari terakhir	Last 10 days
+30 hari terakhir	Last 30 days
+Buka peta	Open map
+Ikon kondisi peta	Map condition icons
+Pemetaan gunung api	Volcano mapping
+Gunung api	Volcanoes
+Pilih sumber untuk memuat gunung api.	Select a source to load volcanoes.
+VolcanoDiscovery · gunung api saja	VolcanoDiscovery · volcanoes only
+Gabungan sumber (tanpa duplikasi)	Combined sources (deduplicated)
+Status resmi USGS	Official USGS status
+Lokasi gunung dunia (GDACS)	Global volcano locations (GDACS)
+Prioritas oranye & merah	Orange & red priority
+Semua status	All statuses
+NORMAL · Tenang	NORMAL · Quiet
+ADVISORY · Perlu dipantau	ADVISORY · Monitoring needed
+WATCH · Waspada tinggi	WATCH · Elevated alert
+WARNING · Bahaya tinggi	WARNING · High danger
+Level II (Waspada)	Level II (Advisory)
+Level III (Siaga)	Level III (Watch)
+Level IV (Awas)	Level IV (Warning)
+UNKNOWN · Belum diketahui	UNKNOWN · Not yet known
+Cari gunung	Search volcanoes
+Nama atau wilayah	Name or region
+Lihat semua	View all
+Warna segitiga menunjukkan status resmi USGS. Lokasi dunia GDACS tanpa status resmi ditandai abu-abu.	Triangle colors indicate official USGS status. GDACS global locations without official status are gray.
+Legenda status dan maknanya	Status legend and meanings
+Aktivitas berada pada kondisi latar belakang normal, tidak erupsi.	Activity is at normal background levels, with no eruption.
+Tenang/normal.	Quiet/normal.
+Ada peningkatan aktivitas di atas normal, misalnya peningkatan gempa atau deformasi tanah, tetapi belum berarti erupsi akan terjadi.	Activity is above normal, such as increased earthquakes or ground deformation, but this does not mean an eruption will occur.
+Mulai tidak normal, perlu dipantau.	Above normal; monitoring is needed.
+Aktivitas meningkat/terus berkembang dan potensi erupsi meningkat, tetapi waktunya belum pasti; atau sudah terjadi erupsi tetapi bahayanya masih terbatas.	Activity is increasing and eruption potential is elevated, with uncertain timing; or an eruption is occurring with limited hazards.
+Waspada tinggi / potensi erupsi meningkat.	Elevated alert / increased eruption potential.
+Erupsi berbahaya sudah berlangsung, diperkirakan segera terjadi, atau diduga sedang terjadi.	A hazardous eruption is ongoing, expected imminently, or suspected.
+Bahaya tinggi / erupsi berbahaya.	High danger / hazardous eruption.
+Status resmi belum tersedia dari sumber ini. Abu-abu tidak berarti gunung dalam kondisi normal.	Official status is unavailable from this source. Gray does not mean normal conditions.
+Daftar gunung	Volcano list
+Hasil pencarian gunung api	Volcano search results
+Data belum dimuat.	Data not loaded yet.
+Kalibrasi	Calibration
+Prakiraan Cuaca	Weather Forecast
+Tampilan Suhu	Temperature Display
+Kondisi Awan	Cloud Condition
+Gempa Bumi	Earthquake
+Kebakaran Hutan	Wildfire
+Muat database	Load database
+Pakai gedung	Use building
+Bahasa narasi	Narrative language
+Pengaturan / konfigurasi	Settings / konfigurasi
+Tampilan akhir	Display final
+Hanya penanda penyedia IP	IP provider marker only
+Terapkan	Apply
+Pusatkan	Center
+Matahari + Bulan	Sun + Moon
+5 tahun mundur/maju	5 years backward/forward
+10 tahun mundur/maju	10 years backward/forward
+Hitung Trajektori	Calculate trajectory
+Historis sudah dilewati	Past history
+Prediksi masa depan	Future prediction
+Posisi timeline	Timeline position
+Memuat zona waktu IANA...	Loading IANA timezones...
+Memuat kalender Masehi, kalender Hijriah, dan jam...	Loading Gregorian and Hijri calendars and clock...
+Memuat metode dari database...	Loading methods from database...
+Mazhab Ashar	Madhab Asr
+Memuat mazhab Ashar dari database...	Loading Asr schools from database...
+Metode yang tampil di index.html	Methods displayed on index.html
+Pilih 1 sampai 3 metode Falak. Metode utama dipakai untuk hitung mundur dan overlay.	Select 1 to 3 Falak methods. The primary method is used for countdowns and overlays.
+Metode Falak yang ditampilkan	Displayed Falak methods
+Metode utama index.html	Primary index.html method
+Metode Ashar publik	Public Asr method
+Parameter Falak selain Subuh dan Isya	Falak parameters other than Fajr and Isha
+Atur Syuruq, Dhuha, Maghrib, kondisi atmosfer/elevasi, serta ihtiyat setiap waktu untuk masing-masing metode.	Set sunrise, Dhuha, Maghrib, atmospheric/elevation conditions, and precautionary offsets for each method.
+Menunggu registry Falak...	Waiting for Falak registry...
+Prakiraan Cuaca · 5 Hari	Weather Forecast · 5 Days
+Satuan suhu	Temperature unit
+Cuaca belum tersedia	Weather unavailable
+Menunggu dataset provider.	Waiting for provider dataset.
+Cloud cover numerik; raster/tile awan tidak dipaksakan.	Numeric cloud cover; cloud raster/tiles are optional.
+Pemantauan Gempa Bumi	Earthquake Monitoring
+Kebakaran / Titik Panas	Wildfire / Hotspot
+Ikhtisar	Overview
+Ikhtisar Astronomi	Astronomical Overview
+Menyiapkan presentasi otomatis…	Preparing automatic presentation…
+Menginisialisasi	Initializing
+Coba: “ayat tentang waktu shalat” · “hadis tentang niat” · “2:255”	Try: “verses about prayer times” · “hadith about intention” · “2:255”
+Arabic · Edisi sumber	Arabic · Source edition
+English · Edisi sumber	English · Source edition
+Bahasa Indonesia · Edisi sumber	Indonesian · Source edition
+Validasi memeriksa lesson/unit, item key, teks Arab, sumber dan lisensi, duplikat, referensi Qur'an, kode Tajwid, rentang anotasi, warna pembelajaran, URL/provider audio, path lokal, serta checksum file. Keaslian sumber dan izin lisensi eksternal tetap memerlukan tinjauan manusia. Commit memerlukan otorisasi admin pada tab Sumber & Sinkronisasi dan tidak pernah mengubah teks Qur'an kanonik.	Validation checks lessons/units, item keys, Arabic text, sources and licenses, duplicates, Qur'an references, Tajwid codes, annotation ranges, learning colors, audio URLs/providers, local paths, and file checksums. Source authenticity and external licensing still require human review. Commit requires admin authorization in Sources & Sync and never changes canonical Qur'an text.
+Reference parser, exact/FTS berbobot, kamus istilah, topik terkurasi, relasi verified, dan vektor konsep lokal. Indeks turunan dapat dibangun ulang tanpa mengubah teks kanonik.	Reference parser, weighted exact/FTS search, terminology dictionary, curated topics, verified relationships, and local concept vectors. Derived indexes can be rebuilt without changing canonical text.
+Pencarian sumber hibrida · lokal/offline	Hybrid source retrieval · lokal/offline
+
+Peta cuaca	Weather map
+Jelajahi kondisi & prakiraan	Explore conditions & forecasts
+Cari kota atau koordinat lintang, bujur	Search city or latitude, longitude
+Cari kota atau lintang, bujur	Search city or latitude, longitude
+Cari lokasi	Search location
+Tutup cuaca	Close weather
+Lapisan dan pengaturan cuaca	Weather layers and settings
+LAPISAN PETA	MAP LAYERS
+Pilih lapisan cuaca	Select weather layer
+Arah & kecepatan	Direction & speed
+Pengamatan radar	Radar observations
+Citra satelit harian NASA Terra	NASA Terra daily satellite imagery
+Suhu udara	Air temperature
+Prakiraan hujan	Rain forecast
+Persentase awan	Cloud percentage
+Tekanan permukaan laut	Sea-level pressure
+Peristiwa aktif	Active events
+Pengaturan cuaca	Weather settings
+Model prakiraan	Forecast model
+Otomatis ? Best Match	Automatic ? Best Match
+Metrik ? ?C, km/jam, mm	Metric ? ?C, km/h, mm
+Imperial ? ?F, mph, inci	Imperial ? ?F, mph, inches
+Gerakkan partikel angin saat diputar	Animate wind particles during playback
+Model mengatur lapisan prakiraan. Radar, citra satelit, dan laporan badai mengikuti sumber pengamatannya.	The model controls forecast layers. Radar, satellite imagery and storm reports use their observational sources.
+Perbarui data	Refresh data
+Navigasi peta cuaca	Weather map navigation
+Perbesar peta	Zoom in
+Perkecil peta	Zoom out
+Ke lokasi pengamat	Go to observer
+Klik peta untuk prakiraan lokasi	Click the map for a location forecast
+Prakiraan titik di lokasi pilihan	Point forecast at selected location
+PRAKIRAAN TITIK	POINT FORECAST
+Lokasi pilihan	Selected location
+Tutup rincian lokasi	Close location details
+Waktu prakiraan area angin	Wind area forecast time
+Prakiraan per jam	Hourly forecast
+Sumber prakiraan	Forecast source
+Waktu dan legenda cuaca	Weather time and legend
+PRAKIRAAN	FORECAST
+PENGAMATAN	OBSERVATION
+Pilih lapisan untuk menjelajahi cuaca	Select a layer to explore weather
+Pilih badai untuk menampilkan lokasi dan panduan	Select a storm to display its location and guidance
+Waktu sebelumnya	Previous time
+Putar animasi	Play animation
+Waktu berikutnya	Next time
+Waktu belum tersedia	Time unavailable
+Waktu perangkat	Device time
+Penjelajah cuaca	Weather explorer
+Tindakan belum dapat dijalankan. Coba lagi.	Unable to perform this action. Please retry.
+PERINGATAN TORNADO	TORNADO WARNING
+MONITORING BADAI	STORM MONITORING
+Memuat jalur dan area resmi?	Loading official tracks and areas?
+Memuat prakiraan lokasi?	Loading location forecast?
+Waktu laporan belum tersedia	Report time unavailable
+Prakiraan model untuk lokasi ini	Model forecast for this location
+Memuat data cuaca?	Loading weather data?
+Layar penuh tidak didukung pada browser ini.	Full screen is not supported by this browser.
+negara belum dipilih	no country selected
+batas belum tersedia	boundaries unavailable
+Lokal ADM0	Local ADM0
+Memuat cuaca?	Loading weather?
+Batas ADM0 negara terpilih belum tersedia.	ADM0 boundaries for the selected country are unavailable.
+Pembaruan gagal; data terakhir tetap ditampilkan.	Refresh failed; the latest cached data remains displayed.
+Tidak ada sistem / peringatan aktif dalam cakupan sumber.	No active systems or warnings within source coverage.
+Cuaca nonaktif	Weather disabled
+Memuat frame berikutnya	Loading next frame
+RADAR PENGAMATAN	OBSERVATIONAL RADAR
+SATELIT HARIAN	DAILY SATELLITE
+Rujukan VolcanoDiscovery	VolcanoDiscovery references
+Rujukan ?30 hari (default)	References ?30 days (default)
+Semua, termasuk lama/tanpa tanggal	All, including old/undated
+Prioritas oranye & merah	Orange & red priority
+Semua status	All statuses
+Kemungkinan punah	Possibly extinct
+Normal / dorman	Normal / dormant
+Peningkatan aktivitas	Elevated activity
+Aktivitas kecil / peringatan erupsi	Minor activity / eruption warning
+Erupsi	Erupting
+Erupsi besar	Major eruption
+Kategori aktivitas VolcanoDiscovery; bukan status resmi USGS/PVMBG.	VolcanoDiscovery activity category; not an official USGS/PVMBG status.
+Tenang / normal	Quiet / normal
+Aktivitas berada pada kondisi latar belakang normal, tidak erupsi.	Activity is at normal background levels, without eruption.
+Mulai tidak normal, perlu dipantau	Above normal; monitoring needed
+Aktivitas meningkat di atas normal, misalnya gempa atau deformasi tanah. Belum berarti erupsi akan terjadi.	Activity has increased above normal, such as earthquakes or ground deformation. This does not necessarily mean an eruption will occur.
+Waspada tinggi / potensi erupsi meningkat	Heightened alert / increased eruption potential
+Aktivitas meningkat dan potensi erupsi bertambah, waktunya belum pasti; atau erupsi berlangsung dengan bahaya terbatas.	Activity and eruption potential have increased, with uncertain timing; or an eruption is underway with limited hazards.
+Bahaya tinggi / erupsi berbahaya	High hazard / hazardous eruption
+Erupsi berbahaya sedang berlangsung, diperkirakan segera terjadi, atau diduga sedang terjadi.	A hazardous eruption is underway, expected imminently, or suspected.
+Status belum tersedia	Status unavailable
+Sumber belum menyediakan status resmi untuk gunung ini.	The source has not provided an official status for this volcano.
+Level II (Waspada)	Level II (Alert)
+Level III (Siaga)	Level III (Standby)
+Level IV (Awas)	Level IV (Warning)
+MAGMA / PVMBG ? Waspada	MAGMA / PVMBG ? Alert
+MAGMA / PVMBG ? Siaga	MAGMA / PVMBG ? Standby
+MAGMA / PVMBG ? Awas	MAGMA / PVMBG ? Warning
+Aktivitas berfluktuasi tanpa peningkatan yang signifikan. Ikuti rekomendasi resmi untuk gunung terkait.	Activity fluctuates without a significant increase. Follow official recommendations for the volcano.
+Aktivitas mulai meningkat; pada beberapa gunung api dapat terjadi erupsi.	Activity is beginning to increase; eruptions may occur at some volcanoes.
+Peningkatan aktivitas semakin nyata atau gunung api mengalami erupsi. Ikuti rekomendasi resmi PVMBG.	Activity is clearly increasing or the volcano is erupting. Follow official PVMBG recommendations.
+Tingkat aktivitas tertinggi dalam sistem PVMBG. Ikuti rekomendasi resmi dan arahan petugas.	The highest activity level in the PVMBG system. Follow official recommendations and instructions.
+VD ? Kemungkinan punah	VD ? Possibly extinct
+VD ? Normal / dorman	VD ? Normal / dormant
+VD ? Peningkatan aktivitas	VD ? Elevated activity
+VD ? Aktivitas kecil / peringatan erupsi	VD ? Minor activity / eruption warning
+VD ? Erupsi	VD ? Erupting
+VD ? Erupsi besar	VD ? Major eruption
+Jelajah cuaca	Explore weather
+Aktifkan cuaca	Enable weather
+Angin	Wind
+Radar hujan	Rain radar
+Satelit harian	Daily satellite
+Suhu	Temperature
+Hujan prakiraan	Forecast rain
+Tutupan awan	Cloud cover
+Tekanan	Pressure
+Badai	Storms
+Cuaca off	Weather off
+Prakiraan angin ? km/h	Wind forecast ? km/h
+Legenda cuaca	Weather legend
+Animasi cuaca	Weather animation
+Cakupan data cuaca	Weather data scope
+Lapisan cuaca	Weather layer
+Bingkai cuaca sebelumnya	Previous weather frame
+Bingkai cuaca berikutnya	Next weather frame
+Kecepatan putar cuaca	Weather playback speed
+Waktu bingkai cuaca	Weather time frame
+Tampilan lokal	Local viewport
+Cakupan global	Global coverage
+Overlay cuaca	Weather overlay
+Jeda animasi	Pause animation
+Terkini sumber (tanpa filter waktu)	Latest from source (no time filter)
+BMKG: Indonesia, 15 kejadian terakhir pada feed; bukan arsip lengkap periode terpilih.	BMKG: Indonesia, the latest 15 feed events; not a complete archive of the selected period.
+NOAA/NWS: peringatan aktif Amerika Serikat; sumber ini bukan arsip 1?30 hari.	NOAA/NWS: active United States warnings; this source is not a 1?30 day archive.
+Status terakhir dari sumber; arsip status per periode tidak tersedia.	Latest status from source; status archives by period are unavailable.
+Estimasi kualitas udara saat ini; bukan riwayat 1?30 hari.	Current air quality estimates; not a 1?30 day history.
+Rentang waktu menyaring umur pembaruan deteksi. Hotspot aktif tanpa waktu hanya tampil pada Terkini sumber.	The time range filters the age of detection updates. Active hotspots without timestamps appear only under Latest from source.
+Waktu kejadian disaring sesuai 1/5/10/30 hari terakhir.	Events are filtered to the last 1/5/10/30 days.
+Perairan	Water features
+Skala perairan	Water data scale

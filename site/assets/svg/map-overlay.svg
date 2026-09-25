@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="application" aria-label="Map coordinate overlay">
+  <defs>
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"></feGaussianBlur>
+      <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+    </filter>
+    <filter id="markerShadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-opacity="0.35"></feDropShadow>
+    </filter>
+  </defs>
+  <style>
+    .map-grid {
+      stroke: rgba(60, 112, 104, 0.23);
+      stroke-width: 0.75;
+    }
+    .map-grid-label {
+      fill: #5e827a;
+      font: 12px Arial, sans-serif;
+    }
+    .map-qibla-line {
+      stroke: #f5ca42;
+      stroke-width: 5;
+      stroke-linecap: round;
+      filter: url(#goldGlow);
+    }
+    .map-qibla-line.is-hidden,
+    .map-marker.is-hidden {
+      display: none;
+    }
+    .map-distance-label {
+      fill: #44330a;
+      stroke: rgba(255,255,255,0.94);
+      stroke-width: 5;
+      paint-order: stroke;
+      font: 700 15px Arial, sans-serif;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .map-marker {
+      cursor: pointer;
+      outline: none;
+    }
+    .map-marker:focus .marker-ring,
+    .map-marker:hover .marker-ring {
+      stroke: #fff;
+      stroke-width: 4;
+    }
+    .marker-ring {
+      fill: rgba(13,105,85,0.83);
+      stroke: #f7cf4d;
+      stroke-width: 3;
+      filter: url(#markerShadow);
+    }
+    .kaabah-ring {
+      fill: rgba(79, 57, 13, 0.87);
+    }
+    .source-ring {
+      fill: #fff;
+      stroke: #1d75ab;
+      stroke-width: 2.5;
+    }
+    .map-marker-label {
+      fill: #183b33;
+      stroke: rgba(255,255,255,0.9);
+      stroke-width: 4;
+      paint-order: stroke;
+      font: 700 13px Arial, sans-serif;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+  </style>
+  <g aria-hidden="true">
+    <path class="map-grid" d="M500 0V500 M0 250H1000"></path>
+    <text class="map-grid-label" x="506" y="244">0°</text>
+    <text class="map-grid-label" x="4" y="266">180°W</text>
+    <text class="map-grid-label" x="955" y="266">180°E</text>
+    <text class="map-grid-label" x="4" y="14">90°N</text>
+    <text class="map-grid-label" x="4" y="494">90°S</text>
+  </g>
+  <line id="overlay-qibla-line" class="map-qibla-line is-hidden" x1="0" y1="0" x2="0" y2="0"></line>
+  <text id="overlay-qibla-label" class="map-distance-label is-hidden" x="0" y="0"></text>
+  <g id="overlay-source-marker" class="map-marker is-hidden" data-overlay-marker="source" role="img" aria-label="Location source marker">
+    <circle class="source-ring" cx="0" cy="0" r="19"></circle>
+    <image id="overlay-source-icon" href="map/places/gps-pinpoint.png" x="-13" y="-13" width="26" height="26"></image>
+  </g>
+  <g id="overlay-building-marker" class="map-marker is-hidden" data-overlay-marker="building" tabindex="0" role="button" aria-label="Building detail">
+    <circle class="marker-ring" cx="0" cy="0" r="27"></circle>
+    <image id="overlay-building-icon" href="map/places/mosque.png" x="-19" y="-19" width="38" height="38"></image>
+    <text id="overlay-building-label" class="map-marker-label" x="0" y="47"></text>
+  </g>
+  <g id="overlay-kaabah-marker" class="map-marker" data-overlay-marker="kaabah" tabindex="0" role="button" aria-label="Kaabah detail">
+    <circle class="marker-ring kaabah-ring" cx="0" cy="0" r="27"></circle>
+    <image href="map/places/kaabah.png" x="-19" y="-19" width="38" height="38"></image>
+    <text class="map-marker-label" x="0" y="47">Kaabah</text>
+  </g>
+</svg>
