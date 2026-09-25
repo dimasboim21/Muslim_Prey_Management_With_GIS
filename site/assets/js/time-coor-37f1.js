@@ -37,10 +37,16 @@
       };
     }
     return {
-      label: text("Waktu ISP / Provider", "ISP / Provider Time"),
+      label: window.MpmDemoOptions && window.MpmDemoOptions.useLocalClockFallback
+        ? text("Waktu Demo Lokal", "Local Demo Time")
+        : text("Waktu ISP / Provider", "ISP / Provider Time"),
       tooltip: text(
-        "Waktu yang diterima dari sumber waktu ISP/provider sesuai status dan provenance Time System.",
-        "Time received from the ISP/provider source according to the Time System status and provenance."
+        window.MpmDemoOptions && window.MpmDemoOptions.useLocalClockFallback
+          ? "Demo menggunakan jam lokal perangkat secara monotonic karena sumber ISP tidak tersedia."
+          : "Waktu yang diterima dari sumber waktu ISP/provider sesuai status dan provenance Time System.",
+        window.MpmDemoOptions && window.MpmDemoOptions.useLocalClockFallback
+          ? "The demo uses the device local clock monotonically because an ISP source is unavailable."
+          : "Time received from the ISP/provider source according to the Time System status and provenance."
       )
     };
   }

@@ -749,6 +749,12 @@
       ? snapshot.time.coordinateCalibratedBuildingTime
       : snapshot.time.providerTime;
     var available = epoch !== null && Number.isFinite(Number(epoch));
+    var demoFallback = window.MpmDemoOptions && window.MpmDemoOptions.useLocalClockFallback &&
+      window.MpmActualTime && typeof window.MpmActualTime.nowEpochMs === "function";
+    if (!available && demoFallback) {
+      epoch = window.MpmActualTime.nowEpochMs();
+      available = Number.isFinite(Number(epoch));
+    }
     var networkStatus = snapshot.provider && snapshot.provider.timeSource
       ? snapshot.provider.timeSource.synchronizationStatus : "unavailable";
     var status = networkStatus;
@@ -773,7 +779,7 @@
       label: coordinate
         ? "Calibrating Building Coordinate Position"
         : "ISP / Provider Time",
-      status: available ? status : "unavailable"
+      status: available ? (status === "unavailable" && demoFallback ? "estimated" : status) : "unavailable"
     };
   }
 
