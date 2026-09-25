@@ -272,6 +272,12 @@
     var now = actualNow();
     var nowMs = now.getTime();
     var snapshot = runtimeSnapshot();
+    if (window.MpmDemoOptions && window.MpmDemoOptions.disableScheduledOverlays &&
+        window.MpmViewer && window.MpmViewer.isStatic && window.MpmViewer.isStatic()) {
+      window.OverlayRenderer.hide();
+      lastRendered = {};
+      return;
+    }
     Object.keys(suppressed).forEach(function (key) { if (suppressed[key] <= nowMs) { delete suppressed[key]; } });
     if (preview && nowMs < previewUntil) {
       window.OverlayRenderer.renderLayers(preview, snapshot || {}, now);

@@ -42,12 +42,25 @@
       try{localStorage.setItem('mpm:index-building:'+id,JSON.stringify(data));}catch(_){}
       document.body.appendChild(document.getElementById('indexDashboardTemplate').content.cloneNode(true));
       const dashboard=document.querySelector('.app-shell');dashboard.hidden=true;
-      const ready=new Promise(resolve=>window.addEventListener("mpm:index-ready",resolve,{once:true}));
+      const ready=new Promise((resolve,reject)=>{
+        let timer=window.setTimeout(()=>reject(Error('dashboard-timeout')),15000);
+        window.addEventListener("mpm:index-ready",()=>{window.clearTimeout(timer);resolve();},{once:true});
+      });
       started=true;
       for(const src of JSON.parse(document.getElementById('indexDashboardScripts').textContent))await loadScript(src);
       await ready;
+      error.textContent='';
       dashboard.hidden=false;gate.close();
-    }catch(failure){error.textContent=en()?'This building could not be loaded. Please choose a building again.':'Gedung tidak dapat dimuat. Silakan pilih gedung kembali.';choose.hidden=false;}
+    }catch(failure){
+      error.textContent=en()
+        ? (failure.message==='dashboard-timeout'
+          ? 'The dashboard took too long to start. Please reload and try again.'
+          : 'This building could not be loaded. Please choose a building again.')
+        : (failure.message==='dashboard-timeout'
+          ? 'Dashboard terlalu lama dimuat. Silakan muat ulang dan coba lagi.'
+          : 'Gedung tidak dapat dimuat. Silakan pilih gedung kembali.');
+      choose.hidden=false;
+    }
     finally{loading=false;if(!started&&id!==window.MpmBuildingLinks.requested())open();}
   }
   choose.addEventListener('click',()=>{const url=new URL(location.href);url.searchParams.delete('building');location.replace(url.href);});
